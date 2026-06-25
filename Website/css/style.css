@@ -137,25 +137,6 @@ small { font-size: 0.875rem; color: #777; }
   margin-bottom: 1rem;
 }
 
-/* ---------- HERO CTA BUTTONS (R1) ---------- */
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-.btn-hero {
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  min-width: 44px;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-}
-
 /* ---------- ROUTE PLANNER (hero widget) ---------- */
 .route-planner {
   background: #fff;

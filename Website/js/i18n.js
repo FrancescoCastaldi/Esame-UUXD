@@ -31,9 +31,6 @@
       'hero.badge': 'CANALE INFORMATIVO',
       'hero.title': 'Muoviti in Emilia-Romagna',
       'hero.subtitle': 'Percorsi, orari, biglietti e abbonamenti per il trasporto pubblico a Bologna e in tutta la regione.',
-      'hero.renew': 'Rinnova Abbonamento',
-      'hero.buy': 'Acquista Biglietto',
-      'hero.plan': 'Pianifica Viaggio',
 
       /* Route Planner */
       'planner.from': 'Partenza',
@@ -405,9 +402,6 @@
       'hero.badge': 'INFO CHANNEL',
       'hero.title': 'Move around Emilia-Romagna',
       'hero.subtitle': 'Routes, timetables, tickets and subscriptions for public transport in Bologna and the whole region.',
-      'hero.renew': 'Renew Subscription',
-      'hero.buy': 'Buy Ticket',
-      'hero.plan': 'Plan Trip',
 
       'planner.from': 'Departure',
       'planner.from-placeholder': 'Street, stop, city...',
@@ -760,9 +754,6 @@
       'hero.badge': 'قناة معلوماتية',
       'hero.title': 'تنقل في إميليا رومانيا',
       'hero.subtitle': 'مسارات، مواعيد، تذاكر واشتراكات للنقل العام في بولونيا وجميع أنحاء المنطقة.',
-      'hero.renew': 'تجديد الاشتراك',
-      'hero.buy': 'شراء تذكرة',
-      'hero.plan': 'تخطيط الرحلة',
 
       'planner.from': 'المغادرة',
       'planner.from-placeholder': 'شارع، محطة، مدينة...',
