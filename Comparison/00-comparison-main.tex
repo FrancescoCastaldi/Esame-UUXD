@@ -1,0 +1,314 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{cmap}
+\usepackage[margin=2cm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+
+\definecolor{primaryColor}{HTML}{0054A6}
+\definecolor{secondaryColor}{HTML}{4A5568}
+\definecolor{backgroundColor}{HTML}{F7FAFC}
+\definecolor{borderColor}{HTML}{E2E8F0}
+\definecolor{successColor}{HTML}{38A169}
+\definecolor{warningColor}{HTML}{DD6B20}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=primaryColor,
+}
+
+\titleformat{\section}
+  {\color{primaryColor}\normalfont\Large\bfseries}
+  {}{0em}{}
+  [\color{borderColor}\titlerule]
+
+\titleformat{\subsection}
+  {\color{primaryColor}\normalfont\large\bfseries}
+  {}{0em}{}
+
+\begin{document}
+
+\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
+    \color{white}\LARGE\bfseries CONFRONTO BEFORE/AFTER \\[0.2cm]
+    \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
+    \color{white!60}\normalsize Phase C --- Design Proposal
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\section{Introduzione}
+
+Il confronto Before/After presentato in questa sezione evidenzia le differenze principali tra il sito \texttt{tper.it} attuale e la proposta di redesign emersa dalle raccomandazioni R1--R13. Per ogni dimensione progettuale vengono mostrati lo stato attuale (Before) e la soluzione proposta (After), con riferimento alle evidenze raccolte in Phase A e alle raccomandazioni di Phase B che hanno guidato le scelte.
+
+\vspace{0.3cm}
+
+\textbf{Nota sull'ecosistema TPER:}
+\texttt{tper.it} \`e un sito puramente informativo: non consente acquisti diretti. L'ecosistema si articola su pi\`u canali specializzati:
+\begin{itemize}[nosep]
+    \item \texttt{solweb.tper.it} --- acquisto abbonamenti online;
+    \item \textbf{App Roger} --- biglietti digitali e servizi mobile;
+    \item \textbf{Punti Tper} (sportelli fisici) --- tutte le operazioni;
+    \item \textbf{Tabaccherie / PuntoLis} --- punti di ricarica;
+    \item \textbf{Contactless a bordo} --- pagamento alla salita.
+\end{itemize}
+Il redesign di \texttt{tper.it} si concentra sul suo ruolo di \textbf{hub informativo} e di \textbf{guida ai canali}, indirizzando ciascun utente verso lo strumento pi\`u adatto alle proprie esigenze.
+
+\vspace{0.3cm}
+
+% ============================================================
+% CONFRONTO 1: HOMEPAGE
+% ============================================================
+\section{Home Page}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+\hline
+& \textbf{Before} & \textbf{After} \\ \hline
+\cellcolor{primaryColor!15} &
+\textit{Homepage attuale di \texttt{tper.it}} &
+\textit{Homepage proposta (Guest View)} \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Struttura}}} &
+Homepage frammentata: news aziendali, comunicati stampa, link istituzionali, bandi di gara. Il pianificatore di viaggio \`e sepolto in sezioni secondarie (``Servizi online'' $\rightarrow$ ``Mobilit\`a'' $\rightarrow$ ``Percorsi''). Canali mescolati senza criterio (Issue D1). &
+Hero principale dedicato al pianificatore di viaggio con campi ``Partenza'' e ``Destinazione'' gi\`a visibili. Card informative per ogni canale dell'ecosistema TPER: Roger, solweb, Punti Tper, Tabaccherie, Contactless a bordo. Sezione ``Dove Comprare'' in evidenza (R1). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{CTA}}} &
+Link testuali generici: ``Servizi online'', ``Area vendita'', ``MyAtac''. Nessuna distinzione tra contenuto informativo e operativo. Utente deve interpretare la terminologia aziendale. &
+Pulsanti grandi con icone: ``Pianifica un viaggio'', ``Dove comprare?'', ``Orari e linee'', ``Contatti e assistenza''. Canali presentati con icone distintive e linguaggio utente (R2, R9). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Canali}}} &
+Tutti i canali elencati in un'unica pagina ``Area vendita'' senza gerarchia n\'e guida alla scelta. Utente deve gi\`a sapere quale canale corrisponde a quale operazione (Issue D3). &
+Sezione ``Quale canale fa per te?'' con card dedicate: ogni card mostra icona, nome del canale, operazioni disponibili e link diretto. Confronto visivo immediato senza necessit\`a di navigare. \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Ricerca}}} &
+Barra di ricerca nascosta dietro icona, senza suggerimenti. Utente deve sapere esattamente cosa cercare (Issue R2). &
+Barra di ricerca visibile con autocompletamento, suggerimenti contestuali e ricerca unificata su orari, fermate, linee e canali. Supporto sinonimi e multilingua. \\ \hline
+\end{tabular}
+\caption{Confronto Before/After --- Homepage}
+\label{tab:comp-homepage}
+\end{table}
+
+\vspace{0.3cm}
+
+% ============================================================
+% CONFRONTO 2: PIANIFICAZIONE VIAGGIO
+% ============================================================
+\section{Pianificazione del Viaggio}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+\hline
+& \textbf{Before} & \textbf{After} \\ \hline
+\cellcolor{primaryColor!15} &
+\textit{Pianificatore attuale} &
+\textit{Pianificatore proposto} \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Posizione}}} &
+Pianificatore sepolto a 3+ livelli di profondit\`a: ``Servizi online'' $\rightarrow$ ``Mobilit\`a'' $\rightarrow$ ``Percorsi''. Raggiungibile solo da utenti con gi\`a familiarit\`a del sito (Issue D2). &
+Pianificatore posizionato come \textbf{hero section} della homepage, visibile senza scroll. Accessibile con un click da qualsiasi pagina tramite barra superiore (R1, R2). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Interazione}}} &
+Modulo multi-pagina: l'utente compila i campi, clicca ``Cerca'', viene reindirizzato a una pagina separata con risultati testuali. Transizione lenta e disorientante. &
+Ricerca unificata ``one-click'': partenza e destinazione visibili nello stesso modulo. Risultati caricati nella stessa pagina con mappa interattiva a fianco. Filtri rapidi per ora, durata, numero cambi. \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Multimodalit\`a}}} &
+Solo percorso bus/treno. Nessuna opzione multimodale. Utente deve usare app o siti esterni (Google Maps, Moovit) per confrontare alternative (UR-01). &
+Opzioni multimodali integrate: bus, treno, bici (bike sharing), piedi. Confronto ``pi\`u veloce'', ``pi\`u economico'', ``minor cambi''. Tempi e costi stimati per ogni opzione. \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Accessibilit\`a}}} &
+Risultati solo testuali, carattere piccolo, nessuna opzione di ingrandimento. Percorsi non filtrabili per accessibilit\`a fisica. &
+Mappa interattiva con zoom. Filtro ``percorso accessibile'' per sedie a rotelle e carrozzine. Testo 14pt minimo. Risultati esportabili in PDF o condivisibili via QR code (R6, R8). \\ \hline
+\end{tabular}
+\caption{Confronto Before/After --- Pianificazione del Viaggio}
+\label{tab:comp-route}
+\end{table}
+
+\vspace{0.3cm}
+
+% ============================================================
+% CONFRONTO 3: GUIDA AI CANALI
+% ============================================================
+\section{Guida alla Scelta del Canale}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+\hline
+& \textbf{Before} & \textbf{After} \\ \hline
+\cellcolor{primaryColor!15} &
+\textit{Gestione attuale dei canali} &
+\textit{Guida ai canali proposta} \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Orientamento}}} &
+Nessuna guida alla scelta del canale. L'utente deve gi\`a sapere che \texttt{solweb.tper.it} serve per abbonamenti, Roger per biglietti digitali, le tabaccherie per ricariche. Informazioni disperse in pagine diverse (Issue D3). &
+Wizard interattivo ``Dove vuoi comprare?'' con tre domande semplici: ``Cosa vuoi acquistare?'' (biglietto, abbonamento, ricarica), ``Come preferisci pagare?'' (contanti, carta, online), ``Dove sei?'' (geolocalizzazione). Risultato: canale consigliato con icona e link diretto. \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Confronto}}} &
+Nessuna tabella comparativa. Ogni canale ha la propria pagina descrittiva, ma confrontare opzioni richiede aprire 4--5 schede e confrontare manualmente. &
+Tabella comparativa ``Canali a confronto'' sempre accessibile: per ogni canale mostra operazioni supportate, costi eventuali, orari, tempi di attesa stimati. Filtrabile per tipo di operazione (R2). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Errori}}} &
+Utente atterra sul canale sbagliato (es. cerca abbonamento su Roger, o biglietto su solweb) e non capisce perch\'e non trova l'opzione desiderata. Messaggi di errore generici (UR-03). &
+Avviso proattivo: ``Stai cercando un abbonamento? \texttt{solweb.tper.it} \`e il canale giusto per te. Ecco il link diretto.'' Suggerimenti contestuali basati sulla pagina visitata. Cross-link espliciti tra canali. \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Nuovi utenti}}} &
+Nuovo utente abbandona dopo 2--3 tentativi. Nessuna ``prima visita'' guidata. Tutorial assente. &
+Tour guidato ``Prima Volta'' opzionale al primo accesso: 4 schermate che presentano i canali principali con illustrazioni e linguaggio semplice. Trainer-mode per accompagnamento passo-passo (R4, R5). \\ \hline
+\end{tabular}
+\caption{Confronto Before/After --- Guida alla Scelta del Canale}
+\label{tab:comp-channels}
+\end{table}
+
+\vspace{0.3cm}
+
+% ============================================================
+% CONFRONTO 4: ECOSISTEMA D'ACQUISTO
+% ============================================================
+\section{Ecosistema d'Acquisto (Canali e Reindirizzamento)}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+\hline
+& \textbf{Before} & \textbf{After} \\ \hline
+\cellcolor{primaryColor!15} &
+\textit{Frammentazione attuale} &
+\textit{Ecosistema informativo integrato} \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Frammentazione}}} &
+Canali completamente separati: \texttt{tper.it} informativo, \texttt{solweb.tper.it} abbonamenti, Roger app biglietti digitali, Punti Tper acquisti fisici. Ogni canale ha interfaccia, credenziali e linguaggio diversi. Transizioni brusche senza preavviso (UR-01). &
+\texttt{tper.it} funge da \textbf{hub informativo unificato}: ogni pagina di prodotto (biglietto, abbonamento, ricarica) mostra automaticamente in quali canali \`e disponibile, con link diretti e istruzioni. Transizione tra canali segnalata con avviso esplicito ``Stai per andare su \texttt{solweb.tper.it}''. \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Reindirizzamento}}} &
+Link diretti assenti. L'utente deve trovare autonomamente l'URL del canale giusto. Nessun preavviso prima del cambio dominio. &
+Pulsanti di reindirizzamento contestuali: ``Compra su solweb'' (con icona), ``Scarica Roger'' (con QR code), ``Trova Punto Tper'' (con mappa), ``Ricarica in tabaccheria'' (con elenco rivenditori). Ogni reindirizzamento mostra una schermata informativa con cosa aspettarsi (R2, R9). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Ponte fisico/digitale}}} &
+Nessun ponte tra canale fisico e digitale. Ci\`o che si fa allo sportello non \`e recuperabile da casa e viceversa (UR-04). &
+Scontrino Punto Tper con QR code che riporta alla pagina informativa su \texttt{tper.it} con riepilogo dell'operazione svolta. Dati gi\`a inseriti preservati. Possibilit\`a di proseguire digitalmente un'operazione iniziata allo sportello. \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Guida abbonamenti}}} &
+Nessuna guida strutturata all'acquisto dell'abbonamento. Utente deve scoprire autonomamente tipologie, documenti necessari e agevolazioni (UR-05). &
+Guida passo-passo ``Come abbonarsi'' con 5 fasi: 1) Verifica requisiti, 2) Scegli tipo, 3) Prepara documenti, 4) Vai su solweb o Punto Tper, 5) Attiva e usa. Checklist documenti, calcolatore agevolazioni, FAQ per ogni fase (R11). \\ \hline
+\end{tabular}
+\caption{Confronto Before/After --- Ecosistema d'Acquisto}
+\label{tab:comp-ecosystem}
+\end{table}
+
+\vspace{0.3cm}
+
+% ============================================================
+% CONFRONTO 5: ACCESSIBILITÀ E SUPPORTO
+% ============================================================
+\section{Accessibilit\`a e Supporto Multilingua}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+\hline
+& \textbf{Before} & \textbf{After} \\ \hline
+\cellcolor{primaryColor!15} &
+\textit{Stato attuale} &
+\textit{Proposta} \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Testo}}} &
+Carattere piccolo (10--11pt). Contrasto insufficiente. Aree cliccabili ridotte, difficili da targetizzare per utenti over 65 (R8). &
+Testo minimo 14pt, contrasto 4.5:1. Aree cliccabili minime 48$\times$48px (R8). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Lingua}}} &
+Solo italiano. Utenti stranieri esclusi dai servizi online. &
+IT/EN/AR per tutti i flussi informativi (pianificazione, guida canali, supporto). Commutatore lingua sempre visibile (R12). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Tono}}} &
+Linguaggio burocratico e istituzionale. Messaggi di errore freddi e generici (Issue D3). &
+Tono incoraggiante e inclusivo: ``Nessun problema, possiamo riprovare insieme''. Termini complessi spiegati inline (R9). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Supporto}}} &
+Help desk telefonico come unico canale di supporto. Nessuna guida interattiva. &
+Trainer-mode integrato: interfaccia duale con tooltip, checklist laterale, sessione salvabile (R4, R5). \\ \hline
+\end{tabular}
+\caption{Confronto Before/After --- Accessibilit\`a e Supporto}
+\label{tab:comp-accessibilita}
+\end{table}
+
+\vspace{0.5cm}
+
+\section{Riepilogo delle Differenze}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=primaryColor,arc=2mm]
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{3.5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Dimensione} & \textbf{Prima (Before)} & \textbf{Dopo (After)} \\\\
+\hline
+Homepage & News e comunicati aziendali & Pianificatore hero + card canali \\\\
+\hline
+Pianificazione viaggio & Sepolta a 3+ livelli & Hero section homepage, one-click \\\\
+\hline
+Multimodalit\`a & Solo bus/treno & Bus, treno, bici, piedi confrontabili \\\\
+\hline
+Canali & Mescolati senza guida & Wizard ``Dove Comprare'' + tabella \\\\
+\hline
+Scelta canale & Affidata all'utente & Guida interattiva per prodotto \\\\
+\hline
+Errori di canale & Messaggi generici & Cross-link ``Intendevi solweb?'' \\\\
+\hline
+Dominio & 3+ domini separati & Hub informativo con redirect guidati \\\\
+\hline
+Ponte fisico/digitale & Assente & QR code scontrino + continuit\`a \\\\
+\hline
+Guida abbonamenti & Assente & Passo-passo 5 fasi + checklist \\\\
+\hline
+Etichette & Terminologia aziendale & Linguaggio utente + icone \\\\
+\hline
+Autenticazione & Obbligatoria per tutto & Guest per consultazione \\\\
+\hline
+Progresso & Assente & Progress bar sempre visibile \\\\
+\hline
+Lingua & Solo italiano & IT, EN, AR (R12) \\\\
+\hline
+Supporto & Solo telefonico & Trainer-mode integrato (R4) \\\\
+\hline
+Sessione & Stateless & Persistenza automatica (R5) \\\\
+\hline
+Accessibilit\`a & Carattere 10--11pt & Testo 14pt, contrasto 4.5:1 (R8) \\\\
+\hline
+\end{tabular}
+}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\begin{center}
+{\color{secondaryColor}\small
+Documento compilato sulla base delle evidenze raccolte durante la Phase A e delle raccomandazioni R1--R13 della Phase B \\[4pt]
+\textbf{Phase C --- Design Proposal: Before/After Comparison} \\[4pt]
+Progetto: UX Design Project: Help People Help People --- TPER S.p.A.}
+\end{center}
+
+\end{document}

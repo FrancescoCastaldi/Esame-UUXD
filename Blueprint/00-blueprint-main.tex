@@ -1,0 +1,210 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{cmap}
+\usepackage[margin=2cm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+
+\definecolor{primaryColor}{HTML}{0054A6}
+\definecolor{secondaryColor}{HTML}{4A5568}
+\definecolor{backgroundColor}{HTML}{F7FAFC}
+\definecolor{borderColor}{HTML}{E2E8F0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=primaryColor,
+}
+
+\titleformat{\section}
+  {\color{primaryColor}\normalfont\Large\bfseries}
+  {}{0em}{}
+  [\color{borderColor}\titlerule]
+
+\titleformat{\subsection}
+  {\color{primaryColor}\normalfont\large\bfseries}
+  {}{0em}{}
+
+\graphicspath{{./}}
+
+\begin{document}
+
+\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
+    \color{white}\LARGE\bfseries BLUEPRINT \\[0.2cm]
+    \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
+    \color{white!60}\normalsize Phase C --- Design Proposal
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\section{Introduzione}
+
+I blueprint presentati in questa sezione definiscono i componenti per l'organizzazione dei contenuti e le connessioni tra di essi, seguendo le linee guida del corso. Sono state create tre prospettive distinte per rappresentare diversi aspetti dell'ecosistema TPER:
+
+\begin{itemize}
+    \item \textbf{BP1} --- Architettura dell'informazione di \texttt{tper.it} (prospettiva struttura)
+    \item \textbf{BP2} --- Ecosistema multi-canale (prospettiva sistema)
+    \item \textbf{BP3} --- User journey dal bisogno all'acquisto (prospettiva utente)
+\end{itemize}
+
+\noindent I blueprint sono stati generati con HTML+CSS per garantire una resa grafica professionale, quindi convertiti in PNG per l'inclusione in questo documento.
+
+\vspace{0.3cm}
+
+% =====================================================================
+% BP1 — INFORMATION ARCHITECTURE
+% =====================================================================
+\section{BP1 --- Architettura dell'Informazione: tper.it}
+
+\textit{Prospettiva struttura.} Questo blueprint mostra l'organizzazione gerarchica dei contenuti su \texttt{tper.it}, evidenziando la separazione netta tra contenuti informativi (gestiti direttamente sul sito) e le destinazioni di acquisto (canali esterni). Le frecce arancioni indicano i reindirizzamenti verso i canali di acquisto corretti.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{html/bp1-ia.png}
+\caption{BP1 --- Architettura dell'Informazione di \texttt{tper.it}}
+\label{fig:bp1}
+\end{figure}
+
+\subsubsection*{Legenda}
+\begin{itemize}
+    \item \textbf{Blu} --- Contenuto informativo gestito su \texttt{tper.it}
+    \item \textbf{Arancione} --- Reindirizzamento a canale esterno per acquisto
+    \item \textbf{Viola/Verde/Altri} --- Canali di acquisto esterni all'ecosistema \texttt{tper.it}
+\end{itemize}
+
+\subsubsection*{Elementi chiave}
+\begin{enumerate}
+    \item \textbf{Route Planner come hero}: La funzione primaria di \texttt{tper.it} è la pianificazione del viaggio. Il motore di ricerca Da--A è posizionato in evidenza nella homepage.
+    \item \textbf{Niente acquisti su tper.it}: Ogni sezione che implica una transazione economica reindirizza l'utente al canale competente (solweb, Roger, Punti Tper, tabaccherie, contactless).
+    \item \textbf{Separazione netta}: I contenuti informativi (tipologie, prezzi, guide) sono gestiti su \texttt{tper.it}. Le transazioni avvengono esclusivamente sui canali esterni.
+    \item \textbf{Guida alla scelta}: La sezione "Dove Comprare" funge da hub decisionale che indirizza l'utente al canale più adatto alle sue esigenze.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% BP2 — MULTI-CHANNEL ECOSYSTEM
+% =====================================================================
+\section{BP2 --- Ecosistema Multi-Canale TPER}
+
+\textit{Prospettiva sistema.} Questo blueprint illustra le relazioni tra \texttt{tper.it} (canale informativo) e i 5 canali di acquisto, mostrando i meccanismi di ponte che collegano l'informazione alla transazione.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{html/bp2-ecosystem.png}
+\caption{BP2 --- Ecosistema Multi-Canale TPER}
+\label{fig:bp2}
+\end{figure}
+
+\newpage
+
+\subsubsection*{I 5 canali di acquisto}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+\hline
+\textbf{Canale} & \textbf{Tipo} & \textbf{Funzioni} & \textbf{Accesso} \\
+\hline
+\texttt{solweb.tper.it} & Digitale & Abbonamenti online, rinnovo, ricarica, agevolazioni ISEE & Browser web, richiede account \\
+\hline
+Roger App & Digitale & Biglietti digitali, acquisto, validazione, saldo contatti & Smartphone (iOS/Android) \\
+\hline
+Punti Tper & Fisico & Tutti i servizi, assistenza, ricariche, abbonamenti & Sportello fisico \\
+\hline
+Tabaccherie / PuntoLis & Fisico & Ricariche Boost, biglietti singoli & Rivendita autorizzata \\
+\hline
+Contactless a bordo & Ibrido & Pay-per-ride con carta o smartphone & Su veicolo TPER \\
+\hline
+\end{tabular}
+\caption{Panoramica dei 5 canali di acquisto dell'ecosistema TPER}
+\label{tab:canali}
+\end{table}
+
+\subsubsection*{Meccanismi di ponte}
+\begin{itemize}
+    \item \textbf{Reindirizzi web}: Link esterni da \texttt{tper.it} a \texttt{solweb.tper.it} e pagine di download Roger App
+    \item \textbf{QR Code}: Scontrino rilasciato ai Punti Tper con QR code per riprendere la pratica da casa
+    \item \textbf{Guide stampate}: PDF generati automaticamente con il percorso completo (R6)
+    \item \textbf{Trainer-Mode}: Operatori sportello che guidano l'utente nella scelta del canale
+\end{itemize}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% BP3 — USER JOURNEY
+% =====================================================================
+\section{BP3 --- User Journey: da tper.it all'Acquisto}
+
+\textit{Prospettiva utente.} Questo blueprint traccia il percorso tipico di un utente HPHP dal momento in cui arriva su \texttt{tper.it} fino al completamento dell'acquisto sul canale corretto.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{html/bp3-journey.png}
+\caption{BP3 --- User Journey da \texttt{tper.it} all'Acquisto}
+\label{fig:bp3}
+\end{figure}
+
+\subsubsection*{Punti di decisione}
+\begin{enumerate}
+    \item \textbf{Devi acquistare?}: Biforcazione tra utenti che cercano solo informazioni (orari, percorsi) e utenti che devono comprare.
+    \item \textbf{Digitale o Fisico?}: Scelta basata sulle preferenze e competenze digitali dell'utente.
+    \item \textbf{Hai un account?}: Per il canale digitale, distinzione tra chi ha gi\`a un account solweb e chi deve usare Roger App.
+    \item \textbf{Cosa devi fare?}: Per il canale fisico, distinzione tra acquisto completo (Punti Tper), ricarica (tabaccherie) o pagamento a bordo (contactless).
+\end{enumerate}
+
+\subsubsection*{Intervento Trainer-Mode}
+Il sistema attiva la modalit\`a assistita (Trainer-Mode) in due casi:
+\begin{itemize}
+    \item \textbf{Su richiesta}: L'utente clicca ``Aiuto'' durante il percorso
+    \item \textbf{Dopo 2 errori consecutivi}: L'utente mostra difficolt\`a nella navigazione o nella scelta del canale
+\end{itemize}
+La Trainer-Mode fornisce: checklist dei documenti, guida alla scelta del canale, e tutorial passo-passo.
+
+\vspace{0.5cm}
+
+% =====================================================================
+% RIEPILOGO
+% =====================================================================
+\section{Riepilogo dei Blueprint}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{1.8cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Blueprint} & \textbf{Prospettiva} & \textbf{Destinatari} & \textbf{Elementi coperti} \\
+\hline
+BP1 & Struttura & Sviluppatori, content manager & Gerarchia pagine, sezioni informative, reindirizzamenti \\
+\hline
+BP2 & Sistema & IT, product owner, marketing & Relazioni tra canali, meccanismi di ponte, tipologie \\
+\hline
+BP3 & Utente & Designer, operatori sportello & Percorso decisionale, punti di intervento, trainer-mode \\
+\hline
+\end{tabular}
+\caption{Panoramica dei tre blueprint e loro destinatari}
+\label{tab:riepilogo-bp}
+\end{table}
+
+\vspace{0.5cm}
+
+\begin{center}
+{\color{secondaryColor}\small
+Documento compilato sulla base delle evidenze raccolte durante la Phase A e Phase B \\[4pt]
+\textbf{Phase C --- Design Proposal: Blueprint} \\[4pt]
+Progetto: UX Design Project: Help People Help People --- TPER S.p.A.}
+\end{center}
+
+\end{document}

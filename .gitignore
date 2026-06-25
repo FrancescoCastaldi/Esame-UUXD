@@ -1,0 +1,36 @@
+# LaTeX temp files
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.synctex.gz
+*.fdb_latexmk
+*.bbl
+*.blg
+*.dvi
+*.bcf
+*.run.xml
+*.lof
+*.lot
+
+# Compiled PDFs
+*.pdf
+
+# Puppeteer Blueprint build artifacts
+Blueprint/html/
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Tool config
+.opencode/
+.playwright-mcp/
+.qwen/
+.slim/
+excalidraw.log
+
+# Backup
+Backupfile_07_17Giugno/

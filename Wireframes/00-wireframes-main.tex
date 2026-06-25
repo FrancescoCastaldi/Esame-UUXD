@@ -1,0 +1,211 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{cmap}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{amssymb}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+% TPER palette - all defined with \definecolor (no inline mixing)
+\definecolor{primaryColor}{HTML}{0054A6}
+\definecolor{secondaryColor}{HTML}{4A5568}
+\definecolor{backgroundColor}{HTML}{F7FAFC}
+\definecolor{borderColor}{HTML}{E2E8F0}
+\definecolor{successColor}{HTML}{38A169}
+\definecolor{warningColor}{HTML}{D69E2E}
+\definecolor{trainerColor}{HTML}{805AD5}
+\definecolor{userColor}{HTML}{2B6CB0}
+\definecolor{lightGray}{HTML}{EDF2F7}
+\definecolor{midGray}{HTML}{A0AEC0}
+\definecolor{darkGray}{HTML}{2D3748}
+\definecolor{rogerColor}{HTML}{E53E3E}
+\definecolor{channelBlue}{HTML}{3182CE}
+\definecolor{channelGreen}{HTML}{38A169}
+\definecolor{channelOrange}{HTML}{DD6B20}
+\definecolor{channelTeal}{HTML}{319795}
+\definecolor{cardBg}{HTML}{EBF4FF}
+
+\colorlet{primaryLight}{primaryColor!10}
+\colorlet{primaryMedium}{primaryColor!30}
+\colorlet{trainerLight}{trainerColor!10}
+\colorlet{successLight}{successColor!10}
+\colorlet{warningLight}{warningColor!10}
+\colorlet{cardBgLight}{cardBg!50}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=primaryColor,
+}
+
+\titleformat{\section}
+  {\color{primaryColor}\normalfont\Large\bfseries}
+  {}{0em}{}
+  [\color{borderColor}\titlerule]
+
+\titleformat{\subsection}
+  {\color{primaryColor}\normalfont\large\bfseries}
+  {}{0em}{}
+
+% Screenshot style
+\newcommand{\wfgraphic}[1]{%
+  \includegraphics[width=\textwidth,keepaspectratio,frame]{#1}%
+}
+
+\begin{document}
+
+\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
+    \color{white}\LARGE\bfseries WIREFRAMES \\[0.2cm]
+    \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
+    \color{white!60}\normalsize Phase C --- Design Proposal --- Section 4.5
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\section{Introduzione}
+
+I wireframe presentati in questa sezione illustrano le schermate fondamentali di \textbf{tper.it}, il portale informativo di TPER. A differenza di quanto ipotizzato in precedenza, \textbf{tper.it non consente acquisti diretti}: è una piattaforma informativa che supporta l'utente nella pianificazione del viaggio e nell'orientamento tra i canali di vendita fisici e digitali dell'ecosistema TPER.
+
+\vspace{0.2cm}
+\textbf{Canali dell'ecosistema TPER:}
+\begin{itemize}
+    \item \textbf{tper.it} --- Informativo: pianificazione percorsi, orari, tipi di biglietto, news, contatti
+    \item \textbf{solweb.tper.it} --- Portale per l'acquisto di abbonamenti online
+    \item \textbf{Roger App} --- App per biglietti digitali e pagamenti mobile
+    \item \textbf{Punti Tper} --- Negozi fisici per tutti gli acquisti
+    \item \textbf{Tabaccherie / PuntoLis} --- Punti di ricarica
+    \item \textbf{Contactless a bordo} --- Pagamento per singola corsa con carta
+\end{itemize}
+
+\vspace{0.2cm}
+\textbf{Convenzioni grafiche:}
+\begin{itemize}
+    \item Riquadri blu = elementi interattivi principali (CTA, navigazione)
+    \item Riquadri grigi = contenuti informativi / aree secondarie
+    \item Linea viola = elementi della Trainer-Mode
+    \item Testo in \texttt{corsivo} = etichette descrittive
+\end{itemize}
+
+\newpage
+
+% ================================================================
+% WF1: HOMEPAGE tper.it (GUEST)
+% ================================================================
+\section{Wireframe 1: Homepage tper.it --- Utente Non Autenticato (Guest)}
+\label{wf1}
+
+\begin{figure}[H]
+\centering
+\wfgraphic{screenshot-wf1.png}
+\caption{Homepage tper.it --- Vista utente non autenticato (Guest)}
+\label{fig:wf1}
+\end{figure}
+
+\newpage
+
+% ================================================================
+% WF2: PIANIFICA (ROUTE PLANNER)
+% ================================================================
+\section{Wireframe 2: Pianifica --- Il Percorso (Core Function)}
+\label{wf2}
+
+\begin{figure}[H]
+\centering
+\wfgraphic{screenshot-wf2.png}
+\caption{Pianifica --- Risultati di ricerca percorso con prezzi informativi}
+\label{fig:wf2}
+\end{figure}
+
+\newpage
+
+% ================================================================
+% WF3: DOVE COMPRARE (CHANNEL GUIDE)
+% ================================================================
+\section{Wireframe 3: Dove Comprare --- Guida ai Canali}
+\label{wf3}
+
+\begin{figure}[H]
+\centering
+\wfgraphic{screenshot-wf3.png}
+\caption{Dove Comprare --- Guida ai canali di vendita con tabella comparativa}
+\label{fig:wf3}
+\end{figure}
+
+\newpage
+
+% ================================================================
+% WF4: BIGLIETTI (INFORMATIONAL)
+% ================================================================
+\section{Wireframe 4: Biglietti --- Tipologie e Prezzi}
+\label{wf4}
+
+\begin{figure}[H]
+\centering
+\wfgraphic{screenshot-wf4.png}
+\caption{Biglietti --- Tipologie, prezzi e canali consigliati}
+\label{fig:wf4}
+\end{figure}
+
+\newpage
+
+% ================================================================
+% WF5: AIUTO + TRAINER-MODE
+% ================================================================
+\section{Wireframe 5: Aiuto e Trainer-Mode --- Guida Passo-Passo}
+\label{wf5}
+
+\begin{figure}[H]
+\centering
+\wfgraphic{screenshot-wf5.png}
+\caption{Aiuto e Trainer-Mode --- FAQ e guida passo-passo attivabile}
+\label{fig:wf5}
+\end{figure}
+
+\vspace{0.5cm}
+
+% ================================================================
+% SUMMARY TABLE
+% ================================================================
+\section{Riepilogo dei Wireframe}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|}
+\hline
+\textbf{Wireframe} & \textbf{Schermata} & \textbf{Contenuto principale} & \textbf{Elementi chiave} \\\\[0.1cm]
+\hline
+WF1 & Homepage Guest & Route planner, 4 card informative (Pianifica, Biglietti, Abbonamenti, Aiuto), sidebar Dove Comprare & Nav tabs, hero search, canali in sidebar, news, contatti \\\\[0.1cm]
+\hline
+WF2 & Pianifica & Form di ricerca percorso, risultati con orari/durata/prezzo, toggle mappa/elenco & Core function, link Dove Comprare per ogni risultato, prezzi informativi \\\\[0.1cm]
+\hline
+WF3 & Dove Comprare & 5 schede canale (solweb, Roger, Punti Tper, Tabaccherie, Contactless), tabella comparativa & Card con CTA, confronto per esigenza, nessun acquisto diretto \\\\[0.1cm]
+\hline
+WF4 & Biglietti & Tipologie biglietto con prezzi e validita, badge consigliato, legenda canali & Informativo puro, icone canale per tipo, prezzi aggiornati \\\\[0.1cm]
+\hline
+WF5 & Aiuto + Trainer-Mode & FAQ per canale, sezione guide, toggle trainer-mode, guida 5 passi & Toggle ON/OFF, passo-passo visibile, canale indicato per ogni passo \\\\[0.1cm]
+\hline
+\end{tabular}
+\caption{Riepilogo dei wireframe prodotti per tper.it (solo informativo)}
+\label{tab:wfsum}
+\end{table}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm]
+\small
+\textbf{Nota importante:} tper.it \`e un portale esclusivamente \textbf{informativo}. Non sono presenti flussi di acquisto, pagamento o transazione. Ogni schermata orienta l'utente verso il canale corretto (\texttt{solweb.tper.it}, Roger App, Punti Tper, Tabaccherie, Contactless a bordo) per completare l'operazione desiderata. Questa architettura rispetta la separazione reale dei canali nell'ecosistema TPER.
+\end{tcolorbox}
+
+\end{document}

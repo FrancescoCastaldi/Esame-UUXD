@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="it" data-page="solweb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="solweb.piani-title">Scegli il tuo abbonamento â€” solweb.tper.it</title>
+  <meta name="description" content="Scegli il tuo abbonamento TPER: mensile, annuale urbano o extraurbano.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-i18n="header.skip">Vai al contenuto principale</a>
+
+  <!-- Solweb Header -->
+  <header class="site-header solweb-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Tper home">
+        <svg viewBox="0 0 100 32" aria-hidden="true">
+          <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
+          <text x="14" y="21" text-anchor="middle" fill="#FFF" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="13">TP</text>
+          <text x="34" y="21" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15">tper.it</text>
+        </svg>
+        tper.it
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="../index.html" data-i18n="solweb.back">&larr; Torna a tper.it</a></li>
+        </ul>
+      </nav>
+      <div class="header-utilities">
+        <button class="lang-btn" data-lang="it" aria-label="Italiano">IT</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©">AR</button>
+        <button class="contrast-toggle" aria-label="Attiva contrasto elevato" title="Contrasto">&#9681;</button>
+        <button class="font-toggle" aria-label="Aumenta carattere" title="Carattere">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="hero-badge" data-i18n="solweb.badge">PIATTAFORMA ABBONAMENTI</div>
+        <h1 data-i18n="solweb.piani-title">Scegli il tuo abbonamento</h1>
+        <p data-i18n="solweb.piani-desc">Abbonamenti mensili, annuali e agevolati per tutta l'Emilia-Romagna.</p>
+      </div>
+
+      <div id="guest-banner" style="display:none;background:#FFF3CD;border:1px solid #FFC107;border-radius:8px;padding:1rem;margin-bottom:1.5rem;text-align:center;font-weight:600;" data-i18n="solweb.guest-banner">ModalitÃ  Ospite â€” Abbonamento Impersonale</div>
+
+      <div class="card-grid" id="subscription-plans">
+        <!-- Monthly Urban -->
+        <div class="card card-blue">
+          <div class="card-icon" aria-hidden="true">&#128197;</div>
+          <h3 data-i18n="solweb.monthly">Abbonamento Mensile Urbano</h3>
+          <p>&euro;51,00/mese</p>
+          <p style="color:#777;font-size:0.9rem;">Viaggi illimitati sui mezzi urbani TPER per un mese. Rinnovo automatico o manuale.</p>
+          <a href="pagamento.html?plan=monthly" class="btn-primary" style="text-decoration:none;text-align:center;display:block;" data-i18n="solweb.acquista">Acquista Online</a>
+        </div>
+
+        <!-- Yearly Urban -->
+        <div class="card card-green">
+          <div class="card-icon" aria-hidden="true">&#128200;</div>
+          <h3 data-i18n="solweb.yearly">Abbonamento Annuale Urbano</h3>
+          <p>&euro;390,00/anno <small style="color:#2E7D32;font-weight:600;">(risparmi 35%)</small></p>
+          <p style="color:#777;font-size:0.9rem;">12 mesi di viaggi illimitati nella rete urbana. Risparmio significativo rispetto al mensile.</p>
+          <a href="pagamento.html?plan=yearly" class="btn-primary" style="text-decoration:none;text-align:center;display:block;" data-i18n="solweb.acquista">Acquista Online</a>
+        </div>
+
+        <!-- Regional -->
+        <div class="card card-orange">
+          <div class="card-icon" aria-hidden="true">&#128652;</div>
+          <h3 data-i18n="solweb.regional">Abbonamento Annuale Extraurbano</h3>
+          <p>Da &euro;35,00/mese</p>
+          <p style="color:#777;font-size:0.9rem;">Per viaggi tra comuni e province dell'Emilia-Romagna. Prezzo variabile in base alle tratte.</p>
+          <a href="pagamento.html?plan=regional" class="btn-primary" style="text-decoration:none;text-align:center;display:block;" data-i18n="solweb.acquista">Acquista Online</a>
+        </div>
+      </div>
+
+      <!-- Agevolazioni section -->
+      <div class="section-header mt-2">
+        <h2 data-i18n="solweb.agevolazioni">Agevolazioni e Riduzioni</h2>
+        <p data-i18n="solweb.agevolazioni-desc">Studenti, over 65, famiglie numerose e persone con disabilit&agrave; hanno diritto a tariffe ridotte.</p>
+      </div>
+
+      <div class="info-banner" role="status">
+        <span class="icon">&#9432;</span>
+        <p data-i18n="solweb.punto-help"><strong>Hai bisogno di aiuto?</strong> Vai in un <a href="../dove-comprare.html#punti-tper">Punto Tper</a> per assistenza personalizzata.</p>
+      </div>
+
+      <p id="guest-login-link" style="display:none;text-align:center;margin-top:1rem;">
+        <a href="login.html" class="btn-outline" data-i18n="solweb.guest-login-link">Accedi per acquisto personale â†’</a>
+      </p>
+
+      <p class="text-center mt-2">
+        <a href="documenti.html" class="btn-outline" style="margin-right:0.5rem;">Documenti Necessari</a>
+        <a href="login.html" class="btn-outline">Accedi al tuo profilo</a>
+      </p>
+
+    </div>
+  </main>
+
+  <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
+    <h3 data-i18n="trainer.title">&#127891; Modalit&agrave; Trainer</h3>
+    <div id="trainer-steps"></div>
+  </aside>
+
+  <button class="back-to-top" aria-label="Torna in cima" title="Torna su" data-i18n-aria="back-to-top.label">&#8593;</button>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>tper.it</h4>
+        <ul>
+          <li><a href="../pianifica.html">Pianifica</a></li>
+          <li><a href="../dove-comprare.html">Dove Comprare</a></li>
+          <li><a href="../biglietti.html">Biglietti</a></li>
+          <li><a href="../abbonamenti.html">Abbonamenti</a></li>
+          <li><a href="../aiuto.html">Aiuto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Canali di Acquisto</h4>
+        <ul>
+          <li><a href="login.html">solweb.tper.it</a></li>
+          <li><a href="../dove-comprare.html#roger">App Roger</a></li>
+          <li><a href="../dove-comprare.html#punti-tper">Punti Tper</a></li>
+          <li><a href="../dove-comprare.html#tabaccherie">Tabaccherie</a></li>
+          <li><a href="../dove-comprare.html#contactless">Contactless a bordo</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Accessibilit&agrave;</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="../aiuto.html">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener">tper.it &ndash; Sito Istituzionale</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/trainer-modules.js"></script>
+  <script src="../js/app.js"></script>
+
+  <!-- Guest mode handler -->
+  <script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('mode') === 'guest') {
+      var banner = document.getElementById('guest-banner');
+      if (banner) banner.style.display = 'block';
+
+      var links = document.querySelectorAll('.card .btn-primary');
+      for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute('href');
+        if (href && href.indexOf('pagamento.html') === 0) {
+          links[i].setAttribute('href', href + '&mode=guest');
+        }
+      }
+
+      var loginLink = document.getElementById('guest-login-link');
+      if (loginLink) loginLink.style.display = 'block';
+    }
+  })();
+  </script>
+
+  <button class="trainer-toggle-btn" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
+</body>
+</html>

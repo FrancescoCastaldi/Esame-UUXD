@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="it" data-page="dove-comprare">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dove Comprare â€” tper.it</title>
+  <meta name="description" content="Guida ai canali di acquisto Tper: solweb, Roger App, Punti Tper, tabaccherie e contactless a bordo.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link" data-i18n="header.skip">Vai al contenuto principale</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <button class="hamburger" data-i18n-aria="header.menu" aria-label="Menu" aria-expanded="false">&#9776;</button>
+      <a href="index.html" class="logo" aria-label="Tper home">
+        <svg viewBox="0 0 100 32" aria-hidden="true">
+          <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
+          <text x="14" y="21" text-anchor="middle" fill="#FFF" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="13">TP</text>
+          <text x="34" y="21" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15">tper.it</text>
+        </svg>
+        tper.it
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="dove-comprare.html" aria-current="page" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </nav>
+      <div class="header-utilities">
+        <button class="lang-btn" data-lang="it" data-i18n-aria="header.lang-it" aria-label="Italiano">IT</button>
+        <button class="lang-btn" data-lang="en" data-i18n-aria="header.lang-en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©">AR</button>
+        <button class="contrast-toggle" data-i18n-aria="a11y.contrast-on" aria-label="Attiva contrasto elevato">&#9681;</button>
+        <button class="font-toggle" data-i18n-aria="a11y.font-increase" aria-label="Aumenta carattere">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <nav data-i18n-aria="nav.home" aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="sep">/</li>
+          <li aria-current="page" data-i18n="nav.dove-comprare">Dove Comprare</li>
+        </ol>
+      </nav>
+
+      <h1 data-i18n="buy.title">Dove Comprare Biglietti e Abbonamenti</h1>
+      <p class="mb-2" data-i18n="buy.desc">Su <strong>tper.it</strong> non &egrave; possibile acquistare titoli di viaggio. Questa pagina ti guida verso il canale pi&ugrave; adatto alle tue esigenze tra le opzioni disponibili.</p>
+
+      <!-- Channel wizard stepper -->
+      <div class="info-banner">
+        <span class="icon">&#128270;</span>
+        <p data-i18n="wizard.start"><strong>Non sai quale canale scegliere?</strong> Usa il nostro wizard interattivo: rispondi a poche domande e ti suggeriamo il canale migliore per te.</p>
+      </div>
+      <div style="text-align:center;margin-bottom:2rem;">
+        <button class="btn-primary" id="start-wizard" style="padding:0.75rem 2rem;font-size:1.1rem;" data-i18n="wizard.start-btn">&#9889; Avvia Wizard di Scelta</button>
+      </div>
+
+      <!-- Wizard step container -->
+      <div id="wizard-container" class="card" style="display:none;max-width:600px;margin:0 auto 2rem;"></div>
+
+      <h2 class="mb-1" data-i18n="section.channels">Tutti i Canali</h2>
+      <div class="channel-grid">
+        <!-- solweb -->
+        <div class="channel-card channel-solweb" id="solweb">
+          <div class="channel-icon" aria-hidden="true">&#127760;</div>
+          <span class="channel-tag" data-i18n="nav.abbonamenti">Abbonamenti</span>
+          <h3 data-i18n="buy.solweb">solweb.tper.it</h3>
+          <p data-i18n="buy.solweb-desc">Piattaforma online per l&rsquo;acquisto e il rinnovo di abbonamenti mensili e annuali. Accesso con SPID o credenziali Tper.</p>
+<a href="solweb/login.html" class="btn-primary" data-channel="solweb" id="go-solweb-btn"
+data-url="solweb/login.html" data-i18n="buy.solweb">Vai a solweb.tper.it</a>
+        </div>
+        <!-- Roger -->
+        <div class="channel-card channel-roger" id="roger">
+          <div class="channel-icon" aria-hidden="true">&#128241;</div>
+          <span class="channel-tag" data-i18n="buy.roger">Biglietti Digitali</span>
+          <h3 data-i18n="buy.roger">App Roger</h3>
+          <p data-i18n="buy.roger-desc">Acquista biglietti digitali via smartphone. Ricarica contactless, carnet e biglietti singoli. GPS per validazione automatica.</p>
+          <a href="#" class="btn-primary" data-channel="roger" data-url="https://play.google.com" target="_blank" rel="noopener" data-i18n="buy.roger">Scarica Roger App</a>
+        </div>
+        <!-- Punti Tper -->
+        <div class="channel-card channel-puntotper" id="punti-tper">
+          <div class="channel-icon" aria-hidden="true">&#128205;</div>
+          <span class="channel-tag" data-i18n="buy.punti">Fisico</span>
+          <h3 data-i18n="buy.punti">Punti Tper</h3>
+          <p data-i18n="buy.punti-desc">Punti vendita fisici con personale. Biglietti, abbonamenti, ricariche e informazioni. Trova il punto Tper pi&ugrave; vicino.</p>
+          <a href="#" class="btn-primary" data-channel="puntotper" data-url="https://tper.it/punti-vendita" target="_blank" rel="noopener" data-i18n="buy.punti">Trova Punto Tper</a>
+        </div>
+        <!-- Tabaccherie -->
+        <div class="channel-card channel-tabaccheria" id="tabaccherie">
+          <div class="channel-icon" aria-hidden="true">&#127991;</div>
+          <span class="channel-tag" data-i18n="buy.tabacchi">Ricariche</span>
+          <h3 data-i18n="buy.tabacchi">Tabaccherie &amp; PuntoLis</h3>
+          <p data-i18n="buy.tabacchi-desc">Ricarica il tuo Roger Card o acquista biglietti cartacei presso tabaccherie convenzionate e punti PuntoLis in tutta la regione.</p>
+          <a href="#" class="btn-primary" data-channel="tabaccheria" data-url="https://tper.it/punti-vendita" target="_blank" rel="noopener" data-i18n="buy.tabacchi">Trova rivendita</a>
+        </div>
+        <!-- Contactless -->
+        <div class="channel-card channel-contactless" id="contactless">
+          <div class="channel-icon" aria-hidden="true">&#128179;</div>
+          <span class="channel-tag" data-i18n="buy.contactless">Pay-per-ride</span>
+          <h3 data-i18n="buy.contactless">Contactless a Bordo</h3>
+          <p data-i18n="buy.contactless-desc">Paga la singola corsa con carta di credito/debito contactless o dispositivo mobile direttamente a bordo del bus. Nessun biglietto cartaceo.</p>
+          <a href="#" class="btn-primary" data-channel="contactless" data-url="https://tper.it/contactless" target="_blank" rel="noopener" data-i18n="buy.contactless">Scopri Contactless</a>
+        </div>
+        <!-- Sanzioni -->
+        <div class="channel-card channel-sanzioni" id="sanzioni">
+          <div class="channel-icon" aria-hidden="true">&#128680;</div>
+          <span class="channel-tag">Sanzioni</span>
+          <h3 data-i18n="buy.sanzioni-title">Pagamento Sanzioni</h3>
+          <p data-i18n="buy.sanzioni-desc">Paga le sanzioni bus e ferroviarie online, senza registrazione, solo con numero pratica.</p>
+          <a href="solweb/sanzioni.html" class="btn-primary" data-i18n="buy.sanzioni">Paga una Sanzione</a>
+        </div>
+      </div>
+
+      <!-- Comparison table -->
+      <h2 class="mt-2 mb-1" data-i18n="buy.table-confronto">Confronto Canali</h2>
+      <div style="overflow-x:auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th data-i18n="buy.table-header-canale">Canale</th>
+              <th data-i18n="buy.table-header-biglietti">Biglietti</th>
+              <th data-i18n="buy.table-header-abbonamenti">Abbonamenti</th>
+              <th data-i18n="buy.table-header-ricariche">Ricariche</th>
+              <th data-i18n="buy.table-header-assistenza">Assistenza</th>
+              <th data-i18n="buy.table-header-online">Online</th>
+              <th data-i18n="buy.table-header-fisico">Fisico</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>solweb.tper.it</strong></td>
+              <td class="cross">&#10007;</td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+              <td class="cross">&#10007;</td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+            </tr>
+            <tr>
+              <td><strong>App Roger</strong></td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+            </tr>
+            <tr>
+              <td><strong>Punti Tper</strong></td>
+              <td class="check">&#10003;</td>
+              <td class="check">&#10003;</td>
+              <td class="check">&#10003;</td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td><strong>Tabaccherie/PuntoLis</strong></td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+              <td class="cross">&#10007;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td><strong>Contactless a bordo</strong></td>
+              <td class="check">&#10003;</td>
+              <td class="cross">&#10007;</td>
+              <td class="cross">&#10007;</td>
+              <td class="cross">&#10007;</td>
+              <td class="cross">&#10007;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Redirect modal -->
+      <div class="modal-overlay" id="redirect-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+          <div class="modal-icon" id="modal-icon" aria-hidden="true">&#128279;</div>
+          <h2 id="modal-title" data-i18n="modal.title">Stai per uscire da tper.it</h2>
+          <p data-i18n="modal.text">Verrai reindirizzato al canale di acquisto esterno:</p>
+          <div class="modal-url" id="modal-url"></div>
+          <p style="font-size:0.85rem;color:#718096;" data-i18n="banner.info">tper.it &egrave; un sito informativo. Non gestiamo transazioni direttamente.</p>
+          <div>
+            <a href="#" class="btn-primary" id="modal-continue" target="_blank" rel="noopener" data-i18n="modal.continue">Continua</a>
+            <button class="btn-secondary" id="modal-close" data-i18n="modal.cancel">Annulla</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <button class="back-to-top" data-i18n-aria="back-to-top.label" aria-label="Torna in cima">&#8593;</button>
+  <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
+    <h3 data-i18n="trainer.title">&#127891; Modalit&agrave; Trainer</h3>
+    <div id="trainer-steps"></div>
+  </aside>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>tper.it</h4>
+        <ul>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.buy-channels">Canali di Acquisto</h4>
+        <ul>
+          <li><a href="solweb/login.html" data-i18n="footer.solweb">solweb.tper.it</a></li>
+          <li><a href="dove-comprare.html#roger" data-i18n="footer.roger">App Roger</a></li>
+          <li><a href="dove-comprare.html#punti-tper" data-i18n="footer.punti">Punti Tper</a></li>
+          <li><a href="dove-comprare.html#tabaccherie" data-i18n="footer.tabacchi">Tabaccherie</a></li>
+          <li><a href="dove-comprare.html#contactless" data-i18n="footer.contactless">Contactless a bordo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/trainer-modules.js"></script>
+  <script src="js/app.js"></script>
+
+  <button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
+</body>
+</html>
+
+

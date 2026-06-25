@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="it" data-page="solweb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="solweb.sanzioni-title">Paga le tue sanzioni TPER</title>
+  <meta name="description" content="Paga le tue sanzioni TPER bus e ferroviarie. Senza registrazione, solo con numero pratica.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-i18n="header.skip">Vai al contenuto principale</a>
+
+  <!-- Solweb Header -->
+  <header class="site-header solweb-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Tper home">
+        <svg viewBox="0 0 100 32" aria-hidden="true">
+          <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
+          <text x="14" y="21" text-anchor="middle" fill="#FFF" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="13">TP</text>
+          <text x="34" y="21" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15">tper.it</text>
+        </svg>
+        tper.it
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="../index.html" data-i18n="solweb.back">&larr; Torna a tper.it</a></li>
+        </ul>
+      </nav>
+      <div class="header-utilities">
+        <button class="lang-btn" data-lang="it" aria-label="Italiano">IT</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©">AR</button>
+        <button class="contrast-toggle" aria-label="Attiva contrasto elevato" title="Contrasto">&#9681;</button>
+        <button class="font-toggle" aria-label="Aumenta carattere" title="Carattere">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="hero-badge" data-i18n="solweb.sanzioni-badge">PAGAMENTO SANZIONI</div>
+        <h1 data-i18n="solweb.sanzioni-title">Paga le tue sanzioni TPER</h1>
+        <p data-i18n="solweb.sanzioni-desc">Bus e ferroviarie. Senza registrazione, solo con numero pratica.</p>
+      </div>
+
+      <div class="form-card">
+        <!-- Tab selector -->
+        <div class="sanzioni-tabs" role="tablist">
+          <button class="sanzioni-tab active" data-tab="pratica" role="tab" aria-selected="true" data-i18n="solweb.sanzioni-pratica-tab">Con Numero Pratica</button>
+          <button class="sanzioni-tab" data-tab="cf" role="tab" aria-selected="false" data-i18n="solweb.sanzioni-cf-tab">Con Codice Fiscale</button>
+        </div>
+
+        <!-- Tab 1: Con Numero Pratica -->
+        <div class="sanzioni-tab-content active" id="tab-pratica">
+          <form novalidate>
+            <div class="form-group">
+              <label for="num-pratica" data-i18n="solweb.sanzioni-pratica">Numero Pratica</label>
+              <input type="text" id="num-pratica" name="num-pratica" placeholder="Es. PR-2026-XXXXX" autocomplete="off" data-i18n-placeholder="solweb.sanzioni-pratica">
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" style="flex:1;" data-i18n="solweb.sanzioni-cerca">Cerca</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Tab 2: Con Codice Fiscale -->
+        <div class="sanzioni-tab-content" id="tab-cf">
+          <form novalidate>
+            <div class="form-group">
+              <label for="codice-fiscale" data-i18n="solweb.sanzioni-cf">Codice Fiscale</label>
+              <input type="text" id="codice-fiscale" name="codice-fiscale" placeholder="RSSMRA80A01H501U" autocomplete="off" data-i18n-placeholder="solweb.sanzioni-cf">
+            </div>
+            <div class="form-group">
+              <label for="targa-linea" data-i18n="solweb.sanzioni-targa">Targa / Linea Bus</label>
+              <input type="text" id="targa-linea" name="targa-linea" placeholder="Es. BA123XX o Linea 27" autocomplete="off" data-i18n-placeholder="solweb.sanzioni-targa">
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" style="flex:1;" data-i18n="solweb.sanzioni-cerca">Cerca</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Results section (hidden by default) -->
+      <div class="sanzioni-results" style="display:none;">
+        <div class="form-card">
+          <h2 data-i18n="solweb.sanzioni-trovato">Sanzione Trovata</h2>
+
+          <div class="sanzioni-detail-card">
+            <div class="sanzioni-detail-row">
+              <span class="sanzioni-detail-label" data-i18n="solweb.sanzioni-numero">Pratica #</span>
+              <span class="sanzioni-detail-value" id="ris-numero">PR-2026-01234</span>
+            </div>
+            <div class="sanzioni-detail-row">
+              <span class="sanzioni-detail-label" data-i18n="solweb.sanzioni-data">Data</span>
+              <span class="sanzioni-detail-value" id="ris-data">15/04/2026</span>
+            </div>
+            <div class="sanzioni-detail-row">
+              <span class="sanzioni-detail-label" data-i18n="solweb.sanzioni-tipo">Tipo</span>
+              <span class="sanzioni-detail-value" id="ris-tipo">Sanzione Bus</span>
+            </div>
+            <div class="sanzioni-detail-row">
+              <span class="sanzioni-detail-label" data-i18n="solweb.sanzioni-importo">Importo</span>
+              <span class="sanzioni-detail-value" id="ris-importo">&euro; 85,00</span>
+            </div>
+            <div class="sanzioni-detail-row">
+              <span class="sanzioni-detail-label" data-i18n="solweb.sanzioni-stato">Stato</span>
+              <span class="sanzioni-detail-value sanzioni-stato-da-pagare" data-i18n="solweb.sanzioni-da-pagare" id="ris-stato">Da pagare</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment section -->
+        <div class="form-card">
+          <h2 data-i18n="solweb.sanzioni-riepilogo">Riepilogo Pagamento</h2>
+
+          <div class="sanzioni-pay-summary">
+            <div class="sanzioni-pay-row">
+              <span data-i18n="solweb.sanzioni-importo">Importo</span>
+              <span id="pay-importo">&euro; 85,00</span>
+            </div>
+            <div class="sanzioni-pay-row">
+              <span data-i18n="solweb.sanzioni-more">More</span>
+              <span id="pay-more">&euro; 12,75</span>
+            </div>
+            <div class="sanzioni-pay-row sanzioni-pay-total">
+              <span data-i18n="solweb.sanzioni-totale">Totale</span>
+              <span id="pay-totale"><strong>&euro; 97,75</strong></span>
+            </div>
+          </div>
+
+          <form novalidate>
+            <div class="form-group">
+              <label for="pay-nome" data-i18n="solweb.pay-name">Nome</label>
+              <input type="text" id="pay-nome" name="pay-nome" placeholder="Mario" autocomplete="given-name" data-i18n-placeholder="solweb.pay-name">
+            </div>
+            <div class="form-group">
+              <label for="pay-cognome" data-i18n="solweb.pay-surname">Cognome</label>
+              <input type="text" id="pay-cognome" name="pay-cognome" placeholder="Rossi" autocomplete="family-name" data-i18n-placeholder="solweb.pay-surname">
+            </div>
+            <div class="form-group">
+              <label for="pay-email" data-i18n="solweb.pay-email">Email</label>
+              <input type="email" id="pay-email" name="pay-email" placeholder="mario.rossi@email.com" autocomplete="email" data-i18n-placeholder="solweb.pay-email">
+            </div>
+
+            <div class="form-divider" role="separator"></div>
+
+            <p><strong data-i18n="solweb.sanzioni-paga">Paga Ora</strong></p>
+
+            <div class="form-group">
+              <label class="radio-label">
+                <input type="radio" name="payment-method" value="credit" checked>
+                <span data-i18n="solweb.pay-credit">Carta di Credito/Debito</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="payment-method" value="paypal">
+                <span data-i18n="solweb.pay-paypal">PayPal</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="pay-terms">
+                <span data-i18n="solweb.pay-terms">Accetto i termini e condizioni</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" style="flex:1;" data-i18n="solweb.sanzioni-paga">Paga Ora</button>
+            </div>
+          </form>
+
+          <div class="info-banner mt-2" role="status">
+            <span class="icon">&#128274;</span>
+            <p data-i18n="solweb.pay-secure">Pagamento sicuro &mdash; Crittografia SSL a 256 bit</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
+    <h3 data-i18n="trainer.title">&#127891; Modalit&agrave; Trainer</h3>
+    <div id="trainer-steps"></div>
+  </aside>
+
+  <button class="back-to-top" aria-label="Torna in cima" title="Torna su" data-i18n-aria="back-to-top.label">&#8593;</button>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>tper.it</h4>
+        <ul>
+          <li><a href="../pianifica.html">Pianifica</a></li>
+          <li><a href="../dove-comprare.html">Dove Comprare</a></li>
+          <li><a href="../biglietti.html">Biglietti</a></li>
+          <li><a href="../abbonamenti.html">Abbonamenti</a></li>
+          <li><a href="../aiuto.html">Aiuto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Canali di Acquisto</h4>
+        <ul>
+          <li><a href="login.html">solweb.tper.it</a></li>
+          <li><a href="../dove-comprare.html#roger">App Roger</a></li>
+          <li><a href="../dove-comprare.html#punti-tper">Punti Tper</a></li>
+          <li><a href="../dove-comprare.html#tabaccherie">Tabaccherie</a></li>
+          <li><a href="../dove-comprare.html#contactless">Contactless a bordo</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Accessibilit&agrave;</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="../aiuto.html">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener">tper.it &ndash; Sito Istituzionale</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/trainer-modules.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    // Sanzioni tab switching
+    document.addEventListener('DOMContentLoaded', function() {
+      var tabs = document.querySelectorAll('.sanzioni-tab');
+      var contents = document.querySelectorAll('.sanzioni-tab-content');
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          tabs.forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+          tab.classList.add('active'); tab.setAttribute('aria-selected', 'true');
+          contents.forEach(function(c) { c.classList.remove('active'); });
+          var target = document.getElementById('tab-' + tab.getAttribute('data-tab'));
+          if (target) target.classList.add('active');
+        });
+      });
+    });
+  </script>
+
+  <button class="trainer-toggle-btn" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
+</body>
+</html>

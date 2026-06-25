@@ -1,0 +1,755 @@
+﻿\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Palette di colori professionali (stile TPER)
+\definecolor{primaryColor}{HTML}{0054A6}
+\definecolor{secondaryColor}{HTML}{4A5568}
+\definecolor{backgroundColor}{HTML}{F7FAFC}
+\definecolor{borderColor}{HTML}{E2E8F0}
+\definecolor{accentGreen}{HTML}{2F855A}
+\definecolor{accentOrange}{HTML}{DD6B20}
+\definecolor{accentRed}{HTML}{C53030}
+
+\hypersetup{
+ colorlinks=true,
+ linkcolor=primaryColor,
+ urlcolor=primaryColor,
+}
+
+\titleformat{\section}
+ {\color{primaryColor}\normalfont\Large\bfseries}
+ {}{0em}{}
+ [\color{borderColor}\titlerule]
+
+\titleformat{\subsection}
+ {\color{primaryColor}\normalfont\large\bfseries}
+ {}{0em}{}
+
+\titleformat{\subsubsection}[runin]
+ {\normalfont\bfseries\color{secondaryColor}}
+ {}{0em}{}[:]
+
+\begin{document}
+
+\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
+ \color{white}\LARGE\bfseries INFORMATION ARCHITECTURE CARD \\[0.2cm]
+ \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
+ \color{white!60}\normalsize Phase C --- Design Proposal
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% =====================================================================
+% Q1: NECESSITÀ DI UNA FASE DI IA SPECIFICA
+% =====================================================================
+\section{Necessità di una Fase di Information Architecture}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\large\textbf{Una fase progettuale specifica per l'architettura dell'informazione dello strumento è stata appropriata e necessaria?} \\[4pt]
+\boxed{\text{Sì}} \; \text{Se sì, perché?} \quad \boxed{\text{No}} \; \text{Se no, perché?}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+\textbf{Sì, una fase specifica di Information Architecture è stata assolutamente necessaria.} Le evidenze raccolte durante la Phase A (Ethnographic Assessment) e Phase B (Feasibility Study) lo confermano in modo inequivocabile:
+
+\begin{enumerate}[leftmargin=*]
+ \item \textbf{Frammentazione dell'ecosistema digitale TPER}: L'ecosistema TPER è composto da canali multipli con funzioni radicalmente diverse, ma questo non è mai reso esplicito all'utente:
+ \begin{itemize}
+   \item \texttt{tper.it} = sito \textbf{esclusivamente informativo}: pianificatore di viaggio, orari, tipologie di biglietti/abbonamenti, news, contatti, informazioni aziendali. \textbf{Non permette acquisti né transazioni.}
+   \item \texttt{solweb.tper.it} = piattaforma dedicata all'acquisto di \textbf{abbonamenti} (solo abbonamenti, non biglietti singoli).
+   \item \textbf{Roger app} = app mobile per l'acquisto di \textbf{biglietti singoli} e \textbf{carnet} digitali.
+   \item \textbf{Punti Tper} (sportelli fisici) = acquisto di tutti i titoli di viaggio, abbonamenti, assistenza, ritiro tessere.
+   \item \textbf{Tabaccherie / PuntoLis} = punti di ricarica per abbonamenti e tessere.
+   \item \textbf{Contactless a bordo} (ATM Mastercard/Visa) = pagamento a corsa singola direttamente sul bus.
+ \end{itemize}
+ Gli utenti non sanno quale canale usare per cosa, e il sito \texttt{tper.it} --- il primo punto di contatto per la maggior parte degli utenti --- non fornisce alcuna guida strutturata a questo ecosistema frammentato.
+
+ \item \textbf{Conferma dai test utente}: Tutti i soggetti testati hanno evidenziato difficoltà strutturali:
+ \begin{itemize}
+   \item Maria B. (79 anni, competenza minima): ``Non so neanche da dove cominciare'' --- arrivata su \texttt{tper.it}, non ha trovato un modo per acquistare e ha abbandonato.
+   \item Sergio M. (67 anni, competenza media): Ha navigato a lungo tra le sezioni di \texttt{tper.it} cercando un pulsante ``Acquista'' --- che su \texttt{tper.it} non esiste --- perdendo oltre 5 minuti.
+   \item Chris H. (34 anni, competenza alta): Ha riconosciuto che \texttt{tper.it} è solo informativo, ma ha dovuto indovinare l'esistenza di \texttt{solweb.tper.it} e di Roger per completare i compiti.
+   \item Laura P. (70 anni): ``L'interfaccia è troppo ingombrante, c'è troppa confusione'' --- mescola news aziendali, bandi, e informazioni utili senza alcuna gerarchia chiara.
+ \end{itemize}
+
+ \item \textbf{Confusione tra informazione e transazione}: Il problema IA centrale è che \texttt{tper.it} mescola contenuti aziendali (news, bandi, appalti, comunicati stampa) con contenuti informativi utili all'utente (orari, tariffe, mappe) senza separazione netta. L'utente che arriva per comprare un biglietto è circondato da informazioni corporate irrilevanti.
+
+ \item \textbf{Impatto diretto sul target HPHP}: Gli utenti fragili (anziani, stranieri, bassa alfabetizzazione digitale) sono i più colpiti. Non solo devono orientarsi in un sito dalle priorità sbagliate, ma devono anche scoprire l'esistenza di canali alternativi (\texttt{solweb}, Roger, Punti Tper) senza alcuna segnaletica che li guidi.
+
+ \item \textbf{Issue D2 -- Violazione G3}: L'analisi euristica ha identificato una violazione grave della linea guida ``Navigazione e architettura informativa''. La navigazione raggiunge fino a quattro livelli di profondità nelle sezioni corporate, mentre le informazioni più cercate (orari, tariffe) sono sepolte sotto etichette aziendali poco chiare.
+\end{enumerate}
+
+\textbf{Senza una fase dedicata all'IA, la frammentazione dell'ecosistema --- il problema principale per l'utente --- non potrebbe essere risolta in modo sistematico.}
+}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% =====================================================================
+% Q2: APPROCCIO TOP-DOWN VS BOTTOM-UP
+% =====================================================================
+\section{Approccio Top-Down vs Bottom-Up}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\large\textbf{Se la risposta precedente è stata sì: è stato selezionato un approccio top-down o bottom-up (o entrambi) per l'architettura dell'informazione?}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Approccio} & \textbf{Selezione} \\
+\hline
+Top-Down & $\square$ \\
+\hline
+Bottom-up & $\square$ \\
+\hline
+Approccio Misto & $\boxtimes$ \textbf{Scelto} \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+
+\textbf{Giustificazione della scelta:}
+
+L'attuale \texttt{tper.it} adotta un approccio esclusivamente \textbf{top-down istituzionale}: la struttura ricalca l'organigramma aziendale (Azienda, Servizi, Media, Bandi, Contatti) invece di rispondere ai bisogni informativi dell'utente. Il risultato è un'architettura pensata per comunicare l'identità corporate, non per aiutare il cittadino a muoversi.
+
+Il nostro redesign adotta un \textbf{approccio misto}:
+
+\paragraph{Componente Top-Down:} Dagli obiettivi strategici del progetto HPHP discendono le macro-decisioni architetturali:
+\begin{itemize}
+ \item \textbf{Canale primario = informazione}: \texttt{tper.it} deve essere chiaramente identificato come sito informativo, con una sezione ``Dove Comprare'' che guida l'utente agli altri canali --- senza mai far credere che si possa acquistare direttamente.
+ \item \textbf{Guida multicanale strutturata}: L'architettura deve presentare ogni canale dell'ecosistema TPER (\texttt{solweb}, Roger, Punti Tper, tabaccherie, contactless) con vantaggi, svantaggi e requisiti specifici.
+ \item \textbf{Supporto multilingua}: Italiano, inglese e arabo per i contenuti informativi principali.
+ \item \textbf{Accessibilità e trainer-mode}: Contenuti progettati per essere fruiti da intermediari (operatori Punti Tper, assistenti sociali) che guidano utenti fragili.
+ \item \textbf{Pianificazione viaggio come funzione primaria}: Il cuore di \texttt{tper.it} è il route planner --- questo deve essere l'eroe della homepage.
+\end{itemize}
+
+\paragraph{Componente Bottom-Up:} Dalle evidenze raccolte nei test utente emergono vincoli precisi:
+\begin{itemize}
+ \item \textbf{``Dove si compra?'' è la domanda più frequente}: I test dimostrano che la maggior parte degli utenti arriva su \texttt{tper.it} con l'intenzione di acquistare, ma non trova un percorso chiaro. L'architettura deve rispondere a questa domanda \textbf{anche se} l'acquisto non avviene su \texttt{tper.it}.
+ \item \textbf{Profondità massima 2 click informativi}: Per ogni informazione su tariffe, orari o tipologie di biglietto, l'utente deve arrivare al contenuto in non più di 2 click.
+ \item \textbf{Separazione netta tra informazioni utili e corporate news}: I test hanno dimostrato che mescolare comunicati stampa con orari dei bus disorienta l'utente fragile.
+ \item \textbf{Etichette chiare, non aziendali}: ``Abbonamento mensile'' invece di ``Mi Muovo'', ``Dove Comprare'' invece di ``Reti di vendita''.
+ \item \textbf{Canale suggerito per ogni esigenza}: Ogni tipologia di titolo di viaggio deve essere accompagnata dall'indicazione esplicita di dove acquistarla (\texttt{solweb}, Roger, Punto Tper, tabaccheria, contactless).
+\end{itemize}
+
+\noindent Questo approccio misto è \textbf{radicalmente diverso} dall'attuale: mentre \texttt{tper.it} oggi organizza l'informazione per ``chi comunica il contenuto'', noi la organizziamo per ``cosa l'utente vuole sapere o fare'', bilanciando la completezza informativa con la chiarezza dell'ecosistema multicanale.
+}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% =====================================================================
+% Q3: ORGANIZZAZIONE E LABELING SYSTEM
+% =====================================================================
+\section{Decisioni su Organizzazione e Sistema di Etichettatura}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\large\textbf{Quali sono le principali decisioni relative all'organizzazione e al sistema di etichettatura? Sono diverse dallo strumento esistente?}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+
+Le decisioni sul sistema di organizzazione e labeling sono radicalmente diverse dall'attuale \texttt{tper.it}:
+
+\paragraph{Organizzazione per INTENT dell'utente:}
+L'attuale sito organizza i contenuti per ``chi li produce'' (Azienda, Media, Bandi, Servizi). Il redesign organizza i contenuti per ``cosa l'utente vuole fare su tper.it'' (ricordando che tper.it è solo informativo):
+
+\begin{center}
+\begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm,width=0.95\textwidth]
+\small
+\textbf{Struttura proposta per tper.it} \\[4pt]
+\texttt{[Pianifica]} \;--\; \texttt{[Dove Comprare]} \;--\; \texttt{[Abbonamenti]} \;--\; \texttt{[Biglietti]} \;--\; \texttt{[Aiuto]} \;--\; \texttt{[Azienda]}
+\end{tcolorbox}
+\end{center}
+
+\begin{enumerate}[leftmargin=*]
+ \item \textbf{Pianifica} (priorità \#1): Il cuore di \texttt{tper.it}. Include:
+ \begin{itemize}
+   \item Pianificatore di viaggio (ricerca percorsi, durata, coincidenze)
+   \item Orari e frequenze per linea
+   \item Mappe interattive della rete
+   \item Stato del servizio in tempo reale (avvisi, ritardi, scioperi)
+ \end{itemize}
+
+ \item \textbf{Dove Comprare} (priorità \#2, NOVITÀ ASSOLUTA): Guida completa a tutti i canali dell'ecosistema TPER:
+ \begin{itemize}
+   \item \texttt{solweb.tper.it}: ``Per abbonamenti online --- vai su solweb.tper.it''
+   \item \textbf{Roger app}: ``Per biglietti singoli e carnet digitali --- scarica Roger''
+   \item \textbf{Punti Tper}: ``Per tutto: acquisti, abbonamenti, assistenza, ritiro tessere --- trova il punto più vicino''
+   \item \textbf{Tabaccherie / PuntoLis}: ``Per ricaricare abbonamenti e tessere''
+   \item \textbf{Contactless a bordo}: ``Per pagare la corsa singola con carta o telefono''
+   \item \textbf{Tabella comparativa}: Vantaggi, svantaggi, e requisiti di ogni canale
+ \end{itemize}
+
+ \item \textbf{Abbonamenti} (priorità \#3): Informazioni complete su:
+ \begin{itemize}
+   \item Tipologie di abbonamento (mensile, annuale, studenti, over 65, agevolazioni ISEE)
+   \item Prezzi e fasce tariffarie
+   \item Documenti necessari (ISEE, documento identità, foto)
+   \item \textbf{Link esplicito} a \texttt{solweb.tper.it} per l'acquisto online
+   \item Guida ``Cosa portare al Punto Tper per fare l'abbonamento''
+ \end{itemize}
+
+ \item \textbf{Biglietti} (priorità \#4): Informazioni su:
+ \begin{itemize}
+   \item Tipologie: biglietto singolo, carnet 10 corse, biglietto giornaliero, biglietto multiplo
+   \item Prezzi e zone tariffarie
+   \item Dove acquistarli: Roger app, Punti Tper, tabaccherie, contactless a bordo
+   \item Validità e condizioni di utilizzo
+ \end{itemize}
+
+ \item \textbf{Aiuto} (supporto): FAQ, guide passo-passo per ogni canale, contatti, trainer-mode per intermediari, mappa dei Punti Tper.
+
+ \item \textbf{Azienda} (ultima posizione): Informazioni corporate, news, bandi, appalti, comunicati stampa, contatti istituzionali --- \textbf{separate e dopo} i contenuti utente.
+\end{enumerate}
+
+\paragraph{Sistema di etichettatura:}
+
+\begin{enumerate}[leftmargin=*]
+ \item \textbf{Mai ``Acquista'' su tper.it}: L'etichetta più importante è ciò che \textbf{non} mettiamo. Nessuna sezione ``Acquista'' o ``Compra'' che farebbe credere all'utente di poter acquistare direttamente. Invece: ``Dove Comprare'' --- etichetta che informa senza promettere transazioni.
+
+ \item \textbf{Da terminologia aziendale a linguaggio utente}:
+ \begin{itemize}
+   \item ``Pianifica un viaggio'' invece di ``Servizi di mobilità''
+   \item ``Dove Comprare'' invece di ``Reti di vendita'' o ``Punti vendita''
+   \item ``Abbonamento mensile'' invece di ``Mi Muovo''
+   \item ``Hai diritto a uno sconto?'' invece di ``Agevolazioni e delibere regionali''
+   \item ``Il tuo abbonamento sta per scadere?'' invece di ``Rinnovo titoli''
+ \end{itemize}
+
+ \item \textbf{Supporto multilingua}: Le etichette principali vengono tradotte in inglese e arabo, con priorità ai contenuti di pianificazione e acquisto.
+
+ \item \textbf{Disclosure progressiva}: I termini tecnici (ISEE, DSU, fascia tariffaria, zona) sono accompagnati da spiegazioni inline attivabili, con possibilità di espandere dal riassunto al dettaglio.
+
+ \item \textbf{Segnaletica visiva}: Ogni canale dell'ecosistema è rappresentato da un'icona universale:
+ \begin{itemize}
+   \item Monitor/globo = \texttt{tper.it} (info)
+   \item Schermo = \texttt{solweb.tper.it} (abbonamenti online)
+   \item Smartphone = Roger app (biglietti digitali)
+   \item Edificio = Punto Tper (sportello fisico)
+   \item Negozio = Tabaccheria / PuntoLis (ricariche)
+   \item Carta di credito = Contactless a bordo
+ \end{itemize}
+ Le icone accompagnano ogni riferimento al canale, creando un linguaggio visivo coerente.
+
+\end{enumerate}
+}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% =====================================================================
+% Q4: METADATA FIELDS
+% =====================================================================
+\section{Campi Metadati Rilevanti}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\large\textbf{Quali sono i campi metadati più rilevanti? Sono diversi dallo strumento esistente?}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+
+I metadati sono stati ridefiniti per supportare la navigazione informativa, la guida multicanale, e la ricerca multilingua. Rispetto all'attuale \texttt{tper.it}, che usa metadati pensati per il back-office dei contenuti CMS, il redesign adotta una categorizzazione orientata all'utente e al suo percorso multicanale.
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{3cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Categoria} & \textbf{Metadati} & \textbf{Differenza dall'esistente} \\
+\hline
+Informazioni di viaggio & \texttt{linea}, \texttt{fermata}, \texttt{zona}, \texttt{durata}, \texttt{orario}, \texttt{frequenza} & Attualmente categorizzati per database interno; noi usiamo attributi per il route planner e la ricerca utente \\
+\hline
+Canali di acquisto & \texttt{canale} (web/app/fisico/tabaccheria/contactless), \texttt{operazioni}, \texttt{requisiti}, \texttt{orari}, \texttt{link\_esterno} & \textbf{Nuovo}: ogni contenuto su biglietti/abbonamenti è associato a uno o più canali consigliati con link e requisiti \\
+\hline
+Titoli di viaggio & \texttt{tipo}, \texttt{durata}, \texttt{zona}, \texttt{prezzo}, \texttt{validità}, \texttt{canali\_acquisto}, \texttt{documenti\_necessari} & Nuovo campo \texttt{canali\_acquisto} (array) che elenca dove si può comprare quel titolo; \texttt{documenti\_necessari} per checklist preventiva \\
+\hline
+Abbonamenti & \texttt{tipo}, \texttt{durata}, \texttt{fasce\_tariffarie}, \texttt{agevolazione}, \texttt{ISEE\_richiesto}, \texttt{canali\_acquisto}, \texttt{link\_solweb} & Nuovo campo \texttt{link\_solweb} per reindirizzamento diretto a \texttt{solweb.tper.it}; campo ISEE per filtro automatico agevolazioni \\
+\hline
+Guide e tutorial & \texttt{canale\_di\_riferimento}, \texttt{target} (utente/intermediario), \texttt{tempo\_stimato}, \texttt{lingua}, \texttt{passi} & Nuovo: ogni guida è associata al canale che spiega (es. ``Come usare Roger'' $\rightarrow$ canale \texttt{roger}) \\
+\hline
+Contenuti informativi & \texttt{tipo}, \texttt{target}, \texttt{priorità}, \texttt{data}, \texttt{parole\_chiave}, \texttt{lingua} & Priorizzazione basata sull'intento utente (orari/tariffe prima di news aziendali) \\
+\hline
+Documenti utente & \texttt{tipo\_documento}, \texttt{scadenza}, \texttt{ente\_rilascio}, \texttt{note} & Metadati per supportare la checklist ``Cosa portare al Punto Tper'' --- mostra all'utente quali documenti servono prima di recarsi allo sportello \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\textbf{Novità principali rispetto all'esistente:}
+\begin{itemize}
+ \item \textbf{Metadati ``canale'':} Ogni contenuto su biglietti, abbonamenti o operazioni è etichettato con i canali a cui si riferisce (\texttt{tper.it} info, \texttt{solweb}, Roger, Punti Tper, tabaccherie, contactless). Questo permette alla sezione ``Dove Comprare'' di aggregare dinamicamente tutti i contenuti pertinenti per canale.
+ \item \textbf{Metadati di lingua}: Ogni contenuto è associato a versioni linguistiche (IT/EN/AR) per il supporto multilingua.
+ \item \textbf{Metadati ``link esterno'':} Per contenuti che rimandano ad altri canali (\texttt{solweb}, download Roger, mappa Punti Tper), il metadato \texttt{link\_esterno} viene usato per generare automaticamente i pulsanti di reindirizzamento.
+ \item \textbf{Metadati ``target'':} Distingue contenuti per utente finale da contenuti per intermediario (trainer-mode), consentendo filtri dinamici nell'interfaccia.
+\end{itemize}
+}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% =====================================================================
+% Q5: SISTEMA DI NAVIGAZIONE
+% =====================================================================
+\section{Sistema di Navigazione}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\large\textbf{Come pensate di progettare il sistema di navigazione? È diverso dallo strumento esistente?}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+
+Il sistema di navigazione del redesign è profondamente diverso dall'attuale \texttt{tper.it}, che nasconde le funzioni principali dietro etichette aziendali e mescola news con contenuti operativi.
+
+\paragraph{Struttura di navigazione principale:}
+
+\begin{enumerate}[leftmargin=*]
+
+ \item \textbf{Navigazione orizzontale per intento:} Il menu principale è organizzato per azione utente:
+ \begin{center}
+ \begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm,width=0.95\textwidth]
+ \small
+ \texttt{[Pianifica]} \quad \texttt{[Dove Comprare]} \quad \texttt{[Abbonamenti]} \quad \texttt{[Biglietti]} \quad \texttt{[Aiuto]} \quad $\cdots$ \quad \texttt{[Azienda]}
+ \end{tcolorbox}
+ \end{center}
+ Ogni scheda apre una pagina di primo livello con i contenuti organizzati in schede verticali, senza sottomenu a discesa che aumentano la profondità.
+
+ \item \textbf{Route planner come hero feature}: La homepage di \texttt{tper.it} presenta immediatamente il pianificatore di viaggio come elemento centrale e dominante. Sotto, una sezione ``Stai cercando di comprare?'' con link diretti a \texttt{solweb.tper.it}, Roger, e Punti Tper --- senza mai far credere che si possa acquistare lì.
+
+ \begin{center}
+ \begin{tcolorbox}[colback=accentOrange!10,colframe=accentOrange,arc=2mm,width=0.85\textwidth]
+ \small \textbf{Banner informativo}: ``\texttt{tper.it} è un sito informativo. Per acquistare abbonamenti vai su \texttt{solweb.tper.it}, per biglietti digitali usa Roger. \\
+ \hyperlink{link}{Scopri tutti i canali di acquisto} $\rightarrow$''
+ \end{tcolorbox}
+ \end{center}
+
+ \item \textbf{Banner di guida canale persistente}: In ogni pagina della sezione ``Abbonamenti'' e ``Biglietti'', un banner superiore informa l'utente su dove può effettivamente acquistare ciò che sta leggendo:
+ \begin{itemize}
+   \item ``Stai leggendo le informazioni sugli abbonamenti. Per acquistare: vai su solweb.tper.it [pulsante] oppure recati al Punto Tper più vicino [pulsante con mappa]''
+   \item ``I biglietti singoli sono disponibili su Roger app [pulsante download] o presso i Punti Tper e tabaccherie [mappa]''
+ \end{itemize}
+
+ \item \textbf{Sidebar ``Canali rapidi''}: In ogni pagina informativa su biglietti e abbonamenti, una sidebar fissa mostra i canali disponibili per l'operazione descritta, con icone, tempi stimati e requisiti:
+ \begin{center}
+ \begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm,width=0.7\textwidth]
+ \small
+ \begin{tabular}{ll}
+ \textbf{Come ottenere un abbonamento}: & \\[4pt]
+ $\bullet$ \texttt{solweb.tper.it} & 5 min, carta/tessera sanitaria \\
+ $\bullet$ Punto Tper & 10-15 min, documento + ISEE + foto \\
+ $\bullet$ Tabaccheria & Solo ricarica, tessera esistente \\
+ \end{tabular}
+ \end{tcolorbox}
+ \end{center}
+
+ \item \textbf{Progress bar per guide passo-passo}: Ogni guida (es. ``Come acquistare il primo abbonamento su solweb'') è accompagnata da una progress bar fissa che mostra i passi:
+ \begin{itemize}
+   \item Passo 1 di 5: Cosa ti serve (documenti)
+   \item Passo 2 di 5: Vai su solweb.tper.it
+   \item Passo 3 di 5: Scegli il tipo di abbonamento
+   \item Passo 4 di 5: Inserisci i tuoi dati
+   \item Passo 5 di 5: Conferma e paga
+ \end{itemize}
+
+ \item \textbf{Ponte QR da fisico a digitale}: Ogni Punto Tper espone QR code che l'utente può inquadrare per:
+ \begin{itemize}
+   \item Aprire la guida passo-passo su \texttt{tper.it} per l'operazione che sta svolgendo
+   \item Salvare la lista dei documenti necessari
+   \item Avviare una sessione trainer-mode sul proprio telefono
+ \end{itemize}
+
+ \item \textbf{Breadcrumb semplificato}: In ogni pagina, un breadcrumb testuale mostra il percorso: \texttt{Home > Abbonamenti > Mensile > Dove acquistare}
+
+\end{enumerate}
+
+\paragraph{Differenze chiave dall'esistente:}
+
+\begin{itemize}
+ \item \textbf{Nessuna sezione ``Acquista'':} L'attuale sito ha aree che suggeriscono acquisti impossibili. Il redesign etichetta chiaramente la guida all'acquisto come ``Dove Comprare''.
+ \item \textbf{Priorità al route planner}: L'attuale homepage è dominata da news aziendali. La nuova homepage mette il pianificatore di viaggio al centro.
+ \item \textbf{Banner di canale vs silos informativi}: L'attuale tratta ogni contenuto come se l'acquisto avvenisse lì. Il redesign aggiunge banner e sidebar che contestualizzano ogni informazione con il canale corretto.
+ \item \textbf{Ponte QR}: Nuovo elemento di navigazione che collega il mondo fisico (Punti Tper) a quello digitale (\texttt{tper.it}), assente nell'attuale ecosistema.
+ \item \textbf{Profondità contenuti corporate ridotta}: Le informazioni aziendali vengono spostate in fondo alla navigazione, mentre oggi sono in primo piano.
+\end{itemize}
+}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% =====================================================================
+% Q6: BROWSING AIDS
+% =====================================================================
+\section{Ausili alla Navigazione (Browsing Aids)}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\large\textbf{Descrivete in breve le vostre scelte riguardo a:}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+
+\subsubsection{Ausili alla navigazione (Browsing aids)}
+
+\begin{enumerate}[leftmargin=*]
+
+ \item \textbf{Tabella comparativa dei canali (NOVITÀ ASSOLUTA)}: In ``Dove Comprare'', una tabella interattiva mostra tutti i canali dell'ecosistema TPER confrontati per:
+ \begin{itemize}
+   \item Operazioni possibili (biglietti, abbonamenti, ricariche, assistenza)
+   \item Requisiti (login, registrazione, documenti fisici)
+   \item Tempo stimato
+   \item Disponibilità (24/7, orari sportello)
+   \item Lingue supportate
+   \item Metodi di pagamento accettati
+ \end{itemize}
+ La tabella è ordinale e filtrabile per esigenza (es. ``Voglio comprare un abbonamento'' $\rightarrow$ mostra solo \texttt{solweb} e Punti Tper).
+
+ \item \textbf{Wizard ``Dove devo andare?'' (NOVITÀ ASSOLUTA)}: Un assistente interattivo a domande che guida l'utente al canale corretto:
+ \begin{itemize}
+   \item ``Cosa vuoi fare?'' (comprare biglietto / fare abbonamento / ricaricare / assistenza)
+   \item ``Come preferisci operare?'' (online / app / dal vivo)
+   \item ``Hai già una tessera Tper?'' (sì / no)
+   \item ``Hai bisogno di assistenza?'' (sì / no)
+ \end{itemize}
+ Basandosi sulle risposte, il wizard suggerisce il canale migliore e mostra un percorso personalizzato.
+
+ \item \textbf{Icone visive per ogni canale}: Ogni riferimento a un canale è accompagnato dall'icona corrispondente (monitor, schermo, smartphone, edificio, negozio, carta), creando un linguaggio visivo immediato che aiuta gli utenti con bassa alfabetizzazione o barriera linguistica.
+
+ \item \textbf{Indicatori di posizione}: Ogni pagina mostra chiaramente la sezione corrente:
+ \begin{itemize}
+   \item Voce di menu attiva evidenziata con colore di sfondo e sottolineatura
+   \item Titolo di pagina chiaro e descrittivo
+   \item Breadcrumb testuale in alto
+   \item Colore di sezione coerente (es. Pianifica = blu, Dove Comprare = verde, Aiuto = arancione)
+ \end{itemize}
+
+ \item \textbf{Quick links ``Stai cercando...''}: In ogni pagina della sezione informativa, una box ``Potrebbe interessarti anche'' con link ai contenuti correlati: se stai leggendo degli abbonamenti, potresti voler vedere ``Dove si compra'' o ``Documenti necessari''.
+
+ \item \textbf{Separatori visivi tra contenuto e navigazione}: Uso di tcolorbox, bordi colorati e sfondi differenziati per distinguere chiaramente:
+ \begin{itemize}
+   \item Contenuto informativo (sfondo bianco)
+   \item Guide e wizard (sfondo chiaro con bordo colore canale)
+   \item Reindirizzamenti ad altri canali (box evidenziato con icona e pulsante ``Vai a'')
+   \item News aziendali (sezione separata, in fondo, con stile differenziato)
+ \end{itemize}
+
+\end{enumerate}
+}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% Q7: SEARCH AIDS
+% =====================================================================
+\section{Ausili alla Ricerca (Search Aids)}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+
+\subsubsection{Ausili alla ricerca (Search aids)}
+
+\begin{enumerate}[leftmargin=*]
+
+ \item \textbf{Ricerca visibile e task-oriented}: La barra di ricerca è sempre visibile nella header (non nascosta dietro un'icona come nell'attuale). Il placeholder suggerisce azioni: ``Cerca percorsi, orari, canali di acquisto...''
+
+ \item \textbf{Risultati categorizzati per tipo}: I risultati della ricerca sono raggruppati in sezioni visivamente distinte:
+ \begin{itemize}
+   \item \textbf{Percorsi e orari} (risultati dal route planner)
+   \item \textbf{Biglietti e abbonamenti} (informazioni sui titoli di viaggio)
+   \item \textbf{Dove comprare} (canali consigliati)
+   \item \textbf{Guide e tutorial} (pagine di aiuto passo-passo)
+   \item \textbf{News e azienda} (solo in fondo)
+ \end{itemize}
+ Ogni sezione è collassabile/espandibile e mostra i primi 3 risultati con link ``Vedi tutti''.
+
+ \item \textbf{Autocompletamento con suggerimenti canale}: Mentre l'utente digita, l'autocomplete mostra:
+ \begin{itemize}
+   \item Suggerimenti di percorso (es. ``da Stazione Centrale a Università'')
+   \item Suggerimenti di canale: ``Comprare abbonamento $\rightarrow$ vai su solweb.tper.it''
+   \item Suggerimenti di guida: ``Come ricaricare la tessera $\rightarrow$ guide passo-passo''
+   \item Suggerimenti di luogo: ``Punto Tper più vicino $\rightarrow$ mappa''
+ \end{itemize}
+
+ \item \textbf{Ricerca multilingua con sinonimi}: Il motore accetta query in italiano, inglese e arabo, oltre a sinonimi e termini colloquiali:
+ \begin{itemize}
+   \item ``sconto'' / ``riduzione'' / ``discount'' / ``agevolazione''
+   \item ``abbonamento'' / ``tessera'' / ``pass'' / ``subscription''
+   \item ``comprare'' / ``acquistare'' / ``buy'' / ``purchase''
+   \item ``dove'' / ``where'' / (arabo: ``ayna'')
+ \end{itemize}
+
+ \item \textbf{``Non hai trovato quello che cercavi?''}: In fondo ai risultati, una sezione contestuale che offre:
+ \begin{itemize}
+   \item Link alla sezione ``Aiuto'' con le FAQ principali
+   \item Pulsante ``Avvia wizard Dove Comprare'' per guidare l'utente al canale corretto
+   \item Link alla mappa dei Punti Tper per assistenza fisica
+   \item Possibilità di contattare l'assistenza telefonica
+ \end{itemize}
+
+ \item \textbf{Risultati della ricerca riconoscibili visivamente}: Ogni risultato mostra:
+ \begin{itemize}
+   \item Icona del canale di riferimento (se pertinente)
+   \item Titolo chiaro e descrizione breve
+   \item Etichetta di categoria (``Percorso'', ``Guida'', ``Canale'', ``Informazione'')
+   \item Link diretto con etichetta d'azione (``Pianifica percorso'', ``Vai a solweb'', ``Scarica Roger'', ``Trova Punto Tper'')
+ \end{itemize}
+
+\end{enumerate}
+}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% Q8: CONTENTS AND TASKS
+% =====================================================================
+\section{Contenuti e Compiti (Contents and Tasks)}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+
+\subsubsection{Contenuti e compiti (Contents and Tasks)}
+
+I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una gerarchia che riflette i reali bisogni degli utenti emersi dai test:
+
+\begin{enumerate}[leftmargin=*]
+
+ \item \textbf{Priorità \#1 --- Pianificazione del viaggio} (funzione primaria di \texttt{tper.it}):
+ \begin{itemize}
+   \item Ricerca percorsi: origine $\rightarrow$ destinazione con orari, durata, coincidenze, costo
+   \item Orari per linea e fascia oraria
+   \item Mappe della rete (urbana, extraurbana, integrata)
+   \item Stato del servizio in tempo reale (avvisi, ritardi, scioperi, deviazioni)
+   \item Mappa interattiva delle fermate con servizi nelle vicinanze
+ \end{itemize}
+ \textbf{Accesso}: 1 click dalla homepage. Ricerca testuale con autocomplete delle fermate.
+
+ \item \textbf{Priorità \#2 --- Guida all'acquisto multicanale (Dove Comprare)}:
+ \begin{itemize}
+   \item Panoramica completa dell'ecosistema TPER con tabella comparativa
+   \item \texttt{solweb.tper.it}: guida ``Come acquistare un abbonamento online passo-passo'', requisiti (SPID, carta identità, ISEE), link diretto
+   \item \textbf{Roger app}: guida ``Come scaricare e usare Roger'', tipi di biglietti disponibili, metodi di pagamento, link download (App Store / Google Play)
+   \item \textbf{Punti Tper}: mappa interattiva con orari, servizi disponibili per ogni punto, tempi di attesa stimati, guida ``Cosa portare''
+   \item \textbf{Tabaccherie / PuntoLis}: mappa con indicazione ``Solo ricariche --- non vendono nuovi abbonamenti''
+   \item \textbf{Contactless a bordo}: guida ``Come pagare con carta o telefono'', istruzioni per l'uso, limiti e costi
+ \end{itemize}
+
+ \item \textbf{Priorità \#3 --- Informazioni su abbonamenti}:
+ \begin{itemize}
+   \item Tipologie: mensile, annuale, studenti, over 65, agevolazioni ISEE, gratuito per categorie
+   \item Prezzi e fasce tariffarie (aggiornati)
+   \item Documenti necessari per ogni tipologia
+   \item Scadenze e rinnovo
+   \item \textbf{Link esplicito} a \texttt{solweb.tper.it} per acquisto online
+   \item Guida stampabile ``Cosa portare al Punto Tper''
+ \end{itemize}
+
+ \item \textbf{Priorità \#4 --- Informazioni su biglietti}:
+ \begin{itemize}
+   \item Tipologie: singolo, carnet 10 corse, giornaliero, multiplo, gruppo
+   \item Prezzi e zone tariffarie
+   \item Validità e condizioni
+   \item Dove acquistarli (Roger, Punti Tper, tabaccherie, contactless)
+   \item Differenze tra i canali (es. biglietto cartaceo vs digitale)
+ \end{itemize}
+
+ \item \textbf{Priorità \#5 --- Aiuto e supporto}:
+ \begin{itemize}
+   \item FAQ per categoria (abbonamenti, biglietti, ricariche, Roger, contactless)
+   \item Guide passo-passo per ogni operazione su ogni canale (trainer-mode)
+   \item Glossario dei termini (ISEE, DSU, Fascia, Mi Muovo, Boost, ecc.)
+   \item Contatti: telefono, email, PEC, chat (se disponibile)
+   \item Mappa interattiva dei Punti Tper e tabaccherie convenzionate
+   \item Segnalazione problemi e feedback
+ \end{itemize}
+
+ \item \textbf{Ultima priorità --- Contenuti corporate}:
+ \begin{itemize}
+   \item Chi siamo, mission, valori
+   \item News e comunicati stampa
+   \item Bandi e appalti
+   \item Lavora con noi
+   \item Amministrazione trasparente
+   \item Privacy e cookie policy
+ \end{itemize}
+ Questi contenuti sono relegati a una sezione ``Azienda'' separata, con accesso dal footer o da un link secondario nel menu, \textbf{mai} in primo piano.
+
+ \item \textbf{Trainer-mode per intermediari}: Ogni guida ha una modalità ``per operatori'' che aggiunge:
+ \begin{itemize}
+   \item Note per l'intermediario (es. ``Attenzione: l'utente potrebbe non avere SPID'')
+   \item Checklist dei passi da seguire con l'utente
+   \item Pulsante ``Stampa riepilogo per l'utente''
+   \item Suggerimenti per utenti fragili (es. ``Parla lentamente, indica lo schermo'')
+ \end{itemize}
+ La trainer-mode è accessibile da un toggle in alto nelle guide, e persiste per l'intera sessione.
+
+\end{enumerate}
+}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% Q9: INVISIBLE COMPONENTS
+% =====================================================================
+\section{Componenti Invisibili (Invisible Components)}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+{\small
+
+\subsubsection{Componenti invisibili}
+
+\begin{enumerate}[leftmargin=*]
+
+ \item \textbf{Persistenza della sessione per trainer-mode}: Il sistema salva automaticamente lo stato delle guide in modalità trainer-mode alla chiusura del browser o al timeout. Al successivo accesso (anche senza login), l'intermediario può riprendere la guida da dove aveva lasciato. Memorizza:
+ \begin{itemize}
+   \item Passo corrente di ogni guida in corso
+   \item Note inserite dall'intermediario
+   \item Preferenze di lingua e accessibilità
+   \item Documenti segnati come ``verificati'' nella checklist
+ \end{itemize}
+ La persistenza è realizzata tramite \texttt{localStorage} con fallback su cookie, senza richiedere registrazione. L'intermediario può cancellare la cronologia al termine del percorso assistenziale.
+
+ \item \textbf{Ponte QR code tra Punti Tper e sito web}: Quando un operatore al Punto Tper completa un'assistenza, può generare un QR code stampabile che l'utente porta a casa. Inquadrandolo con lo smartphone, l'utente arriva su \texttt{tper.it} a:
+ \begin{itemize}
+   \item Un riepilogo di ciò che è stato fatto allo sportello
+   \item La guida passo-passo per la prossima operazione (es. ``La prossima volta puoi rinnovare online'')
+   \item La lista dei documenti mancanti per la pratica successiva
+   \item Un video tutorial sull'uso di \texttt{solweb} o Roger
+ \end{itemize}
+ Il QR code contiene un identificatore di sessione anonimo (nessun dato personale) valido 30 giorni.
+
+ \item \textbf{Preferenze di lingua persistenti}: Il sistema memorizza la lingua scelta dall'utente (o rilevata dal browser) e la applica a tutte le sessioni successive tramite cookie persistente. Le preferenze sono sincronizzate anche via QR code: se un utente parla arabo e un QR code lo reindirizza a \texttt{tper.it}, il sistema rileva la lingua preferita e mostra la versione localizzata.
+
+ \item \textbf{Analytics dei canali di acquisto (anonimi)}: Il sistema traccia in modo anonimo:
+ \begin{itemize}
+   \item Quante volte viene visitata la sezione ``Dove Comprare''
+   \item Quali canali vengono cliccati più frequentemente
+   \item Da quale pagina gli utenti lasciano \texttt{tper.it} per andare su \texttt{solweb.tper.it}
+   \item Quali guide sono più consultate
+   \item Tasso di completamento delle guide passo-passo
+ \end{itemize}
+ Questi dati alimentano un dashboard interno (invisibile all'utente) che permette di migliorare continuamente la guida all'acquisto e identificare i canali con maggiore attrito.
+
+ \item \textbf{Generazione automatica del riepilogo stampabile}: Alla fine di ogni guida completata (in particolare in trainer-mode), il sistema genera automaticamente:
+ \begin{itemize}
+   \item Riepilogo dei passi svolti
+   \item Lista dei documenti necessari per l'operazione
+   \item Mappa del Punto Tper più vicino (se pertinente)
+   \item QR code per accedere al video tutorial
+   \item Riferimenti di contatto assistenza TPER
+ \end{itemize}
+ Il riepilogo è formattato con carattere minimo 14pt, contrasto elevato, e spazio per note scritte a mano.
+
+ \item \textbf{Precaricamento contenuti multilingua}: In background, il sistema precarica le versioni linguistiche dei contenuti più probabili in base alla navigazione corrente, per garantire tempi di risposta rapidi nel passaggio da una lingua all'altra. I contenuti precaricati includono:
+ \begin{itemize}
+   \item La guida all'acquisto del canale più cliccato nella sessione
+   \item Le FAQ della sezione corrente
+   \item I contenuti del route planner (universalmente multilingua)
+ \end{itemize}
+
+ \item \textbf{Disambiguazione ``Questo sito è informativo''}: Un componente invisibile ma fondamentale è un flag di sessione che, associato a pattern di navigazione (es. utente visita 3+ pagine ``Biglietti'' senza cliccare nessun link di reindirizzamento), attiva un messaggio contestuale:
+ \begin{center}
+ \begin{tcolorbox}[colback=accentOrange!10,colframe=accentOrange,arc=2mm,width=0.8\textwidth]
+ \small \textbf{Stai cercando di acquistare?} Ricorda che su \texttt{tper.it} puoi solo leggere le informazioni. \\[2pt]
+ Per acquistare: \texttt{solweb.tper.it} (abbonamenti) $\cdot$ Roger app (biglietti) $\cdot$ Punti Tper (tutto)
+ \end{tcolorbox}
+ \end{center}
+ Questo intervento proattivo riduce l'abbandono per confusione canale, emerso come problema critico nei test.
+
+\end{enumerate}
+}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% =====================================================================
+% RIEPILOGO: KEY DIFFERENCES FROM EXISTING TOOL
+% =====================================================================
+\section{Riepilogo delle Differenze da tper.it Esistente}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=primaryColor,arc=2mm]
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{3.5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Dimensione} & \textbf{tper.it esistente} & \textbf{Redesign proposto} \\
+\hline
+\textbf{Natura del sito} & Misto info + transazione (confusione) & \textbf{Esclusivamente informativo}, con guida agli altri canali \\
+\hline
+\textbf{Homepage} & News aziendali e comunicati stampa & \textbf{Route planner come hero} + banner canali acquisto \\
+\hline
+\textbf{Organizzazione} & Per struttura aziendale (Azienda, Media, Bandi, Servizi) & Per \textbf{intento utente} (Pianifica, Dove Comprare, Abbonamenti, Biglietti, Aiuto) \\
+\hline
+\textbf{Etichette} & Terminologia interna (``Mi Muovo'', ``Reti di vendita'', ``Agevolazioni'') & \textbf{Linguaggio utente} + icone per ogni canale \\
+\hline
+\textbf{Sezione Acquisto} & Nessuna guida strutturata & \textbf{``Dove Comprare''}: tabella comparativa + wizard + guide per canale \\
+\hline
+\textbf{Ponte canali} & Inesistente (silos separati) & \textbf{Banner, sidebar, QR code} che guidano tra canali \\
+\hline
+\textbf{Profondità IA} & 4+ livelli navigazione & Massimo 2 livelli per contenuti informativi \\
+\hline
+\textbf{Contenuti corporate} & In primo piano, mescolati con servizi & Sezione separata ``Azienda'' in \textbf{ultima posizione} \\
+\hline
+\textbf{Route planner} & Accessibile ma non prioritario & \textbf{Feature principale}, 1 click dalla homepage \\
+\hline
+\textbf{Multilingua} & Solo italiano & IT/EN/AR per contenuti principali e guide \\
+\hline
+\textbf{Ricerca} & Nascosta, testuale, senza filtri & Visibile, con \textbf{autocomplete} e risultati \textbf{categorizzati per canale} \\
+\hline
+\textbf{Wizard canale} & Inesistente & \textbf{``Dove devo andare?''} a domande \\
+\hline
+\textbf{Ponte QR fisico-digitale} & Inesistente & \textbf{QR code} allo sportello $\rightarrow$ guida online \\
+\hline
+\textbf{Trainer-mode} & Inesistente & Guide con note intermediario, checklist, riepilogo stampabile \\
+\hline
+\textbf{Sessioni} & Stateless & Persistenza trainer-mode + analisi anonima dei canali \\
+\hline
+\end{tabular}
+}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\begin{center}
+{\color{secondaryColor}\small Documento compilato sulla base delle evidenze raccolte durante la Phase A (Ethnographic Assessment) e Phase B (Feasibility Study) del progetto \\[4pt]
+\textbf{Phase C -- Design Proposal: Information Architecture Card} \\[4pt]
+Progetto: UX Design Project: Help People Help People -- TPER S.p.A.}
+
+\vspace{0.3cm}
+{\color{secondaryColor}\itshape\small
+\texttt{tper.it} = sito informativo \;$\cdot$\; \texttt{solweb.tper.it} = abbonamenti online \;$\cdot$\; Roger app = biglietti digitali \;$\cdot$\; Punti Tper = tutto \;$\cdot$\; Tabaccherie = ricariche \;$\cdot$\; Contactless = corsa singola
+}
+\end{center}
+
+\end{document}
