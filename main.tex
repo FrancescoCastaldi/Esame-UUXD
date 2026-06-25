@@ -2179,9 +2179,8 @@ che aumentano il carico cognitivo.
 \label{rec:R3}
 
 \textbf{Raccomandazione}: Introdurre un indicatore di avanzamento
-(progress bar) visibile in ogni fase dei flussi di acquisto, rinnovo e
-caricamento documenti, specialmente nel contesto istituzionale dove il tempo
-disponibile \`e limitato a 3--5 minuti per operazione.
+(progress bar) nei flussi di acquisto e rinnovo abbonamento su
+\texttt{solweb.tper.it}, per orientare l'utente sul numero di passi residui.
 
 \textbf{Implementazione}: Il progress bar deve mostrare:
 \begin{enumerate}
@@ -2191,8 +2190,9 @@ disponibile \`e limitato a 3--5 minuti per operazione.
     \item un indicatore grafico di completamento (es. tratteggio o
     riempimento).
 \end{enumerate}
-Il componente deve essere fissato in alto nella viewport e rimanere sempre
-visibile durante lo scrolling.
+Il componente va inserito come statico in testa al contenuto di ogni
+pagina del flusso (\texttt{login.html}, \texttt{piani.html},
+\texttt{documenti.html}, \texttt{pagamento.html}).
 
 \textbf{Evidenze a supporto}:
 \begin{itemize}
