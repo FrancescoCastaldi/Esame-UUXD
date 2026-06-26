@@ -753,7 +753,21 @@
           saveTrainerState();
           renderTrainerSteps();
         } else if (e.target.classList.contains('trainer-next')) {
+          // R10: validate empty field before advancing
           var mod = trainerModules[currentModule];
+          var step = mod ? mod.steps[currentStep] : null;
+          if (step && step.highlight) {
+            var field = document.querySelector(step.highlight);
+            if (field && (field.tagName === 'INPUT' || field.tagName === 'TEXTAREA') && !field.value.trim()) {
+              var errMsgs = {
+                '#from': 'Inserisci il punto di partenza. Scrivi un indirizzo, via o nome della fermata.',
+                '#to': 'Inserisci la destinazione. Scrivi dove vuoi arrivare.'
+              };
+              showFieldError(field, errMsgs[step.highlight] || 'Completa questo campo prima di proseguire al passo successivo.');
+              field.focus();
+              return;
+            }
+          }
           if (currentModule && currentStep === mod.steps.length - 1) {
             // Module complete -> show rating
             renderTrainerRating();
@@ -1028,15 +1042,12 @@
       var nxt = document.querySelector('.trainer-next');
       if (!nxt) return;
 
-      // Disable Next until field has value
-      nxt.disabled = true;
-
+      // Visual feedback on field fill (R10: no Next disable, error shown on click)
       var wasFilled = false;
 
       function checkField() {
         var valid = el.value && el.value.trim() !== '';
-        if (el.tagName === 'SELECT') valid = true; // select always has a value
-        nxt.disabled = !valid;
+        if (el.tagName === 'SELECT') valid = true;
 
         var indicator = el.parentNode.querySelector('.trainer-field-check');
         if (valid) {
@@ -1047,11 +1058,11 @@
             el.parentNode.appendChild(chk);
           }
           el.style.borderColor = '#2E7D32';
+          removeFieldError(el);
           wasFilled = true;
         } else {
           if (indicator) indicator.remove();
           el.style.borderColor = '';
-          // Count error if user empties a previously filled field
           if (wasFilled) {
             trainerStats.currentErrors++;
             updateErrorBadge();
