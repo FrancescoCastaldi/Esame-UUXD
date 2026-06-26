@@ -224,6 +224,23 @@
   (function() {
     var params = new URLSearchParams(window.location.search);
 
+    // Order summary — support renew and recharge (R11)
+    var plan = params.get('plan') || 'monthly';
+    var amount = params.get('amount') || '51,00';
+    var nameEl = document.getElementById('plan-name');
+    var durationEl = document.getElementById('plan-duration');
+    var priceEl = document.getElementById('plan-price');
+
+    if (plan === 'renew') {
+      if (nameEl) nameEl.textContent = 'Rinnovo Abbonamento';
+      if (durationEl) durationEl.textContent = '30 giorni';
+      if (priceEl) priceEl.textContent = '\u20ac51,00';
+    } else if (plan === 'recharge') {
+      if (nameEl) nameEl.textContent = 'Ricarica Tessera';
+      if (durationEl) durationEl.textContent = 'Saldo immediato';
+      if (priceEl) priceEl.textContent = '\u20ac' + amount;
+    }
+
     // Login detection (R11): show welcome only, keep personal fields visible
     if (params.get('login') === 'ok') {
       var summary = document.querySelector('.form-card');

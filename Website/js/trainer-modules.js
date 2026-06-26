@@ -30,8 +30,8 @@ window.INLINE_TRAINER_MODULES = {
         "highlight": "#buy-channels",
         "tip": "Scegli tra acquisto online su solweb o di persona al Punto Tper.",
         "action": {
-          "textKey": "trainer.goto-channels",
-          "url": "dove-comprare.html#punti-tper"
+          "textKey": "trainer.goto-rinnovo",
+          "url": "solweb/rinnova.html"
         },
         "completionMessage": "Canale scelto"
       },
@@ -192,6 +192,17 @@ window.INLINE_TRAINER_MODULES = {
         "highlight": "#roger",
         "tip": "Apri l'App Roger sul telefono e vai alla sezione Ricarica.",
         "completionMessage": "Ricarica digitale completata"
+      },
+      {
+        "title": "Ricaricare online su solweb",
+        "desc": "Vai su solweb.tper.it, seleziona 'Ricarica Tessera', inserisci il numero tessera e scegli l'importo. Paghi con carta o PayPal. Il saldo è disponibile subito. Nessuna registrazione necessaria.",
+        "highlight": null,
+        "tip": "La ricarica online su solweb non richiede login: bastano numero tessera e metodo di pagamento.",
+        "action": {
+          "textKey": "trainer.goto-ricarica",
+          "url": "solweb/ricarica.html"
+        },
+        "completionMessage": "Ricarica online completata"
       },
       {
         "title": "Verifica il saldo prima di salire",

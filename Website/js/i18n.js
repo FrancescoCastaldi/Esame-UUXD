@@ -220,6 +220,8 @@
       /* Trainer Enhanced Controls */
       'trainer.goto-solweb': 'Vai a solweb.tper.it',
       'trainer.goto-channels': 'Vedi Canali di Acquisto',
+      'trainer.goto-rinnovo': 'Vai a solweb Rinnovo',
+      'trainer.goto-ricarica': 'Vai a solweb Ricarica',
       'trainer.goto-guest': 'Continua come Ospite',
       'trainer.goto-pianifica': 'Vai a Pianifica Viaggio',
       'trainer.search-now': 'Cerca Ora',
@@ -377,6 +379,31 @@
       'solweb.guest-desc': 'Acquista un abbonamento impersonale: basta il numero della tua Roger Card o tessera.',
       'solweb.guest-btn': 'Acquista Abbonamento Impersonale',
       'solweb.guest-info': "L'abbonamento impersonale è legato alla tessera, non alla persona. Ideale per chi non vuole creare un account.",
+
+      /* Quick actions */
+      'solweb.quick-actions': 'Azioni Rapide (senza registrazione)',
+      'solweb.rinnovo-quick': '🔄 Rinnova Abbonamento',
+      'solweb.ricarica-quick': '⚡ Ricarica Tessera',
+
+      /* Rinnovo */
+      'solweb.rinnovo-title': 'Rinnova Abbonamento',
+      'solweb.rinnovo-desc': 'Rinnova un abbonamento esistente inserendo il numero tessera. Senza registrazione.',
+      'solweb.rinnovo-step1': 'Rinnovo',
+      'solweb.rinnovo-impersonale': 'Rinnovo Impersonale',
+      'solweb.rinnovo-impersonale-desc': 'Inserisci il numero della tua tessera o Roger Card. Riceverai la conferma via email.',
+      'solweb.rinnovo-confirm': 'Conferma e Procedi',
+      'solweb.rinnovo-agevolato': 'Rinnovo con Agevolazioni',
+
+      /* Ricarica */
+      'solweb.ricarica-title': 'Ricarica la Tessera',
+      'solweb.ricarica-desc': 'Ricarica la tua Roger Card o tessera TPER online. Senza registrazione.',
+      'solweb.ricarica-badge': 'RICARICA TESSERA',
+      'solweb.ricarica-step1': 'Ricarica',
+      'solweb.ricarica-form-title': 'Ricarica la tua tessera',
+      'solweb.ricarica-importo': 'Importo Ricarica',
+      'solweb.ricarica-altro': 'Altro',
+      'solweb.ricarica-importo-altro': 'Importo personalizzato (€)',
+      'solweb.ricarica-proceed': 'Prosegui al Pagamento',
 
       /* Login Errors (R10) */
       'solweb.login-error': 'Impossibile accedere. Verifica che Codice Fiscale/Email e Password siano compilati. Se hai dimenticato la password, usa il link in fondo. In alternativa, usa Acquisto Impersonale.',
@@ -585,6 +612,8 @@
       /* Trainer Enhanced Controls */
       'trainer.goto-solweb': 'Go to solweb.tper.it',
       'trainer.goto-channels': 'See Purchase Channels',
+      'trainer.goto-rinnovo': 'Go to solweb Renew',
+      'trainer.goto-ricarica': 'Go to solweb Recharge',
       'trainer.goto-guest': 'Continue as Guest',
       'trainer.goto-pianifica': 'Go to Plan Journey',
       'trainer.search-now': 'Search Now',
@@ -711,6 +740,31 @@
       'solweb.guest-desc': 'Buy an impersonal subscription: just your Roger Card or card number.',
       'solweb.guest-btn': 'Buy Impersonal Subscription',
       'solweb.guest-info': "The impersonal subscription is tied to the card, not to a person. Ideal for those who don't want to create an account.",
+
+      /* Quick actions */
+      'solweb.quick-actions': 'Quick Actions (no registration)',
+      'solweb.rinnovo-quick': '🔄 Renew Subscription',
+      'solweb.ricarica-quick': '⚡ Recharge Card',
+
+      /* Renew */
+      'solweb.rinnovo-title': 'Renew Subscription',
+      'solweb.rinnovo-desc': 'Renew an existing subscription by entering your card number. No registration required.',
+      'solweb.rinnovo-step1': 'Renew',
+      'solweb.rinnovo-impersonale': 'Impersonal Renewal',
+      'solweb.rinnovo-impersonale-desc': 'Enter your card or Roger Card number. You will receive confirmation by email.',
+      'solweb.rinnovo-confirm': 'Confirm and Continue',
+      'solweb.rinnovo-agevolato': 'Discounted Renewal',
+
+      /* Recharge */
+      'solweb.ricarica-title': 'Recharge Card',
+      'solweb.ricarica-desc': 'Recharge your Roger Card or TPER card online. No registration required.',
+      'solweb.ricarica-badge': 'CARD RECHARGE',
+      'solweb.ricarica-step1': 'Recharge',
+      'solweb.ricarica-form-title': 'Recharge your card',
+      'solweb.ricarica-importo': 'Recharge Amount',
+      'solweb.ricarica-altro': 'Other',
+      'solweb.ricarica-importo-altro': 'Custom amount (€)',
+      'solweb.ricarica-proceed': 'Proceed to Payment',
 
       /* Login Errors (R10) */
       'solweb.login-error': 'Unable to log in. Check that Tax ID/Email and Password are filled in. Forgot your password? Use the link below. Alternatively, use Guest Purchase.',
@@ -942,6 +996,8 @@
       /* Trainer Enhanced Controls */
       'trainer.goto-solweb': 'اذهب إلى solweb.tper.it',
       'trainer.goto-channels': 'عرض قنوات الشراء',
+      'trainer.goto-rinnovo': 'اذهب إلى تجديد solweb',
+      'trainer.goto-ricarica': 'اذهب إلى شحن solweb',
       'trainer.goto-guest': 'المتابعة كضيف',
       'trainer.goto-pianifica': 'انتقل إلى تخطيط الرحلة',
       'trainer.search-now': 'بحث الآن',
@@ -1068,6 +1124,31 @@
       'solweb.guest-desc': 'اشتر اشتراكًا غير شخصي: فقط رقم بطاقة Roger الخاصة بك.',
       'solweb.guest-btn': 'اشترِ اشتراكًا غير شخصي',
       'solweb.guest-info': 'الاشتراك غير الشخصي مرتبط بالبطاقة وليس بالشخص. مثالي لمن لا يريد إنشاء حساب.',
+
+      /* Quick actions */
+      'solweb.quick-actions': 'إجراءات سريعة (بدون تسجيل)',
+      'solweb.rinnovo-quick': '🔄 تجديد الاشتراك',
+      'solweb.ricarica-quick': '⚡ شحن البطاقة',
+
+      /* Renew */
+      'solweb.rinnovo-title': 'تجديد الاشتراك',
+      'solweb.rinnovo-desc': 'جدد اشتراكًا موجودًا بإدخال رقم بطاقتك. بدون تسجيل.',
+      'solweb.rinnovo-step1': 'تجديد',
+      'solweb.rinnovo-impersonale': 'تجديد غير شخصي',
+      'solweb.rinnovo-impersonale-desc': 'أدخل رقم بطاقتك أو Roger Card. ستتلقى تأكيدًا عبر البريد الإلكتروني.',
+      'solweb.rinnovo-confirm': 'تأكيد ومتابعة',
+      'solweb.rinnovo-agevolato': 'تجديد مخفض',
+
+      /* Recharge */
+      'solweb.ricarica-title': 'شحن البطاقة',
+      'solweb.ricarica-desc': 'اشحن Roger Card أو بطاقة TPER عبر الإنترنت. بدون تسجيل.',
+      'solweb.ricarica-badge': 'شحن البطاقة',
+      'solweb.ricarica-step1': 'شحن',
+      'solweb.ricarica-form-title': 'اشحن بطاقتك',
+      'solweb.ricarica-importo': 'مبلغ الشحن',
+      'solweb.ricarica-altro': 'أخرى',
+      'solweb.ricarica-importo-altro': 'مبلغ مخصص (€)',
+      'solweb.ricarica-proceed': 'متابعة إلى الدفع',
 
       /* Login Errors (R10) */
       'solweb.login-error': 'تعذر تسجيل الدخول. تحقق من ملء الرمز الضريبي/البريد الإلكتروني وكلمة المرور. إذا نسيت كلمة المرور، استخدم الرابط أدناه. بدلاً من ذلك، استخدم الشراء كضيف.',

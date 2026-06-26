@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it" data-page="solweb">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="solweb.login-title">Accedi a solweb.tper.it</title>
-  <meta name="description" content="Accedi a solweb.tper.it per gestire il tuo abbonamento TPER.">
+  <title data-i18n="solweb.rinnovo-title">Rinnova Abbonamento — solweb.tper.it</title>
+  <meta name="description" content="Rinnova il tuo abbonamento TPER online.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -30,8 +30,8 @@
       <div class="header-utilities">
         <button class="lang-btn" data-lang="it" aria-label="Italiano">IT</button>
         <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
-        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©">AR</button>
-        <button class="contrast-toggle" aria-label="Attiva contrasto elevato" title="Contrasto">&#9681;</button>
+        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="العربية">AR</button>
+        <button class="contrast-toggle" aria-label="Attiva contrasto elevato" title="Contrasto">◾</button>
         <button class="font-toggle" aria-label="Aumenta carattere" title="Carattere">A+</button>
       </div>
     </div>
@@ -42,88 +42,48 @@
 
       <div class="section-header">
         <div class="hero-badge" data-i18n="solweb.badge">PIATTAFORMA ABBONAMENTI</div>
-        <h1 data-i18n="solweb.login-title">Accedi a solweb.tper.it</h1>
-        <p data-i18n="solweb.login-desc">Gestisci il tuo abbonamento, rinnova, verifica lo stato.</p>
+        <h1 data-i18n="solweb.rinnovo-title">Rinnova Abbonamento</h1>
+        <p data-i18n="solweb.rinnovo-desc">Rinnova un abbonamento esistente inserendo il numero tessera. Senza registrazione.</p>
       </div>
 
       <div class="progress-bar">
         <div class="progress-step active">
           <span class="step-num">1</span>
-          <span class="step-label" data-i18n="solweb.step1">Accedi</span>
+          <span class="step-label" data-i18n="solweb.rinnovo-step1">Rinnovo</span>
         </div>
         <div class="progress-step">
           <span class="step-num">2</span>
-          <span class="step-label" data-i18n="solweb.step2">Scegli il Piano</span>
-        </div>
-        <div class="progress-step">
-          <span class="step-num">3</span>
-          <span class="step-label" data-i18n="solweb.step3">Documenti</span>
-        </div>
-        <div class="progress-step">
-          <span class="step-num">4</span>
           <span class="step-label" data-i18n="solweb.step4">Pagamento</span>
         </div>
       </div>
 
+      <!-- Rinnovo Impersonale -->
       <div class="form-card">
-        <h2 data-i18n="solweb.login-title">Accedi a solweb.tper.it</h2>
+        <h2 data-i18n="solweb.rinnovo-impersonale">Rinnovo Impersonale</h2>
+        <p style="color:#777;font-size:0.9rem;margin-bottom:1rem;" data-i18n="solweb.rinnovo-impersonale-desc">Inserisci il numero della tua tessera o Roger Card. Riceverai la conferma via email.</p>
 
-        <form novalidate id="login-form">
-          <div id="login-error" class="form-error" style="display:none;" role="alert" data-i18n="solweb.login-error">
-            <span class="fe-icon">&#9888;</span> Impossibile accedere. Verifica che Codice Fiscale/Email e Password siano compilati. Se hai dimenticato la password, usa il link in fondo. In alternativa, usa <a href="piani.html?mode=guest">Acquisto Impersonale</a>.
+        <form novalidate id="rinnovo-form">
+          <div class="form-group">
+            <label for="tessera" data-i18n="solweb.pay-card">Numero Tessera / Codice Abbonamento</label>
+            <input type="text" id="tessera" name="tessera" placeholder="TPER-XXXXXX" data-i18n-placeholder="solweb.pay-card" autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="username" data-i18n="solweb.username">Codice Fiscale / Email</label>
-            <input type="text" id="username" name="username" placeholder="Codice Fiscale o Email" autocomplete="username" data-i18n-placeholder="solweb.username">
-          </div>
-
-          <div class="form-group">
-            <label for="password" data-i18n="solweb.password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" data-i18n-placeholder="solweb.password">
-          </div>
-
-          <div class="form-group">
-            <label>
-              <input type="checkbox" id="show-pwd"> <span data-i18n="solweb.show-pwd">Mostra password</span>
-            </label>
+            <label for="email" data-i18n="solweb.pay-email">Email</label>
+            <input type="email" id="email" name="email" placeholder="mario.rossi@email.it" data-i18n-placeholder="solweb.pay-email" autocomplete="email">
           </div>
 
           <div class="form-actions">
-            <button type="submit" class="btn-primary" style="flex:1;" data-i18n="solweb.login-btn">Accedi</button>
+            <button type="submit" class="btn-primary" style="flex:1;" data-i18n="solweb.rinnovo-confirm">Conferma e Procedi</button>
           </div>
         </form>
 
-        <div class="form-divider" role="separator">        </div>
-
         <div class="form-divider" role="separator"></div>
 
-        <div class="guest-section">
-          <h3 data-i18n="solweb.quick-actions">Azioni Rapide (senza registrazione)</h3>
-          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1rem;">
-            <a href="rinnova.html" class="btn-outline" style="flex:1;text-align:center;min-width:140px;" data-i18n="solweb.rinnovo-quick">&#8635; Rinnova Abbonamento</a>
-            <a href="ricarica.html" class="btn-outline" style="flex:1;text-align:center;min-width:140px;" data-i18n="solweb.ricarica-quick">&#9889; Ricarica Tessera</a>
-          </div>
-
-          <div class="form-divider" role="separator"></div>
-
-          <h3 data-i18n="solweb.guest-title">Oppure acquista senza registrazione</h3>
-          <p data-i18n="solweb.guest-desc">Acquista un abbonamento impersonale: basta il numero della tua Roger Card o tessera.</p>
-          <div class="form-actions">
-            <a href="piani.html?mode=guest" class="btn-primary" style="flex:1;text-align:center;" data-i18n="solweb.guest-btn">Acquista Abbonamento Impersonale</a>
-          </div>
-          <div class="info-banner mt-1" role="note">
-            <span class="icon">&#9432;</span>
-            <p data-i18n="solweb.guest-info">L'abbonamento impersonale &egrave; legato alla tessera, non alla persona. Ideale per chi non vuole creare un account.</p>
-          </div>
-        </div>
-
-        <p class="text-center"><a href="#" data-i18n="solweb.forgot">Password dimenticata?</a></p>
-        <p class="text-center"><a href="#" data-i18n="solweb.register">Non hai un account? Registrati</a></p>
-
-        <div class="info-banner mt-2" role="status">
+        <h3 data-i18n="solweb.rinnovo-agevolato" style="margin-bottom:0.5rem;">Rinnovo con Agevolazioni</h3>
+        <div class="info-banner" id="rinnovo-agevolazioni" role="note">
           <span class="icon">&#128274;</span>
-          <p data-i18n="solweb.security">Accesso sicuro con protocollo HTTPS. I tuoi dati sono protetti.</p>
+          <p data-i18n="solweb.agevolazioni-info"><strong>Per le tariffe agevolate è richiesta la registrazione.</strong> Serve ISEE aggiornato, certificato di iscrizione (studenti), documento d'identità e codice fiscale. La verifica richiede 3–5 giorni lavorativi. <a href="login.html">Accedi</a> o <a href="login.html">registrati</a> per procedere.</p>
         </div>
       </div>
 
@@ -131,11 +91,11 @@
   </main>
 
   <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
-    <h3 data-i18n="trainer.title">&#127891; Modalit&agrave; Trainer</h3>
+    <h3 data-i18n="trainer.title">&#127891; Modalità Trainer</h3>
     <div id="trainer-steps"></div>
   </aside>
 
-  <button class="back-to-top" aria-label="Torna in cima" title="Torna su" data-i18n-aria="back-to-top.label">&#8593;</button>
+  <button class="back-to-top" data-i18n-aria="back-to-top.label" aria-label="Torna in cima" title="Torna su">&#8593;</button>
 
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
@@ -183,6 +143,32 @@
   <script src="../js/i18n.js"></script>
   <script src="../js/trainer-modules.js"></script>
   <script src="../js/app.js"></script>
+
+  <!-- Rinnovo form validation (R10) -->
+  <script>
+  (function() {
+    var form = document.getElementById('rinnovo-form');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var tessera = document.getElementById('tessera');
+      var email = document.getElementById('email');
+      var valid = true;
+
+      if (!tessera || !tessera.value.trim()) {
+        if (typeof showFieldError === 'function') showFieldError(tessera, 'Inserisci il numero della tua tessera o Roger Card. Serve per identificare l\'abbonamento da rinnovare.');
+        valid = false;
+      }
+      if (!email || !email.value.trim()) {
+        if (typeof showFieldError === 'function') showFieldError(email, 'Inserisci un indirizzo email valido. Riceverai qui la conferma del rinnovo.');
+        valid = false;
+      }
+      if (!valid) return;
+
+      window.location.href = 'pagamento.html?plan=renew&login=ok';
+    });
+  })();
+  </script>
 
   <button class="trainer-toggle-btn" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
 </body>
