@@ -1235,12 +1235,7 @@
           if (errorEl) { errorEl.style.display = 'block'; }
         } else {
           if (errorEl) { errorEl.style.display = 'none'; }
-          var msg = document.createElement('div');
-          msg.style.cssText = 'background:#E8F5E9;border:1px solid #A5D6A7;border-radius:6px;padding:1rem;margin-top:1rem;text-align:center;font-weight:600;color:#2E7D32;';
-          msg.textContent = '\u2713 Accesso riuscito. Ti porto ai piani di abbonamento...';
-          loginForm.parentNode.insertBefore(msg, loginForm.nextSibling);
-          loginForm.style.display = 'none';
-          setTimeout(function() { window.location.href = 'piani.html?login=ok'; }, 1200);
+          window.location.href = 'piani.html?login=ok';
         }
       });
     }
