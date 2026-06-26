@@ -588,12 +588,16 @@
       }
       summaryHtml += '</div>';
 
-      // Path followed
+      // Path followed (with navigational path per step — R6)
+      var pageLabels = { rinnovo:'Abbonamenti', viaggio:'Pianifica', biglietto:'Biglietti', ricarica:'Dove Comprare' };
+      var pageLabel = pageLabels[currentModule] || '';
       summaryHtml += '<div class="trainer-summary-section">';
       summaryHtml += '<h5>' + getI18nText('trainer.summary-path') + '</h5>';
       for (var pi = 0; pi < module.steps.length; pi++) {
+        var navPath = 'Home \u2192 ' + pageLabel + ' \u2192 ' + module.steps[pi].title;
         summaryHtml += '<div class="trainer-summary-item">' +
-          '<span class="tsi-label">' + (pi + 1) + '. ' + module.steps[pi].title + '</span>' +
+          '<span class="tsi-label">' + (pi + 1) + '. ' + module.steps[pi].title +
+          '<br><small style="color:#999;">' + navPath + '</small></span>' +
           '<span class="tsi-value" style="color:#2E7D32;">&#10003;</span></div>';
       }
       summaryHtml += '</div>';
