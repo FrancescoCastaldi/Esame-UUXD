@@ -61,7 +61,8 @@
           <h2 id="guide-title" data-i18n="buy.guide-title">&#128269; Guida: trova il canale giusto per te</h2>
           <p data-i18n="buy.guide-desc">Rispondi a poche domande e ti suggeriamo dove acquistare in base alle tue esigenze.</p>
         </div>
-        <div class="ticket-wizard-card" id="guide-container"></div>
+        <button class="btn-primary" id="start-guide" style="margin-bottom:1rem;">&#128269; Ti aiutiamo a scegliere</button>
+        <div class="ticket-wizard-card" id="guide-container" style="display:none;"></div>
       </section>
 
       <h2 class="mb-1" data-i18n="section.channels">Tutti i Canali</h2>
@@ -349,7 +350,14 @@ data-url="solweb/login.html" data-i18n="buy.solweb">Vai a solweb.tper.it</a>
       });
     }
 
-    renderQuestion(0);
+    var startBtn = document.getElementById('start-guide');
+    if (startBtn) {
+      startBtn.addEventListener('click', function() {
+        startBtn.style.display = 'none';
+        container.style.display = '';
+        renderQuestion(0);
+      });
+    }
   })();
   </script>
 

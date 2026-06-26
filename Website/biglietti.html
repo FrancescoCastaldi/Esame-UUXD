@@ -61,7 +61,8 @@
           <h2 id="wizard-title" data-i18n="tickets.wizard-title">&#128269; Guida: trova il biglietto giusto per te</h2>
           <p data-i18n="tickets.wizard-desc">Rispondi a poche domande e ti consiglieremo il biglietto pi&ugrave; adatto.</p>
         </div>
-        <div class="ticket-wizard-card" id="wizard-container"></div>
+        <button class="btn-primary" id="start-guide" style="margin-bottom:1rem;">&#128269; Ti aiutiamo a scegliere</button>
+        <div class="ticket-wizard-card" id="wizard-container" style="display:none;"></div>
       </section>
 
       <!-- Info banner -->
@@ -325,7 +326,14 @@
       });
     }
 
-    renderQuestion(0);
+    var startBtn = document.getElementById('start-guide');
+    if (startBtn) {
+      startBtn.addEventListener('click', function() {
+        startBtn.style.display = 'none';
+        container.style.display = '';
+        renderQuestion(0);
+      });
+    }
   })();
   </script>
 

@@ -61,7 +61,8 @@
           <h2 id="wizard-title" data-i18n="subs.wizard-title">&#128269; Guida: scegli il tuo abbonamento</h2>
           <p data-i18n="subs.wizard-desc">Rispondi a poche domande e ti consiglieremo l'abbonamento pi&ugrave; conveniente.</p>
         </div>
-        <div class="ticket-wizard-card" id="wizard-container"></div>
+        <button class="btn-primary" id="start-guide" style="margin-bottom:1rem;">&#128269; Ti aiutiamo a scegliere</button>
+        <div class="ticket-wizard-card" id="wizard-container" style="display:none;"></div>
       </section>
 
       <!-- Info banner -->
@@ -419,7 +420,14 @@
       });
     }
 
-    renderQuestion(0);
+    var startBtn = document.getElementById('start-guide');
+    if (startBtn) {
+      startBtn.addEventListener('click', function() {
+        startBtn.style.display = 'none';
+        container.style.display = '';
+        renderQuestion(0);
+      });
+    }
   })();
   </script>
 
