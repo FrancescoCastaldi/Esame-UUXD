@@ -64,10 +64,6 @@ window.INLINE_TRAINER_MODULES = {
         "highlight": "#from",
         "tip": "Digita qui il punto di partenza: indirizzo, via o nome della fermata.",
         "hint": true,
-        "action": {
-          "textKey": "trainer.goto-pianifica",
-          "url": "pianifica.html"
-        },
         "completionMessage": "Partenza inserita"
       },
       {
@@ -76,10 +72,6 @@ window.INLINE_TRAINER_MODULES = {
         "highlight": "#to",
         "tip": "Digita qui la destinazione: indirizzo, via, monumento o quartiere.",
         "hint": true,
-        "action": {
-          "textKey": "trainer.goto-pianifica",
-          "url": "pianifica.html"
-        },
         "completionMessage": "Destinazione inserita"
       },
       {
@@ -87,10 +79,6 @@ window.INLINE_TRAINER_MODULES = {
         "desc": "Seleziona il mezzo che preferisci: bus, treno, bici o piedi. Puoi anche lasciare 'Tutti' per vedere tutte le opzioni disponibili.",
         "highlight": "#travel-mode",
         "tip": "Scegli il mezzo di trasporto: bus, treno, bici o a piedi.",
-        "action": {
-          "textKey": "trainer.goto-pianifica",
-          "url": "pianifica.html"
-        },
         "completionMessage": "Modalit\u00e0 scelta"
       },
       {

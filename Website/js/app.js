@@ -813,6 +813,19 @@
           currentStep = 0;
           trainerStats.currentStart = Date.now();
           trainerStats.currentErrors = 0;
+          delete lastCompleted[currentModule];
+
+          // Viaggio: redirect immediato a pianifica.html
+          if (currentModule === 'viaggio') {
+            var cp = window.location.pathname.split('/').pop() || 'index.html';
+            if (cp !== 'pianifica.html') {
+              saveTrainerState();
+              setTrainerActive(true);
+              window.location.href = 'pianifica.html';
+              return;
+            }
+          }
+
           renderTrainerSteps();
         });
       });
