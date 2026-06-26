@@ -110,7 +110,9 @@
 
       /* Dove Comprare */
       'buy.title': 'Dove Comprare Biglietti e Abbonamenti',
-      'buy.desc': 'TPER offre diversi canali per l\'acquisto. Scegli quello più comodo per te.',
+      'buy.desc': 'Scopri tutti i canali per acquistare biglietti e abbonamenti. Usa la guida per trovare il canale più adatto a te.',
+      'buy.guide-title': '🔍 Guida: trova il canale giusto per te',
+      'buy.guide-desc': 'Rispondi a poche domande e ti suggeriamo dove acquistare in base alle tue esigenze.',
       'buy.solweb': 'solweb.tper.it',
       'buy.solweb-desc': 'Piattaforma online per l\'acquisto e il rinnovo di abbonamenti mensili, annuali e agevolati.',
       'buy.roger': 'App Roger',
@@ -528,7 +530,9 @@
       'section.channels-desc': 'Compare options and choose the one that suits you.',
 
       'buy.title': 'Where to Buy Tickets and Subscriptions',
-      'buy.desc': 'TPER offers several purchase channels. Choose the most convenient one.',
+      'buy.desc': 'Discover all purchase channels for tickets and subscriptions. Use the guide to find the best channel for you.',
+      'buy.guide-title': '🔍 Guide: find the right channel for you',
+      'buy.guide-desc': 'Answer a few questions and we\'ll suggest where to buy based on your needs.',
       'buy.solweb': 'solweb.tper.it',
       'buy.solweb-desc': 'Online platform for purchasing and renewing monthly, yearly and discounted subscriptions.',
       'buy.roger': 'Roger App',
@@ -933,7 +937,9 @@
       'section.channels-desc': 'قارن الخيارات واختر الأنسب لك.',
 
       'buy.title': 'أين تشتري التذاكر والاشتراكات',
-      'buy.desc': 'تقدم TPER عدة قنوات للشراء. اختر الأنسب لك.',
+      'buy.desc': 'اكتشف جميع قنوات الشراء للتذاكر والاشتراكات. استخدم الدليل للعثور على أفضل قناة لك.',
+      'buy.guide-title': '🔍 دليل: اعثر على القناة المناسبة لك',
+      'buy.guide-desc': 'أجب عن بضعة أسئلة وسنقترح عليك أين تشتري بناءً على احتياجاتك.',
       'buy.solweb': 'solweb.tper.it',
       'buy.solweb-desc': 'منصة إلكترونية لشراء وتجديد الاشتراكات الشهرية والسنوية والمخفضة.',
       'buy.roger': 'تطبيق Roger',

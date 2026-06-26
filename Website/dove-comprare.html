@@ -55,17 +55,14 @@
       <h1 data-i18n="buy.title">Dove Comprare Biglietti e Abbonamenti</h1>
       <p class="mb-2" data-i18n="buy.desc">Su <strong>tper.it</strong> non &egrave; possibile acquistare titoli di viaggio. Questa pagina ti guida verso il canale pi&ugrave; adatto alle tue esigenze tra le opzioni disponibili.</p>
 
-      <!-- Channel wizard stepper -->
-      <div class="info-banner">
-        <span class="icon">&#128270;</span>
-        <p data-i18n="wizard.start"><strong>Non sai quale canale scegliere?</strong> Usa il nostro wizard interattivo: rispondi a poche domande e ti suggeriamo il canale migliore per te.</p>
-      </div>
-      <div style="text-align:center;margin-bottom:2rem;">
-        <button class="btn-primary" id="start-wizard" style="padding:0.75rem 2rem;font-size:1.1rem;" data-i18n="wizard.start-btn">&#9889; Avvia Wizard di Scelta</button>
-      </div>
-
-      <!-- Wizard step container -->
-      <div id="wizard-container" class="card" style="display:none;max-width:600px;margin:0 auto 2rem;"></div>
+      <!-- Guida canali -->
+      <section aria-labelledby="guide-title">
+        <div class="section-header">
+          <h2 id="guide-title" data-i18n="buy.guide-title">&#128269; Guida: trova il canale giusto per te</h2>
+          <p data-i18n="buy.guide-desc">Rispondi a poche domande e ti suggeriamo dove acquistare in base alle tue esigenze.</p>
+        </div>
+        <div class="ticket-wizard-card" id="guide-container"></div>
+      </section>
 
       <h2 class="mb-1" data-i18n="section.channels">Tutti i Canali</h2>
       <div class="channel-grid">
@@ -239,6 +236,122 @@ data-url="solweb/login.html" data-i18n="buy.solweb">Vai a solweb.tper.it</a>
   <script src="js/i18n.js"></script>
   <script src="js/trainer-modules.js"></script>
   <script src="js/app.js"></script>
+
+  <!-- Channel guide (inline) -->
+  <script>
+  (function() {
+    var container = document.getElementById('guide-container');
+    if (!container) return;
+
+    var current = 0;
+    var answers = {};
+
+    var questions = [
+      { id:'servizio', q:'Cosa ti serve?', opts:[
+        { v:'abbonamento', t:'Un abbonamento (mensile o annuale)' },
+        { v:'biglietto', t:'Un biglietto (corsa singola o carnet)' },
+        { v:'ricarica', t:'Ricaricare la tessera' },
+        { v:'sanzioni', t:'Pagare una sanzione' }
+      ]},
+      { id:'canale', q:'Preferisci online o di persona?', opts:[
+        { v:'online', t:'Online (sito web o app)' },
+        { v:'fisico', t:'Di persona (punto vendita)' },
+        { v:'qualsiasi', t:'Non ho preferenze' }
+      ]},
+      { id:'pagamento', q:'Come vuoi pagare?', opts:[
+        { v:'digitale', t:'Carta di credito / digitale' },
+        { v:'contanti', t:'Contanti' },
+        { v:'entrambi', t:'Entrambi / non lo so' }
+      ]}
+    ];
+
+    var results = {
+      abbonamento_online: { title:'solweb.tper.it', icon:'&#127760;', desc:'Per abbonamenti online vai su solweb. Puoi acquistare o rinnovare abbonamenti mensili e annuali. Accesso con SPID o credenziali Tper.', link:'<a href="solweb/login.html" class="btn-outline">Vai a solweb</a>' },
+      abbonamento_fisico: { title:'Punti Tper', icon:'&#128205;', desc:'Per abbonamenti di persona recati in un Punto Tper. Trova il più vicino e porta documento d\'identità e foto tessera.', link:'<a href="#punti-tper" class="btn-outline">Vedi Punti Tper</a>' },
+      biglietto_online: { title:'App Roger', icon:'&#128241;', desc:'Per biglietti digitali scarica l\'App Roger. Acquisti biglietti singoli, carnet e giornalieri direttamente dallo smartphone.', link:'<a href="#roger" class="btn-outline">Vedi App Roger</a>' },
+      biglietto_fisico_contanti: { title:'Tabaccherie / PuntoLis', icon:'&#127991;', desc:'Per biglietti cartacei e pagamento in contanti vai in una tabaccheria o edicola PuntoLis. Trova la più vicina.', link:'<a href="#tabaccherie" class="btn-outline">Vedi Tabaccherie</a>' },
+      biglietto_fisico_carta: { title:'Punti Tper', icon:'&#128205;', desc:'Per biglietti cartacei con pagamento digitale vai in un Punto Tper. Accettano anche contanti.', link:'<a href="#punti-tper" class="btn-outline">Vedi Punti Tper</a>' },
+      ricarica_online: { title:'solweb Ricarica', icon:'&#9889;', desc:'Ricarica la tessera online su solweb. Bastano numero tessera e metodo di pagamento. Nessuna registrazione richiesta.', link:'<a href="solweb/ricarica.html" class="btn-outline">Vai a Ricarica</a>' },
+      ricarica_fisico: { title:'Tabaccherie / PuntoLis', icon:'&#127991;', desc:'Ricarica la tessera in una tabaccheria o edicola PuntoLis. Accettano contanti e carta.', link:'<a href="#tabaccherie" class="btn-outline">Vedi Tabaccherie</a>' },
+      sanzioni: { title:'solweb Sanzioni', icon:'&#128680;', desc:'Paga le sanzioni online su solweb. Ti bastano il numero pratica o il codice fiscale. Nessuna registrazione richiesta.', link:'<a href="solweb/sanzioni.html" class="btn-outline">Paga Sanzione</a>' }
+    };
+
+    function getResult() {
+      var a = answers;
+      if (a.servizio === 'sanzioni') return 'sanzioni';
+      if (a.servizio === 'abbonamento' && a.canale === 'online') return 'abbonamento_online';
+      if (a.servizio === 'abbonamento') return 'abbonamento_fisico';
+      if (a.servizio === 'biglietto' && a.canale === 'online') return 'biglietto_online';
+      if (a.servizio === 'biglietto' && a.pagamento === 'contanti') return 'biglietto_fisico_contanti';
+      if (a.servizio === 'biglietto') return 'biglietto_fisico_carta';
+      if (a.servizio === 'ricarica' && a.canale === 'online') return 'ricarica_online';
+      if (a.servizio === 'ricarica') return 'ricarica_fisico';
+      return 'abbonamento_online';
+    }
+
+    function renderQuestion(idx) {
+      var q = questions[idx];
+      var html = '<div class="ticket-wizard-step">';
+      html += '<div class="ticket-wizard-progress">Domanda ' + (idx + 1) + ' di ' + questions.length + '</div>';
+      html += '<h3>' + q.q + '</h3>';
+      html += '<div class="ticket-wizard-options">';
+      for (var i = 0; i < q.opts.length; i++) {
+        var o = q.opts[i];
+        var sel = answers[q.id] === o.v ? ' selected' : '';
+        html += '<button class="ticket-wizard-opt' + sel + '" data-value="' + o.v + '">' + o.t + '</button>';
+      }
+      html += '</div>';
+      if (idx > 0) {
+        html += '<button class="btn-outline ticket-wizard-back">← Indietro</button>';
+      }
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelectorAll('.ticket-wizard-opt').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          answers[q.id] = btn.getAttribute('data-value');
+          if (current < questions.length - 1) {
+            current++;
+            renderQuestion(current);
+          } else {
+            showResult();
+          }
+        });
+      });
+
+      var backBtn = container.querySelector('.ticket-wizard-back');
+      if (backBtn) {
+        backBtn.addEventListener('click', function() {
+          current--;
+          renderQuestion(current);
+        });
+      }
+    }
+
+    function showResult() {
+      var key = getResult();
+      var r = results[key];
+      var html = '<div class="ticket-wizard-result">';
+      html += '<div class="twr-badge">🎯 Canale consigliato</div>';
+      html += '<div class="twr-card">';
+      html += '<h3>' + r.title + '</h3>';
+      html += '<p>' + r.desc + '</p>';
+      html += '<div class="twr-action">' + r.link + '</div>';
+      html += '</div>';
+      html += '<button class="btn-outline ticket-wizard-restart">⟳ Ricomincia</button>';
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelector('.ticket-wizard-restart').addEventListener('click', function() {
+        current = 0;
+        answers = {};
+        renderQuestion(0);
+      });
+    }
+
+    renderQuestion(0);
+  })();
+  </script>
 
   <button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
 </body>
