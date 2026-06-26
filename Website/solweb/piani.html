@@ -188,14 +188,23 @@
       var plans = document.getElementById('subscription-plans');
       if (plans) plans.parentNode.insertBefore(welcome, plans);
 
+      // Redirect plan cards to documenti instead of pagamento
       var links = document.querySelectorAll('.card .btn-primary');
       for (var i = 0; i < links.length; i++) {
         var href = links[i].getAttribute('href');
         if (href && href.indexOf('pagamento.html') === 0) {
-          links[i].setAttribute('href', href + (href.indexOf('?') === -1 ? '?' : '&') + 'login=ok');
+          var plan = href.replace('pagamento.html', '').replace('?plan=', '').replace(/[&?].*/, '');
+          if (!plan) plan = 'monthly';
+          links[i].setAttribute('href', 'documenti.html?plan=' + plan + '&login=ok');
         }
       }
-      return; // don't apply guest mode if logged in
+
+      // Hide "Accedi al tuo profilo" and "Documenti Necessari" links
+      var bottomLinks = document.querySelectorAll('.text-center.mt-2 a');
+      for (var j = 0; j < bottomLinks.length; j++) {
+        bottomLinks[j].style.display = 'none';
+      }
+      return;
     }
 
     if (isGuest) {
