@@ -1015,6 +1015,7 @@
 
     /* ---------- Inline Error Messages (R10) ---------- */
     function showFieldError(input, msg) {
+      removeTrainerTooltip();
       removeFieldError(input);
       var err = document.createElement('div');
       err.className = 'form-error';
