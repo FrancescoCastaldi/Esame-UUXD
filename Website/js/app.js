@@ -1249,14 +1249,6 @@
       });
     }
 
-    // Language change — update error message
-    document.addEventListener('tper-lang-changed', function() {
-      var errEl = document.getElementById('login-error');
-      if (errEl && typeof TPER_I18N !== 'undefined' && TPER_I18N.translate) {
-        TPER_I18N.translate(errEl);
-      }
-    });
-
     /* ============================
        9. ACCORDION
        ============================ */

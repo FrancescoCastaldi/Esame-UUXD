@@ -1122,8 +1122,27 @@
       var el = elements[i];
       var key = el.getAttribute('data-i18n');
       var text = dict[key] || DICT.it[key] || key;
-      // Handle {placeholder} substitution
-      el.textContent = text;
+      // Handle {placeholder} substitution from data-i18n-* attributes
+      for (var a = 0; a < el.attributes.length; a++) {
+        var attrName = el.attributes[a].name;
+        if (attrName.indexOf('data-i18n-') === 0) {
+          var phName = attrName.replace('data-i18n-', '');
+          if (phName !== 'placeholder' && phName !== 'aria') {
+            text = text.replace('{' + phName + '}', el.attributes[a].value);
+          }
+        }
+      }
+      if (el.children.length === 0) {
+        el.textContent = text;
+      } else {
+        // Preserve child elements (span, a, strong) — update first text node only
+        for (var n = 0; n < el.childNodes.length; n++) {
+          if (el.childNodes[n].nodeType === 3 && el.childNodes[n].textContent.trim()) {
+            el.childNodes[n].textContent = text;
+            break;
+          }
+        }
+      }
     }
 
     // Translate placeholders
@@ -1140,6 +1159,13 @@
       var ae = ariaEls[k];
       var aKey = ae.getAttribute('data-i18n-aria');
       ae.setAttribute('aria-label', dict[aKey] || DICT.it[aKey] || '');
+    }
+
+    // Translate document.title
+    var titleEl = document.querySelector('title[data-i18n]');
+    if (titleEl) {
+      var titleKey = titleEl.getAttribute('data-i18n');
+      document.title = dict[titleKey] || DICT.it[titleKey] || titleEl.textContent;
     }
 
     // Dispatch event for app.js to react
