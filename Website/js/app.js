@@ -868,6 +868,12 @@
 
       var backLink = '<button class="trainer-back">\u2190 ' + getI18nText('trainer.back-modules', 'Torna alle attivit\u00e0') + '</button>';
 
+      // Welcome message (R9) — only on first step
+      var welcomeHtml = '';
+      if (currentStep === 0 && mod.welcome) {
+        welcomeHtml = '<div class="trainer-welcome">' + mod.welcome + '</div>';
+      }
+
       // Action button
       var actionHtml = '';
       var currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -898,7 +904,7 @@
           step.completionMessage + '</div>';
       }
 
-      trainerSteps.innerHTML = backLink +
+      trainerSteps.innerHTML = backLink + welcomeHtml +
         '<div class="trainer-step">' +
         '<div class="step-title">' + step.title + '</div>' +
         '<div class="step-desc">' + step.desc + '</div>' +

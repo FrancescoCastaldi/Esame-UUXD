@@ -8,6 +8,7 @@ window.INLINE_TRAINER_MODULES = {
     "estimatedTime": "5 minuti",
     "category": "acquisto",
     "summary": "Guida passo-passo per scegliere, preparare documenti e acquistare un abbonamento TPER.",
+    "welcome": "Vedrai, basta un passo alla volta — iniziamo a rinnovare il tuo abbonamento!",
     "steps": [
       {
         "title": "Scegli il tipo di abbonamento",
@@ -57,6 +58,7 @@ window.INLINE_TRAINER_MODULES = {
     "estimatedTime": "3 minuti",
     "category": "informazione",
     "summary": "Scopri come usare il pianificatore di viaggio TPER per trovare il percorso migliore con bus, treno, bici o a piedi.",
+    "welcome": "Trovare il percorso giusto è facile! Ti guido passo dopo passo.",
     "steps": [
       {
         "title": "Inserisci la partenza",
@@ -121,6 +123,7 @@ window.INLINE_TRAINER_MODULES = {
     "estimatedTime": "3 minuti",
     "category": "acquisto",
     "summary": "Guida alla scelta del biglietto giusto e del canale pi\u00f9 comodo per acquistarlo.",
+    "welcome": "Scegliere il biglietto giusto non \u00e8 mai stato cos\u00ec semplice. Partiamo!",
     "steps": [
       {
         "title": "Scegli il tipo di biglietto",
@@ -168,6 +171,7 @@ window.INLINE_TRAINER_MODULES = {
     "estimatedTime": "2 minuti",
     "category": "ricarica",
     "summary": "Scopri come ricaricare la tua Roger Card o tessera TPER nei punti vendita fisici o tramite App Roger.",
+    "welcome": "Ricarica la tua tessera in pochi minuti. Ti mostro come fare.",
     "steps": [
       {
         "title": "Scegli il metodo di ricarica",
