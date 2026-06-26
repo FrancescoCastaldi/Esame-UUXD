@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abbonamenti â€” tper.it</title>
-  <meta name="description" content="Abbonamenti Tper: mensile, annuale, agevolazioni ISEE e studenti. Scopri le opzioni e come acquistare.">
+  <title data-i18n="subs.title">Abbonamenti — tper.it</title>
+  <meta name="description" content="Abbonamenti Tper: mensile, annuale, agevolazioni. Scopri le opzioni e come acquistare.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
   <header class="site-header" role="banner">
     <div class="header-inner">
-      <button class="hamburger" aria-label="Menu" aria-expanded="false" data-i18n-aria="header.menu">&#9776;</button>
+      <button class="hamburger" data-i18n-aria="header.menu" aria-label="Menu" aria-expanded="false">&#9776;</button>
       <a href="index.html" class="logo" aria-label="Tper home">
         <svg viewBox="0 0 100 32" aria-hidden="true">
           <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
@@ -35,7 +35,7 @@
       <div class="header-utilities">
         <button class="lang-btn" data-lang="it" data-i18n-aria="header.lang-it" aria-label="Italiano">IT</button>
         <button class="lang-btn" data-lang="en" data-i18n-aria="header.lang-en" aria-label="English">EN</button>
-        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©">AR</button>
+        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="العربية">AR</button>
         <button class="contrast-toggle" data-i18n-aria="header.contrast" aria-label="Attiva contrasto elevato">&#9681;</button>
         <button class="font-toggle" data-i18n-aria="header.font-increase" aria-label="Aumenta carattere">A+</button>
       </div>
@@ -53,108 +53,80 @@
       </nav>
 
       <h1 data-i18n="subs.title">Abbonamenti</h1>
-      <p class="mb-2" data-i18n="subs.desc">Scopri le opzioni di abbonamento per il trasporto pubblico a Bologna e in Emilia-Romagna. Prezzi indicativi 2026.</p>
+      <p class="mb-2" data-i18n="subs.desc">Scopri tutte le opzioni di abbonamento per Bologna e l'Emilia-Romagna. Usa la guida per trovare il pi&ugrave; adatto a te.</p>
 
-      <div class="info-banner">
+      <!-- Wizard Section -->
+      <section aria-labelledby="wizard-title">
+        <div class="section-header">
+          <h2 id="wizard-title" data-i18n="subs.wizard-title">&#128269; Guida: scegli il tuo abbonamento</h2>
+          <p data-i18n="subs.wizard-desc">Rispondi a poche domande e ti consiglieremo l'abbonamento pi&ugrave; conveniente.</p>
+        </div>
+        <div class="ticket-wizard-card" id="wizard-container"></div>
+      </section>
+
+      <!-- Info banner -->
+      <div class="info-banner mt-2">
         <span class="icon">&#9432;</span>
-        <p><strong>Abbonamenti acquistabili solo su solweb.tper.it o ai Punti Tper.</strong> Su tper.it trovi tutte le informazioni necessarie per scegliere e preparare i documenti.</p>
+        <p><strong data-i18n="subs.info-banner">Gli abbonamenti si acquistano su solweb.tper.it o ai Punti Tper.</strong> <span data-i18n="subs.info-banner-desc">Su tper.it trovi tutte le informazioni per scegliere e preparare i documenti.</span></p>
       </div>
 
-      <div class="card-grid" id="subscription-types">
-        <!-- Mensile -->
+      <!-- All subscriptions cards -->
+      <div class="section-header mt-2" id="subscription-types">
+        <h2 data-i18n="subs.all-title">Tutti gli abbonamenti disponibili</h2>
+      </div>
+      <div class="card-grid">
         <div class="card card-blue">
           <div class="card-icon" aria-hidden="true">&#128197;</div>
-          <h3 data-i18n="sub.mensile">Abbonamento Mensile Urbano</h3>
-          <p><strong>&euro; 51,00</strong> &mdash; Viaggi illimitati per 30 giorni sulla rete urbana di Bologna. Rinnovabile automaticamente.</p>
-          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a> o Punti Tper</small></p>
+          <h3>Mensile Impersonale</h3>
+          <p><strong>39&euro;</strong> — 30 giorni illimitati sulla rete urbana di Bologna. Trasferibile tra pi&ugrave; persone (non contemporaneamente). Sabato e festivi fino a 7 persone.</p>
+          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper, Rivendite, PuntoLis</small></p>
         </div>
-        <!-- Annuale -->
         <div class="card card-green">
           <div class="card-icon" aria-hidden="true">&#128200;</div>
-          <h3 data-i18n="sub.annuale">Abbonamento Annuale Urbano</h3>
-          <p><strong>&euro; 390,00</strong> &mdash; Viaggi illimitati per 12 mesi. Risparmi oltre il 35% rispetto al mensile. Pagamento unico o rateale.</p>
-          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a> o Punti Tper</small></p>
+          <h3>Annuale Personale</h3>
+          <p><strong>310&euro;</strong> — 365 giorni illimitati. Su tessera MiMuovo (5&euro;). Risparmi il 35% rispetto al mensile.</p>
+          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper</small></p>
         </div>
-        <!-- Agevolato ISEE -->
         <div class="card card-orange">
-          <div class="card-icon" aria-hidden="true">&#129297;</div>
-          <h3 data-i18n="sub.agevolato">Abbonamento Agevolato (ISEE)</h3>
-          <p><strong>Da &euro; 30,00/mese</strong> &mdash; Riservato a residenti con ISEE inferiore a determinate soglie. Richiedi la certificazione ISEE presso un CAF o INPS.</p>
-          <p><small>Documenti: ISEE corrente, documento identit&agrave;, foto tessera</small></p>
+          <div class="card-icon" aria-hidden="true">&#127939;</div>
+          <h3>Annuale Under 27</h3>
+          <p><strong>230&euro;</strong> — Per giovani sotto i 27 anni. Include tessera MiMuovo. Anche mensile a 30&euro;.</p>
+          <p><small>Documenti: documento identit&agrave;, foto tessera</small></p>
         </div>
-        <!-- Studente -->
         <div class="card card-purple">
-          <div class="card-icon" aria-hidden="true">&#127891;</div>
-          <h3 data-i18n="sub.studente">Abbonamento Studente</h3>
-          <p><strong>&euro; 260,00/anno</strong> &mdash; Dedicato a studenti universitari e delle scuole superiori. Valido su tratte casa-scuola/universit&agrave;.</p>
-          <p><small>Documenti: certificato di iscrizione, documento identit&agrave;, foto tessera</small></p>
+          <div class="card-icon" aria-hidden="true">&#128117;</div>
+          <h3>Annuale Over 70</h3>
+          <p><strong>200&euro;</strong> — Per anziani sopra i 70 anni. Include tessera MiMuovo. Massima convenienza.</p>
+          <p><small>Documenti: documento identit&agrave;, foto tessera</small></p>
         </div>
-        <!-- Extraurbano -->
         <div class="card card-teal">
-          <div class="card-icon" aria-hidden="true">&#128652;</div>
-          <h3>Abbonamento Extraurbano</h3>
-          <p><strong>Da &euro; 35,00/mese</strong> &mdash; Prezzo variabile in base alle tratte percorse. Collega comuni della provincia di Bologna e dell&rsquo;Emilia-Romagna.</p>
-          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a> o Punti Tper</small></p>
+          <div class="card-icon" aria-hidden="true">&#127891;</div>
+          <h3>SaltaSu Under 19</h3>
+          <p><strong>Gratuito</strong> — Abbonamento annuale gratuito per studenti under 19 residenti in Emilia-Romagna.</p>
+          <p><small>Richiedibile online. Verifica sul sito della Regione.</small></p>
         </div>
-        <!-- Gruppo/Famiglia -->
         <div class="card card-red">
+          <div class="card-icon" aria-hidden="true">&#128652;</div>
+          <h3>Extraurbano</h3>
+          <p><strong>Da 31&euro;/mese</strong> — Prezzo a zone per spostamenti fuori Bologna. Sistema tariffario MiMuovo.</p>
+          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper</small></p>
+        </div>
+        <div class="card card-blue">
+          <div class="card-icon" aria-hidden="true">&#128179;</div>
+          <h3>Annuale Impersonale</h3>
+          <p><strong>340&euro;</strong> — 365 giorni trasferibile su tessera MiMuovo. Non valido per sconto dimenticanza.</p>
+          <p><small>Acquisto: Punti Tper Bologna</small></p>
+        </div>
+        <div class="card card-green">
           <div class="card-icon" aria-hidden="true">&#128101;</div>
-          <h3>Abbonamento Famiglia</h3>
-          <p><strong>Sconto 20%</strong> sul secondo abbonamento e successivi per componenti dello stesso nucleo familiare. Richiedibile ai Punti Tper.</p>
+          <h3>Famiglia</h3>
+          <p><strong>Sconto 20%</strong> sul secondo abbonamento e successivi per lo stesso nucleo familiare.</p>
           <p><small>Documenti: stato di famiglia, documento identit&agrave; di ogni componente</small></p>
         </div>
       </div>
 
-      <!-- Come acquistare abbonamento guide â€” 5-step journey -->
-      <h2 class="mt-2 mb-1" id="buy-channels" data-i18n="sub.renew">Come Acquistare un Abbonamento</h2>
-
-      <!-- 5-Step Visual Journey -->
-      <div class="journey-map" style="margin-bottom:1.5rem;">
-        <style>
-          .journey-step { display:flex;align-items:flex-start;gap:1rem;padding:0.75rem;margin-bottom:0.5rem;background:#fafafa;border-radius:8px;border-left:4px solid #CA1424;transition:background 0.2s; }
-          .journey-step:hover { background:#f0f0f0; }
-          .journey-step .step-num { width:40px;height:40px;border-radius:50%;background:#CA1424;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0; }
-          .journey-step .step-body { flex:1; }
-          .journey-step .step-body h4 { font-size:0.95rem;color:#333;margin-bottom:0.2rem; }
-          .journey-step .step-body p { font-size:0.82rem;color:#666;line-height:1.4; }
-        </style>
-        <div class="journey-step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Scegli il tipo di abbonamento</h4>
-            <p>Urbano mensile/annuale, extraurbano, agevolato (ISEE), studente o famiglia. Confronta prezzi e vantaggi qui sopra.</p>
-          </div>
-        </div>
-        <div class="journey-step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Prepara i documenti</h4>
-            <p>Documento d&rsquo;identit&agrave;, codice fiscale, foto tessera. Se richiedi agevolazioni, prepara anche ISEE o certificazione studente.</p>
-          </div>
-        </div>
-        <div class="journey-step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Scegli il canale di acquisto</h4>
-            <p><strong>Online:</strong> <a href="solweb/login.html">solweb.tper.it</a> &mdash; rapido, pagamento con carta. <strong>Fisico:</strong> <a href="dove-comprare.html#punti-tper">Punto Tper</a> pi&ugrave; vicino &mdash; paghi in contanti o carta.</p>
-          </div>
-        </div>
-        <div class="journey-step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Effettua il pagamento</h4>
-            <p>Online: carta di credito, PayPal o bonifico. In punto vendita: contanti o carta. Conserva la ricevuta come prova.</p>
-          </div>
-        </div>
-        <div class="journey-step" style="border-left-color:#2E7D32;">
-          <div class="step-num" style="background:#2E7D32;">5</div>
-          <div class="step-body">
-            <h4>Ricevi l&rsquo;abbonamento e inizia a viaggiare</h4>
-            <p>Ricevi l&rsquo;abbonamento via email (digitale) o ritiralo al Punto Tper (cartaceo). Se hai gi&agrave; una Roger Card, la ricarica &egrave; immediata. Buon viaggio!</p>
-          </div>
-        </div>
-      </div>
-
+      <!-- Come Acquistare -->
+      <h2 class="mt-2 mb-1" id="buy-channels" data-i18n="subs.howto">Come Acquistare un Abbonamento</h2>
       <div class="accordion">
         <div class="accordion-item">
           <button class="accordion-header">
@@ -164,11 +136,11 @@
           <div class="accordion-content">
             <ol style="margin-top:0.5rem;">
               <li>Visita <a href="solweb/login.html">solweb.tper.it</a></li>
-              <li>Accedi con SPID o registrati con le tue credenziali Tper</li>
-              <li>Scegli il tipo di abbonamento (mensile/annuale/extraurbano)</li>
-              <li>Carica i documenti necessari (se previsti)</li>
-              <li>Effettua il pagamento con carta di credito o bonifico</li>
-              <li>Ricevi l&rsquo;abbonamento digitale via email o ritiralo presso un Punto Tper</li>
+              <li>Accedi con le tue credenziali</li>
+              <li>Scegli il tipo di abbonamento</li>
+              <li>Carica i documenti necessari</li>
+              <li>Effettua il pagamento con carta o bonifico</li>
+              <li>Ricevi l&rsquo;abbonamento digitale via email</li>
             </ol>
           </div>
         </div>
@@ -179,24 +151,24 @@
           </button>
           <div class="accordion-content">
             <ol style="margin-top:0.5rem;">
-              <li>Trova il Punto Tper pi&ugrave; vicino (<a href="dove-comprare.html#punti-tper">mappa</a>)</li>
-              <li>Porta con te: documento d&rsquo;identit&agrave;, foto tessera, certificato ISEE (se richiesto)</li>
+              <li>Trova il Punto Tper pi&ugrave; vicino</li>
+              <li>Porta documento identit&agrave;, foto tessera, eventuale ISEE</li>
               <li>Richiedi l&rsquo;abbonamento all&rsquo;operatore</li>
               <li>Paga in contanti o con carta</li>
-              <li>Ritira l&rsquo;abbonamento cartaceo o la Roger Card</li>
+              <li>Ritira la tessera o l&rsquo;abbonamento cartaceo</li>
             </ol>
           </div>
         </div>
         <div class="accordion-item" id="documents-section">
           <button class="accordion-header">
-            <span data-i18n="sub.documents">Documenti Necessari</span>
+            <span>Documenti Necessari</span>
             <span class="arrow" aria-hidden="true">&#9660;</span>
           </button>
           <div class="accordion-content">
             <ul style="margin-top:0.5rem;">
-              <li>Documento d&rsquo;identit&agrave; valido (carta d&rsquo;identit&agrave;, passaporto)</li>
+              <li>Documento d&rsquo;identit&agrave; valido</li>
               <li>Codice fiscale</li>
-              <li>Foto tessera (formato tessera)</li>
+              <li>Foto tessera recente</li>
               <li>Certificazione ISEE (per agevolazioni)</li>
               <li>Certificato di iscrizione (per studenti)</li>
               <li>Stato di famiglia (per abbonamento famiglia)</li>
@@ -218,10 +190,11 @@
       <div class="footer-section">
         <h4>tper.it</h4>
         <ul>
-          <li><a href="pianifica.html" data-i18n="footer.plan">Pianifica</a></li>
-          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="orari.html" data-i18n="nav.orari">Orari</a></li>
           <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
           <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
           <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
         </ul>
       </div>
@@ -235,6 +208,20 @@
           <li><a href="dove-comprare.html#contactless" data-i18n="footer.contactless">Contactless a bordo</a></li>
         </ul>
       </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.accessibility">Accessibilit&agrave;</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.contrast">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.font-large">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.contacts">Contatti</h4>
+        <ul>
+          <li><a href="aiuto.html" data-i18n="footer.support">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener" data-i18n="footer.institutional">tper.it &ndash; Sito Istituzionale</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <p data-i18n="footer.copyright">&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
@@ -245,8 +232,130 @@
   <script src="js/trainer-modules.js"></script>
   <script src="js/app.js"></script>
 
+  <!-- Subscription wizard (inline) -->
+  <script>
+  (function() {
+    var container = document.getElementById('wizard-container');
+    if (!container) return;
+
+    var current = 0;
+    var answers = {};
+
+    var questions = [
+      { id:'zona', q:'In quale zona viaggi?', opts:[
+        { v:'bologna', t:'Bologna città' },
+        { v:'ferrara', t:'Ferrara città' },
+        { v:'extraurbano', t:'Fuori città (extraurbano)' }
+      ]},
+      { id:'durata', q:'Per quanto tempo ti serve?', opts:[
+        { v:'mensile', t:'Un mese' },
+        { v:'annuale', t:'Un anno (risparmi fino al 35%)' }
+      ]},
+      { id:'chi', q:'Chi userà l\'abbonamento?', opts:[
+        { v:'personale', t:'Solo io (personale)' },
+        { v:'impersonale', t:'Anche altre persone (trasferibile)' }
+      ]},
+      { id:'agev', q:'Hai diritto a un\'agevolazione?', opts:[
+        { v:'nessuna', t:'Tariffa standard' },
+        { v:'under27', t:'Under 27' },
+        { v:'over70', t:'Over 70' },
+        { v:'studente', t:'Studente / ISEE / SaltaSu' }
+      ]},
+      { id:'canale', q:'Dove vuoi acquistare?', opts:[
+        { v:'online', t:'Online (solweb.tper.it)' },
+        { v:'fisico', t:'Di persona (Punto Tper)' }
+      ]}
+    ];
+
+    var results = {
+      mensile_impersonale: { title:'Mensile Impersonale', price:'39€', desc:'30 giorni illimitati. Trasferibile tra più persone. Sabato e festivi fino a 7 persone contemporaneamente.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      mensile_personale: { title:'Mensile Personale', price:'39€', desc:'30 giorni illimitati su tessera MiMuovo. Abbonamento nominativo personale.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_personale: { title:'Annuale Personale', price:'310€', desc:'365 giorni illimitati su rete urbana Bologna. Risparmi il 35% rispetto al mensile. Su tessera MiMuovo (5€).', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_impersonale: { title:'Annuale Impersonale', price:'340€', desc:'365 giorni trasferibile su tessera. Non valido per agevolazione dimenticanza.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_under27: { title:'Annuale Under 27', price:'230€', desc:'Per giovani sotto i 27 anni. Anche mensile a 30€. Include tessera MiMuovo.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_over70: { title:'Annuale Over 70', price:'200€', desc:'Per anziani sopra i 70 anni. Massima convenienza annuale.', link:'<a href="solweb/login.html" class="btn-outline">Vai a solweb</a>' },
+      saltasu: { title:'SaltaSu Under 19', price:'Gratuito', desc:'Abbonamento annuale gratuito per studenti under 19 residenti in Emilia-Romagna. Richiedibile online.', link:'<a href="solweb/login.html" class="btn-outline">Scopri SaltaSu</a>' },
+      extraurbano: { title:'Abbonamento Extraurbano', price:'Da 31€/mese', desc:'Prezzo a zone per spostamenti fuori Bologna. Usa il calcolatore MiMuovo per il prezzo esatto del tuo percorso.', link:'<a href="solweb/login.html" class="btn-outline">Calcola su solweb</a>' },
+      ferrara: { title:'Mensile Ferrara', price:'31€', desc:'Abbonamento personale area urbana di Ferrara. 30 giorni illimitati. Anche annuale disponibile.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' }
+    };
+
+    function getResult() {
+      var a = answers;
+      if (a.zona === 'extraurbano') return 'extraurbano';
+      if (a.zona === 'ferrara') return 'ferrara';
+      if (a.agev === 'under27' && a.durata === 'annuale') return 'annuale_under27';
+      if (a.agev === 'over70' && a.durata === 'annuale') return 'annuale_over70';
+      if (a.agev === 'studente') return 'saltasu';
+      if (a.durata === 'mensile' && a.chi === 'impersonale') return 'mensile_impersonale';
+      if (a.durata === 'mensile' && a.chi === 'personale') return 'mensile_personale';
+      if (a.durata === 'annuale' && a.chi === 'impersonale') return 'annuale_impersonale';
+      return 'annuale_personale';
+    }
+
+    function renderQuestion(idx) {
+      var q = questions[idx];
+      var html = '<div class="ticket-wizard-step">';
+      html += '<div class="ticket-wizard-progress">Domanda ' + (idx + 1) + ' di ' + questions.length + '</div>';
+      html += '<h3>' + q.q + '</h3>';
+      html += '<div class="ticket-wizard-options">';
+      for (var i = 0; i < q.opts.length; i++) {
+        var o = q.opts[i];
+        var sel = answers[q.id] === o.v ? ' selected' : '';
+        html += '<button class="ticket-wizard-opt' + sel + '" data-value="' + o.v + '">' + o.t + '</button>';
+      }
+      html += '</div>';
+      if (idx > 0) {
+        html += '<button class="btn-outline ticket-wizard-back">← Indietro</button>';
+      }
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelectorAll('.ticket-wizard-opt').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          answers[q.id] = btn.getAttribute('data-value');
+          if (current < questions.length - 1) {
+            current++;
+            renderQuestion(current);
+          } else {
+            showResult();
+          }
+        });
+      });
+
+      var backBtn = container.querySelector('.ticket-wizard-back');
+      if (backBtn) {
+        backBtn.addEventListener('click', function() {
+          current--;
+          renderQuestion(current);
+        });
+      }
+    }
+
+    function showResult() {
+      var key = getResult();
+      var r = results[key];
+      var html = '<div class="ticket-wizard-result">';
+      html += '<div class="twr-badge">🎯 Abbonamento consigliato</div>';
+      html += '<div class="twr-card">';
+      html += '<h3>' + r.title + ' — ' + r.price + '</h3>';
+      html += '<p>' + r.desc + '</p>';
+      html += '<div class="twr-action">' + r.link + '</div>';
+      html += '</div>';
+      html += '<button class="btn-outline ticket-wizard-restart">⟳ Ricomincia</button>';
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelector('.ticket-wizard-restart').addEventListener('click', function() {
+        current = 0;
+        answers = {};
+        renderQuestion(0);
+      });
+    }
+
+    renderQuestion(0);
+  })();
+  </script>
+
   <button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
 </body>
 </html>
-
-
