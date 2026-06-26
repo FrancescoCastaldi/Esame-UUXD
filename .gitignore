@@ -34,3 +34,9 @@ excalidraw.log
 
 # Backup
 Backupfile_07_17Giugno/
+Backup_main/
+*.backup
+
+# Agent / tool temp
+thoughts/
+ia-card-body.tex
