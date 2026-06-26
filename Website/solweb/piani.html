@@ -102,7 +102,7 @@
         <p data-i18n="solweb.agevolazioni-desc">Studenti, over 65, famiglie numerose e persone con disabilit&agrave; hanno diritto a tariffe ridotte.</p>
       </div>
 
-      <div class="info-banner" role="note">
+      <div class="info-banner" id="agevolazioni-info" style="display:none;" role="note">
         <span class="icon">&#128274;</span>
         <p data-i18n="solweb.agevolazioni-info"><strong>Per le tariffe agevolate &egrave; richiesta la registrazione.</strong> Serve ISEE aggiornato, certificato di iscrizione (studenti), documento d'identit&agrave; e codice fiscale. La verifica richiede 3&ndash;5 giorni lavorativi. <a href="login.html">Accedi</a> o <a href="login.html">registrati</a> per procedere.</p>
       </div>
@@ -208,6 +208,10 @@
     }
 
     if (isGuest) {
+      // Show agevolazioni info (R7): explains why login is needed for discounts
+      var agevInfo = document.getElementById('agevolazioni-info');
+      if (agevInfo) agevInfo.style.display = '';
+
       var banner = document.getElementById('guest-banner');
       if (banner) banner.style.display = 'block';
 
