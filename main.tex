@@ -2215,22 +2215,22 @@ pagina del flusso transazionale.
 \label{rec:R4}
 
 \textbf{Raccomandazione}: Progettare una \textit{trainer-mode} attivabile
-tramite un interruttore visibile nell'angolo superiore destro dello schermo,
+tramite un interruttore visibile nell'angolo inferiore destro dello schermo,
 che consenta all'intermediario di accedere a strumenti di guida (tooltip
-attivabili, checklist di apprendimento, flussi passo-passo) senza modificare
-la struttura dell'interfaccia per l'utente finale.
+contestuali, walkthrough passo-passo, evidenziazione degli elementi)
+senza modificare la struttura dell'interfaccia per l'utente finale.
 
 \textbf{Implementazione}: In trainer-mode:
 \begin{itemize}
-    \item compariranno delle etichette esplicative (tooltip) a fianco di ogni
-    elemento interattivo;
-    \item l'intermediario potr\`a aprire una checklist laterale con i task da
-    completare durante la sessione;
+    \item compariranno delle etichette esplicative (tooltip) a fianco degli
+    elementi interattivi su cui il trainer sta spiegando;
+    \item l'intermediario disporr\`a di un walkthrough passo-passo con
+    indicatore di avanzamento (passo corrente, totale passi);
     \item sar\`a disponibile una “modalit\`a spiegazione” che evidenzia con un
     bordo colorato l'area dello schermo su cui sta spiegando.
 \end{itemize}
 Le due viste (trainer e user) devono coesistere sulla stessa schermata
-(es. split view) durante l'affiancamento in presenza.
+(es. split view con sidebar laterale) durante l'affiancamento in presenza.
 
 \textbf{Evidenze a supporto}:
 \begin{itemize}

@@ -406,12 +406,13 @@
       return false;
     }
 
-    /* ---------- Highlighter ---------- */
+    /* ---------- Highlighter (R4) ---------- */
     function clearHighlight() {
       if (highlightedElement) {
         highlightedElement.classList.remove('trainer-highlight');
         highlightedElement = null;
       }
+      removeTrainerTooltip();
     }
     function highlightElement(selector) {
       clearHighlight();
@@ -422,6 +423,32 @@
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         highlightedElement = el;
       }
+    }
+
+    /* ---------- Trainer tooltip (R4) ---------- */
+    function removeTrainerTooltip() {
+      var tip = document.getElementById('trainer-tooltip');
+      if (tip) tip.remove();
+    }
+    function showTrainerTooltip(text, selector) {
+      removeTrainerTooltip();
+      if (!text || !selector) return;
+      var target = document.querySelector(selector);
+      if (!target) return;
+      var tooltip = document.createElement('div');
+      tooltip.id = 'trainer-tooltip';
+      tooltip.className = 'trainer-tooltip';
+      tooltip.textContent = text;
+      document.body.appendChild(tooltip);
+      var targetRect = target.getBoundingClientRect();
+      var tooltipRect = tooltip.getBoundingClientRect();
+      var left = targetRect.left + (targetRect.width / 2) - (tooltipRect.width / 2);
+      var top = targetRect.top - tooltipRect.height - 12;
+      if (left < 8) left = 8;
+      if (left + tooltipRect.width > window.innerWidth - 8) left = window.innerWidth - tooltipRect.width - 8;
+      if (top < 8) top = targetRect.bottom + 12;
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
     }
 
     /* ---------- Dashboard (R13) ---------- */
@@ -880,8 +907,12 @@
         });
       }
 
-      // Highlight
-      if (step.highlight) highlightElement(step.highlight);
+      // Highlight + tooltip (R4)
+      clearHighlight();
+      if (step.highlight) {
+        highlightElement(step.highlight);
+        showTrainerTooltip(step.tip || getI18nText('trainer.highlight-hint', 'Elemento evidenziato sulla pagina'), step.highlight);
+      }
 
       // Progress bar
       if (pf) {

@@ -1091,6 +1091,31 @@ body.high-contrast { background: #000; color: #fff; }
   50%      { box-shadow: 0 0 0 14px rgba(202,20,36,0); }
 }
 
+/* Trainer tooltip (R4) */
+.trainer-tooltip {
+  position: fixed;
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  max-width: 260px;
+  z-index: 999;
+  pointer-events: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  line-height: 1.4;
+  text-align: center;
+}
+.trainer-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #333;
+}
+
 /* Dashboard (R13) */
 .trainer-dashboard {
   padding: 1rem;
