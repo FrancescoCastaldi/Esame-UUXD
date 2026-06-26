@@ -1,50 +1,4 @@
-﻿\documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{cmap}
-\usepackage[T1]{fontenc}
-\usepackage[italian]{babel}
-\usepackage[margin=2cm]{geometry}
-\usepackage[table]{xcolor}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{tcolorbox}
-\usepackage{titlesec}
-\usepackage{booktabs}
-\usepackage{tikz}
-\usepackage{float}
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-% Palette di colori professionali (stile TPER)
-\definecolor{primaryColor}{HTML}{0054A6}
-\definecolor{secondaryColor}{HTML}{4A5568}
-\definecolor{backgroundColor}{HTML}{F7FAFC}
-\definecolor{borderColor}{HTML}{E2E8F0}
-\definecolor{accentGreen}{HTML}{2F855A}
-\definecolor{accentOrange}{HTML}{DD6B20}
-\definecolor{accentRed}{HTML}{C53030}
-
-\hypersetup{
- colorlinks=true,
- linkcolor=primaryColor,
- urlcolor=primaryColor,
-}
-
-\titleformat{\section}
- {\color{primaryColor}\normalfont\Large\bfseries}
- {}{0em}{}
- [\color{borderColor}\titlerule]
-
-\titleformat{\subsection}
- {\color{primaryColor}\normalfont\large\bfseries}
- {}{0em}{}
-
-\titleformat{\subsubsection}[runin]
- {\normalfont\bfseries\color{secondaryColor}}
- {}{0em}{}[:]
-
-\begin{document}
-
+﻿
 \begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
  \color{white}\LARGE\bfseries INFORMATION ARCHITECTURE CARD \\[0.2cm]
  \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
@@ -347,7 +301,7 @@ Il sistema di navigazione del redesign è profondamente diverso dall'attuale \te
  \begin{center}
  \begin{tcolorbox}[colback=accentOrange!10,colframe=accentOrange,arc=2mm,width=0.85\textwidth]
  \small \textbf{Banner informativo}: ``\texttt{tper.it} è un sito informativo. Per acquistare abbonamenti vai su \texttt{solweb.tper.it}, per biglietti digitali usa Roger. \\
- \hyperlink{link}{Scopri tutti i canali di acquisto} $\rightarrow$''
+ Scopri tutti i canali di acquisto $\rightarrow$''
  \end{tcolorbox}
  \end{center}
 
@@ -736,4 +690,3 @@ La tabella seguente riassume le differenze architetturali tra l'attuale \texttt{
 Basata sulle evidenze di Phase A (Ethnographic Assessment) e Phase B (Feasibility Study: personas Maria, Laura, Chris, Fatima; use case UR-01 ÷ UR-05)}
 \end{center}
 
-\end{document}

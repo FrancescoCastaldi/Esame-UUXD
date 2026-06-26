@@ -1,5 +1,7 @@
 ﻿\documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage[margin=2cm]{geometry}
 \usepackage[table]{xcolor}
@@ -10,12 +12,17 @@
  \usepackage{booktabs}
  \usepackage{tikz}
 \usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 % Palette di colori professionali
 \definecolor{primaryColor}{HTML}{0054A6} % Blu istituzionale TPER
 \definecolor{secondaryColor}{HTML}{4A5568}
 \definecolor{backgroundColor}{HTML}{F7FAFC}
 \definecolor{borderColor}{HTML}{E2E8F0}
+\definecolor{accentGreen}{HTML}{2F855A}
+\definecolor{accentOrange}{HTML}{DD6B20}
+\definecolor{accentRed}{HTML}{C53030}
 
 \hypersetup{
     colorlinks=true,
@@ -4066,16 +4073,7 @@ La Phase C traduce le raccomandazioni R1--R13 in artefatti progettuali concreti:
 % --------------------------------------------------------------
 \subsection{Information Architecture Card}
 
-L'architettura dell'informazione è stata ridisegnata seguendo i principi della Flat IA (R2), passando da una struttura a 4+ livelli organizzata per reparto aziendale a una struttura a massimo 2 livelli organizzata per compito utente.
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Primo livello (Macro-aree):} Acquista, Pianifica, I Miei Viaggi, Aiuto. Ogni macro-area raggruppa tutte le operazioni per intenzione d'uso.
-    \item \textbf{Secondo livello (Sotto-aree):} Operazioni specifiche accessibili in singola schermata, senza navigazione aggiuntiva.
-    \item \textbf{Progress bar:} Elemento trasversale presente in ogni flusso transazionale, con indicazione ``Passo X di Y'' (R3).
-    \item \textbf{Guest vs. Autenticato:} Percorso Guest per operazioni base (biglietto singolo, ricarica Boost) accessibile con sola verifica numero tessera (R7); percorso autenticato per abbonamenti e agevolazioni.
-\end{itemize}
-
-Documento di riferimento:\texttt{IA/02-ia-card.tex}.
+\input{ia-card-body.tex}
 
 \vspace{0.3cm}
 

@@ -1088,6 +1088,84 @@ html.font-large { font-size: 20px; }
 }
 .trainer-toggle-btn:hover { transform: scale(1.1); }
 
+/* ---------- ORARI E LINEE ---------- */
+.line-search {
+  display: flex; gap: 0.5rem; max-width: 600px; margin: 0 auto 2rem;
+}
+.line-search input {
+  flex: 1; padding: 0.75rem 1rem; border: 2px solid #ddd; border-radius: 8px;
+  font-size: 1rem; outline: none; transition: border-color 0.2s;
+}
+.line-search input:focus { border-color: #CA1424; }
+.line-search button {
+  background: #CA1424; color: #fff; border: none; border-radius: 8px;
+  padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer;
+  white-space: nowrap; transition: background 0.2s;
+}
+.line-search button:hover { background: #A0101C; }
+
+.line-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem; margin-bottom: 2rem;
+}
+.line-card {
+  background: #fff; border: 1px solid #ddd; border-radius: 12px;
+  padding: 1.25rem; cursor: pointer; text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+.line-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.line-num {
+  background: #CA1424; color: #fff; width: 48px; height: 48px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; font-weight: 800;
+}
+.line-name { font-weight: 600; font-size: 0.95rem; color: #333; }
+.line-info { font-size: 0.8rem; color: #999; }
+
+.line-detail-card {
+  background: #fff; border: 1px solid #ddd; border-radius: 12px;
+  padding: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.line-detail-header {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+}
+.ldh-num {
+  background: #CA1424; color: #fff; width: 64px; height: 64px;
+  border-radius: 16px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; font-weight: 800; flex-shrink: 0;
+}
+.line-detail-header h3 { margin-bottom: 0.25rem; }
+.line-detail-header p { color: #777; margin: 0; }
+
+.line-schedule { margin-bottom: 1.5rem; }
+.line-schedule h4, .line-stops h4 { margin-bottom: 0.75rem; font-size: 1.05rem; }
+
+.line-table {
+  width: 100%; border-collapse: collapse; font-size: 0.9rem;
+}
+.line-table th, .line-table td {
+  padding: 0.6rem 0.75rem; border-bottom: 1px solid #eee; text-align: left;
+}
+.line-table th { color: #777; font-weight: 600; font-size: 0.8rem; }
+.line-table td { color: #333; }
+
+.stop-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.stop-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.stop-dot {
+  width: 12px; height: 12px; border-radius: 50%; background: #CA1424;
+  flex-shrink: 0;
+}
+.stop-name { font-size: 0.95rem; color: #333; flex: 1; }
+.stop-tag {
+  font-size: 0.75rem; background: #FFF0F0; color: #CA1424;
+  padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 600;
+}
+
 /* ============================================================
    TRAINER ENHANCED — Dashboard (R13), Riepilogo (R6), Rating
    ============================================================ */

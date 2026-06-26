@@ -26,6 +26,7 @@
       'nav.biglietti': 'Biglietti',
       'nav.abbonamenti': 'Abbonamenti',
       'nav.aiuto': 'Aiuto',
+      'nav.orari': 'Orari',
 
       /* Hero */
       'hero.badge': 'CANALE INFORMATIVO',
@@ -48,6 +49,25 @@
       'planner.depart-now': 'Partenza immediata',
       'planner.date': 'Data',
       'planner.time': 'Ora',
+
+      /* Orari e Linee */
+      'orari.title': 'Orari e Linee',
+      'orari.desc': 'Cerca linee, fermate e orari del trasporto pubblico TPER a Bologna e in Emilia-Romagna.',
+      'orari.search-placeholder': 'Cerca linea per numero o nome (es. 39, Circolare, Navetta)',
+      'orari.search': 'Cerca',
+      'orari.popular': 'Linee più consultate',
+      'orari.back': '← Torna alle linee',
+      'orari.frequency': 'Frequenza',
+      'orari.day': 'Giorno',
+      'orari.peak': 'Punta',
+      'orari.offpeak': 'Morbida',
+      'orari.evening': 'Serale',
+      'orari.stops': 'Fermate principali',
+      'orari.disclaimer': 'Gli orari sono indicativi e possono subire variazioni. Consulta l\'app Roger o il sito istituzionale per aggiornamenti in tempo reale.',
+      'orari.urban': 'Urbano Bologna',
+      'card.orari.title': 'Orari e Linee',
+      'card.orari.desc': 'Cerca fermate e orari di tutte le linee TPER. Bus urbani, extraurbani e ferroviari.',
+      'card.orari.cta': 'Consulta Orari',
 
       /* Results */
       'results.title': 'Percorsi trovati',
@@ -432,6 +452,7 @@
       'nav.biglietti': 'Tickets',
       'nav.abbonamenti': 'Subscriptions',
       'nav.aiuto': 'Help',
+      'nav.orari': 'Schedules',
 
       'hero.badge': 'INFO CHANNEL',
       'hero.title': 'Move around Emilia-Romagna',
@@ -452,6 +473,25 @@
       'planner.depart-now': 'Depart now',
       'planner.date': 'Date',
       'planner.time': 'Time',
+
+      /* Schedules & Lines */
+      'orari.title': 'Schedules & Lines',
+      'orari.desc': 'Search TPER bus and train lines, stops and timetables in Bologna and Emilia-Romagna.',
+      'orari.search-placeholder': 'Search line by number or name (e.g. 39, Circolare)',
+      'orari.search': 'Search',
+      'orari.popular': 'Most consulted lines',
+      'orari.back': '← Back to lines',
+      'orari.frequency': 'Frequency',
+      'orari.day': 'Day',
+      'orari.peak': 'Peak',
+      'orari.offpeak': 'Off-peak',
+      'orari.evening': 'Evening',
+      'orari.stops': 'Main stops',
+      'orari.disclaimer': 'Timetables are indicative and may change. Check the Roger app or institutional site for real-time updates.',
+      'orari.urban': 'Urban Bologna',
+      'card.orari.title': 'Schedules & Lines',
+      'card.orari.desc': 'Find stops and timetables for all TPER lines. Urban, suburban and rail buses.',
+      'card.orari.cta': 'Check Schedules',
 
       'results.title': 'Routes found',
       'results.subtitle': 'From {from} to {to}',
@@ -818,6 +858,7 @@
       'nav.biglietti': 'التذاكر',
       'nav.abbonamenti': 'الاشتراكات',
       'nav.aiuto': 'المساعدة',
+      'nav.orari': 'الجداول',
 
       'hero.badge': 'قناة معلوماتية',
       'hero.title': 'تنقل في إميليا رومانيا',
@@ -838,6 +879,25 @@
       'planner.depart-now': 'مغادرة فورية',
       'planner.date': 'التاريخ',
       'planner.time': 'الوقت',
+
+      /* الجداول والخطوط */
+      'orari.title': 'الجداول والخطوط',
+      'orari.desc': 'ابحث عن خطوط ومحطات وجداول حافلات وقطارات TPER في بولونيا وإميليا رومانيا.',
+      'orari.search-placeholder': 'ابحث عن خط بالرقم أو الاسم (مثال: 39، دائري)',
+      'orari.search': 'بحث',
+      'orari.popular': 'الخطوط الأكثر استشارة',
+      'orari.back': '← العودة إلى الخطوط',
+      'orari.frequency': 'التكرار',
+      'orari.day': 'اليوم',
+      'orari.peak': 'الذروة',
+      'orari.offpeak': 'خارج الذروة',
+      'orari.evening': 'المساء',
+      'orari.stops': 'المحطات الرئيسية',
+      'orari.disclaimer': 'الجداول إرشادية وقد تتغير. تحقق من تطبيق Roger أو الموقع الرسمي للحصول على تحديثات فورية.',
+      'orari.urban': 'بولونيا الحضرية',
+      'card.orari.title': 'الجداول والخطوط',
+      'card.orari.desc': 'ابحث عن محطات وجداول جميع خطوط TPER. حافلات حضرية وضواحي وسكك حديدية.',
+      'card.orari.cta': 'استشر الجداول',
 
       'results.title': 'تم العثور على مسارات',
       'results.subtitle': 'من {from} إلى {to}',

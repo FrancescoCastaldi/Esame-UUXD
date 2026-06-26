@@ -81,12 +81,12 @@
  \end{itemize}
  Gli utenti non sanno quale canale usare per cosa, e il sito \texttt{tper.it} --- il primo punto di contatto per la maggior parte degli utenti --- non fornisce alcuna guida strutturata a questo ecosistema frammentato.
 
- \item \textbf{Conferma dai test utente (Phase A) e dalle personas (Phase B)}: Tutti i soggetti testati hanno evidenziato difficoltà strutturali, poi formalizzate nelle quattro personas del progetto:
+ \item \textbf{Conferma dai test utente}: Tutti i soggetti testati hanno evidenziato difficoltà strutturali:
  \begin{itemize}
-   \item \textbf{Maria} (79 anni, SUS 27.5, competenza digitale minima): ``Non so neanche da dove cominciare'' --- arrivata su \texttt{tper.it}, non ha trovato un modo per acquistare e ha abbandonato. La sua bassissima competenza tecnica (C\&A: 1/5) richiede una struttura piatta con icone grandi e labeling in linguaggio quotidiano.
-   \item \textbf{Laura} (70 anni, 7 errori in fase di test): ``L'interfaccia è troppo ingombrante, c'è troppa confusione'' --- mescola news aziendali e informazioni utili. La sua competenza di dominio medio-bassa richiede una separazione netta tra contenuti operativi e corporate.
-   \item \textbf{Chris} (34 anni, 226 secondi per il Task 1): Ha riconosciuto che \texttt{tper.it} è solo informativo, ma ha dovuto indovinare l'esistenza di \texttt{solweb.tper.it} e Roger. La sua competenza linguistica media (madrelingua inglese) richiede supporto multilingua e labeling internazionale.
-   \item \textbf{Fatima} (45 anni, competenza linguistica bassa in italiano): Parlante araba, necessita di navigazione in lingua araba con supporto RTL e icone visive per superare la barriera linguistica (C\&A linguistica: 2/5).
+   \item Maria B. (79 anni, competenza minima): ``Non so neanche da dove cominciare'' --- arrivata su \texttt{tper.it}, non ha trovato un modo per acquistare e ha abbandonato.
+   \item Sergio M. (67 anni, competenza media): Ha navigato a lungo tra le sezioni di \texttt{tper.it} cercando un pulsante ``Acquista'' --- che su \texttt{tper.it} non esiste --- perdendo oltre 5 minuti.
+   \item Chris H. (34 anni, competenza alta): Ha riconosciuto che \texttt{tper.it} è solo informativo, ma ha dovuto indovinare l'esistenza di \texttt{solweb.tper.it} e di Roger per completare i compiti.
+   \item Laura P. (70 anni): ``L'interfaccia è troppo ingombrante, c'è troppa confusione'' --- mescola news aziendali, bandi, e informazioni utili senza alcuna gerarchia chiara.
  \end{itemize}
 
  \item \textbf{Confusione tra informazione e transazione}: Il problema IA centrale è che \texttt{tper.it} mescola contenuti aziendali (news, bandi, appalti, comunicati stampa) con contenuti informativi utili all'utente (orari, tariffe, mappe) senza separazione netta. L'utente che arriva per comprare un biglietto è circondato da informazioni corporate irrilevanti.
@@ -147,11 +147,11 @@ Il nostro redesign adotta un \textbf{approccio misto}:
 
 \paragraph{Componente Bottom-Up:} Dalle evidenze raccolte nei test utente emergono vincoli precisi:
 \begin{itemize}
- \item \textbf{``Dove si compra?'' è la domanda più frequente (UR-01 -- Frammentazione canali)}: I test dimostrano che la maggior parte degli utenti arriva su \texttt{tper.it} con l'intenzione di acquistare, ma non trova un percorso chiaro. L'architettura deve rispondere a questa domanda \textbf{anche se} l'acquisto non avviene su \texttt{tper.it}. Lo use case UR-01 documenta come la frammentazione tra i cinque canali dell'ecosistema TPER (\texttt{tper.it}, \texttt{solweb.tper.it}, Roger, Punti Tper, tabaccherie, contactless) generi abbandono e frustrazione.
+ \item \textbf{``Dove si compra?'' è la domanda più frequente}: I test dimostrano che la maggior parte degli utenti arriva su \texttt{tper.it} con l'intenzione di acquistare, ma non trova un percorso chiaro. L'architettura deve rispondere a questa domanda \textbf{anche se} l'acquisto non avviene su \texttt{tper.it}.
  \item \textbf{Profondità massima 2 click informativi}: Per ogni informazione su tariffe, orari o tipologie di biglietto, l'utente deve arrivare al contenuto in non più di 2 click.
  \item \textbf{Separazione netta tra informazioni utili e corporate news}: I test hanno dimostrato che mescolare comunicati stampa con orari dei bus disorienta l'utente fragile.
  \item \textbf{Etichette chiare, non aziendali}: ``Abbonamento mensile'' invece di ``Mi Muovo'', ``Dove Comprare'' invece di ``Reti di vendita''.
- \item \textbf{Canale suggerito per ogni esigenza}: Ogni tipologia di titolo di viaggio deve essere accompagnata dall'indicazione esplicita di dove acquistarla (\texttt{solweb}, Roger, Punto Tper, tabaccheria, contactless). Questo risponde allo use case \textbf{UR-02} (Confusione post-acquisto) e \textbf{UR-03} (Errori canale sbagliato), prevenendo l'abbandono per frustrazione.
+ \item \textbf{Canale suggerito per ogni esigenza}: Ogni tipologia di titolo di viaggio deve essere accompagnata dall'indicazione esplicita di dove acquistarla (\texttt{solweb}, Roger, Punto Tper, tabaccheria, contactless).
 \end{itemize}
 
 \noindent Questo approccio misto è \textbf{radicalmente diverso} dall'attuale: mentre \texttt{tper.it} oggi organizza l'informazione per ``chi comunica il contenuto'', noi la organizziamo per ``cosa l'utente vuole sapere o fare'', bilanciando la completezza informativa con la chiarezza dell'ecosistema multicanale.
@@ -183,13 +183,11 @@ L'attuale sito organizza i contenuti per ``chi li produce'' (Azienda, Media, Ban
 \begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm,width=0.95\textwidth]
 \small
 \textbf{Struttura proposta per tper.it} \\[4pt]
-\texttt{[Home]} \;--\; \texttt{[Pianifica]} \;--\; \texttt{[Dove Comprare]} \;--\; \texttt{[Biglietti]} \;--\; \texttt{[Abbonamenti]} \;--\; \texttt{[Aiuto]}
+\texttt{[Pianifica]} \;--\; \texttt{[Dove Comprare]} \;--\; \texttt{[Abbonamenti]} \;--\; \texttt{[Biglietti]} \;--\; \texttt{[Aiuto]} \;--\; \texttt{[Azienda]}
 \end{tcolorbox}
 \end{center}
 
 \begin{enumerate}[leftmargin=*]
- \item \textbf{Home} (atterraggio): Hero section con route planner come funzionalità principale, seguita dalle card di accesso rapido alle sezioni e dal banner informativo ``tper.it è un sito informativo''.
-
  \item \textbf{Pianifica} (priorità \#1): Il cuore di \texttt{tper.it}. Include:
  \begin{itemize}
    \item Pianificatore di viaggio (ricerca percorsi, durata, coincidenze)
@@ -225,7 +223,9 @@ L'attuale sito organizza i contenuti per ``chi li produce'' (Azienda, Media, Ban
    \item Validità e condizioni di utilizzo
  \end{itemize}
 
- \item \textbf{Aiuto} (supporto): FAQ, guide passo-passo per ogni canale, contatti, trainer-mode per intermediari con toggle di attivazione, mappa dei Punti Tper.
+ \item \textbf{Aiuto} (supporto): FAQ, guide passo-passo per ogni canale, contatti, trainer-mode per intermediari, mappa dei Punti Tper.
+
+ \item \textbf{Azienda} (ultima posizione): Informazioni corporate, news, bandi, appalti, comunicati stampa, contatti istituzionali --- \textbf{separate e dopo} i contenuti utente.
 \end{enumerate}
 
 \paragraph{Sistema di etichettatura:}
@@ -337,7 +337,7 @@ Il sistema di navigazione del redesign è profondamente diverso dall'attuale \te
  \begin{center}
  \begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm,width=0.95\textwidth]
  \small
- \texttt{[Home]} \quad \texttt{[Pianifica]} \quad \texttt{[Dove Comprare]} \quad \texttt{[Biglietti]} \quad \texttt{[Abbonamenti]} \quad \texttt{[Aiuto]}
+ \texttt{[Pianifica]} \quad \texttt{[Dove Comprare]} \quad \texttt{[Abbonamenti]} \quad \texttt{[Biglietti]} \quad \texttt{[Aiuto]} \quad $\cdots$ \quad \texttt{[Azienda]}
  \end{tcolorbox}
  \end{center}
  Ogni scheda apre una pagina di primo livello con i contenuti organizzati in schede verticali, senza sottomenu a discesa che aumentano la profondità.
@@ -397,7 +397,7 @@ Il sistema di navigazione del redesign è profondamente diverso dall'attuale \te
  \item \textbf{Priorità al route planner}: L'attuale homepage è dominata da news aziendali. La nuova homepage mette il pianificatore di viaggio al centro.
  \item \textbf{Banner di canale vs silos informativi}: L'attuale tratta ogni contenuto come se l'acquisto avvenisse lì. Il redesign aggiunge banner e sidebar che contestualizzano ogni informazione con il canale corretto.
  \item \textbf{Ponte QR}: Nuovo elemento di navigazione che collega il mondo fisico (Punti Tper) a quello digitale (\texttt{tper.it}), assente nell'attuale ecosistema.
- \item \textbf{Profondità contenuti corporate ridotta}: Le informazioni aziendali sono accessibili dal footer, mentre oggi sono in primo piano nel menu principale.
+ \item \textbf{Profondità contenuti corporate ridotta}: Le informazioni aziendali vengono spostate in fondo alla navigazione, mentre oggi sono in primo piano.
 \end{itemize}
 }
 \end{tcolorbox}
@@ -593,7 +593,7 @@ I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una ge
    \item Segnalazione problemi e feedback
  \end{itemize}
 
- \item \textbf{Ultima priorità --- Contenuti corporate (footer)}:
+ \item \textbf{Ultima priorità --- Contenuti corporate}:
  \begin{itemize}
    \item Chi siamo, mission, valori
    \item News e comunicati stampa
@@ -602,16 +602,16 @@ I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una ge
    \item Amministrazione trasparente
    \item Privacy e cookie policy
  \end{itemize}
- Questi contenuti sono relegati al footer del sito, \textbf{mai} nel menu di navigazione principale (dove oggi occupano spazio prezioso).
+ Questi contenuti sono relegati a una sezione ``Azienda'' separata, con accesso dal footer o da un link secondario nel menu, \textbf{mai} in primo piano.
 
- \item \textbf{Trainer-mode per intermediari (UR-05)}: Ogni guida ha una modalità ``per operatori'' che aggiunge, rispondendo allo use case \textbf{UR-05} (Guida abbonamento):
+ \item \textbf{Trainer-mode per intermediari}: Ogni guida ha una modalità ``per operatori'' che aggiunge:
  \begin{itemize}
    \item Note per l'intermediario (es. ``Attenzione: l'utente potrebbe non avere SPID'')
    \item Checklist dei passi da seguire con l'utente
    \item Pulsante ``Stampa riepilogo per l'utente''
    \item Suggerimenti per utenti fragili (es. ``Parla lentamente, indica lo schermo'')
  \end{itemize}
- La trainer-mode è accessibile da un toggle in alto nelle guide o dal pulsante fisso \texttt{[$\bigcirc$]} in basso a destra, e persiste per l'intera sessione via \texttt{localStorage}.
+ La trainer-mode è accessibile da un toggle in alto nelle guide, e persiste per l'intera sessione.
 
 \end{enumerate}
 }
@@ -629,11 +629,9 @@ I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una ge
 
 \subsubsection{Componenti invisibili}
 
-\noindent\textit{Nota: I componenti descritti di seguito sono suddivisi tra \textbf{implementati} nel prototipo HTML/CSS/JS e \textbf{progettuali} (raccomandazioni per lo sviluppo futuro).}
-
 \begin{enumerate}[leftmargin=*]
 
- \item \textbf{Persistenza della sessione per trainer-mode} (\textbf{implementato}): Il sistema salva automaticamente lo stato delle guide in modalità trainer-mode alla chiusura del browser o al timeout via \texttt{localStorage} e \texttt{sessionStorage}. Al successivo accesso (anche senza login), l'intermediario può riprendere la guida da dove aveva lasciato. Memorizza:
+ \item \textbf{Persistenza della sessione per trainer-mode}: Il sistema salva automaticamente lo stato delle guide in modalità trainer-mode alla chiusura del browser o al timeout. Al successivo accesso (anche senza login), l'intermediario può riprendere la guida da dove aveva lasciato. Memorizza:
  \begin{itemize}
    \item Passo corrente di ogni guida in corso
    \item Note inserite dall'intermediario
@@ -642,7 +640,7 @@ I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una ge
  \end{itemize}
  La persistenza è realizzata tramite \texttt{localStorage} con fallback su cookie, senza richiedere registrazione. L'intermediario può cancellare la cronologia al termine del percorso assistenziale.
 
- \item \textbf{Ponte QR code tra Punti Tper e sito web (UR-04)} (\textbf{progettuale} -- non implementato nel prototipo corrente): Quando un operatore al Punto Tper completa un'assistenza, può generare un QR code stampabile che l'utente porta a casa, rispondendo allo use case \textbf{UR-04} (Ponte fisico/digitale). Inquadrandolo con lo smartphone, l'utente arriva su \texttt{tper.it} a:
+ \item \textbf{Ponte QR code tra Punti Tper e sito web}: Quando un operatore al Punto Tper completa un'assistenza, può generare un QR code stampabile che l'utente porta a casa. Inquadrandolo con lo smartphone, l'utente arriva su \texttt{tper.it} a:
  \begin{itemize}
    \item Un riepilogo di ciò che è stato fatto allo sportello
    \item La guida passo-passo per la prossima operazione (es. ``La prossima volta puoi rinnovare online'')
@@ -653,7 +651,7 @@ I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una ge
 
  \item \textbf{Preferenze di lingua persistenti}: Il sistema memorizza la lingua scelta dall'utente (o rilevata dal browser) e la applica a tutte le sessioni successive tramite cookie persistente. Le preferenze sono sincronizzate anche via QR code: se un utente parla arabo e un QR code lo reindirizza a \texttt{tper.it}, il sistema rileva la lingua preferita e mostra la versione localizzata.
 
- \item \textbf{Analytics dei canali di acquisto (anonimi)} (\textbf{progettuale}): Il sistema traccia in modo anonimo:
+ \item \textbf{Analytics dei canali di acquisto (anonimi)}: Il sistema traccia in modo anonimo:
  \begin{itemize}
    \item Quante volte viene visitata la sezione ``Dove Comprare''
    \item Quali canali vengono cliccati più frequentemente
@@ -663,7 +661,7 @@ I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una ge
  \end{itemize}
  Questi dati alimentano un dashboard interno (invisibile all'utente) che permette di migliorare continuamente la guida all'acquisto e identificare i canali con maggiore attrito.
 
- \item \textbf{Generazione automatica del riepilogo stampabile} (\textbf{progettuale}): Alla fine di ogni guida completata (in particolare in trainer-mode), il sistema genera automaticamente:
+ \item \textbf{Generazione automatica del riepilogo stampabile}: Alla fine di ogni guida completata (in particolare in trainer-mode), il sistema genera automaticamente:
  \begin{itemize}
    \item Riepilogo dei passi svolti
    \item Lista dei documenti necessari per l'operazione
@@ -673,7 +671,7 @@ I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una ge
  \end{itemize}
  Il riepilogo è formattato con carattere minimo 14pt, contrasto elevato, e spazio per note scritte a mano.
 
- \item \textbf{Precaricamento contenuti multilingua} (\textbf{implementato} via \texttt{i18n.js}): Il sistema carica tutte le traduzioni IT/EN/AR all'avvio (circa 297 chiavi per lingua), garantendo tempi di risposta rapidi nel passaggio da una lingua all'altra. I contenuti includono:
+ \item \textbf{Precaricamento contenuti multilingua}: In background, il sistema precarica le versioni linguistiche dei contenuti più probabili in base alla navigazione corrente, per garantire tempi di risposta rapidi nel passaggio da una lingua all'altra. I contenuti precaricati includono:
  \begin{itemize}
    \item La guida all'acquisto del canale più cliccato nella sessione
    \item Le FAQ della sezione corrente
@@ -702,27 +700,40 @@ I contenuti di \texttt{tper.it} sono organizzati per priorità d'uso, con una ge
 
 \begin{tcolorbox}[colback=backgroundColor,colframe=primaryColor,arc=2mm]
 {\small
-La tabella seguente riassume le differenze architetturali tra l'attuale \texttt{tper.it} e il redesign proposto. Per un confronto visivo approfondito (screenshot Before/After), si rimanda al documento \texttt{Comparison/00-comparison-main.tex}.
-
-\vspace{0.3cm}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|p{3cm}|p{5cm}|p{5cm}|}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{3.5cm}|p{5cm}|p{5cm}|}
 \hline
 \textbf{Dimensione} & \textbf{tper.it esistente} & \textbf{Redesign proposto} \\
 \hline
-\textbf{Natura del sito} & Misto info + transazione & \textbf{Esclusivamente informativo} \\
+\textbf{Natura del sito} & Misto info + transazione (confusione) & \textbf{Esclusivamente informativo}, con guida agli altri canali \\
 \hline
-\textbf{Homepage} & News aziendali & \textbf{Route planner hero} + banner canali \\
+\textbf{Homepage} & News aziendali e comunicati stampa & \textbf{Route planner come hero} + banner canali acquisto \\
 \hline
-\textbf{Organizzazione} & Per struttura aziendale & Per \textbf{intento utente} \\
+\textbf{Organizzazione} & Per struttura aziendale (Azienda, Media, Bandi, Servizi) & Per \textbf{intento utente} (Pianifica, Dove Comprare, Abbonamenti, Biglietti, Aiuto) \\
 \hline
-\textbf{Etichette} & Terminologia interna & \textbf{Linguaggio utente} + icone \\
+\textbf{Etichette} & Terminologia interna (``Mi Muovo'', ``Reti di vendita'', ``Agevolazioni'') & \textbf{Linguaggio utente} + icone per ogni canale \\
 \hline
-\textbf{Guida canali} & Nessuna & \textbf{``Dove Comprare''} + wizard \\
+\textbf{Sezione Acquisto} & Nessuna guida strutturata & \textbf{``Dove Comprare''}: tabella comparativa + wizard + guide per canale \\
 \hline
-\textbf{Multilingua} & Solo italiano & \textbf{IT/EN/AR} \\
+\textbf{Ponte canali} & Inesistente (silos separati) & \textbf{Banner, sidebar, QR code} che guidano tra canali \\
 \hline
-\textbf{Trainer-mode} & Inesistente & \textbf{Toggle} guide + note intermediario \\
+\textbf{Profondità IA} & 4+ livelli navigazione & Massimo 2 livelli per contenuti informativi \\
+\hline
+\textbf{Contenuti corporate} & In primo piano, mescolati con servizi & Sezione separata ``Azienda'' in \textbf{ultima posizione} \\
+\hline
+\textbf{Route planner} & Accessibile ma non prioritario & \textbf{Feature principale}, 1 click dalla homepage \\
+\hline
+\textbf{Multilingua} & Solo italiano & IT/EN/AR per contenuti principali e guide \\
+\hline
+\textbf{Ricerca} & Nascosta, testuale, senza filtri & Visibile, con \textbf{autocomplete} e risultati \textbf{categorizzati per canale} \\
+\hline
+\textbf{Wizard canale} & Inesistente & \textbf{``Dove devo andare?''} a domande \\
+\hline
+\textbf{Ponte QR fisico-digitale} & Inesistente & \textbf{QR code} allo sportello $\rightarrow$ guida online \\
+\hline
+\textbf{Trainer-mode} & Inesistente & Guide con note intermediario, checklist, riepilogo stampabile \\
+\hline
+\textbf{Sessioni} & Stateless & Persistenza trainer-mode + analisi anonima dei canali \\
 \hline
 \end{tabular}
 }
@@ -731,9 +742,14 @@ La tabella seguente riassume le differenze architetturali tra l'attuale \texttt{
 \vspace{0.5cm}
 
 \begin{center}
-{\color{secondaryColor}\small Progetto: UX Design Project: Help People Help People -- TPER S.p.A. \\[4pt]
+{\color{secondaryColor}\small Documento compilato sulla base delle evidenze raccolte durante la Phase A (Ethnographic Assessment) e Phase B (Feasibility Study) del progetto \\[4pt]
 \textbf{Phase C -- Design Proposal: Information Architecture Card} \\[4pt]
-Basata sulle evidenze di Phase A (Ethnographic Assessment) e Phase B (Feasibility Study: personas Maria, Laura, Chris, Fatima; use case UR-01 ÷ UR-05)}
+Progetto: UX Design Project: Help People Help People -- TPER S.p.A.}
+
+\vspace{0.3cm}
+{\color{secondaryColor}\itshape\small
+\texttt{tper.it} = sito informativo \;$\cdot$\; \texttt{solweb.tper.it} = abbonamenti online \;$\cdot$\; Roger app = biglietti digitali \;$\cdot$\; Punti Tper = tutto \;$\cdot$\; Tabaccherie = ricariche \;$\cdot$\; Contactless = corsa singola
+}
 \end{center}
 
 \end{document}
