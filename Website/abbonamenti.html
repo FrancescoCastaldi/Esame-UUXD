@@ -246,6 +246,10 @@
         { v:'rinnovo', t:'Rinnovare un abbonamento che ho già' },
         { v:'acquisto', t:'Acquistare un nuovo abbonamento' }
       ]},
+      { id:'impersonale', q:'L\'abbonamento da rinnovare è impersonale?', opts:[
+        { v:'si', t:'Sì, è impersonale (basta il numero tessera)' },
+        { v:'no', t:'No, è personale / nominativo' }
+      ]},
       { id:'zona', q:'In quale zona viaggi?', opts:[
         { v:'bologna', t:'Bologna città' },
         { v:'ferrara', t:'Ferrara città' },
@@ -274,7 +278,8 @@
     ];
 
     var results = {
-      rinnovo: { title:'Rinnovo Abbonamento', price:'Senza documenti', desc:'Rinnova un abbonamento esistente in 2 minuti. Ti serve solo il numero tessera e un indirizzo email. Nessun documento richiesto, nessuna registrazione.', link:'<a href="solweb/rinnova.html" class="btn-outline">Rinnova ora</a>' },
+      rinnovo: { title:'Rinnovo Impersonale', price:'Senza documenti', desc:'Rinnova il tuo abbonamento in 2 minuti. Ti serve solo il numero tessera e un indirizzo email. Nessun documento richiesto, nessuna registrazione.', link:'<a href="solweb/rinnova.html" class="btn-outline">Rinnova ora</a>' },
+      rinnovo_personale: { title:'Rinnovo Personale', price:'Serve login', desc:'Per rinnovare un abbonamento personale o nominativo devi accedere con le tue credenziali. Ti serviranno documento d\'identità e i dati dell\'abbonamento.', link:'<a href="solweb/login.html" class="btn-outline">Accedi a solweb</a>' },
       mensile_impersonale: { title:'Mensile Impersonale', price:'39€', desc:'30 giorni illimitati su rete urbana Bologna. Trasferibile tra più persone (non contemporaneamente). Sabato e festivi fino a 7 persone.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
       mensile_personale: { title:'Mensile Personale', price:'39€', desc:'30 giorni illimitati su tessera MiMuovo. Abbonamento nominativo personale. Serve documento identità e foto tessera.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
       annuale_personale: { title:'Annuale Personale', price:'310€', desc:'365 giorni illimitati su rete urbana Bologna. Risparmi il 35% rispetto al mensile. Su tessera MiMuovo (5€).', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
@@ -290,7 +295,7 @@
 
     function getResult() {
       var a = answers;
-      if (a.azione === 'rinnovo') return 'rinnovo';
+      if (a.azione === 'rinnovo') return a.impersonale === 'no' ? 'rinnovo_personale' : 'rinnovo';
       if (a.zona === 'extraurbano') return 'extraurbano';
       if (a.zona === 'ferrara') return 'ferrara';
       if (a.chi === 'famiglia') return 'famiglia';
@@ -325,8 +330,20 @@
       container.querySelectorAll('.ticket-wizard-opt').forEach(function(btn) {
         btn.addEventListener('click', function() {
           answers[q.id] = btn.getAttribute('data-value');
-          // Rinnovo: skip all questions, show result immediately
+          // Rinnovo: go to impersonale question, then result
           if (q.id === 'azione' && answers[q.id] === 'rinnovo') {
+            current = 1;
+            renderQuestion(1);
+            return;
+          }
+          // Acquisto: skip impersonale, go to zona
+          if (q.id === 'azione' && answers[q.id] === 'acquisto') {
+            current = 2;
+            renderQuestion(2);
+            return;
+          }
+          // Impersonale question: show result
+          if (q.id === 'impersonale') {
             showResult();
             return;
           }
@@ -343,6 +360,8 @@
       if (backBtn) {
         backBtn.addEventListener('click', function() {
           current--;
+          // Skip impersonale question when backtracking from acquisto flow
+          if (answers.azione === 'acquisto' && current === 1) current = 0;
           renderQuestion(current);
         });
       }
