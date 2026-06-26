@@ -738,12 +738,7 @@ body.high-contrast { background: #000; color: #fff; }
     .high-contrast .journey-map-timeline::before { background: #FF9999; }
 
 /* ---------- ACCESSIBILITY: LARGE TEXT ---------- */
-.font-large body { font-size: 1.25rem; }
-.font-large h1 { font-size: 2.5rem; }
-.font-large h2 { font-size: 1.875rem; }
-.font-large h3 { font-size: 1.5rem; }
-.font-large .card, .font-large .channel-card { padding: 2rem; }
-.font-large .route-planner input { font-size: 1.1rem; padding: 0.75rem; }
+html.font-large { font-size: 20px; }
 
 /* ---------- SOLWEB PAGES ---------- */
 .solweb-header {

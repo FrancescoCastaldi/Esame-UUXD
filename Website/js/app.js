@@ -67,23 +67,29 @@
     }
 
     // --- Font Size ---
-    const fontToggle = document.querySelector('.font-toggle');
-    if (fontToggle) {
+    const fontToggles = document.querySelectorAll('.font-toggle');
+    if (fontToggles.length) {
       if (localStorage.getItem('tper-font') === 'large') {
+        document.documentElement.classList.add('font-large');
         document.body.classList.add('font-large');
       }
-      fontToggle.addEventListener('click', function() {
-        document.body.classList.toggle('font-large');
-        const isLarge = document.body.classList.contains('font-large');
-        localStorage.setItem('tper-font', isLarge ? 'large' : 'normal');
-        fontToggle.setAttribute('aria-label', isLarge ? 'Riduci carattere' : 'Aumenta carattere');
+      fontToggles.forEach(function(ft) {
+        ft.addEventListener('click', function() {
+          document.documentElement.classList.toggle('font-large');
+          document.body.classList.toggle('font-large');
+          var isLarge = document.documentElement.classList.contains('font-large');
+          localStorage.setItem('tper-font', isLarge ? 'large' : 'normal');
+          fontToggles.forEach(function(f) {
+            f.setAttribute('aria-label', isLarge ? 'Riduci carattere' : 'Aumenta carattere');
+          });
+        });
       });
     }
 
     // Keyboard shortcut: Alt+C = contrast, Alt+F = font
     document.addEventListener('keydown', function(e) {
       if (e.altKey && e.key === 'c') { e.preventDefault(); if (contrastToggle) contrastToggle.click(); }
-      if (e.altKey && e.key === 'f') { e.preventDefault(); if (fontToggle) fontToggle.click(); }
+      if (e.altKey && e.key === 'f') { e.preventDefault(); if (fontToggles.length) fontToggles[0].click(); }
     });
 
     /* ============================
