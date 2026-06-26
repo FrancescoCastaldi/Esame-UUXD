@@ -257,6 +257,62 @@
   })();
   </script>
 
+  <!-- Form validation (R10) -->
+  <script>
+  (function() {
+    var form = document.querySelector('.form-card form');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var isGuest = new URLSearchParams(window.location.search).get('mode') === 'guest';
+      var valid = true;
+
+      if (!isGuest) {
+        var nome = document.getElementById('nome');
+        var cognome = document.getElementById('cognome');
+        var email = document.getElementById('email');
+        if (!nome || !nome.value.trim()) {
+          if (typeof showFieldError === 'function') showFieldError(nome, 'Inserisci il tuo nome. Serve per identificare l\u2019ordine e la ricevuta.');
+          valid = false;
+        }
+        if (!cognome || !cognome.value.trim()) {
+          if (typeof showFieldError === 'function') showFieldError(cognome, 'Inserisci il tuo cognome. Serve per completare i dati dell\u2019ordine.');
+          valid = false;
+        }
+        if (!email || !email.value.trim()) {
+          if (typeof showFieldError === 'function') showFieldError(email, 'Inserisci un indirizzo email valido. Riceverai qui la ricevuta e la conferma d\u2019acquisto.');
+          valid = false;
+        }
+      } else {
+        var tessera = document.getElementById('tessera');
+        if (!tessera || !tessera.value.trim()) {
+          if (typeof showFieldError === 'function') showFieldError(tessera, 'Inserisci il numero della tua tessera o Roger Card. Serve per associare l\u2019abbonamento.');
+          valid = false;
+        }
+      }
+
+      var terms = document.getElementById('terms');
+      if (!terms || !terms.checked) {
+        var termsGroup = terms ? terms.closest('.form-group') : null;
+        if (termsGroup) {
+          var existErr = termsGroup.querySelector('.form-error');
+          if (!existErr) {
+            var err = document.createElement('div');
+            err.className = 'form-error';
+            err.innerHTML = '<span class="fe-icon">&#9888;</span> Devi accettare i termini e condizioni per procedere. Senza, non \u00e8 possibile completare l\u2019acquisto.';
+            termsGroup.insertBefore(err, termsGroup.firstChild);
+          }
+        }
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      alert('Acquisto simulato completato! Riceverai una email di conferma.');
+    });
+  })();
+  </script>
+
   <button class="trainer-toggle-btn" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
 </body>
 </html>

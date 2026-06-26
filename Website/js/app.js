@@ -999,6 +999,25 @@
       }
     }
 
+    /* ---------- Inline Error Messages (R10) ---------- */
+    function showFieldError(input, msg) {
+      removeFieldError(input);
+      var err = document.createElement('div');
+      err.className = 'form-error';
+      err.innerHTML = '<span class="fe-icon">&#9888;</span>' + msg;
+      input.parentNode.insertBefore(err, input);
+      input.style.borderColor = '#EF9A9A';
+      input.addEventListener('input', function once() {
+        removeFieldError(input);
+        input.removeEventListener('input', once);
+      });
+    }
+    function removeFieldError(input) {
+      var prev = input.previousElementSibling;
+      if (prev && prev.classList.contains('form-error')) prev.remove();
+      input.style.borderColor = '';
+    }
+
     /* ---------- Field Validation ---------- */
     function setupFieldValidation(step) {
       if (!step.highlight) return;
@@ -1226,12 +1245,8 @@
     // Language change — update error message
     document.addEventListener('tper-lang-changed', function() {
       var errEl = document.getElementById('login-error');
-      if (errEl) {
-        var key = errEl.getAttribute('data-i18n');
-        if (key) {
-          errEl.textContent = (window.TPER_I18N && TPER_I18N.dict && TPER_I18N.dict[TPER_I18N.getCurrentLang()] && TPER_I18N.dict[TPER_I18N.getCurrentLang()][key]) ||
-            errEl.textContent;
-        }
+      if (errEl && typeof TPER_I18N !== 'undefined' && TPER_I18N.translate) {
+        TPER_I18N.translate(errEl);
       }
     });
 

@@ -379,7 +379,7 @@
       'solweb.guest-info': "L'abbonamento impersonale è legato alla tessera, non alla persona. Ideale per chi non vuole creare un account.",
 
       /* Login Errors (R10) */
-      'solweb.login-error': 'Compila tutti i campi per accedere. Se hai dimenticato la password, usa il link in fondo.',
+      'solweb.login-error': 'Impossibile accedere. Verifica che Codice Fiscale/Email e Password siano compilati. Se hai dimenticato la password, usa il link in fondo. In alternativa, usa Acquisto Impersonale.',
 
       /* Document Checklist (R11) */
       'solweb.doc.checklist-label': 'Documenti pronti:',
@@ -713,7 +713,7 @@
       'solweb.guest-info': "The impersonal subscription is tied to the card, not to a person. Ideal for those who don't want to create an account.",
 
       /* Login Errors (R10) */
-      'solweb.login-error': 'Fill in all fields to log in. If you forgot your password, use the link below.',
+      'solweb.login-error': 'Unable to log in. Check that Tax ID/Email and Password are filled in. Forgot your password? Use the link below. Alternatively, use Guest Purchase.',
 
       /* Document Checklist (R11) */
       'solweb.doc.checklist-label': 'Documents ready:',
@@ -1070,7 +1070,7 @@
       'solweb.guest-info': 'الاشتراك غير الشخصي مرتبط بالبطاقة وليس بالشخص. مثالي لمن لا يريد إنشاء حساب.',
 
       /* Login Errors (R10) */
-      'solweb.login-error': 'املأ جميع الحقول لتسجيل الدخول. إذا نسيت كلمة المرور، استخدم الرابط أدناه.',
+      'solweb.login-error': 'تعذر تسجيل الدخول. تحقق من ملء الرمز الضريبي/البريد الإلكتروني وكلمة المرور. إذا نسيت كلمة المرور، استخدم الرابط أدناه. بدلاً من ذلك، استخدم الشراء كضيف.',
 
       /* Document Checklist (R11) */
       'solweb.doc.checklist-label': 'المستندات جاهزة:',
