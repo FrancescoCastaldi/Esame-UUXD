@@ -1240,7 +1240,7 @@
           msg.textContent = '\u2713 Accesso riuscito. Ti porto ai piani di abbonamento...';
           loginForm.parentNode.insertBefore(msg, loginForm.nextSibling);
           loginForm.style.display = 'none';
-          setTimeout(function() { window.location.href = 'piani.html'; }, 1200);
+          setTimeout(function() { window.location.href = 'piani.html?login=ok'; }, 1200);
         }
       });
     }
