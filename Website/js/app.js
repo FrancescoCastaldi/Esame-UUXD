@@ -857,12 +857,6 @@
           getI18nText('trainer.highlight-hint') + '</span></div>';
       }
 
-      // Tip
-      var tipHtml = '';
-      if (step.tip) {
-        tipHtml = '<div class="trainer-tip"><strong>' + getI18nText('trainer.tip-label', 'Consiglio') + ':</strong> ' + step.tip + '</div>';
-      }
-
       // Completion message
       var completeHtml = '';
       if (step.completionMessage) {
@@ -874,7 +868,7 @@
         '<div class="trainer-step">' +
         '<div class="step-title">' + step.title + '</div>' +
         '<div class="step-desc">' + step.desc + '</div>' +
-        hintHtml + tipHtml + completeHtml + actionHtml + '</div>';
+        hintHtml + completeHtml + actionHtml + '</div>';
 
       // Back handler
       var bb = trainerSteps.querySelector('.trainer-back');
