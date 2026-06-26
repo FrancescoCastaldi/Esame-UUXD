@@ -74,50 +74,73 @@
       <div class="section-header mt-2">
         <h2 data-i18n="tickets.all-title">Tutti i biglietti disponibili</h2>
       </div>
+
+      <div class="card-filters" id="ticket-filters">
+        <span class="filter-label">&#128205;</span>
+        <div class="filter-group" data-filter="zona">
+          <button class="filter-pill" data-value="bologna">Bologna</button>
+          <button class="filter-pill" data-value="ferrara">Ferrara</button>
+          <button class="filter-pill" data-value="extraurbano">Extraurbano</button>
+        </div>
+        <span class="filter-label" style="margin-left:0.5rem;">&#9201;</span>
+        <div class="filter-group" data-filter="validita">
+          <button class="filter-pill" data-value="corsa">Corsa singola</button>
+          <button class="filter-pill" data-value="giornaliero">Giornaliero</button>
+          <button class="filter-pill" data-value="multi">Pi&ugrave; corse</button>
+        </div>
+        <span class="filter-label" style="margin-left:0.5rem;">&#128179;</span>
+        <div class="filter-group" data-filter="canale">
+          <button class="filter-pill" data-value="roger">App Roger</button>
+          <button class="filter-pill" data-value="cartaceo">Cartaceo</button>
+          <button class="filter-pill" data-value="contactless">Contactless</button>
+        </div>
+        <button class="filter-reset" id="ticket-filter-reset">&#8635; Reset</button>
+        <span class="filter-count" id="ticket-filter-count">8 risultati</span>
+      </div>
+
       <div class="card-grid" id="ticket-types">
-        <div class="card card-blue">
+        <div class="card card-blue" data-zona="bologna" data-validita="corsa" data-canale="roger cartaceo contactless">
           <div class="card-icon" aria-hidden="true">&#127915;</div>
           <h3>Biglietto Ordinario</h3>
           <p><strong>2,30&euro;</strong> — Valido 75 minuti dalla convalida su tutta la rete urbana di Bologna. Si pu&ograve; cambiare bus.</p>
           <p><small data-i18n="tickets.ordinario-channels">Canali: Roger App, Punti Tper, Rivendite, Emettitrici, Contactless, A bordo (+0,20&euro;)</small></p>
         </div>
-        <div class="card card-green">
+        <div class="card card-green" data-zona="bologna" data-validita="multi" data-canale="roger cartaceo">
           <div class="card-icon" aria-hidden="true">&#128196;</div>
           <h3>CityPass (10 corse)</h3>
           <p><strong>1,90&euro;/corsa</strong> — Carnet da 10 viaggi da 75 minuti. Condivisibile tra pi&ugrave; persone. Digitale o cartaceo.</p>
           <p><small data-i18n="tickets.citypass-channels">Canali: Roger App, Punti Tper, Rivendite, Emettitrici</small></p>
         </div>
-        <div class="card card-orange">
+        <div class="card card-orange" data-zona="bologna" data-validita="giornaliero" data-canale="cartaceo contactless">
           <div class="card-icon" aria-hidden="true">&#127774;</div>
           <h3>Giornaliero</h3>
           <p><strong>9,00&euro;</strong> — 24 ore di viaggi illimitati dalla prima convalida su tutta la rete urbana di Bologna.</p>
           <p><small data-i18n="tickets.giornaliero-channels">Canali: Punti Tper, Rivendite, Emettitrici, Contactless</small></p>
         </div>
-        <div class="card card-purple">
+        <div class="card card-purple" data-zona="bologna" data-validita="multi" data-canale="cartaceo">
           <div class="card-icon" aria-hidden="true">&#127908;</div>
           <h3>Ecoticket</h3>
           <p><strong>65,00&euro;</strong> — 20 giornate di viaggi illimitati in 10 mesi. Su tessera MiMuovo. Personale.</p>
           <p><small data-i18n="tickets.ecoticket-channels">Canali: Punti Tper, Rivendite (tessera MiMuovo 5&euro;)</small></p>
         </div>
-        <div class="card card-teal">
+        <div class="card card-teal" data-zona="extraurbano" data-validita="corsa" data-canale="cartaceo contactless">
           <div class="card-icon" aria-hidden="true">&#128652;</div>
           <h3>Biglietto Extraurbano</h3>
           <p><strong>Da 2,30&euro;</strong> — Prezzo a zone per viaggi fuori citt&agrave;. Sistema tariffario MiMuovo.</p>
           <p><small data-i18n="tickets.extraurbano-channels">Canali: Punti Tper, Rivendite, A bordo, Contactless</small></p>
         </div>
-        <div class="card card-red">
+        <div class="card card-red" data-zona="bologna ferrara extraurbano" data-validita="corsa giornaliero" data-canale="contactless">
           <div class="card-icon" aria-hidden="true">&#128179;</div>
           <h3>Contactless a Bordo</h3>
           <p><strong>2,30&euro;/corsa</strong> — Accosta la tua carta bancaria al validatore. Cap giornaliero automatico.</p>
           <p><small data-i18n="tickets.contactless-channels">Canale: Carte Visa, Mastercard, Amex, Maestro contactless</small></p>
         </div>
-        <div class="card card-blue">
-          <div class="card-icon" aria-hidden="true">&#128241;</div>
+        <div class="card card-blue" data-zona="bologna ferrara extraurbano" data-validita="corsa multi giornaliero" data-canale="roger">
           <h3>App Roger</h3>
           <p><strong>2,30&euro;</strong> — Biglietti digitali su smartphone. Validazione GPS automatica. Anche CityPass e Giornaliero.</p>
           <p><small data-i18n="tickets.roger-channels">Canale: App Roger (iOS e Android)</small></p>
         </div>
-        <div class="card card-orange">
+        <div class="card card-orange" data-zona="ferrara" data-validita="corsa" data-canale="roger cartaceo contactless">
           <div class="card-icon" aria-hidden="true">&#9889;</div>
           <h3>Ferrara Urbano</h3>
           <p><strong>1,90&euro;</strong> — Biglietto ordinario area urbana di Ferrara. 75 minuti. Anche CityPass e Giornaliero.</p>
@@ -303,6 +326,59 @@
     }
 
     renderQuestion(0);
+  })();
+  </script>
+
+  <!-- Card filters -->
+  <script>
+  (function() {
+    var filters = {};
+    var cards = document.querySelectorAll('#ticket-types .card');
+    if (!cards.length) return;
+
+    var pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        var group = pill.parentNode.getAttribute('data-filter');
+        var value = pill.getAttribute('data-value');
+
+        // Toggle: clicking same pill deselects it
+        if (filters[group] === value) {
+          delete filters[group];
+          pill.classList.remove('active');
+        } else {
+          // Deselect others in same group
+          pill.parentNode.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          filters[group] = value;
+        }
+        applyFilters();
+      });
+    });
+
+    var resetBtn = document.getElementById('ticket-filter-reset');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        filters = {};
+        document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+        applyFilters();
+      });
+    }
+
+    function applyFilters() {
+      var visible = 0;
+      cards.forEach(function(card) {
+        var match = true;
+        Object.keys(filters).forEach(function(group) {
+          var cardVal = card.getAttribute('data-' + group) || '';
+          if (cardVal.indexOf(filters[group]) === -1) match = false;
+        });
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      var countEl = document.getElementById('ticket-filter-count');
+      if (countEl) countEl.textContent = visible + ' risultato' + (visible !== 1 ? 'i' : '');
+    }
   })();
   </script>
 

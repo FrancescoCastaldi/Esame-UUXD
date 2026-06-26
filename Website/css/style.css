@@ -1212,6 +1212,36 @@ html.font-large { font-size: 20px; }
   margin-top: 0.75rem; font-size: 0.85rem; padding: 0.4rem 1rem;
 }
 
+/* ---------- CARD FILTERS ---------- */
+.card-filters {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+  padding: 1rem; background: #FAFAFA; border: 1px solid #E5E7EB;
+  border-radius: 12px; margin-bottom: 1.5rem;
+}
+.card-filters .filter-group {
+  display: flex; gap: 0.35rem; flex-wrap: wrap;
+}
+.card-filters .filter-label {
+  font-size: 0.75rem; color: #999; font-weight: 600; text-transform: uppercase;
+  margin-right: 0.25rem; white-space: nowrap;
+  display: flex; align-items: center;
+}
+.filter-pill {
+  padding: 0.3rem 0.75rem; border: 1px solid #ddd;
+  border-radius: 20px; background: #fff; cursor: pointer;
+  font-size: 0.8rem; color: #555; white-space: nowrap;
+  transition: all 0.2s;
+}
+.filter-pill:hover { border-color: #CA1424; color: #CA1424; }
+.filter-pill.active { background: #CA1424; color: #fff; border-color: #CA1424; }
+.filter-reset {
+  padding: 0.3rem 0.75rem; border: 1px dashed #ccc;
+  border-radius: 20px; background: transparent; cursor: pointer;
+  font-size: 0.8rem; color: #999; margin-left: auto;
+}
+.filter-reset:hover { border-color: #999; color: #333; }
+.filter-count { font-size: 0.8rem; color: #999; margin-left: 0.5rem; }
+
 /* ============================================================
    TRAINER ENHANCED — Dashboard (R13), Riepilogo (R6), Rating
    ============================================================ */

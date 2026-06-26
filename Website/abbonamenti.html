@@ -74,50 +74,81 @@
       <div class="section-header mt-2" id="subscription-types">
         <h2 data-i18n="subs.all-title">Tutti gli abbonamenti disponibili</h2>
       </div>
+
+      <div class="card-filters" id="subs-filters">
+        <span class="filter-label">&#128205;</span>
+        <div class="filter-group" data-filter="zona">
+          <button class="filter-pill" data-value="bologna">Bologna</button>
+          <button class="filter-pill" data-value="ferrara">Ferrara</button>
+          <button class="filter-pill" data-value="extraurbano">Extraurbano</button>
+        </div>
+        <span class="filter-label" style="margin-left:0.5rem;">&#128197;</span>
+        <div class="filter-group" data-filter="durata">
+          <button class="filter-pill" data-value="mensile">Mensile</button>
+          <button class="filter-pill" data-value="annuale">Annuale</button>
+        </div>
+        <span class="filter-label" style="margin-left:0.5rem;">&#128101;</span>
+        <div class="filter-group" data-filter="tipo">
+          <button class="filter-pill" data-value="personale">Personale</button>
+          <button class="filter-pill" data-value="impersonale">Impersonale</button>
+          <button class="filter-pill" data-value="famiglia">Famiglia</button>
+        </div>
+        <span class="filter-label" style="margin-left:0.5rem;">&#127891;</span>
+        <div class="filter-group" data-filter="agev">
+          <button class="filter-pill" data-value="standard">Standard</button>
+          <button class="filter-pill" data-value="under27">Under 27</button>
+          <button class="filter-pill" data-value="over70">Over 70</button>
+          <button class="filter-pill" data-value="studente">Studente</button>
+          <button class="filter-pill" data-value="isee">ISEE</button>
+        </div>
+        <button class="filter-reset" id="subs-filter-reset">&#8635; Reset</button>
+        <span class="filter-count" id="subs-filter-count">8 risultati</span>
+      </div>
+
       <div class="card-grid">
-        <div class="card card-blue">
+        <div class="card card-blue" data-zona="bologna" data-durata="mensile" data-tipo="impersonale" data-agev="standard">
           <div class="card-icon" aria-hidden="true">&#128197;</div>
           <h3>Mensile Impersonale</h3>
           <p><strong>39&euro;</strong> — 30 giorni illimitati sulla rete urbana di Bologna. Trasferibile tra pi&ugrave; persone (non contemporaneamente). Sabato e festivi fino a 7 persone.</p>
           <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper, Rivendite, PuntoLis</small></p>
         </div>
-        <div class="card card-green">
+        <div class="card card-green" data-zona="bologna" data-durata="annuale" data-tipo="personale" data-agev="standard">
           <div class="card-icon" aria-hidden="true">&#128200;</div>
           <h3>Annuale Personale</h3>
           <p><strong>310&euro;</strong> — 365 giorni illimitati. Su tessera MiMuovo (5&euro;). Risparmi il 35% rispetto al mensile.</p>
           <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper</small></p>
         </div>
-        <div class="card card-orange">
+        <div class="card card-orange" data-zona="bologna" data-durata="annuale mensile" data-tipo="personale" data-agev="under27">
           <div class="card-icon" aria-hidden="true">&#127939;</div>
           <h3>Annuale Under 27</h3>
           <p><strong>230&euro;</strong> — Per giovani sotto i 27 anni. Include tessera MiMuovo. Anche mensile a 30&euro;.</p>
           <p><small>Documenti: documento identit&agrave;, foto tessera</small></p>
         </div>
-        <div class="card card-purple">
+        <div class="card card-purple" data-zona="bologna" data-durata="annuale" data-tipo="personale" data-agev="over70">
           <div class="card-icon" aria-hidden="true">&#128117;</div>
           <h3>Annuale Over 70</h3>
           <p><strong>200&euro;</strong> — Per anziani sopra i 70 anni. Include tessera MiMuovo. Massima convenienza.</p>
           <p><small>Documenti: documento identit&agrave;, foto tessera</small></p>
         </div>
-        <div class="card card-teal">
+        <div class="card card-teal" data-zona="bologna" data-durata="annuale" data-tipo="personale" data-agev="studente">
           <div class="card-icon" aria-hidden="true">&#127891;</div>
           <h3>SaltaSu Under 19</h3>
           <p><strong>Gratuito</strong> — Abbonamento annuale gratuito per studenti under 19 residenti in Emilia-Romagna.</p>
           <p><small>Richiedibile online. Verifica sul sito della Regione.</small></p>
         </div>
-        <div class="card card-red">
+        <div class="card card-red" data-zona="extraurbano" data-durata="mensile annuale" data-tipo="personale" data-agev="standard">
           <div class="card-icon" aria-hidden="true">&#128652;</div>
           <h3>Extraurbano</h3>
           <p><strong>Da 31&euro;/mese</strong> — Prezzo a zone per spostamenti fuori Bologna. Sistema tariffario MiMuovo.</p>
           <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper</small></p>
         </div>
-        <div class="card card-blue">
+        <div class="card card-blue" data-zona="bologna" data-durata="annuale" data-tipo="impersonale" data-agev="standard">
           <div class="card-icon" aria-hidden="true">&#128179;</div>
           <h3>Annuale Impersonale</h3>
           <p><strong>340&euro;</strong> — 365 giorni trasferibile su tessera MiMuovo. Chiunque può usarlo (non contemporaneamente). Non dà diritto allo sconto in caso di dimenticanza del titolo a bordo.</p>
           <p><small>Acquisto: Punti Tper Bologna</small></p>
         </div>
-        <div class="card card-green">
+        <div class="card card-green" data-zona="bologna" data-durata="annuale" data-tipo="famiglia" data-agev="standard">
           <div class="card-icon" aria-hidden="true">&#128101;</div>
           <h3>Famiglia</h3>
           <p><strong>Sconto 20%</strong> sul secondo abbonamento e successivi per lo stesso nucleo familiare.</p>
@@ -389,6 +420,57 @@
     }
 
     renderQuestion(0);
+  })();
+  </script>
+
+  <!-- Card filters -->
+  <script>
+  (function() {
+    var filters = {};
+    var cards = document.querySelectorAll('#subscription-types + .card-filters + .card-grid .card');
+    if (!cards.length) return;
+
+    var pills = document.querySelectorAll('#subs-filters .filter-pill');
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        var group = pill.parentNode.getAttribute('data-filter');
+        var value = pill.getAttribute('data-value');
+
+        if (filters[group] === value) {
+          delete filters[group];
+          pill.classList.remove('active');
+        } else {
+          pill.parentNode.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          filters[group] = value;
+        }
+        applyFilters();
+      });
+    });
+
+    var resetBtn = document.getElementById('subs-filter-reset');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        filters = {};
+        document.querySelectorAll('#subs-filters .filter-pill').forEach(function(p) { p.classList.remove('active'); });
+        applyFilters();
+      });
+    }
+
+    function applyFilters() {
+      var visible = 0;
+      cards.forEach(function(card) {
+        var match = true;
+        Object.keys(filters).forEach(function(group) {
+          var cardVal = card.getAttribute('data-' + group) || '';
+          if (cardVal.indexOf(filters[group]) === -1) match = false;
+        });
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      var countEl = document.getElementById('subs-filter-count');
+      if (countEl) countEl.textContent = visible + ' risultato' + (visible !== 1 ? 'i' : '');
+    }
   })();
   </script>
 
