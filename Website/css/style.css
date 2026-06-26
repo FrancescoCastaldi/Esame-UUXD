@@ -285,6 +285,13 @@ small { font-size: 0.875rem; color: #777; }
 .card-teal .card-icon { background: #F0FFFA; color: #00695C; }
 .card-blue .card-icon { background: #F0F5FF; color: #1565C0; }
 
+/* Accessibility card actions */
+.a11y-actions, .a11y-langs {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;
+}
+.a11y-actions .btn-outline { font-size: 0.85rem; padding: 0.4rem 0.75rem; }
+.a11y-langs .btn-outline { font-size: 0.8rem; padding: 0.3rem 1rem; }
+
 /* ---------- SECTION HEADER ---------- */
 .section-header {
   text-align: center;
