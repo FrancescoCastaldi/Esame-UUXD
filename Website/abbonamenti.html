@@ -114,7 +114,7 @@
         <div class="card card-blue">
           <div class="card-icon" aria-hidden="true">&#128179;</div>
           <h3>Annuale Impersonale</h3>
-          <p><strong>340&euro;</strong> — 365 giorni trasferibile su tessera MiMuovo. Non valido per sconto dimenticanza.</p>
+          <p><strong>340&euro;</strong> — 365 giorni trasferibile su tessera MiMuovo. Chiunque può usarlo (non contemporaneamente). Non dà diritto allo sconto in caso di dimenticanza del titolo a bordo.</p>
           <p><small>Acquisto: Punti Tper Bologna</small></p>
         </div>
         <div class="card card-green">
@@ -126,7 +126,7 @@
       </div>
 
       <!-- Come Acquistare -->
-      <h2 class="mt-2 mb-1" id="buy-channels" data-i18n="subs.howto">Come Acquistare un Abbonamento</h2>
+      <h2 class="mt-2 mb-1" id="buy-channels">Come Acquistare o Rinnovare un Abbonamento</h2>
       <div class="accordion">
         <div class="accordion-item">
           <button class="accordion-header">
@@ -242,6 +242,10 @@
     var answers = {};
 
     var questions = [
+      { id:'azione', q:'Cosa vuoi fare?', opts:[
+        { v:'rinnovo', t:'Rinnovare un abbonamento che ho già' },
+        { v:'acquisto', t:'Acquistare un nuovo abbonamento' }
+      ]},
       { id:'zona', q:'In quale zona viaggi?', opts:[
         { v:'bologna', t:'Bologna città' },
         { v:'ferrara', t:'Ferrara città' },
@@ -253,13 +257,15 @@
       ]},
       { id:'chi', q:'Chi userà l\'abbonamento?', opts:[
         { v:'personale', t:'Solo io (personale)' },
-        { v:'impersonale', t:'Anche altre persone (trasferibile)' }
+        { v:'impersonale', t:'Può usarlo anche un\'altra persona (impersonale)' },
+        { v:'famiglia', t:'Tutta la famiglia (sconto 20%)' }
       ]},
       { id:'agev', q:'Hai diritto a un\'agevolazione?', opts:[
-        { v:'nessuna', t:'Tariffa standard' },
+        { v:'nessuna', t:'Nessuna — tariffa standard' },
         { v:'under27', t:'Under 27' },
         { v:'over70', t:'Over 70' },
-        { v:'studente', t:'Studente / ISEE / SaltaSu' }
+        { v:'studente', t:'Studente under 19 (SaltaSu gratuito)' },
+        { v:'isee', t:'ISEE agevolato (tariffa ridotta)' }
       ]},
       { id:'canale', q:'Dove vuoi acquistare?', opts:[
         { v:'online', t:'Online (solweb.tper.it)' },
@@ -268,24 +274,30 @@
     ];
 
     var results = {
-      mensile_impersonale: { title:'Mensile Impersonale', price:'39€', desc:'30 giorni illimitati. Trasferibile tra più persone. Sabato e festivi fino a 7 persone contemporaneamente.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
-      mensile_personale: { title:'Mensile Personale', price:'39€', desc:'30 giorni illimitati su tessera MiMuovo. Abbonamento nominativo personale.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      rinnovo: { title:'Rinnovo Abbonamento', price:'Senza documenti', desc:'Rinnova un abbonamento esistente in 2 minuti. Ti serve solo il numero tessera e un indirizzo email. Nessun documento richiesto, nessuna registrazione.', link:'<a href="solweb/rinnova.html" class="btn-outline">Rinnova ora</a>' },
+      mensile_impersonale: { title:'Mensile Impersonale', price:'39€', desc:'30 giorni illimitati su rete urbana Bologna. Trasferibile tra più persone (non contemporaneamente). Sabato e festivi fino a 7 persone.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      mensile_personale: { title:'Mensile Personale', price:'39€', desc:'30 giorni illimitati su tessera MiMuovo. Abbonamento nominativo personale. Serve documento identità e foto tessera.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
       annuale_personale: { title:'Annuale Personale', price:'310€', desc:'365 giorni illimitati su rete urbana Bologna. Risparmi il 35% rispetto al mensile. Su tessera MiMuovo (5€).', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
-      annuale_impersonale: { title:'Annuale Impersonale', price:'340€', desc:'365 giorni trasferibile su tessera. Non valido per agevolazione dimenticanza.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
-      annuale_under27: { title:'Annuale Under 27', price:'230€', desc:'Per giovani sotto i 27 anni. Anche mensile a 30€. Include tessera MiMuovo.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
-      annuale_over70: { title:'Annuale Over 70', price:'200€', desc:'Per anziani sopra i 70 anni. Massima convenienza annuale.', link:'<a href="solweb/login.html" class="btn-outline">Vai a solweb</a>' },
-      saltasu: { title:'SaltaSu Under 19', price:'Gratuito', desc:'Abbonamento annuale gratuito per studenti under 19 residenti in Emilia-Romagna. Richiedibile online.', link:'<a href="solweb/login.html" class="btn-outline">Scopri SaltaSu</a>' },
+      annuale_impersonale: { title:'Annuale Impersonale', price:'340€', desc:'365 giorni trasferibile su tessera MiMuovo. Chiunque può usarlo (non contemporaneamente). Non copre la dimenticanza del titolo a bordo.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_under27: { title:'Annuale Under 27', price:'230€', desc:'Per giovani sotto i 27 anni. Anche mensile a 30€. Include tessera MiMuovo. Serve documento identità.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_over70: { title:'Annuale Over 70', price:'200€', desc:'Per anziani sopra i 70 anni. Massima convenienza annuale. Serve documento identità.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      saltasu: { title:'SaltaSu Under 19', price:'Gratuito', desc:'Abbonamento annuale gratuito per studenti under 19 residenti in Emilia-Romagna. Richiedibile sul sito della Regione Emilia-Romagna.', link:'<a href="https://mobilita.regione.emilia-romagna.it" class="btn-outline">Scopri SaltaSu</a>' },
       extraurbano: { title:'Abbonamento Extraurbano', price:'Da 31€/mese', desc:'Prezzo a zone per spostamenti fuori Bologna. Usa il calcolatore MiMuovo per il prezzo esatto del tuo percorso.', link:'<a href="solweb/login.html" class="btn-outline">Calcola su solweb</a>' },
-      ferrara: { title:'Mensile Ferrara', price:'31€', desc:'Abbonamento personale area urbana di Ferrara. 30 giorni illimitati. Anche annuale disponibile.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' }
+      ferrara: { title:'Mensile Ferrara', price:'31€', desc:'Abbonamento personale area urbana di Ferrara. 30 giorni illimitati. Anche annuale disponibile.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      famiglia: { title:'Abbonamento Famiglia', price:'Sconto 20%', desc:'Sconto del 20% sul secondo abbonamento e successivi per lo stesso nucleo familiare. Richiedibile ai Punti Tper con stato di famiglia.', link:'<a href="dove-comprare.html#punti-tper" class="btn-outline">Trova un Punto Tper</a>' },
+      isee: { title:'Agevolato ISEE', price:'Tariffa ridotta', desc:'Abbonamento a tariffa agevolata per chi ha un ISEE sotto soglia. Serve certificazione ISEE corrente. Richiedibile online o al Punto Tper.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' }
     };
 
     function getResult() {
       var a = answers;
+      if (a.azione === 'rinnovo') return 'rinnovo';
       if (a.zona === 'extraurbano') return 'extraurbano';
       if (a.zona === 'ferrara') return 'ferrara';
+      if (a.chi === 'famiglia') return 'famiglia';
       if (a.agev === 'under27' && a.durata === 'annuale') return 'annuale_under27';
       if (a.agev === 'over70' && a.durata === 'annuale') return 'annuale_over70';
       if (a.agev === 'studente') return 'saltasu';
+      if (a.agev === 'isee') return 'isee';
       if (a.durata === 'mensile' && a.chi === 'impersonale') return 'mensile_impersonale';
       if (a.durata === 'mensile' && a.chi === 'personale') return 'mensile_personale';
       if (a.durata === 'annuale' && a.chi === 'impersonale') return 'annuale_impersonale';
@@ -313,6 +325,11 @@
       container.querySelectorAll('.ticket-wizard-opt').forEach(function(btn) {
         btn.addEventListener('click', function() {
           answers[q.id] = btn.getAttribute('data-value');
+          // Rinnovo: skip all questions, show result immediately
+          if (q.id === 'azione' && answers[q.id] === 'rinnovo') {
+            showResult();
+            return;
+          }
           if (current < questions.length - 1) {
             current++;
             renderQuestion(current);
