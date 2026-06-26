@@ -25,15 +25,15 @@ window.INLINE_TRAINER_MODULES = {
         "completionMessage": "Documenti pronti"
       },
       {
-        "title": "Scegli il canale di acquisto",
-        "desc": "Due opzioni: ONLINE su solweb.tper.it (rapido, paghi con carta o PayPal, ricevi tutto via email) oppure FISICO presso un Punto Tper (paghi in contanti o carta, ritiri subito). Clicca sotto per vedere i canali dedicati.",
-        "highlight": "#buy-channels",
-        "tip": "Scegli tra acquisto online su solweb o di persona al Punto Tper.",
+        "title": "Rinnova su solweb",
+        "desc": "Vai su solweb.tper.it, inserisci il numero tessera e la tua email. Il rinnovo \u00e8 immediato, senza bisogno di documenti aggiuntivi. Clicca sotto per andare alla pagina di rinnovo.",
+        "highlight": "#tessera",
+        "tip": "Inserisci il numero della tua tessera o Roger Card e l\u2019email per ricevere la conferma del rinnovo.",
         "action": {
           "textKey": "trainer.goto-rinnovo",
           "url": "solweb/rinnova.html"
         },
-        "completionMessage": "Canale scelto"
+        "completionMessage": "Rinnovo completato"
       },
       {
         "title": "Effettua il pagamento",
@@ -195,9 +195,9 @@ window.INLINE_TRAINER_MODULES = {
       },
       {
         "title": "Ricaricare online su solweb",
-        "desc": "Vai su solweb.tper.it, seleziona 'Ricarica Tessera', inserisci il numero tessera e scegli l'importo. Paghi con carta o PayPal. Il saldo è disponibile subito. Nessuna registrazione necessaria.",
-        "highlight": null,
-        "tip": "La ricarica online su solweb non richiede login: bastano numero tessera e metodo di pagamento.",
+        "desc": "Vai su solweb.tper.it, inserisci il numero tessera e scegli l'importo (10, 20, 50 euro o personalizzato). Paghi con carta o PayPal. Il saldo \u00e8 disponibile subito. Nessuna registrazione necessaria.",
+        "highlight": "#tessera",
+        "tip": "Inserisci il numero della tua tessera o Roger Card e seleziona l\u2019importo che vuoi ricaricare.",
         "action": {
           "textKey": "trainer.goto-ricarica",
           "url": "solweb/ricarica.html"
