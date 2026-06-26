@@ -20,6 +20,7 @@
     var highlightedElement = null;
     var trainerModules = {};
     var trainerStats = { completed: [], currentStart: null, currentErrors: 0 };
+    var lastCompleted = {}; // per-modulo: ultimo step completato
 
     // Load trainer modules and restore state
     loadTrainerModules();
@@ -752,6 +753,7 @@
             if (pBtn) pBtn.style.display = 'none';
             if (nBtn) nBtn.style.display = 'none';
           } else {
+            lastCompleted[currentModule] = currentStep;
             currentStep++;
             saveTrainerState();
             renderTrainerSteps();
@@ -857,9 +859,9 @@
           getI18nText('trainer.highlight-hint') + '</span></div>';
       }
 
-      // Completion message
+      // Completion message (only after step was actually done)
       var completeHtml = '';
-      if (step.completionMessage) {
+      if (step.completionMessage && typeof lastCompleted[currentModule] !== 'undefined' && currentStep <= lastCompleted[currentModule]) {
         completeHtml = '<div class="trainer-complete-msg" style="font-size:0.85rem;padding:0.5rem;">' +
           step.completionMessage + '</div>';
       }
