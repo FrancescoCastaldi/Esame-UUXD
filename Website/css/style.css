@@ -1166,6 +1166,52 @@ html.font-large { font-size: 20px; }
   padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 600;
 }
 
+/* ---------- TICKET WIZARD ---------- */
+.ticket-wizard-card {
+  background: #fff; border: 1px solid #ddd; border-radius: 16px;
+  padding: 2rem; box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  margin-bottom: 2rem; max-width: 680px; margin-left: auto; margin-right: auto;
+}
+.ticket-wizard-step { text-align: center; animation: trainerFadeInUp 0.3s ease-out; }
+.ticket-wizard-progress {
+  font-size: 0.8rem; color: #999; margin-bottom: 1rem;
+}
+.ticket-wizard-step h3 {
+  font-size: 1.15rem; margin-bottom: 1.25rem; color: #333;
+}
+.ticket-wizard-options {
+  display: flex; flex-direction: column; gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.ticket-wizard-opt {
+  padding: 1rem 1.25rem; border: 2px solid #E2E8F0;
+  border-radius: 10px; background: #fff; cursor: pointer;
+  text-align: left; font-size: 1rem; color: #333;
+  transition: border-color 0.2s, background 0.2s;
+}
+.ticket-wizard-opt:hover { border-color: #CA1424; background: #FFF5F5; }
+.ticket-wizard-opt.selected, .ticket-wizard-opt:active { border-color: #CA1424; background: #FFF0F0; }
+.ticket-wizard-back {
+  margin-top: 0.5rem; font-size: 0.85rem; padding: 0.4rem 1rem;
+}
+.ticket-wizard-result { text-align: center; animation: trainerFadeInUp 0.35s ease-out; }
+.twr-badge {
+  display: inline-block; background: #E8F5E9; color: #2E7D32;
+  padding: 0.35rem 1rem; border-radius: 20px; font-size: 0.85rem;
+  font-weight: 600; margin-bottom: 1rem;
+}
+.twr-card {
+  background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px;
+  padding: 1.5rem; margin-bottom: 1rem; text-align: left;
+}
+.twr-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #CA1424; }
+.twr-card p { color: #555; font-size: 0.95rem; margin-bottom: 1rem; }
+.twr-action { display: flex; gap: 0.5rem; justify-content: center; }
+.twr-action .btn-outline { padding: 0.5rem 1.5rem; border-color: #CA1424; color: #CA1424; }
+.ticket-wizard-restart {
+  margin-top: 0.75rem; font-size: 0.85rem; padding: 0.4rem 1rem;
+}
+
 /* ============================================================
    TRAINER ENHANCED — Dashboard (R13), Riepilogo (R6), Rating
    ============================================================ */

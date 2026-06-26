@@ -131,19 +131,13 @@
 
       /* Biglietti */
       'tickets.title': 'Biglietti e Tariffe',
-      'tickets.desc': 'Informazioni su tutte le tipologie di biglietto disponibili per il trasporto TPER.',
-      'ticket.singolo': 'Corsa Singola',
-      'ticket.singolo-desc': 'Biglietto valido per un singolo viaggio. Durata 75 minuti dalla timbratura.',
-      'ticket.carnet': 'Carnet 10 Corse',
-      'ticket.carnet-desc': 'Blocco da 10 corse singole. Risparmia rispetto all\'acquisto singolo.',
-      'ticket.giornaliero': 'Biglietto Giornaliero',
-      'ticket.giornaliero-desc': 'Viaggi illimitati per un giorno su tutta la rete urbana.',
-      'ticket.multipiu': 'MultiPiù',
-      'ticket.multipiu-desc': 'Pacchetto da 10 corse convalidabili in più giorni. Ideale per chi viaggia regolarmente.',
-      'ticket.boost': 'Biglietto Boost',
-      'ticket.boost-desc': 'Corsa singola+ con extra servizi: priorità e bagaglio incluso.',
-      'ticket.contactless': 'Contactless a Bordo',
-      'ticket.contactless-desc': 'Paga direttamente con carta contactless. Nessun biglietto cartaceo necessario.',
+      'tickets.desc': 'Scopri tutte le tipologie di biglietto per Bologna e l\'Emilia-Romagna. Usa la guida per trovare il più adatto a te.',
+      'tickets.wizard-title': '🔍 Guida: trova il biglietto giusto per te',
+      'tickets.wizard-desc': 'Rispondi a poche domande e ti consiglieremo il biglietto più adatto.',
+      'tickets.info-banner': 'Su tper.it non si acquistano biglietti.',
+      'tickets.info-banner-desc': 'Dopo aver scelto il tuo titolo di viaggio, visita la pagina',
+      'tickets.info-banner-link': 'Dove Comprare',
+      'tickets.all-title': 'Tutti i biglietti disponibili',
 
       /* Abbonamenti */
       'subs.title': 'Abbonamenti',

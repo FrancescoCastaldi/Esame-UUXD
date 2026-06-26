@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biglietti â€” tper.it</title>
-  <meta name="description" content="Tipologie di biglietti Tper: corsa singola, carnet, giornaliero, MultiPi&ugrave;, Boost e contactless.">
+  <title data-i18n="tickets.title">Biglietti — tper.it</title>
+  <meta name="description" content="Tipologie di biglietti Tper: corsa singola, carnet, giornaliero, Ecoticket, contactless.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
       <div class="header-utilities">
         <button class="lang-btn" data-lang="it" data-i18n-aria="header.lang-it" aria-label="Italiano">IT</button>
         <button class="lang-btn" data-lang="en" data-i18n-aria="header.lang-en" aria-label="English">EN</button>
-        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©">AR</button>
+        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="العربية">AR</button>
         <button class="contrast-toggle" data-i18n-aria="header.contrast" aria-label="Attiva contrasto elevato">&#9681;</button>
         <button class="font-toggle" data-i18n-aria="header.font-increase" aria-label="Aumenta carattere">A+</button>
       </div>
@@ -53,68 +53,75 @@
       </nav>
 
       <h1 data-i18n="tickets.title">Biglietti</h1>
-      <p class="mb-2" data-i18n="tickets.desc">Informazioni su tutte le tipologie di biglietto disponibili per il trasporto pubblico a Bologna e in Emilia-Romagna. I prezzi indicativi sono aggiornati al 2026.</p>
+      <p class="mb-2" data-i18n="tickets.desc">Scopri tutte le tipologie di biglietto per Bologna e l'Emilia-Romagna. Usa la guida per trovare il pi&ugrave; adatto a te.</p>
 
-      <div id="ticket-types">
-      <div class="info-banner">
+      <!-- Wizard Section -->
+      <section aria-labelledby="wizard-title" id="ticket-wizard">
+        <div class="section-header">
+          <h2 id="wizard-title" data-i18n="tickets.wizard-title">&#128269; Guida: trova il biglietto giusto per te</h2>
+          <p data-i18n="tickets.wizard-desc">Rispondi a poche domande e ti consiglieremo il biglietto pi&ugrave; adatto.</p>
+        </div>
+        <div class="ticket-wizard-card" id="wizard-container"></div>
+      </section>
+
+      <!-- Info banner -->
+      <div class="info-banner mt-2">
         <span class="icon">&#9432;</span>
-        <p><strong>Su tper.it non si acquistano biglietti.</strong> Dopo aver scelto il tuo titolo di viaggio, visita la pagina <a href="dove-comprare.html">Dove Comprare</a> per scoprire il canale pi&ugrave; adatto.</p>
+        <p><strong data-i18n="tickets.info-banner">Su tper.it non si acquistano biglietti.</strong> <span data-i18n="tickets.info-banner-desc">Dopo aver scelto il tuo titolo di viaggio, visita la pagina</span> <a href="dove-comprare.html" data-i18n="tickets.info-banner-link">Dove Comprare</a> per scoprire canali e prezzi aggiornati.</p>
       </div>
 
-      <div class="card-grid">
-        <!-- Singolo -->
+      <!-- All tickets cards -->
+      <div class="section-header mt-2">
+        <h2 data-i18n="tickets.all-title">Tutti i biglietti disponibili</h2>
+      </div>
+      <div class="card-grid" id="ticket-types">
         <div class="card card-blue">
-          <div class="card-icon" aria-hidden="true">&#128197;</div>
-          <h3 data-i18n="ticket.singolo">Biglietto Singolo (Corsa Semplice)</h3>
-          <p data-i18n="ticket.singolo-desc"><strong>&euro; 1,50</strong> &mdash; Valido 75 minuti dalla timbratura su tutta la rete urbana di Bologna. Include un trasferimento.</p>
-          <p><small>Canali: Roger App, Punti Tper, Tabaccherie, Contactless</small></p>
+          <div class="card-icon" aria-hidden="true">&#127915;</div>
+          <h3>Biglietto Ordinario</h3>
+          <p><strong>2,30&euro;</strong> — Valido 75 minuti dalla convalida su tutta la rete urbana di Bologna. Si pu&ograve; cambiare bus.</p>
+          <p><small data-i18n="tickets.ordinario-channels">Canali: Roger App, Punti Tper, Rivendite, Emettitrici, Contactless, A bordo (+0,20&euro;)</small></p>
         </div>
-        <!-- Carnet -->
         <div class="card card-green">
           <div class="card-icon" aria-hidden="true">&#128196;</div>
-          <h3 data-i18n="ticket.carnet">Carnet 10 Corse</h3>
-          <p data-i18n="ticket.carnet-desc"><strong>&euro; 13,50</strong> &mdash; 10 corse singole valide 75 minuti ciascuna. Ideale per chi viaggia saltuariamente.</p>
-          <p><small>Canali: Roger App (digitale), Punti Tper (cartaceo), Tabaccherie (cartaceo)</small></p>
+          <h3>CityPass (10 corse)</h3>
+          <p><strong>1,90&euro;/corsa</strong> — Carnet da 10 viaggi da 75 minuti. Condivisibile tra pi&ugrave; persone. Digitale o cartaceo.</p>
+          <p><small data-i18n="tickets.citypass-channels">Canali: Roger App, Punti Tper, Rivendite, Emettitrici</small></p>
         </div>
-        <!-- Giornaliero -->
         <div class="card card-orange">
           <div class="card-icon" aria-hidden="true">&#127774;</div>
-          <h3 data-i18n="ticket.giornaliero">Biglietto Giornaliero</h3>
-          <p data-i18n="ticket.giornaliero-desc"><strong>&euro; 6,00</strong> &mdash; Viaggi illimitati per 24 ore dalla timbratura su tutta la rete urbana. Perfetto per turisti e visite in citt&agrave;.</p>
-          <p><small>Canali: Roger App, Punti Tper, Tabaccherie</small></p>
+          <h3>Giornaliero</h3>
+          <p><strong>9,00&euro;</strong> — 24 ore di viaggi illimitati dalla prima convalida su tutta la rete urbana di Bologna.</p>
+          <p><small data-i18n="tickets.giornaliero-channels">Canali: Punti Tper, Rivendite, Emettitrici, Contactless</small></p>
         </div>
-        <!-- MultiPiÃ¹ -->
         <div class="card card-purple">
-          <div class="card-icon" aria-hidden="true">&#128176;</div>
-          <h3 data-i18n="ticket.multipiu">MultiPi&ugrave;</h3>
-          <p data-i18n="ticket.multipiu-desc"><strong>&euro; 30,00</strong> &mdash; 20 corse a prezzo scontato. Valido 60 giorni dalla prima timbratura. Conveniente per chi viaggia regolarmente senza abbonamento.</p>
-          <p><small>Canali: Roger App, Punti Tper</small></p>
+          <div class="card-icon" aria-hidden="true">&#127908;</div>
+          <h3>Ecoticket</h3>
+          <p><strong>65,00&euro;</strong> — 20 giornate di viaggi illimitati in 10 mesi. Su tessera MiMuovo. Personale.</p>
+          <p><small data-i18n="tickets.ecoticket-channels">Canali: Punti Tper, Rivendite (tessera MiMuovo 5&euro;)</small></p>
         </div>
-        <!-- Boost -->
         <div class="card card-teal">
-          <div class="card-icon" aria-hidden="true">&#9889;</div>
-          <h3 data-i18n="ticket.boost">Boost (Extraurbano)</h3>
-          <p data-i18n="ticket.boost-desc"><strong>&euro; 2,00/km</strong> &mdash; Biglietto per tratte extraurbane. Prezzo variabile in base alla distanza. Acquistabile a bordo o presso le rivendite.</p>
-          <p><small>Canali: Punti Tper, Tabaccherie, Contactless a bordo</small></p>
+          <div class="card-icon" aria-hidden="true">&#128652;</div>
+          <h3>Biglietto Extraurbano</h3>
+          <p><strong>Da 2,30&euro;</strong> — Prezzo a zone per viaggi fuori citt&agrave;. Sistema tariffario MiMuovo.</p>
+          <p><small data-i18n="tickets.extraurbano-channels">Canali: Punti Tper, Rivendite, A bordo, Contactless</small></p>
         </div>
-        <!-- Contactless -->
         <div class="card card-red">
           <div class="card-icon" aria-hidden="true">&#128179;</div>
-          <h3 data-i18n="ticket.contactless">Contactless a Bordo</h3>
-          <p data-i18n="ticket.contactless-desc"><strong>&euro; 1,50/corsa</strong> &mdash; Paga con carta di credito/debito contactless o dispositivo mobile direttamente sul validatore a bordo. Nessun biglietto cartaceo necessario. Massimo 3 corse al giorno, poi non ti viene addebitato pi&ugrave; del giornaliero (capped fare).</p>
-          <p><small>Canale: Carte contactless (Visa, Mastercard, American Express, Maestro)</small></p>
+          <h3>Contactless a Bordo</h3>
+          <p><strong>2,30&euro;/corsa</strong> — Accosta la tua carta bancaria al validatore. Cap giornaliero automatico.</p>
+          <p><small data-i18n="tickets.contactless-channels">Canale: Carte Visa, Mastercard, Amex, Maestro contactless</small></p>
         </div>
-      </div> <!-- /#ticket-types -->
-
-      <!-- Channel legend -->
-      <div class="card mt-2">
-        <h3 data-i18n="buy.title">Legenda Canali di Acquisto</h3>
-        <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem;">
-          <span style="display:flex;align-items:center;gap:0.4rem;"><span style="background:#FFF0F0;color:#CA1424;padding:2px 8px;border-radius:4px;font-weight:700;">R</span> Roger App</span>
-          <span style="display:flex;align-items:center;gap:0.4rem;"><span style="background:#FFFAF0;color:#C05621;padding:2px 8px;border-radius:4px;font-weight:700;">PT</span> Punti Tper</span>
-          <span style="display:flex;align-items:center;gap:0.4rem;"><span style="background:#FAF5FF;color:#6B46C1;padding:2px 8px;border-radius:4px;font-weight:700;">T</span> Tabaccherie</span>
-          <span style="display:flex;align-items:center;gap:0.4rem;"><span style="background:#E6FFFA;color:#285E61;padding:2px 8px;border-radius:4px;font-weight:700;">C</span> Contactless</span>
-          <span style="display:flex;align-items:center;gap:0.4rem;"><span style="background:#FFF0F0;color:#CA1424;padding:2px 8px;border-radius:4px;font-weight:700;">S</span> solweb.tper.it</span>
+        <div class="card card-blue">
+          <div class="card-icon" aria-hidden="true">&#128241;</div>
+          <h3>App Roger</h3>
+          <p><strong>2,30&euro;</strong> — Biglietti digitali su smartphone. Validazione GPS automatica. Anche CityPass e Giornaliero.</p>
+          <p><small data-i18n="tickets.roger-channels">Canale: App Roger (iOS e Android)</small></p>
+        </div>
+        <div class="card card-orange">
+          <div class="card-icon" aria-hidden="true">&#9889;</div>
+          <h3>Ferrara Urbano</h3>
+          <p><strong>1,90&euro;</strong> — Biglietto ordinario area urbana di Ferrara. 75 minuti. Anche CityPass e Giornaliero.</p>
+          <p><small data-i18n="tickets.ferrara-channels">Canali: Roger App, Punti Tper, Rivendite, Emettitrici, Contactless</small></p>
         </div>
       </div>
     </div>
@@ -132,9 +139,10 @@
         <h4>tper.it</h4>
         <ul>
           <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
-          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="orari.html" data-i18n="nav.orari">Orari</a></li>
           <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
           <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
           <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
         </ul>
       </div>
@@ -148,6 +156,20 @@
           <li><a href="dove-comprare.html#contactless" data-i18n="footer.contactless">Contactless a bordo</a></li>
         </ul>
       </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.accessibility">Accessibilit&agrave;</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.contrast">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.font-large">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.contacts">Contatti</h4>
+        <ul>
+          <li><a href="aiuto.html" data-i18n="footer.support">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener" data-i18n="footer.institutional">tper.it &ndash; Sito Istituzionale</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <p data-i18n="footer.copyright">&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
@@ -158,8 +180,132 @@
   <script src="js/trainer-modules.js"></script>
   <script src="js/app.js"></script>
 
+  <!-- Ticket wizard (inline) -->
+  <script>
+  (function() {
+    var container = document.getElementById('wizard-container');
+    if (!container) return;
+
+    var current = 0;
+    var answers = {};
+
+    var questions = [
+      { id:'zona', q:'In quale zona viaggi?', opts:[
+        { v:'bologna', t:'Bologna città' },
+        { v:'ferrara', t:'Ferrara città' },
+        { v:'extraurbano', t:'Fuori città (extraurbano)' }
+      ]},
+      { id:'freq', q:'Quanto spesso usi i mezzi?', opts:[
+        { v:'ognitanto', t:'Una volta ogni tanto' },
+        { v:'qualchevolta', t:'Qualche volta al mese' },
+        { v:'ognigiorno', t:'Quasi tutti i giorni' }
+      ]},
+      { id:'durata', q:'Quanto dura il tuo viaggio tipo?', opts:[
+        { v:'corsa', t:'Una corsa sola o andata e ritorno' },
+        { v:'giornata', t:'Giornata intera (più viaggi)' },
+        { v:'piugiorni', t:'Più corse in giorni diversi' }
+      ]},
+      { id:'app', q:'Puoi usare lo smartphone per i biglietti?', opts:[
+        { v:'si', t:'Sì, uso l\'App Roger' },
+        { v:'no', t:'No, preferisco il cartaceo' },
+        { v:'entrambi', t:'Entrambi / non lo so' }
+      ]},
+      { id:'persone', q:'Viaggi con altre persone?', opts:[
+        { v:'solo', t:'Solo io' },
+        { v:'conaltri', t:'A volte con familiari o amici' }
+      ]}
+    ];
+
+    var results = {
+      ordinario: { title:'Biglietto Ordinario', price:'2,30€', desc:'75 minuti sulla rete urbana. Perfetto per chi usa i mezzi ogni tanto e fa viaggi semplici in città.', link:'<a href="dove-comprare.html" class="btn-outline">Dove Comprarlo</a>' },
+      citypass: { title:'CityPass (10 corse)', price:'1,90€/corsa', desc:'10 corse da 75 minuti l\'una. Condivisibile tra più persone. Ideale per chi viaggia qualche volta al mese.', link:'<a href="dove-comprare.html" class="btn-outline">Dove Comprarlo</a>' },
+      giornaliero: { title:'Giornaliero', price:'9,00€', desc:'24 ore di viaggi illimitati. Perfetto per turisti, visite in città o giornate piene di spostamenti.', link:'<a href="dove-comprare.html" class="btn-outline">Dove Comprarlo</a>' },
+      ecoticket: { title:'Ecoticket', price:'65,00€', desc:'20 giornate di viaggi illimitati in 10 mesi. Su tessera MiMuovo. Per chi viaggia regolarmente ma non tutti i giorni.', link:'<a href="dove-comprare.html" class="btn-outline">Dove Comprarlo</a>' },
+      extraurbano: { title:'Biglietto Extraurbano', price:'Da 2,30€', desc:'Prezzo a zone per spostamenti fuori Bologna. Usa il calcolatore tariffario MiMuovo per il prezzo esatto.', link:'<a href="dove-comprare.html" class="btn-outline">Dove Comprarlo</a>' },
+      roger: { title:'App Roger', price:'2,30€', desc:'Biglietti digitali sullo smartphone. Validazione automatica via GPS. Perfetto se hai sempre il telefono con te.', link:'<a href="dove-comprare.html#roger" class="btn-outline">Scopri Roger</a>' },
+      ferrara: { title:'Biglietto Ferrara', price:'1,90€', desc:'75 minuti area urbana di Ferrara. Anche CityPass e Giornaliero disponibili.', link:'<a href="dove-comprare.html" class="btn-outline">Dove Comprarlo</a>' },
+      abbonamento: { title:'Conviene l\'Abbonamento!', price:'Da 39€/mese', desc:'Usando i mezzi quasi tutti i giorni ti conviene un abbonamento. Mensile, annuale o agevolato. Risparmi fino al 35%.', link:'<a href="abbonamenti.html" class="btn-outline">Vedi Abbonamenti</a>' }
+    };
+
+    function getResult() {
+      var a = answers;
+      if (a.freq === 'ognigiorno') return 'abbonamento';
+      if (a.zona === 'extraurbano') return 'extraurbano';
+      if (a.zona === 'ferrara') return 'ferrara';
+      if (a.durata === 'giornata') return 'giornaliero';
+      if (a.durata === 'piugiorni') return 'ecoticket';
+      if (a.persone === 'conaltri' && a.durata === 'corsa' && a.freq === 'qualchevolta') return 'citypass';
+      if (a.app === 'si' && a.durata === 'corsa') return 'roger';
+      if (a.app === 'no' && a.durata === 'corsa') return 'ordinario';
+      if (a.freq === 'qualchevolta') return 'citypass';
+      return 'ordinario';
+    }
+
+    function renderQuestion(idx) {
+      var q = questions[idx];
+      var html = '<div class="ticket-wizard-step">';
+      html += '<div class="ticket-wizard-progress">Domanda ' + (idx + 1) + ' di ' + questions.length + '</div>';
+      html += '<h3>' + q.q + '</h3>';
+      html += '<div class="ticket-wizard-options">';
+      for (var i = 0; i < q.opts.length; i++) {
+        var o = q.opts[i];
+        var sel = answers[q.id] === o.v ? ' selected' : '';
+        html += '<button class="ticket-wizard-opt' + sel + '" data-value="' + o.v + '">' + o.t + '</button>';
+      }
+      html += '</div>';
+
+      if (idx > 0) {
+        html += '<button class="btn-outline ticket-wizard-back">← Indietro</button>';
+      }
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelectorAll('.ticket-wizard-opt').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          answers[q.id] = btn.getAttribute('data-value');
+          if (current < questions.length - 1) {
+            current++;
+            renderQuestion(current);
+          } else {
+            showResult();
+          }
+        });
+      });
+
+      var backBtn = container.querySelector('.ticket-wizard-back');
+      if (backBtn) {
+        backBtn.addEventListener('click', function() {
+          current--;
+          renderQuestion(current);
+        });
+      }
+    }
+
+    function showResult() {
+      var key = getResult();
+      var r = results[key];
+      var html = '<div class="ticket-wizard-result">';
+      html += '<div class="twr-badge">🎯 Biglietto consigliato</div>';
+      html += '<div class="twr-card">';
+      html += '<h3>' + r.title + ' — ' + r.price + '</h3>';
+      html += '<p>' + r.desc + '</p>';
+      html += '<div class="twr-action">' + r.link + '</div>';
+      html += '</div>';
+      html += '<button class="btn-outline ticket-wizard-restart">⟳ Ricomincia</button>';
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelector('.ticket-wizard-restart').addEventListener('click', function() {
+        current = 0;
+        answers = {};
+        renderQuestion(0);
+      });
+    }
+
+    renderQuestion(0);
+  })();
+  </script>
+
   <button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
 </body>
 </html>
-
-
