@@ -382,6 +382,7 @@
 
       /* Quick actions */
       'solweb.quick-actions': 'Azioni Rapide (senza registrazione)',
+      'solweb.login-required-note': 'Per acquistare un abbonamento è necessario accedere. Rinnovi impersonali e ricariche sono disponibili senza registrazione dalle Azioni Rapide. Le sanzioni sono pagabili senza login.',
       'solweb.rinnovo-quick': '🔄 Rinnova Abbonamento',
       'solweb.ricarica-quick': '⚡ Ricarica Tessera',
 
@@ -743,6 +744,7 @@
 
       /* Quick actions */
       'solweb.quick-actions': 'Quick Actions (no registration)',
+      'solweb.login-required-note': 'You need to log in to purchase a subscription. Impersonal renewals and recharges are available without registration from Quick Actions. Fines can be paid without login.',
       'solweb.rinnovo-quick': '🔄 Renew Subscription',
       'solweb.ricarica-quick': '⚡ Recharge Card',
 
@@ -1127,6 +1129,7 @@
 
       /* Quick actions */
       'solweb.quick-actions': 'إجراءات سريعة (بدون تسجيل)',
+      'solweb.login-required-note': 'تحتاج إلى تسجيل الدخول لشراء اشتراك. التجديدات غير الشخصية والشحن متاحة بدون تسجيل من الإجراءات السريعة. يمكن دفع الغرامات بدون تسجيل دخول.',
       'solweb.rinnovo-quick': '🔄 تجديد الاشتراك',
       'solweb.ricarica-quick': '⚡ شحن البطاقة',
 

@@ -65,7 +65,7 @@
         </div>
       </div>
 
-      <div id="guest-banner" style="display:none;background:#FFF3CD;border:1px solid #FFC107;border-radius:8px;padding:1rem;margin-bottom:1.5rem;text-align:center;font-weight:600;" data-i18n="solweb.guest-banner">ModalitÃ  Ospite â€” Abbonamento Impersonale</div>
+      <div id="guest-banner" style="display:none;"></div>
 
       <div class="card-grid" id="subscription-plans">
         <!-- Monthly Urban -->
@@ -106,10 +106,6 @@
         <span class="icon">&#128274;</span>
         <p data-i18n="solweb.agevolazioni-info"><strong>Per le tariffe agevolate &egrave; richiesta la registrazione.</strong> Serve ISEE aggiornato, certificato di iscrizione (studenti), documento d'identit&agrave; e codice fiscale. La verifica richiede 3&ndash;5 giorni lavorativi. <a href="login.html">Accedi</a> o <a href="login.html">registrati</a> per procedere.</p>
       </div>
-
-      <p id="guest-login-link" style="display:none;text-align:center;margin-top:1rem;">
-        <a href="login.html" class="btn-outline" data-i18n="solweb.guest-login-link">Accedi per acquisto personale â†’</a>
-      </p>
 
       <p class="text-center mt-2">
         <a href="documenti.html" class="btn-outline" style="margin-right:0.5rem;">Documenti Necessari</a>
@@ -173,58 +169,33 @@
   <script src="../js/trainer-modules.js"></script>
   <script src="../js/app.js"></script>
 
-  <!-- Guest mode handler -->
+  <!-- Login detection (R11) -->
   <script>
   (function() {
     var params = new URLSearchParams(window.location.search);
-    var isGuest = params.get('mode') === 'guest';
-    var isLogin = params.get('login') === 'ok';
+    if (params.get('login') !== 'ok') return;
 
-    // Login detection (R11)
-    if (isLogin) {
-      var welcome = document.createElement('div');
-      welcome.style.cssText = 'background:#E8F5E9;border:1px solid #A5D6A7;border-radius:8px;padding:1rem;margin-bottom:1rem;text-align:center;font-size:1rem;font-weight:600;color:#2E7D32;';
-      welcome.textContent = '\u2713 Benvenuto! Hai effettuato l\'accesso. Scegli il tuo abbonamento.';
-      var plans = document.getElementById('subscription-plans');
-      if (plans) plans.parentNode.insertBefore(welcome, plans);
+    var welcome = document.createElement('div');
+    welcome.style.cssText = 'background:#E8F5E9;border:1px solid #A5D6A7;border-radius:8px;padding:1rem;margin-bottom:1rem;text-align:center;font-size:1rem;font-weight:600;color:#2E7D32;';
+    welcome.textContent = '\u2713 Benvenuto! Hai effettuato l\'accesso. Scegli il tuo abbonamento.';
+    var plans = document.getElementById('subscription-plans');
+    if (plans) plans.parentNode.insertBefore(welcome, plans);
 
-      // Redirect plan cards to documenti instead of pagamento
-      var links = document.querySelectorAll('.card .btn-primary');
-      for (var i = 0; i < links.length; i++) {
-        var href = links[i].getAttribute('href');
-        if (href && href.indexOf('pagamento.html') === 0) {
-          var plan = href.replace('pagamento.html', '').replace('?plan=', '').replace(/[&?].*/, '');
-          if (!plan) plan = 'monthly';
-          links[i].setAttribute('href', 'documenti.html?plan=' + plan + '&login=ok');
-        }
+    // Redirect card links to documenti instead of pagamento
+    var links = document.querySelectorAll('.card .btn-primary');
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href');
+      if (href && href.indexOf('pagamento.html') === 0) {
+        var plan = href.replace('pagamento.html', '').replace('?plan=', '').replace(/[&?].*/, '');
+        if (!plan) plan = 'monthly';
+        links[i].setAttribute('href', 'documenti.html?plan=' + plan + '&login=ok');
       }
-
-      // Hide "Accedi al tuo profilo" and "Documenti Necessari" links
-      var bottomLinks = document.querySelectorAll('.text-center.mt-2 a');
-      for (var j = 0; j < bottomLinks.length; j++) {
-        bottomLinks[j].style.display = 'none';
-      }
-      return;
     }
 
-    if (isGuest) {
-      // Show agevolazioni info (R7): explains why login is needed for discounts
-      var agevInfo = document.getElementById('agevolazioni-info');
-      if (agevInfo) agevInfo.style.display = '';
-
-      var banner = document.getElementById('guest-banner');
-      if (banner) banner.style.display = 'block';
-
-      var links = document.querySelectorAll('.card .btn-primary');
-      for (var i = 0; i < links.length; i++) {
-        var href = links[i].getAttribute('href');
-        if (href && href.indexOf('pagamento.html') === 0) {
-          links[i].setAttribute('href', href + '&mode=guest');
-        }
-      }
-
-      var loginLink = document.getElementById('guest-login-link');
-      if (loginLink) loginLink.style.display = 'block';
+    // Hide bottom links (already on login flow)
+    var bottomLinks = document.querySelectorAll('.text-center.mt-2 a');
+    for (var j = 0; j < bottomLinks.length; j++) {
+      bottomLinks[j].style.display = 'none';
     }
   })();
   </script>

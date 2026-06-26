@@ -108,13 +108,6 @@
             </div>
           </div>
 
-          <div id="guest-fields" style="display:none;">
-            <div class="form-group">
-              <label for="tessera" data-i18n="solweb.pay-card">Numero Tessera / Codice Abbonamento</label>
-              <input type="text" id="tessera" name="tessera" placeholder="TPER-XXXXXX" data-i18n-placeholder="solweb.pay-card">
-            </div>
-          </div>
-
           <div class="form-divider" role="separator"></div>
 
           <!-- Payment Methods -->
@@ -148,8 +141,6 @@
           <div class="form-actions">
             <button type="submit" class="btn-primary" style="flex:1;" id="pay-btn" data-i18n="solweb.pay-btn">Paga &euro;51,00</button>
           </div>
-
-          <div id="guest-notice" style="display:none;background:#FFF3CD;border:1px solid #FFC107;border-radius:8px;padding:0.75rem 1rem;margin-bottom:1rem;text-align:center;font-weight:600;" data-i18n="solweb.pay-guest-notice">Abbonamento impersonale â€” non sono richiesti dati personali</div>
         </form>
 
         <div class="info-banner mt-2" role="status">
@@ -219,12 +210,12 @@
   <script src="../js/trainer-modules.js"></script>
   <script src="../js/app.js"></script>
 
-  <!-- Guest mode handler -->
+  <!-- Order summary + Login detection (R11) -->
   <script>
   (function() {
     var params = new URLSearchParams(window.location.search);
 
-    // Order summary — support renew and recharge (R11)
+    // Order summary — support renew and recharge
     var plan = params.get('plan') || 'monthly';
     var amount = params.get('amount') || '51,00';
     var nameEl = document.getElementById('plan-name');
@@ -241,7 +232,7 @@
       if (priceEl) priceEl.textContent = '\u20ac' + amount;
     }
 
-    // Login detection (R11): show welcome only, keep personal fields visible
+    // Login detection: show welcome badge
     if (params.get('login') === 'ok') {
       var summary = document.querySelector('.form-card');
       if (summary) {
@@ -250,40 +241,7 @@
         loginBadge.textContent = '\u2713 Accesso effettuato \u2014 abbonamento nominativo';
         summary.insertBefore(loginBadge, summary.firstChild);
       }
-      return;
     }
-
-    if (params.get('mode') === 'guest') {
-      var personalFields = document.getElementById('personal-fields');
-      if (personalFields) personalFields.style.display = 'none';
-
-      var guestFields = document.getElementById('guest-fields');
-      if (guestFields) guestFields.style.display = 'block';
-
-      var guestNotice = document.getElementById('guest-notice');
-      if (guestNotice) guestNotice.style.display = 'block';
-
-      var payBtn = document.getElementById('pay-btn');
-      if (payBtn) {
-        var amount = payBtn.textContent.replace(/^Paga\s*/, '');
-        payBtn.textContent = 'Paga ' + amount + ' come Ospite';
-        payBtn.setAttribute('data-i18n', 'solweb.pay-guest-btn');
-        payBtn.setAttribute('data-i18n-amount', amount);
-      }
-    }
-
-    // Support re-translation of guest button on language change
-    document.addEventListener('tper-lang-changed', function(e) {
-      if (params.get('mode') !== 'guest') return;
-      var payBtn = document.getElementById('pay-btn');
-      if (payBtn && payBtn.getAttribute('data-i18n') === 'solweb.pay-guest-btn') {
-        var amount = payBtn.getAttribute('data-i18n-amount') || 'â‚¬51,00';
-        if (window.TPER_I18N) {
-          var dict = window.TPER_I18N.dict[e.detail.lang] || window.TPER_I18N.dict.it;
-          payBtn.textContent = (dict['solweb.pay-guest-btn'] || 'Pay {amount} as Guest').replace('{amount}', amount);
-        }
-      }
-    });
   })();
   </script>
 
@@ -294,31 +252,22 @@
     if (!form) return;
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var isGuest = new URLSearchParams(window.location.search).get('mode') === 'guest';
       var valid = true;
 
-      if (!isGuest) {
-        var nome = document.getElementById('nome');
-        var cognome = document.getElementById('cognome');
-        var email = document.getElementById('email');
-        if (!nome || !nome.value.trim()) {
-          if (typeof showFieldError === 'function') showFieldError(nome, 'Inserisci il tuo nome. Serve per identificare l\u2019ordine e la ricevuta.');
-          valid = false;
-        }
-        if (!cognome || !cognome.value.trim()) {
-          if (typeof showFieldError === 'function') showFieldError(cognome, 'Inserisci il tuo cognome. Serve per completare i dati dell\u2019ordine.');
-          valid = false;
-        }
-        if (!email || !email.value.trim()) {
-          if (typeof showFieldError === 'function') showFieldError(email, 'Inserisci un indirizzo email valido. Riceverai qui la ricevuta e la conferma d\u2019acquisto.');
-          valid = false;
-        }
-      } else {
-        var tessera = document.getElementById('tessera');
-        if (!tessera || !tessera.value.trim()) {
-          if (typeof showFieldError === 'function') showFieldError(tessera, 'Inserisci il numero della tua tessera o Roger Card. Serve per associare l\u2019abbonamento.');
-          valid = false;
-        }
+      var nome = document.getElementById('nome');
+      var cognome = document.getElementById('cognome');
+      var email = document.getElementById('email');
+      if (!nome || !nome.value.trim()) {
+        if (typeof showFieldError === 'function') showFieldError(nome, 'Inserisci il tuo nome. Serve per identificare l\'ordine e la ricevuta.');
+        valid = false;
+      }
+      if (!cognome || !cognome.value.trim()) {
+        if (typeof showFieldError === 'function') showFieldError(cognome, 'Inserisci il tuo cognome. Serve per completare i dati dell\'ordine.');
+        valid = false;
+      }
+      if (!email || !email.value.trim()) {
+        if (typeof showFieldError === 'function') showFieldError(email, 'Inserisci un indirizzo email valido. Riceverai qui la ricevuta e la conferma d\'acquisto.');
+        valid = false;
       }
 
       var terms = document.getElementById('terms');
@@ -329,7 +278,7 @@
           if (!existErr) {
             var err = document.createElement('div');
             err.className = 'form-error';
-            err.innerHTML = '<span class="fe-icon">&#9888;</span> Devi accettare i termini e condizioni per procedere. Senza, non \u00e8 possibile completare l\u2019acquisto.';
+            err.innerHTML = '<span class="fe-icon">&#9888;</span> Devi accettare i termini e condizioni per procedere. Senza, non \u00e8 possibile completare l\'acquisto.';
             termsGroup.insertBefore(err, termsGroup.firstChild);
           }
         }
