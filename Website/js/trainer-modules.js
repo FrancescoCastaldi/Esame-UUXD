@@ -180,10 +180,6 @@ window.INLINE_TRAINER_MODULES = {
         "desc": "Vai in una tabaccheria o edicola con il simbolo PuntoLis. Consegna la Roger Card e chiedi una ricarica. Puoi ricaricare l'importo che preferisci. Il saldo viene aggiornato subito.",
         "highlight": "#tabaccherie",
         "tip": "Cerca una tabaccheria o edicola con il simbolo PuntoLis per ricaricare.",
-        "action": {
-          "textKey": "trainer.goto-tabacchi",
-          "url": "dove-comprare.html#tabaccherie"
-        },
         "completionMessage": "Ricarica in tabaccheria: fatta!"
       },
       {
@@ -191,10 +187,6 @@ window.INLINE_TRAINER_MODULES = {
         "desc": "Apri l'App Roger, vai alla sezione 'Ricarica', inserisci il numero della tua Roger Card e scegli l'importo. Il pagamento \u00e8 digitale e il saldo \u00e8 disponibile subito.",
         "highlight": "#roger",
         "tip": "Apri l'App Roger sul telefono e vai alla sezione Ricarica.",
-        "action": {
-          "textKey": "trainer.goto-roger",
-          "url": "dove-comprare.html#roger"
-        },
         "completionMessage": "Ricarica digitale completata"
       },
       {

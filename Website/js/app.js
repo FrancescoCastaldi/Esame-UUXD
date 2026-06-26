@@ -815,15 +815,24 @@
           trainerStats.currentErrors = 0;
           delete lastCompleted[currentModule];
 
-          // Viaggio: redirect immediato a pianifica.html
-          if (currentModule === 'viaggio') {
-            var cp = window.location.pathname.split('/').pop() || 'index.html';
-            if (cp !== 'pianifica.html') {
-              saveTrainerState();
-              setTrainerActive(true);
-              window.location.href = 'pianifica.html';
-              return;
-            }
+          var cp = window.location.pathname.split('/').pop() || 'index.html';
+
+          // Redirect immediato alla pagina target del modulo
+          if (currentModule === 'viaggio' && cp !== 'pianifica.html') {
+            saveTrainerState(); setTrainerActive(true);
+            window.location.href = 'pianifica.html'; return;
+          }
+          if (currentModule === 'rinnovo' && cp !== 'abbonamenti.html') {
+            saveTrainerState(); setTrainerActive(true);
+            window.location.href = 'abbonamenti.html'; return;
+          }
+          if (currentModule === 'biglietto' && cp !== 'biglietti.html') {
+            saveTrainerState(); setTrainerActive(true);
+            window.location.href = 'biglietti.html'; return;
+          }
+          if (currentModule === 'ricarica' && cp !== 'dove-comprare.html') {
+            saveTrainerState(); setTrainerActive(true);
+            window.location.href = 'dove-comprare.html'; return;
           }
 
           renderTrainerSteps();
