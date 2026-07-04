@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="it" data-page="solweb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="solweb.dashboard-title">Cosa vuoi fare? — solweb.tper.it</title>
+  <meta name="description" content="Scegli l'operazione da eseguire sul tuo account TPER.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-i18n="header.skip">Vai al contenuto principale</a>
+
+  <!-- Solweb Header -->
+  <header class="site-header solweb-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Tper home">
+        <svg viewBox="0 0 100 32" aria-hidden="true">
+          <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
+          <text x="14" y="21" text-anchor="middle" fill="#FFF" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="13">TP</text>
+          <text x="34" y="21" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15">tper.it</text>
+        </svg>
+        tper.it
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="../index.html" data-i18n="solweb.back">&larr; Torna a tper.it</a></li>
+          <li><a href="login.html" id="logout-link" data-i18n="solweb.dashboard-esci">Esci</a></li>
+        </ul>
+      </nav>
+      <div class="header-utilities">
+        <button class="lang-btn" data-lang="it" aria-label="Italiano">Italiano</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">English</button>
+        <button class="lang-btn" data-lang="ar" aria-label="العربية">العربية</button>
+        <button class="search-toggle" data-i18n-aria="header.search-toggle" aria-label="Cerca nel sito" title="Cerca">&#128269;</button>
+        <button class="contrast-toggle" data-i18n-aria="a11y.contrast-on" aria-label="Attiva contrasto elevato" title="Contrasto">&#9681;</button>
+        <button class="font-toggle" data-i18n-aria="a11y.font-increase" aria-label="Aumenta carattere" title="Carattere">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="hero-badge" data-i18n="solweb.badge">PIATTAFORMA ABBONAMENTI</div>
+        <h1 data-i18n="solweb.dashboard-title">Cosa vuoi fare?</h1>
+        <p data-i18n="solweb.dashboard-desc">Scegli l'operazione che vuoi eseguire sul tuo account.</p>
+      </div>
+
+      <!-- Welcome banner (visible when login=ok) -->
+      <div id="welcome-banner" class="info-banner" style="background:#E8F5E9;border-color:#A5D6A7;display:none;" role="status">
+        <span class="icon">&#10003;</span>
+        <p data-i18n="solweb.dashboard-welcome"><strong>Accesso effettuato con successo.</strong> Scegli cosa fare tra le opzioni disponibili.</p>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+
+        <!-- Card 1: Acquista Abbonamento -->
+        <div class="card" style="text-align:center;">
+          <div class="card-icon" aria-hidden="true" style="font-size:3rem;margin-bottom:0.5rem;">&#128722;</div>
+          <h3 data-i18n="solweb.dashboard-acquista">Acquista Abbonamento</h3>
+          <p style="color:#777;font-size:0.9rem;" data-i18n="solweb.dashboard-acquista-desc">Nuovo abbonamento mensile, annuale o extraurbano. Scegli il piano e le agevolazioni.</p>
+          <a href="piani.html?login=ok" class="btn-primary" style="display:block;text-align:center;text-decoration:none;margin-top:1rem;" data-i18n="solweb.dashboard-acquista-cta">Scegli il Piano</a>
+        </div>
+
+        <!-- Card 2: Rinnova Abbonamento -->
+        <div class="card" style="text-align:center;">
+          <div class="card-icon" aria-hidden="true" style="font-size:3rem;margin-bottom:0.5rem;">&#128260;</div>
+          <h3 data-i18n="solweb.dashboard-rinnova">Rinnova Abbonamento</h3>
+          <p style="color:#777;font-size:0.9rem;" data-i18n="solweb.dashboard-rinnova-desc">Rinnova un abbonamento esistente. I tuoi dati sono giÃ  associati all'account.</p>
+          <a href="rinnova.html?login=ok" class="btn-primary" style="display:block;text-align:center;text-decoration:none;margin-top:1rem;" data-i18n="solweb.dashboard-rinnova-cta">Rinnova Ora</a>
+        </div>
+
+      </div>
+      <div class="text-center mt-2">
+        <a href="login.html" class="btn-outline" data-i18n="solweb.dashboard-esci">Esci</a>
+      </div>
+
+    </div>
+  </main>
+
+    <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay-content">
+      <div class="search-overlay-header">
+        <input type="search" class="search-overlay-input" id="search-overlay-input" placeholder="Cerca..." data-i18n-placeholder="search.placeholder" aria-label="Cerca" />
+        <button class="search-overlay-close" data-i18n-aria="search.close" aria-label="Chiudi ricerca">&times;</button>
+      </div>
+      <div class="search-overlay-results" id="search-overlay-results">
+        <div class="search-overlay-empty" data-i18n="search.placeholder">Cerca notizie, orari, linee...</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
+    <h3 data-i18n="trainer.title">&#127891; Modalit&agrave; Trainer</h3>
+    <div id="trainer-steps"></div>
+  </aside>
+
+  <button class="back-to-top" data-i18n-aria="back-to-top.label" aria-label="Torna in cima" title="Torna su">&#8593;</button>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>tper.it</h4>
+        <ul>
+          <li><a href="../pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="../dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="../biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="../abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="../aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.buy-channels">Canali di Acquisto</h4>
+        <ul>
+          <li><a href="login.html" data-i18n="footer.solweb">solweb.tper.it</a></li>
+          <li><a href="../dove-comprare.html#roger" data-i18n="footer.roger">App Roger</a></li>
+          <li><a href="../dove-comprare.html#punti-tper" data-i18n="footer.punti">Punti Tper</a></li>
+          <li><a href="../dove-comprare.html#tabaccherie" data-i18n="footer.tabacchi">Tabaccherie</a></li>
+          <li><a href="../dove-comprare.html#contactless" data-i18n="footer.contactless">Contactless a bordo</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.accessibility">Accessibilit&agrave;</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.contrast">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.font-large">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.contacts">Contatti</h4>
+        <ul>
+          <li><a href="../aiuto.html" data-i18n="footer.support">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener" data-i18n="footer.institutional">tper.it &ndash; Sito Istituzionale</a></li>
+
+          <li><a href="tel:+390800123456" data-i18n="footer.phone">Numero Verde 800-123-456</a></li>        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/trainer-modules.js"></script>
+  <script src="../js/app.js"></script>
+
+  <!-- Show welcome banner on login -->
+  <script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('login') === 'ok') {
+      var banner = document.getElementById('welcome-banner');
+      if (banner) banner.style.display = 'flex';
+    }
+  })();
+  </script>
+
+<button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
+</body>
+</html>
+
+
+
+
+
+
+

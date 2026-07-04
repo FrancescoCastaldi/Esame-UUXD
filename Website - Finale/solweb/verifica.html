@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="it" data-page="solweb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="solweb.verifica-title">Verifica Tessera — solweb.tper.it</title>
+  <meta name="description" content="Verifica lo stato della tua tessera TPER.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-i18n="header.skip">Vai al contenuto principale</a>
+
+  <!-- Solweb Header -->
+  <header class="site-header solweb-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Tper home">
+        <svg viewBox="0 0 100 32" aria-hidden="true">
+          <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
+          <text x="14" y="21" text-anchor="middle" fill="#FFF" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="13">TP</text>
+          <text x="34" y="21" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15">tper.it</text>
+        </svg>
+        tper.it
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="../index.html" data-i18n="solweb.back">&larr; Torna a tper.it</a></li>
+        </ul>
+      </nav>
+      <div class="header-utilities">
+        <button class="lang-btn" data-lang="it" aria-label="Italiano">Italiano</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">English</button>
+        <button class="lang-btn" data-lang="ar" aria-label="العربية">العربية</button>
+        <button class="search-toggle" data-i18n-aria="header.search-toggle" aria-label="Cerca nel sito" title="Cerca">&#128269;</button>
+        <button class="contrast-toggle" data-i18n-aria="a11y.contrast-on" aria-label="Attiva contrasto elevato" title="Contrasto">&#9681;</button>
+        <button class="font-toggle" data-i18n-aria="a11y.font-increase" aria-label="Aumenta carattere" title="Carattere">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="hero-badge" data-i18n="solweb.badge">PIATTAFORMA ABBONAMENTI</div>
+        <h1 data-i18n="solweb.verifica-title">Verifica Tessera</h1>
+        <p data-i18n="solweb.verifica-desc">Inserisci il numero della tua tessera per verificarne lo stato e la validit&agrave;.</p>
+      </div>
+
+      <div class="form-card">
+        <form novalidate id="verifica-form">
+          <div class="form-group">
+            <label for="card-number" data-i18n="solweb.pay-card">Numero Tessera / Codice Abbonamento</label>
+            <input type="text" id="card-number" name="card-number" placeholder="TPER-XXXXXX" pattern="TPER-\d{6}" title="Formato: TPER- seguito da 6 cifre (es. TPER-123456)" data-i18n-placeholder="solweb.pay-card" autocomplete="off">
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" style="flex:1;" data-i18n="solweb.verifica-btn">Verifica</button>
+          </div>
+        </form>
+
+        <div id="verifica-risultato" style="display:none;margin-top:1.5rem;padding:1rem;border-radius:8px;background:#E8F5E9;border:1px solid #A5D6A7;">
+          <p style="font-weight:600;color:#2E7D32;font-size:1.1rem;margin-bottom:0.5rem;" data-i18n="solweb.verifica-ok">&#10003; Tessera attiva e valida</p>
+          <hr style="border:none;border-top:1px solid #A5D6A7;margin:0.5rem 0;">
+          <table style="width:100%;font-size:0.95rem;">
+            <tr>
+              <td style="padding:0.25rem 0;color:#555;" data-i18n="solweb.pay-card">Numero Tessera</td>
+              <td style="padding:0.25rem 0;text-align:right;font-weight:600;" id="risultato-codice">TPER-XXXXXX</td>
+            </tr>
+            <tr>
+              <td style="padding:0.25rem 0;color:#555;" data-i18n="solweb.verifica-stato">Stato</td>
+              <td style="padding:0.25rem 0;text-align:right;font-weight:600;color:#2E7D32;" id="risultato-stato">Attiva</td>
+            </tr>
+            <tr>
+              <td style="padding:0.25rem 0;color:#555;" data-i18n="solweb.verifica-scadenza">Scadenza</td>
+              <td style="padding:0.25rem 0;text-align:right;font-weight:600;" id="risultato-scadenza">31/12/2026</td>
+            </tr>
+            <tr>
+              <td style="padding:0.25rem 0;color:#555;" data-i18n="solweb.verifica-tipo">Tipo Tessera</td>
+              <td style="padding:0.25rem 0;text-align:right;font-weight:600;" id="risultato-tipo">MiMuovo</td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="verifica-errore" style="display:none;margin-top:1.5rem;padding:1rem;border-radius:8px;background:#FFEBEE;border:1px solid #EF9A9A;color:#C62828;" role="alert">
+          <p data-i18n="solweb.verifica-non-trovata">&#9888; Tessera non trovata. Verifica il numero inserito e riprova.</p>
+        </div>
+      </div>
+
+      <p class="text-center mt-2">
+        <a href="ricarica.html" class="btn-primary" data-i18n="solweb.verifica-ricarica">Ricarica questa tessera</a>
+      </p>
+      <p class="text-center mt-1">
+        <a href="login.html" class="btn-outline">&larr; Torna al login</a>
+      </p>
+
+    </div>
+  </main>
+
+    <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay-content">
+      <div class="search-overlay-header">
+        <input type="search" class="search-overlay-input" id="search-overlay-input" placeholder="Cerca..." data-i18n-placeholder="search.placeholder" aria-label="Cerca" />
+        <button class="search-overlay-close" data-i18n-aria="search.close" aria-label="Chiudi ricerca">&times;</button>
+      </div>
+      <div class="search-overlay-results" id="search-overlay-results">
+        <div class="search-overlay-empty" data-i18n="search.placeholder">Cerca notizie, orari, linee...</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
+    <h3 data-i18n="trainer.title">&#127891; Modalit&agrave; Trainer</h3>
+    <div id="trainer-steps"></div>
+  </aside>
+
+  <button class="back-to-top" data-i18n-aria="back-to-top.label" aria-label="Torna in cima" title="Torna su">&#8593;</button>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>tper.it</h4>
+        <ul>
+          <li><a href="../pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="../dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="../biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="../abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="../aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.buy-channels">Canali di Acquisto</h4>
+        <ul>
+          <li><a href="login.html" data-i18n="footer.solweb">solweb.tper.it</a></li>
+          <li><a href="../dove-comprare.html#roger" data-i18n="footer.roger">App Roger</a></li>
+          <li><a href="../dove-comprare.html#punti-tper" data-i18n="footer.punti">Punti Tper</a></li>
+          <li><a href="../dove-comprare.html#tabaccherie" data-i18n="footer.tabacchi">Tabaccherie</a></li>
+          <li><a href="../dove-comprare.html#contactless" data-i18n="footer.contactless">Contactless a bordo</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.accessibility">Accessibilit&agrave;</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.contrast">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.font-large">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.contacts">Contatti</h4>
+        <ul>
+          <li><a href="../aiuto.html" data-i18n="footer.support">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener" data-i18n="footer.institutional">tper.it &ndash; Sito Istituzionale</a></li>
+
+          <li><a href="tel:+390800123456" data-i18n="footer.phone">Numero Verde 800-123-456</a></li>        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/trainer-modules.js"></script>
+  <script src="../js/app.js"></script>
+
+  <!-- Simulated verification -->
+  <script>
+  (function() {
+    var form = document.getElementById('verifica-form');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var cardInput = document.getElementById('card-number');
+      var risultato = document.getElementById('verifica-risultato');
+      var codice = cardInput ? cardInput.value.trim() : '';
+
+      if (risultato) risultato.style.display = 'none';
+
+      if (!codice || codice.length < 5) {
+        if (typeof showFieldError === 'function') showFieldError(cardInput, 'Il numero tessera deve contenere almeno 5 caratteri. Si trova sul retro della tua carta TPER o MiMuovo.');
+        return;
+      }
+
+      // Simulate found card
+      document.getElementById('risultato-codice').textContent = codice;
+      document.getElementById('risultato-stato').textContent = typeof translate === 'function' ? translate('solweb.verifica-attiva') : 'Attiva';
+      document.getElementById('risultato-scadenza').textContent = '31/12/2026';
+      document.getElementById('risultato-tipo').textContent = codice.toUpperCase().indexOf('ROGER') !== -1
+        ? (typeof translate === 'function' ? translate('solweb.verifica-roger') : 'Roger Card')
+        : (typeof translate === 'function' ? translate('solweb.verifica-mimuovo') : 'MiMuovo');
+      if (risultato) risultato.style.display = 'block';
+    });
+  })();
+  </script>
+
+<button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
+</body>
+</html>
+
+
+
+
+
+
+

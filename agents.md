@@ -1,105 +1,190 @@
-# TPER UX Design — Project Agent Handoff
+# AGENTS — Session Log
 
-## Project Path
-`C:\Users\stef3\OneDrive\Esame__UUXD`
+## 2026-07-03 — Wireframe Update + main.tex Refactor
 
-## File Inventory (current)
+### Done
+- **8 screenshots ricatturati** da `Website - Finale/` con Puppeteer (viewport 1366×700, landscape crop, no footer):
+  - WF1: index.html — Homepage Guest (no trainer)
+  - WF2: pianifica.html — Trainer Viaggio step 3 (highlight #plan-route-btn)  
+  - WF3: dove-comprare.html — Channel guide (no trainer)
+  - WF4: biglietti.html — Trainer Biglietto step 0 (highlight #ticket-types)
+  - WF5: aiuto.html — Trainer sidebar aperta (griglia selezione 5 moduli)
+  - WF6: abbonamenti.html — Trainer Rinnovo step 0 (highlight #subscription-types)
+  - WF7a: solweb/pagamento.html — Flusso pagamento (no trainer)
+  - WF7b: solweb/conferma.html — Conferma post-acquisto (no trainer)
+- **main.tex wireframe section riscritto** (righe 4331–4610+):
+  - Descrizioni WF1-WF5 aggiornate allo stato corrente del sito
+  - WF6 (Abbonamenti + Trainer) e WF7 (solweb Pagamento + Conferma) aggiunti
+  - Tabella riepilogativa espansa da 5 a 7 righe
+  - Fix `#` → `\#` per errore di compilazione LaTeX
+  - Nota box aggiornata con menzione solweb
+- **Wireframes/00-wireframes-main.tex** sincronizzato con main.tex
+- **main.pdf ricompilato**: 112 pagine, 4.36 MB
+- **File di compilazione eliminati** (.aux, .log, .out, etc.)
 
-### main.tex — 218 KB / 3477 righe
-- **Phase C Cards:** Market Research (#3), Assessment (TPER + ATAC), Preliminary User Testing (TPER + ATAC), Conclusion
-- **Snellimenti applicati:**
-  - Card #3: "Segment of choice" + "Reason for choice" unificati; aggiunte interviste one-on-one su moduli stampabili
-  - Assessment Card: ridotta ~25%; rimosso `\newpage` tra TPER e ATAC
-  - Testing protocol: ogni test TPER/ATAC ha "Session details" (Name+Date+Assistant+Context uniti) e "SUS and reflections" (SUS+Suggestions+Outcomes uniti); fusi Testing method + methodology ATAC; accorciate descrizioni task
-- **Label di ancoraggio:** `\phantomsection\label{test:sergio}`, `test:laura`, `test:chris`, `test:maria`, `test:atac-sergio`, `test:atac-laura`, `test:atac-chris`, `test:atac-maria`
+### Trainer Mode — Analisi e Coerenza
+- Analizzato il codice JS (`app.js`): ogni modulo trainer reindirizza automaticamente alla pagina corretta (es. `viaggio` → `pianifica.html`, `rinnovo` → `abbonamenti.html`)
+- Usati solo moduli con target elements REALI sulla pagina (verificati con grep su tutti gli 8 file HTML)
+- WF5 (aiuto.html): nessun modulo punta a questa pagina — mostrata la griglia di selezione moduli senza modulo attivo
 
-### Website/css/style.css — 37.5 KB / 1439 righe
-TPER red palette #CA1424, tutti i componenti (header, hero, route planner, cards, stepper, accordion, comparison table, modal, skeleton loading, trainer sidebar, a11y controls, high contrast, font scaling, responsive breakpoints).
-- `body.high-contrast` selettore corretto (linea 713)
-- Classi `.sanzioni-*` per tab switching pratiche/CF (linee 819–850)
-- `.trainer-toggle-btn`: FAB fisso in basso a destra (44×44px, `#CA1424`, linea 1052)
+### Key Decisions
+- Viewport 1366×700 (landscape) invece di 1280×780 (più quadrato) — immagini meno quadrate
+- `fullPage: false` per tagliare footer e mostrare solo header + contenuto principale
+- Trainer moduli usati solo dove gli highlight corrispondono a ID esistenti nella pagina
+- 4 wireframe con trainer attivo (WF2, WF4, WF5, WF6), 4 senza (WF1, WF3, WF7a, WF7b)
 
-### Website/js/i18n.js — 61 KB / 1077 righe
-- IT/EN/AR dizionari (~297 keys ciascuno)
-- `translate()`, `setLang()`, `getCurrentLang()`, auto-init
-- RTL per arabo, `data-i18n`/`data-i18n-placeholder`/`data-i18n-aria`
-- Chiavi `nav.percorso`/`footer.percorso` rimosse
+---
 
-### Website/js/app.js — 50 KB / 1085 righe
-- Trainer mode modulare (4 attività, walkthrough con highlight)
-- Hamburger menu, contrast/font a11y, language switch (IT/EN/AR)
-- Route planner, channel redirect modal, wizard, accordion, back-to-top, skeleton loading
-- `escapeHtml`: 1 definizione (linea 196)
-- `.trainer-toggle-btn` click handler (linee 1095–1102)
-- `loadTrainerStats()` con try/catch (linea 345)
+## 2026-07-03 — main.tex: Versioni, Coerenza FT, Audit Inspection Card
 
-### HTML Pages (12 total)
-| File | Descrizione | trainer-toggle-btn |
-|------|-------------|-------------------|
-| `index.html` | Homepage — route planner hero, 6 info cards, info banner | Prima di `</body>` |
-| `pianifica.html` | Route planner page | Prima di `</body>` |
-| `dove-comprare.html` | Channel guide + wizard + sanzioni card | Prima di `</body>` |
-| `biglietti.html` | Ticket information | Prima di `</body>` |
-| `abbonamenti.html` | Subscription info | Prima di `</body>` |
-| `aiuto.html` | Help + trainer-mode activation | Prima di `</body>` |
-| `404.html` | Error page | Prima di `</body>` |
-| `solweb/login.html` | Login + Acquisto Impersonale | Prima di `</body>` |
-| `solweb/piani.html` | 3 plan cards + guest mode detection | Prima di `</body>` |
-| `solweb/documenti.html` | Required documents checklist | Prima di `</body>` |
-| `solweb/pagamento.html` | Order summary + payment + guest mode | Prima di `</body>` |
-| `solweb/sanzioni.html` | Fines payment (no registration), tab pratiche/CF | Prima di `</body>` |
+### Done
+- **Versioni (v1.0 → v2.0):**
+  - `FaseD2/02-inspection-card-body.tex`: inizio v1.0 (riga 20), aggiunta sezione `Name of Redesigned Version` a fine con v2.0 (righe 675-679)
+  - `main.tex` Final Conclusions: riga 5311 v1.0 → v2.0
+- **Coerenza Formative Test:**
+  - Aggiunto **FT7** (Link agli orari nella pianificazione, P=2, I=3) alla urgency curve + tabella
+  - Raccomandazione #5 fusa in #1 → raccomandazioni da 5 a 4
+- **Inspection Card audit** vs Website - Finale: 9 raccomandazioni → 8 PASS, 1 PARTIAL (CW-05)
+- **FT issues sopra curva** — audit stato fix:
+  - FT1 (P=5, I=5): Mitigato progettualmente
+  - FT4 (P=4, I=3): Parziale → fixato con 3 link su aiuto.html
+  - FT5 (P=3, I=4): Fixed
+  - FT6 (P=4, I=3): Non fixato
+- `main.tex`: 5314 → 5319 righe
 
-### Phase C PDFs
-| Document | File | Size attuale |
-|----------|------|--------------|
-| IA Card | `IA/02-ia-card.pdf` | 178 KB |
-| Blueprint | `Blueprint/00-blueprint-main.pdf` | 532 KB |
-| Wireframes | `Wireframes/00-wireframes-main.pdf` | 570 KB |
-| Comparison | `Comparison/00-comparison-main.pdf` | 153 KB |
-| Reflections | `Comparison/00-reflections.pdf` | 130 KB |
+---
 
-## Funzionalità Implementate
+## 2026-07-03 — Website - Finale: Bug Fix Sessione Completa
 
-### Trainer Mode
-- Attivazione: pulsante `🎓` **fisso in basso a destra** su tutte le pagine (`.trainer-toggle-btn`) + pulsante `#activate-trainer` in `aiuto.html`
-- Sidebar `.trainer-bar` 320px, slide-in da destra
-- 4 moduli con walkthrough: Rinnova abbonamento, Pianifica viaggio, Acquista biglietto, Ricarica tessera
-- `body` si sposta `margin-right: 320px` quando aperto
-- Highlight visivo (`.trainer-highlight`), progress bar, step counter, i18n completo
-- Persistenza: localStorage (`tper-trainer-active`), sessionStorage (`tper-trainer-current`), URL parameter (`?trainer=<module>`)
+### Audit e Fix Strutturali
+- **Audit completo** (4 audit paralleli: trainer mode, JS, HTML, CSS) — 22 file analizzati
+- **FT4 fix** — `aiuto.html`: link a `agevolazioni.html`, `solweb/ricarica.html`, `solweb/rinnova.html` nelle FAQ
+- **Wizard centering** — `css/style.css`: `.ticket-wizard-opt` con `margin: 0 auto; width: min(100%, 450px); text-align: center`
+- **Bottone start-guide centrato** — `css/style.css`: `#start-guide { display: block; margin-left: auto; margin-right: auto; }`
+- **11 chiavi i18n mancanti** aggiunte a IT/EN/AR (`home.title`, `pianifica.title`, 8 `tickets.*-channels`, `solweb.registrazione-terms`)
+- **Mojibake**: `giÃ ` → `già` su `dashboard.html:71`
+- **Footer completato** su `aiuto.html` e `dove-comprare.html` (Accessibilità + Contatti)
+- **Breadcrumb** aggiunto su 6 pagine solweb (dashboard, login, recupero, registrazione, sanzioni, verifica)
 
-### Guest Mode (solweb)
-- `login.html` → link "Acquisto Impersonale" → `piani.html?mode=guest`
-- `pagamento.html?mode=guest` → nasconde nome/cognome/email/telefono, mostra solo Numero Tessera
+### Banner e Layout
+- **Banner rosso `abbonamenti.html`**: rimosso testo duplicato, separato `data-i18n` da link HTML
+- **Rimosso `wizard-section--compact`** da `abbonamenti.html` e `dove-comprare.html` → testo Guida e banner tornati a dimensione originale
+- **Rimosso `info-banner--compact`** da entrambe le pagine → banner a dimensione piena
+- **i18n `banner.info`** aggiornato IT/EN/AR con testo pulito (solo `<span>`, niente HTML inline)
 
-### Channel Guide / Dove Comprare
-- Wizard interattivo (3 domande: tipo utente, esigenza, metodo pagamento)
-- Risultati con link diretti a canali (solweb per acquisti, tabaccherie, Roger app, Contactless)
-- Card "Sanzioni" con tab switching (Con Numero Pratica / Con Codice Fiscale)
+### Trainer Mode — Bug Fix Critici
+| # | Bug | File | Fix |
+|:--:|------|------|-----|
+| 1 | Wizard "Ti aiutiamo a scegliere" morto | `app.js:246-247` | `start-wizard` → `start-guide` + `guide-container` fallback |
+| 2 | Login non salvava stato trainer | `app.js:1310` | `saveTrainerState()` prima del redirect |
+| 3 | `#welcome-banner` `display:none` — highlight falliva | `app.js:1016-1018` | Forza `display:''` se nascosto |
+| 4 | `resolveTrainerPath` tranciava hash `#roger` | `app.js:382-399` | Preserva frammento hash |
+| 5 | Trainer bar 320px copriva tutto su mobile | `style.css:1868-1869` | `width: 100vw` in `@media (max-width: 768px)` |
+  | 6 | `#rinnovo-decision` assente su `abbonamenti.html` | `trainer-modules.js:30` | `highlight: "#rinnovo-decision"` → `null` |
+- **Fix wizard cross-contamination:** `app.js:246-247` — wizard Channel Selector ora si attiva solo su `dove-comprare.html` (gate `isDoveComprare`). Su `biglietti.html` e `abbonamenti.html` restano attivi i wizard inline specifici (5 e 7 domande).
 
-### Accessibilità
-- High contrast (body.high-contrast)
-- Font scaling (A+/A-)
-- Skip link, ARIA labels
-- RTL support for Arabic
+### File Inventory Finale
+- **Website - Finale**: 22 HTML + 3 JS (app.js ~1500, i18n.js ~1744, trainer-modules.js 293) + 1 CSS (~2118 righe)
+- **main.tex**: 5319 righe
+- **FaseD2/02-inspection-card-body.tex**: 682 righe
 
-## Key Technical Notes
-- **Color palette:** White #FFFFFF, TPER Red #CA1424, Dark #333, Grey #F5F5F5
-- **CRITICAL:** tper.it è INFORMATIVO SOLO. Nessun acquisto. Acquisti reali su: solweb.tper.it, Roger app, Punti Tper, Tabaccherie/PuntoLis, Contactless a bordo
-- Tutti i link `https://solweb.tper.it` esterni → sostituiti con percorsi relativi interni (`solweb/login.html` o `login.html`)
-- HTML pages sono statiche (nessun build step), si aprono direttamente in browser
-- Path relativi: `css/style.css`, `js/i18n.js`, `js/app.js`
-- Pagine solweb/ usano `../css/style.css`, `../js/i18n.js`
-- `pdflatex` per compilazione LaTeX (non installato su ambiente corrente)
-- Puppeteer con Edge headless per PNG: `node capture.cjs` (Blueprint Mermaid.js → HTML → PNG)
-- Blueprint source HTML in `Blueprint/html/` (bp1-ia.html, bp2-ecosystem.html, bp3-journey.html)
+---
 
-## Git Status
-- Repository **non inizializzato** (nessun `.git`)
-- Per tracciare le modifiche: `git init` + `.gitignore` (escludere `*.pdf`, `*.aux`, `*.log`, `*.out`, etc.)
+## 2026-07-04 — Directory State Audit (post-session discrepancies)
 
-## Personas
-- **Maria** (79yo, SUS 27.5) — digitalmente inattiva, zero completamento
-- **Laura** (70yo, 7 errori) — smartphone basilare, 20% completamento TPER
-- **Chris** (34yo, 226s T1) — straniero anglofono, 40% completamento TPER
-- **Fatima** (45yo) — araba parlante, scenario test
+### Audit vs AGENTS.md
+Analizzato l'intero albero delle directory e confrontato con quanto documentato. **Ultimo commit: 26 giugno** — tutto il lavoro del 3 luglio + successivo NON è mai stato committato.
+
+### Discrepanze Rilevate
+
+#### main.tex
+| Claim AGENTS.md | Realtà |
+|----------------|--------|
+| 5.319 righe | 4.631 righe (working copy) |
+| HEAD (committed): 3.468 righe | |
+
+Nessuna versione del file (HEAD, backup, working) raggiunge le 5.319 righe. Il working copy ha subito un **refactoring pesante non documentato**:
+- Aggiunti pacchetti: `tcolorbox` (breakable), `graphicx`, `eurosym`, `microtype`
+- Palette colori rivista (es. `accentOrange` `#DD6B20` → `#EA580C`)
+- 6 nuovi stili tcolorbox (base, sectionbox, personabox, warningbox, rffield)
+- Titoli sezioni ora in `\sffamily`
+- Diff: +2.114 inserzioni / -708 rimozioni rispetto a HEAD
+
+#### main.pdf
+| Claim AGENTS.md | Realtà |
+|----------------|--------|
+| 112 pagine, 4.36 MB | 110 pagine, 4.04 MB |
+
+Ricompilato dopo le modifiche — leggermente più compatto.
+
+#### FaseD2/02-inspection-card-body.tex
+| Claim AGENTS.md | Realtà |
+|----------------|--------|
+| 682 righe | 537 righe |
+
+#### Website - Finale JS/CSS (line counts approssimativi)
+| File | AGENTS.md | Reale |
+|------|-----------|-------|
+| app.js | ~1500 | 1.358 |
+| i18n.js | ~1744 | 1.602 |
+| trainer-modules.js | 293 | 293 ✅ |
+| style.css | ~2118 | 2.031 |
+
+### Nuove directory NON documentate
+
+| Directory | Contenuto |
+|-----------|-----------|
+| `Website - Inter/` | 22 HTML + 3 JS + 1 CSS — versione intermedia (app.js 1.297, i18n.js 1.539, style.css 1.859). Quasi identica a Finale, manca solo `images/mappa_bologna.png`. |
+| `backupsito/Website - Final` | Backup con 21 HTML (manca `registrazione.html`, `recupero.html`, `verifica.html`) |
+| `backupsito/Website - inter` | Backup versione intermedia con 15 HTML e 7 solweb |
+| `Backup/` | main.tex a 3.730 righe |
+| `Backup_main/` | main.pdf + main.tex (3.468 righe = HEAD) |
+| `BACKUP_SESSION_20260628_170941/` | main.tex (3.327 righe), main.pdf, report-analisi.md, confronto-scenari.md |
+| `FaseD2/` | Inspection card (tex/pdf/docx), formative test card, tex2pdf.cjs |
+| `11-CourseProject2026.pptx` | Nuova presentazione PowerPoint |
+
+### File sparsi nuovi
+- `capture-screenshots.js`, `capture-wf5.js` (script Puppeteer)
+- `images/mappa_bologna.png`
+- `package.json`, `package-lock.json`, `node_modules/`
+- `Comparison/00-comparison-body.tex`, `00-reflections-body.tex`
+- File duplicati con suffisso `(1)` in `Blueprint/` e `Comparison/`
+
+### Stato Git
+```
+HEAD:       c024d7c (26 giugno 2026)
+Branch:     master
+Modificati: 7 file (main.tex, agents.md, 5 screenshot, Blueprint, Comparison)
+Nuovi:      ~40+ file in ~12 directory non tracciate
+Commit:     NESSUN commit dopo il 26 giugno
+```
+
+### Raccomandazioni
+1. **Commitare** tutto il lavoro in sospeso prima di dichiarare concluso
+2. **Aggiornare** i line count precisi se si ripetono le misurazioni
+3. **Valutare cleanup** di `Backup/`, `backupsito/`, `BACKUP_SESSION_*`, file con suffisso `(1)` se sono duplicati superflui
+ 4. **Decidere** se `Website - Inter/` va tenuto o rimosso (è ridondante rispetto a `Website - Finale`)
+
+---
+
+## 2026-07-04 — Summative Test Card + main.tex sezione finale
+
+### Done
+- **Summative Test Card aggiunta** in fondo a `main.tex` (righe 5319-5469):
+  - Protocollo di test: discount usability testing, bottom line data, 5 task identici a Phase A
+  - Metriche: Success, Time, Errors, Satisfaction (SUS target $\ge 68$, buona usabilità)
+  - Soggetti: Laura Palumbo (70 anni) + Maria Borriello (79 anni), entrambi da Phase A per confronto before/after
+  - Motivazione: confronto quantitativo same-subject con stessi task del Preliminary User Testing
+- **Test #1: Laura Palumbo** (righe 5470-5583):
+  - 2 Luglio 2026, ore 17:00 — 30 minuti, assistente Stefano Mercurio
+  - 4/5 task (80%), tempo medio 103 s, errori medi 1,4, SUS 72,5/100
+  - Unico fallimento T3 (acquisto) per barriera terminologica FT1
+  - T4 (agevolazioni) completato con 0 errori, 0 backtrack, 57 s (vs 195 s Phase A)
+  - SUS superiore a 68 (buona usabilità), +35 punti vs Phase A (37,5)
+- **Fix SUS target:** protocollo Metrics of Tests corretto da $\ge 55$ a $\ge 68$ (buona usabilità)
+- **Fix wizard cross-contamination:** `app.js:246-247` — wizard Channel Selector con gate `isDoveComprare`, si attiva solo su dove-comprare (biglietti e abbonamenti usano wizard inline specifici)
+
+### File Inventory Finale
+- **main.tex**: 5583 righe (da 5470)
+- **Website - Finale JS**: app.js ~1502 righe (da ~1500)
+- **FaseD2/02-inspection-card-body.tex**: 682 righe

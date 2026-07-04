@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="it" data-page="abbonamenti">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="subs.title">Abbonamenti — tper.it</title>
+  <meta name="description" content="Abbonamenti Tper: mensile, annuale, agevolazioni. Scopri le opzioni e come acquistare.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link" data-i18n="header.skip">Vai al contenuto principale</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <button class="hamburger" data-i18n-aria="header.menu" aria-label="Menu" aria-expanded="false">&#9776;</button>
+      <a href="index.html" class="logo" aria-label="Tper home">
+        <svg viewBox="0 0 100 32" aria-hidden="true">
+          <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
+          <text x="14" y="21" text-anchor="middle" fill="#FFF" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="13">TP</text>
+          <text x="34" y="21" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15">tper.it</text>
+        </svg>
+        tper.it
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="orari.html" data-i18n="nav.orari">Orari</a></li>
+          <li><a href="notizie.html" data-i18n="nav.notizie">Notizie</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="abbonamenti.html" aria-current="page" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </nav>
+      <div class="header-utilities">
+        <button class="lang-btn" data-lang="it" data-i18n-aria="header.lang-it" aria-label="Italiano">IT</button>
+        <button class="lang-btn" data-lang="en" data-i18n-aria="header.lang-en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="العربية">AR</button>
+        <button class="search-toggle" data-i18n-aria="header.search-toggle" aria-label="Cerca nel sito" title="Cerca">&#128269;</button>
+        <button class="contrast-toggle" data-i18n-aria="a11y.contrast-on" aria-label="Attiva contrasto elevato">&#9681;</button>
+        <button class="font-toggle" data-i18n-aria="a11y.font-increase" aria-label="Aumenta carattere">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="sep">/</li>
+          <li aria-current="page" data-i18n="nav.abbonamenti">Abbonamenti</li>
+        </ol>
+      </nav>
+
+      <h1 data-i18n="subs.title">Abbonamenti</h1>
+      <p class="mb-2" data-i18n="subs.desc">Scopri tutte le opzioni di abbonamento per Bologna e l'Emilia-Romagna. Usa la guida per trovare il pi&ugrave; adatto a te.</p>
+
+      <div class="info-banner" style="background:#E8F5E9;border-color:#A5D6A7;" role="status">
+        <span class="icon" style="font-size:1.5rem;">&#127942;</span>
+        <p><strong data-i18n="agevolazioni.box-title">Non sai se hai diritto a uno sconto?</strong> <span data-i18n="agevolazioni.box-desc">Scopri in 30 secondi a quali agevolazioni puoi accedere e quali documenti ti servono.</span> <a href="agevolazioni.html" class="btn-primary" style="display:inline-block;margin-top:0.5rem;text-decoration:none;" data-i18n="agevolazioni.box-cta">&#127942; Scopri le agevolazioni</a></p>
+      </div>
+
+      <!-- Wizard Section -->
+      <section aria-labelledby="wizard-title">
+        <div class="section-header">
+          <h2 id="wizard-title" data-i18n="subs.wizard-title">&#128269; Guida: scegli il tuo abbonamento</h2>
+          <p data-i18n="subs.wizard-desc">Rispondi a poche domande e ti consiglieremo l'abbonamento pi&ugrave; conveniente.</p>
+        </div>
+        <button class="btn-primary" id="start-guide" style="margin-bottom:1rem;">&#128269; Ti aiutiamo a scegliere</button>
+        <div class="ticket-wizard-card" id="wizard-container" style="display:none;"></div>
+      </section>
+
+
+      <!-- All subscriptions cards -->
+      <div class="section-header mt-2" id="subscription-types">
+        <h2 data-i18n="subs.all-title">Tutti gli abbonamenti disponibili</h2>
+      </div>
+
+      <div class="card-filters" id="subs-filters">
+        <span class="filter-label">&#128205;</span>
+        <div class="filter-group" data-filter="zona">
+          <button class="filter-pill" data-value="bologna">Bologna</button>
+          <button class="filter-pill" data-value="ferrara">Ferrara</button>
+          <button class="filter-pill" data-value="extraurbano">Extraurbano</button>
+        </div>
+        <span class="filter-label" style="margin-left:0.5rem;">&#128197;</span>
+        <div class="filter-group" data-filter="durata">
+          <button class="filter-pill" data-value="mensile">Mensile</button>
+          <button class="filter-pill" data-value="annuale">Annuale</button>
+        </div>
+        <span class="filter-label" style="margin-left:0.5rem;">&#128101;</span>
+        <div class="filter-group" data-filter="tipo">
+          <button class="filter-pill" data-value="personale">Personale</button>
+          <button class="filter-pill" data-value="impersonale">Impersonale</button>
+          <button class="filter-pill" data-value="famiglia">Famiglia</button>
+        </div>
+        <span class="filter-label" style="margin-left:0.5rem;">&#127891;</span>
+        <div class="filter-group" data-filter="agev">
+          <button class="filter-pill" data-value="standard">Standard</button>
+          <button class="filter-pill" data-value="under27">Under 27</button>
+          <button class="filter-pill" data-value="over70">Over 70</button>
+          <button class="filter-pill" data-value="studente">Studente</button>
+          <button class="filter-pill" data-value="isee">ISEE</button>
+        </div>
+        <button class="filter-reset" id="subs-filter-reset">&#8635; Reset</button>
+        <span class="filter-count" id="subs-filter-count">8 risultati</span>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-blue" data-zona="bologna" data-durata="mensile" data-tipo="impersonale" data-agev="standard">
+          <div class="card-icon" aria-hidden="true">&#128197;</div>
+          <h3>Mensile Impersonale</h3>
+          <p><strong>39&euro;</strong> — 30 giorni illimitati sulla rete urbana di Bologna. Trasferibile tra pi&ugrave; persone (non contemporaneamente). Sabato e festivi fino a 7 persone.</p>
+          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper, Rivendite, PuntoLis</small></p>
+        </div>
+        <div class="card card-green" data-zona="bologna" data-durata="annuale" data-tipo="personale" data-agev="standard">
+          <div class="card-icon" aria-hidden="true">&#128200;</div>
+          <h3>Annuale Personale</h3>
+          <p><strong>310&euro;</strong> — 365 giorni illimitati. Su tessera MiMuovo (5&euro;). Risparmi il 35% rispetto al mensile.</p>
+          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper</small></p>
+        </div>
+        <div class="card card-orange" data-zona="bologna" data-durata="annuale mensile" data-tipo="personale" data-agev="under27">
+          <div class="card-icon" aria-hidden="true">&#127939;</div>
+          <h3>Annuale Under 27</h3>
+          <p><strong>230&euro;</strong> — Per giovani sotto i 27 anni. Include tessera MiMuovo. Anche mensile a 30&euro;.</p>
+          <p><small>Documenti: documento identit&agrave;, foto tessera</small></p>
+        </div>
+        <div class="card card-purple" data-zona="bologna" data-durata="annuale" data-tipo="personale" data-agev="over70">
+          <div class="card-icon" aria-hidden="true">&#128117;</div>
+          <h3>Annuale Over 70</h3>
+          <p><strong>200&euro;</strong> — Per anziani sopra i 70 anni. Include tessera MiMuovo. Massima convenienza.</p>
+          <p><small>Documenti: documento identit&agrave;, foto tessera</small></p>
+        </div>
+        <div class="card card-teal" data-zona="bologna" data-durata="annuale" data-tipo="personale" data-agev="studente">
+          <div class="card-icon" aria-hidden="true">&#127891;</div>
+          <h3>SaltaSu Under 19</h3>
+          <p><strong>Gratuito</strong> — Abbonamento annuale gratuito per studenti under 19 residenti in Emilia-Romagna.</p>
+          <p><small>Richiedibile online. Verifica sul sito della Regione.</small></p>
+        </div>
+        <div class="card card-red" data-zona="extraurbano" data-durata="mensile annuale" data-tipo="personale" data-agev="standard">
+          <div class="card-icon" aria-hidden="true">&#128652;</div>
+          <h3>Extraurbano</h3>
+          <p><strong>Da 31&euro;/mese</strong> — Prezzo a zone per spostamenti fuori Bologna. Sistema tariffario MiMuovo.</p>
+          <p><small>Acquisto: <a href="solweb/login.html">solweb.tper.it</a>, Punti Tper</small></p>
+        </div>
+        <div class="card card-blue" data-zona="bologna" data-durata="annuale" data-tipo="impersonale" data-agev="standard">
+          <div class="card-icon" aria-hidden="true">&#128179;</div>
+          <h3>Annuale Impersonale</h3>
+          <p><strong>340&euro;</strong> — 365 giorni trasferibile su tessera MiMuovo. Chiunque può usarlo (non contemporaneamente). Non dà diritto allo sconto in caso di dimenticanza del titolo a bordo.</p>
+          <p><small>Acquisto: Punti Tper Bologna</small></p>
+        </div>
+        <div class="card card-green" data-zona="bologna" data-durata="annuale" data-tipo="famiglia" data-agev="standard">
+          <div class="card-icon" aria-hidden="true">&#128101;</div>
+          <h3>Famiglia</h3>
+          <p><strong>Sconto 20%</strong> sul secondo abbonamento e successivi per lo stesso nucleo familiare.</p>
+          <p><small>Documenti: stato di famiglia, documento identit&agrave; di ogni componente</small></p>
+        </div>
+      </div>
+
+      <!-- Come Acquistare -->
+      <h2 class="mt-2 mb-1" id="buy-channels">Come Acquistare o Rinnovare un Abbonamento</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Online su solweb.tper.it <small style="color:#718096;font-weight:400;">(consigliato)</small></span>
+            <span class="arrow" aria-hidden="true">&#9660;</span>
+          </button>
+          <div class="accordion-content">
+            <ol style="margin-top:0.5rem;">
+              <li>Visita <a href="solweb/login.html">solweb.tper.it</a></li>
+              <li>Accedi con le tue credenziali</li>
+              <li>Scegli il tipo di abbonamento</li>
+              <li>Carica i documenti necessari</li>
+              <li>Effettua il pagamento con carta o bonifico</li>
+              <li>Ricevi l&rsquo;abbonamento digitale via email</li>
+            </ol>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Presso un Punto Tper</span>
+            <span class="arrow" aria-hidden="true">&#9660;</span>
+          </button>
+          <div class="accordion-content">
+            <ol style="margin-top:0.5rem;">
+              <li>Trova il Punto Tper pi&ugrave; vicino</li>
+              <li>Porta documento identit&agrave;, foto tessera, eventuale ISEE</li>
+              <li>Richiedi l&rsquo;abbonamento all&rsquo;operatore</li>
+              <li>Paga in contanti o con carta</li>
+              <li>Ritira la tessera o l&rsquo;abbonamento cartaceo</li>
+            </ol>
+          </div>
+        </div>
+        <div class="accordion-item" id="documents-section">
+          <button class="accordion-header">
+            <span>Documenti Necessari</span>
+            <span class="arrow" aria-hidden="true">&#9660;</span>
+          </button>
+          <div class="accordion-content">
+            <ul style="margin-top:0.5rem;">
+              <li>Documento d&rsquo;identit&agrave; valido</li>
+              <li>Codice fiscale</li>
+              <li>Foto tessera recente</li>
+              <li>Certificazione ISEE (per agevolazioni)</li>
+              <li>Certificato di iscrizione (per studenti)</li>
+              <li>Stato di famiglia (per abbonamento famiglia)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <button class="back-to-top" data-i18n-aria="back-to-top.label" aria-label="Torna in cima">&#8593;</button>
+    <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay-content">
+      <div class="search-overlay-header">
+        <input type="search" class="search-overlay-input" id="search-overlay-input" placeholder="Cerca..." data-i18n-placeholder="search.placeholder" aria-label="Cerca" />
+        <button class="search-overlay-close" data-i18n-aria="search.close" aria-label="Chiudi ricerca">&times;</button>
+      </div>
+      <div class="search-overlay-results" id="search-overlay-results">
+        <div class="search-overlay-empty" data-i18n="search.placeholder">Cerca notizie, orari, linee...</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
+    <h3 data-i18n="trainer.title">&#127891; Modalit&agrave; Trainer</h3>
+    <div id="trainer-steps"></div>
+  </aside>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>tper.it</h4>
+        <ul>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="orari.html" data-i18n="nav.orari">Orari</a></li>
+          <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.buy-channels">Canali di Acquisto</h4>
+        <ul>
+          <li><a href="solweb/login.html" data-i18n="footer.solweb">solweb.tper.it</a></li>
+          <li><a href="dove-comprare.html#roger" data-i18n="footer.roger">App Roger</a></li>
+          <li><a href="dove-comprare.html#punti-tper" data-i18n="footer.punti">Punti Tper</a></li>
+          <li><a href="dove-comprare.html#tabaccherie" data-i18n="footer.tabacchi">Tabaccherie</a></li>
+          <li><a href="dove-comprare.html#contactless" data-i18n="footer.contactless">Contactless a bordo</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.accessibility">Accessibilit&agrave;</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.contrast">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.font-large">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.contacts">Contatti</h4>
+        <ul>
+          <li><a href="aiuto.html" data-i18n="footer.support">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener" data-i18n="footer.institutional">tper.it &ndash; Sito Istituzionale</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/trainer-modules.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Subscription wizard (inline) -->
+  <script>
+  (function() {
+    var container = document.getElementById('wizard-container');
+    if (!container) return;
+
+    var current = 0;
+    var answers = {};
+
+    var questions = [
+      { id:'azione', q:'Cosa vuoi fare?', opts:[
+        { v:'rinnovo', t:'Rinnovare un abbonamento che ho già' },
+        { v:'acquisto', t:'Acquistare un nuovo abbonamento' }
+      ]},
+      { id:'impersonale', q:'L\'abbonamento da rinnovare è impersonale?', opts:[
+        { v:'si', t:'Sì, è impersonale (basta il numero tessera)' },
+        { v:'no', t:'No, è personale / nominativo' }
+      ]},
+      { id:'zona', q:'In quale zona viaggi?', opts:[
+        { v:'bologna', t:'Bologna città' },
+        { v:'ferrara', t:'Ferrara città' },
+        { v:'extraurbano', t:'Fuori città (extraurbano)' }
+      ]},
+      { id:'durata', q:'Per quanto tempo ti serve?', opts:[
+        { v:'mensile', t:'Un mese' },
+        { v:'annuale', t:'Un anno (risparmi fino al 35%)' }
+      ]},
+      { id:'chi', q:'Chi userà l\'abbonamento?', opts:[
+        { v:'personale', t:'Solo io (personale)' },
+        { v:'impersonale', t:'Può usarlo anche un\'altra persona (impersonale)' },
+        { v:'famiglia', t:'Tutta la famiglia (sconto 20%)' }
+      ]},
+      { id:'agev', q:'Hai diritto a un\'agevolazione?', opts:[
+        { v:'nessuna', t:'Nessuna — tariffa standard' },
+        { v:'under27', t:'Under 27' },
+        { v:'over70', t:'Over 70' },
+        { v:'studente', t:'Studente under 19 (SaltaSu gratuito)' },
+        { v:'isee', t:'ISEE agevolato (tariffa ridotta)' }
+      ]},
+      { id:'canale', q:'Dove vuoi acquistare?', opts:[
+        { v:'online', t:'Online (solweb.tper.it)' },
+        { v:'fisico', t:'Di persona (Punto Tper)' }
+      ]}
+    ];
+
+    var results = {
+      rinnovo: { title:'Rinnovo Impersonale', price:'Senza documenti', desc:'Rinnova il tuo abbonamento in 2 minuti. Ti serve solo il numero tessera e un indirizzo email. Nessun documento richiesto, nessuna registrazione.', link:'<a href="solweb/rinnova.html" class="btn-outline">Rinnova ora</a>' },
+      rinnovo_personale: { title:'Rinnovo Personale', price:'Serve login', desc:'Per rinnovare un abbonamento personale o nominativo devi accedere con le tue credenziali. Ti serviranno documento d\'identità e i dati dell\'abbonamento.', link:'<a href="solweb/login.html" class="btn-outline">Accedi a solweb</a>' },
+      mensile_impersonale: { title:'Mensile Impersonale', price:'39€', desc:'30 giorni illimitati su rete urbana Bologna. Trasferibile tra più persone (non contemporaneamente). Sabato e festivi fino a 7 persone.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      mensile_personale: { title:'Mensile Personale', price:'39€', desc:'30 giorni illimitati su tessera MiMuovo. Abbonamento nominativo personale. Serve documento identità e foto tessera.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_personale: { title:'Annuale Personale', price:'310€', desc:'365 giorni illimitati su rete urbana Bologna. Risparmi il 35% rispetto al mensile. Su tessera MiMuovo (5€).', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_impersonale: { title:'Annuale Impersonale', price:'340€', desc:'365 giorni trasferibile su tessera MiMuovo. Chiunque può usarlo (non contemporaneamente). Non copre la dimenticanza del titolo a bordo.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_under27: { title:'Annuale Under 27', price:'230€', desc:'Per giovani sotto i 27 anni. Anche mensile a 30€. Include tessera MiMuovo. Serve documento identità.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      annuale_over70: { title:'Annuale Over 70', price:'200€', desc:'Per anziani sopra i 70 anni. Massima convenienza annuale. Serve documento identità.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      saltasu: { title:'SaltaSu Under 19', price:'Gratuito', desc:'Abbonamento annuale gratuito per studenti under 19 residenti in Emilia-Romagna. Richiedibile sul sito della Regione Emilia-Romagna.', link:'<a href="https://mobilita.regione.emilia-romagna.it" class="btn-outline">Scopri SaltaSu</a>' },
+      extraurbano: { title:'Abbonamento Extraurbano', price:'Da 31€/mese', desc:'Prezzo a zone per spostamenti fuori Bologna. Usa il calcolatore MiMuovo per il prezzo esatto del tuo percorso.', link:'<a href="solweb/login.html" class="btn-outline">Calcola su solweb</a>' },
+      ferrara: { title:'Mensile Ferrara', price:'31€', desc:'Abbonamento personale area urbana di Ferrara. 30 giorni illimitati. Anche annuale disponibile.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' },
+      famiglia: { title:'Abbonamento Famiglia', price:'Sconto 20%', desc:'Sconto del 20% sul secondo abbonamento e successivi per lo stesso nucleo familiare. Richiedibile ai Punti Tper con stato di famiglia.', link:'<a href="dove-comprare.html#punti-tper" class="btn-outline">Trova un Punto Tper</a>' },
+      isee: { title:'Agevolato ISEE', price:'Tariffa ridotta', desc:'Abbonamento a tariffa agevolata per chi ha un ISEE sotto soglia. Serve certificazione ISEE corrente. Richiedibile online o al Punto Tper.', link:'<a href="solweb/login.html" class="btn-outline">Acquista su solweb</a>' }
+    };
+
+    function getResult() {
+      var a = answers;
+      if (a.azione === 'rinnovo') return a.impersonale === 'no' ? 'rinnovo_personale' : 'rinnovo';
+      if (a.zona === 'extraurbano') return 'extraurbano';
+      if (a.zona === 'ferrara') return 'ferrara';
+      if (a.chi === 'famiglia') return 'famiglia';
+      if (a.agev === 'under27' && a.durata === 'annuale') return 'annuale_under27';
+      if (a.agev === 'over70' && a.durata === 'annuale') return 'annuale_over70';
+      if (a.agev === 'studente') return 'saltasu';
+      if (a.agev === 'isee') return 'isee';
+      if (a.durata === 'mensile' && a.chi === 'impersonale') return 'mensile_impersonale';
+      if (a.durata === 'mensile' && a.chi === 'personale') return 'mensile_personale';
+      if (a.durata === 'annuale' && a.chi === 'impersonale') return 'annuale_impersonale';
+      return 'annuale_personale';
+    }
+
+    function renderQuestion(idx) {
+      var q = questions[idx];
+      var html = '<div class="ticket-wizard-step">';
+      html += '<div class="ticket-wizard-progress">Domanda ' + (idx + 1) + ' di ' + questions.length + '</div>';
+      html += '<h3>' + q.q + '</h3>';
+      html += '<div class="ticket-wizard-options">';
+      for (var i = 0; i < q.opts.length; i++) {
+        var o = q.opts[i];
+        var sel = answers[q.id] === o.v ? ' selected' : '';
+        html += '<button class="ticket-wizard-opt' + sel + '" data-value="' + o.v + '">' + o.t + '</button>';
+      }
+      html += '</div>';
+      if (idx > 0) {
+        html += '<button class="btn-outline ticket-wizard-back">← Indietro</button>';
+      }
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelectorAll('.ticket-wizard-opt').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          answers[q.id] = btn.getAttribute('data-value');
+          // Rinnovo: go to impersonale question, then result
+          if (q.id === 'azione' && answers[q.id] === 'rinnovo') {
+            current = 1;
+            renderQuestion(1);
+            return;
+          }
+          // Acquisto: skip impersonale, go to zona
+          if (q.id === 'azione' && answers[q.id] === 'acquisto') {
+            current = 2;
+            renderQuestion(2);
+            return;
+          }
+          // Impersonale question: show result
+          if (q.id === 'impersonale') {
+            showResult();
+            return;
+          }
+          if (current < questions.length - 1) {
+            current++;
+            renderQuestion(current);
+          } else {
+            showResult();
+          }
+        });
+      });
+
+      var backBtn = container.querySelector('.ticket-wizard-back');
+      if (backBtn) {
+        backBtn.addEventListener('click', function() {
+          current--;
+          // Skip impersonale question when backtracking from acquisto flow
+          if (answers.azione === 'acquisto' && current === 1) current = 0;
+          renderQuestion(current);
+        });
+      }
+    }
+
+    function showResult() {
+      var key = getResult();
+      var r = results[key];
+      var html = '<div class="ticket-wizard-result">';
+      html += '<div class="twr-badge">🎯 Abbonamento consigliato</div>';
+      html += '<div class="twr-card">';
+      html += '<h3>' + r.title + ' — ' + r.price + '</h3>';
+      html += '<p>' + r.desc + '</p>';
+      html += '<div class="twr-action">' + r.link + '</div>';
+      html += '</div>';
+      html += '<button class="btn-outline ticket-wizard-restart">⟳ Ricomincia</button>';
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelector('.ticket-wizard-restart').addEventListener('click', function() {
+        current = 0;
+        answers = {};
+        renderQuestion(0);
+      });
+    }
+
+    var startBtn = document.getElementById('start-guide');
+    if (startBtn) {
+      startBtn.addEventListener('click', function() {
+        startBtn.style.display = 'none';
+        container.style.display = '';
+        renderQuestion(0);
+      });
+    }
+  })();
+  </script>
+
+  <!-- Card filters -->
+  <script>
+  (function() {
+    var filters = {};
+    var cards = document.querySelectorAll('#subscription-types + .card-filters + .card-grid .card');
+    if (!cards.length) return;
+
+    var pills = document.querySelectorAll('#subs-filters .filter-pill');
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        var group = pill.parentNode.getAttribute('data-filter');
+        var value = pill.getAttribute('data-value');
+
+        if (filters[group] === value) {
+          delete filters[group];
+          pill.classList.remove('active');
+        } else {
+          pill.parentNode.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          filters[group] = value;
+        }
+        applyFilters();
+      });
+    });
+
+    var resetBtn = document.getElementById('subs-filter-reset');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        filters = {};
+        document.querySelectorAll('#subs-filters .filter-pill').forEach(function(p) { p.classList.remove('active'); });
+        applyFilters();
+      });
+    }
+
+    function applyFilters() {
+      var visible = 0;
+      cards.forEach(function(card) {
+        var match = true;
+        Object.keys(filters).forEach(function(group) {
+          var cardVal = card.getAttribute('data-' + group) || '';
+          if (cardVal.indexOf(filters[group]) === -1) match = false;
+        });
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      var countEl = document.getElementById('subs-filter-count');
+      if (countEl) countEl.textContent = visible + ' risultato' + (visible !== 1 ? 'i' : '');
+    }
+  })();
+  </script>
+
+  <button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
+</body>
+</html>
+
+
+

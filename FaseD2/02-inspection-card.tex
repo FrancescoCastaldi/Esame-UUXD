@@ -1,0 +1,773 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[final]{microtype}
+
+% ===================================================================
+% Color Palette (consistent with main.tex)
+% ===================================================================
+\definecolor{primaryColor}{HTML}{0054A6}
+\definecolor{secondaryColor}{HTML}{374151}
+\definecolor{backgroundColor}{HTML}{F5F6FA}
+\definecolor{borderColor}{HTML}{D1D5DB}
+\definecolor{accentGreen}{HTML}{059669}
+\definecolor{accentOrange}{HTML}{EA580C}
+\definecolor{accentRed}{HTML}{DC2626}
+\definecolor{sectionBg}{HTML}{EBF0F7}
+
+% ===================================================================
+% Tcolorbox Styles (consistent with main.tex)
+% ===================================================================
+\tcbset{
+    breakable,
+    base/.style={
+        colback=backgroundColor,
+        colframe=borderColor,
+        arc=1mm,
+        left=6pt, right=6pt, top=6pt, bottom=6pt,
+        boxsep=0pt,
+    },
+    sectionbox/.style={
+        colback=primaryColor!8,
+        colframe=primaryColor,
+        arc=1mm,
+        left=6pt, right=6pt, top=6pt, bottom=6pt,
+        boxsep=0pt,
+    },
+    warningbox/.style={
+        colback=accentOrange!5,
+        colframe=accentOrange,
+        arc=1mm,
+        left=6pt, right=6pt, top=6pt, bottom=6pt,
+        boxsep=0pt,
+    },
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=primaryColor,
+  urlcolor=primaryColor,
+}
+
+% ===================================================================
+% Section Formatting (sans-serif, consistent with main.tex)
+% ===================================================================
+\titleformat{\section}
+  {\color{primaryColor}\normalfont\Large\bfseries\sffamily}
+  {}{0em}{}
+  [\color{borderColor}\titlerule]
+
+\titleformat{\subsection}
+  {\color{secondaryColor}\normalfont\large\bfseries\sffamily}
+  {}{0em}{}
+
+\titleformat{\subsubsection}
+  {\color{secondaryColor}\normalfont\normalsize\bfseries\sffamily}
+  {}{0em}{}
+
+% ===================================================================
+% List spacing (compact, consistent with main.tex)
+% ===================================================================
+\setlist{nosep, leftmargin=*}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt}
+\setlist[itemize]{leftmargin=*, itemsep=2pt}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+
+\begin{document}
+
+\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
+  \color{white}\LARGE\bfseries INSPECTION CARD \\[0.2cm]
+  \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
+  \color{white!60}\normalsize Phase D --- Cognitive Walkthrough
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% DATI DELL'INSPECTION (allineati al template)
+% =====================================================================
+\section{Dati dell'Inspection}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+
+\noindent\textbf{Name of version:} Redesign TPER --- v1.0 (Phase C -- Design Proposal)
+
+\vspace{0.3cm}
+\noindent\textbf{Inspection context data:}
+\begin{itemize}
+  \item \textbf{Data:} 28-29 Giugno 2026
+  \item \textbf{Team members:} 2 valutatori (membri del team di design)
+  \item \textbf{Ruoli:} Valutatore 1 (narrator, guida la simulazione), Valutatore 2 (listener, annota le criticit\`a)
+  \item \textbf{Modalit\`a:} Valutazione individuale su prototipo statico (HTML/CSS), seguita da confronto e consenso
+\end{itemize}
+
+\vspace{0.3cm}
+\noindent\textbf{Inspection method:}
+\begin{itemize}
+  \item[$\bullet$] \textbf{Cognitive Walkthrough} (selezionato)
+  \item[$\circ$] Formal Action Analysis
+  \item[$\circ$] Informal Action Analysis
+  \item[$\circ$] Heuristic Analysis
+\end{itemize}
+
+\vspace{0.3cm}
+\noindent\textbf{Output of inspection:} Di seguito vengono documentati i 5 task analizzati. Per ogni passo vengono valutate le 4 domande del CW (Goal, Visibility, Mapping, Feedback). Per ogni criticit\`a rilevata viene fornita una giustificazione qualitativa.
+
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% INTRODUZIONE AL COGNITIVE WALKTHROUGH
+% =====================================================================
+\section{Introduzione al Cognitive Walkthrough}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+Il Cognitive Walkthrough \`e un metodo ispettivo che valuta la facilit\`a di apprendimento tramite esecuzione simulata di task. Per ogni passo si risponde a 4 domande (Goal, Visibility, Mapping, Feedback). I valutatori simulano i profili delle personas definite in Phase B, assumendo competenza minima e contesto domestico senza assistenza.
+
+\vspace{0.2cm}
+\noindent\textbf{Task selezionati:}
+\begin{enumerate}
+  \item Rinnovo Abbonamento (Guest Flow)
+  \item Acquisto Abbonamento (Login Flow)
+  \item Scoprire Agevolazioni
+  \item Guida all'Acquisto (Dove Comprare)
+  \item Verifica e Ricarica Tessera
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% =====================================================================
+% TASK 1: RINNOVO ABBONAMENTO (GUEST)
+% =====================================================================
+\section{Task 1: Rinnovo Abbonamento --- Guest Flow}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\small
+\textbf{Profilo utente:} Liliana (70 anni, bassa competenza digitale) deve rinnovare l'abbonamento mensile che scade domani. Prova a farlo da sola, senza assistenza.
+
+\textbf{Punto di partenza:} Homepage \texttt{tper.it}. \textbf{Obiettivo:} Completare il rinnovo senza registrazione.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 1: Trovare la sezione ``Dove Comprare''}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Dalla homepage, clicca su ``Dove Comprare'' nella navigazione principale o sulla card ``Dove Comprare'' nella griglia ``Cosa vuoi fare?''} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole rinnovare un abbonamento. Il termine ``Dove Comprare'' può non essere associato immediatamente al rinnovo. \\
+\hline
+\textbf{Q2 -- Visibility} & La voce ``Dove Comprare'' è ben visibile nel menu principale (posizione \#4) e come card nella homepage (card verde con icona carrello). \\
+\hline
+\textbf{Q3 -- Mapping} & ``Dove Comprare'' suggerisce acquisto, non rinnovo. L'utente potrebbe esitare. Tuttavia, la card ``Abbonamenti'' (card viola) è più vicina al concetto di ``rinnovo abbonamento''. \\
+\hline
+\textbf{Q4 -- Feedback} & La navigazione è una semplice transizione di pagina, nessun feedback specifico. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent\textbf{Criticit\`a:} Q3 critica: il termine ``Dove Comprare'' è ambiguo per un'operazione di rinnovo. L'utente potrebbe cliccare ``Abbonamenti'' invece che ``Dove Comprare'', allontanandosi dal flusso guidato di selezione del canale. Sebbene ``Abbonamenti'' fornisca informazioni tariffarie, non porta direttamente al canale di rinnovo, richiedendo un passo addizionale di navigazione.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 2--3: Usare la guida interattiva}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\noindent L'utente clicca ``Ti aiutiamo a scegliere'' e risponde alle 3 domande (servizio, canale, pagamento). Nessuna criticità: la guida è chiara, le opzioni sono grandi e cliccabili, la progress bar ``Domanda X di 3'' e il pulsante ``Indietro'' forniscono feedback adeguato. Il wizard porta l'utente al risultato ``solweb.tper.it'' con link diretto.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 4: Raggiungere solweb e scegliere ``Rinnovo Impersonale''}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Dalla guida ottiene ``solweb.tper.it'' come risultato. Clicca ``Vai a solweb'' che porta a \texttt{login.html}. Qui clicca ``Rinnovo Impersonale'' tra le 4 Azioni Rapide, arrivando a \texttt{rinnova.html}. Sceglie ``Abbonamento Impersonale'' e poi ``Rinnova senza Accesso''.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole rinnovare senza creare un account. ``Rinnovo Impersonale'' e ``Rinnova senza Accesso'' corrispondono a questo bisogno. \\
+\hline
+\textbf{Q2 -- Visibility} & Le ``Azioni Rapide'' sono in una sezione ben visibile sotto il form di login, con pulsanti grandi. La schermata di decisione su \texttt{rinnova.html} mostra due card affiancate con icone e descrizioni chiare. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Abbonamento Impersonale'' $\rightarrow$ ``Non nominativo. Ti basta il numero della tessera'' $\rightarrow$ ``Rinnova senza Accesso''. Il linguaggio è semplice e descrittivo. \\
+\hline
+\textbf{Q4 -- Feedback} & La progress bar mostra ``Passo 1 di 2''. Il breadcrumb mostra ``Login / Rinnovo Impersonale''. Buon orientamento. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Il flusso guest è chiaro, le opzioni sono ben spiegate. L'utente ha un percorso diretto per il rinnovo senza dover creare un account.
+
+\vspace{0.2cm}
+\noindent\textbf{Criticità:} \textbf{CW-08 (Media, Q2).} Su \texttt{login.html} le Azioni Rapide sono in fondo alla pagina, sotto il form di login che domina visivamente la schermata. Per Liliana, il form di login è il punto focale: rischia di non notare le opzioni guest, tentare di accedere senza credenziali e abbandonare.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 5: Compilare il form di rinnovo}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Inserisce il numero della tessera (formato TPER-XXXXXX) e clicca ``Conferma e Procedi''} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente capisce che deve inserire il numero della tessera per identificare l'abbonamento da rinnovare. \\
+\hline
+\textbf{Q2 -- Visibility} & Il campo ``Numero Tessera / Codice Abbonamento'' è l'unico campo del form. Ben visibile con label e placeholder. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Numero tessera'' $\rightarrow$ ``identificare il mio abbonamento'' è un mapping chiaro. Molti utenti hanno familiarità con questo tipo di form (es. ricariche telefoniche). \\
+\hline
+\textbf{Q4 -- Feedback} & La validazione è lato client: se il campo è vuoto mostra errore inline (\texttt{showFieldError}). Al submit, redirect a \texttt{pagamento.html}. Feedback rapido. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Form minimale e chiaro.
+
+\vspace{0.2cm}
+\noindent\textbf{Issue identificata:} Il formato ``TPER-XXXXXX'' non ha una validazione formale lato client. Un utente che inserisce un formato errato (es. solo numeri) riceverà comunque il redirect a pagamento, per poi scoprire l'errore solo dopo. Si suggerisce di aggiungere una regex di validazione con feedback immediato.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% TASK 2: ACQUISTO ABBONAMENTO (LOGIN FLOW)
+% =====================================================================
+\section{Task 2: Acquisto Abbonamento --- Login Flow}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\small
+\textbf{Profilo utente:} David (34 anni, inglese, competenza digitale alta) vuole acquistare un abbonamento annuale. Ha già un account su solweb. Prova a fare tutto da solo.
+
+\textbf{Punto di partenza:} Pagina ``Dove Comprare'' su \texttt{tper.it}. \textbf{Obiettivo:} Completare l'acquisto fino alla conferma.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 1: Raggiungere login e accedere}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Da ``Dove Comprare'' clicca ``Vai a solweb.tper.it'' $\rightarrow$ \texttt{login.html}. Inserisce email/CF e password, poi clicca ``Accedi''.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente sa di dover accedere per acquistare un abbonamento. Il banner informativo ``Per acquistare un abbonamento è necessario accedere'' lo conferma. \\
+\hline
+\textbf{Q2 -- Visibility} & Il form di login è il contenuto principale della pagina. I campi ``Codice Fiscale / Email'' e ``Password'' sono ben visibili. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Inserisci le tue credenziali'' $\rightarrow$ ``accedere al tuo account'' è il mapping universale del login. L'utente lo riconosce. Tuttavia, per un utente inglese, ``Codice Fiscale'' è un concetto italiano sconosciuto. \\
+\hline
+\textbf{Q4 -- Feedback} & Al submit, redirect immediato a \texttt{dashboard.html?login=ok}. Feedback chiaro di avvenuto login. In caso di errore, messaggio di errore con spiegazione e alternative. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent\textbf{Criticit\`a:} Q3 critica: ``Codice Fiscale'' non è un concetto internazionale. L'utente inglese potrebbe non capire cosa inserire. Il placeholder ``o Email'' mitiga solo parzialmente il problema: l'utente deve comunque esitare, leggere e interpretare prima di trovare l'alternativa.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 2: Dashboard e scelta piano}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Sulla dashboard (2 card: ``Acquista'', ``Rinnova personale''), clicca ``Acquista'' $\rightarrow$ \texttt{piani.html} con 3 piani: Mensile (51\euro), Annuale (390\euro), Extraurbano (da 35\euro/mese). Sceglie Annuale e clicca ``Acquista Online''.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole acquistare. ``Acquista'' sulla dashboard è esplicito. I piani mostrano prezzi e descrizioni chiare. \\
+\hline
+\textbf{Q2 -- Visibility} & Le card dei piani sono grandi, con prezzi in evidenza e pulsanti ``Seleziona''. La progress bar mostra ``Passo 2 di 4''. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Seleziona'' sul piano annuale $\rightarrow$ ``voglio questo abbonamento'' è diretto e inequivocabile. \\
+\hline
+\textbf{Q4 -- Feedback} & La progress bar si aggiorna, il breadcrumb mostra il percorso. Al click, redirect a \texttt{documenti.html}. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Flusso lineare, prezzi visibili, selezione chiara.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 3: Caricamento documenti}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Su \texttt{documenti.html} vede la checklist dei documenti richiesti (documento identità, codice fiscale, foto tessera). Conferma di averli e clicca ``Procedi al Pagamento''.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente capisce che per l'abbonamento annuale servono alcuni documenti. La checklist glieli mostra. \\
+\hline
+\textbf{Q2 -- Visibility} & La checklist è ben strutturata con icone, descrizioni e note. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Ho questi documenti?'' $\rightarrow$ ``Conferma e procedi''. Il mapping è chiaro: l'utente verifica di avere ciò che serve. \\
+\hline
+\textbf{Q4 -- Feedback} & Progress bar ``Passo 3 di 4''. Al submit, redirect a \texttt{pagamento.html}. Feedback OK. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent La checklist preventiva è una buona soluzione al problema ``arrivo allo sportello senza documenti'' (RF-35, RF-43).
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 4: Pagamento e conferma}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Su \texttt{pagamento.html} vede il riepilogo ordine (piano annuale 390\euro), inserisce i dati di pagamento (carta, scadenza, CVV), clicca ``Paga 390\euro'' $\rightarrow$ redirect a \texttt{conferma.html} con riepilogo e ricevuta PDF.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole pagare per completare l'acquisto. Il riepilogo e il totale sono ben visibili. \\
+\hline
+\textbf{Q2 -- Visibility} & Form di pagamento completo (intestatario, carta, scadenza, CVV). Pulsante ``Paga'' con importo ben visibile. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Compila i dati della carta'' $\rightarrow$ ``paga l'importo mostrato'' è lo standard e-commerce. Mapping universale. \\
+\hline
+\textbf{Q4 -- Feedback} & Dopo il pagamento, redirect a \texttt{conferma.html} con riepilogo ordine, messaggio di conferma e link per scaricare ricevuta PDF. Feedback eccellente. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Flusso di pagamento standard e rassicurante.
+
+\vspace{0.2cm}
+\noindent\textbf{Issue identificata:} \textbf{CW-03 (Media).} La sezione ``E adesso? Cosa fare dopo l'acquisto'' è presente in fondo alla pagina di conferma, ma risulta poco visibile: collocata sotto il riepilogo ordine e il pulsante di download ricevuta, richiede all'utente di scorrere oltre la piega. Un utente con bassa competenza digitale potrebbe non accorgersi delle istruzioni post-acquisto e salire a bordo senza un titolo correttamente utilizzabile (\textbf{RF-18, RF-28}).
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% TASK 3: SCOPRIRE AGEVOLAZIONI
+% =====================================================================
+\section{Task 3: Scoprire le Agevolazioni}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\small
+\textbf{Profilo utente:} Roberto (45 anni, bassa motivazione, bassa concentrazione) ha sentito che potrebbe avere diritto a uno sconto sull'abbonamento.
+
+\textbf{Punto di partenza:} Pagina ``Abbonamenti'' su \texttt{tper.it}. \textbf{Obiettivo:} Scoprire se ha diritto a agevolazioni e quali documenti servono.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 1: Notare il banner delle agevolazioni}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Sulla pagina ``Abbonamenti'', vede un banner verde con icona trofeo: ``Non sai se hai diritto a uno sconto? Scopri in 30 secondi a quali agevolazioni puoi accedere'' con pulsante ``Scopri le agevolazioni''.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole sapere se ha diritto a sconti. Il banner parla esattamente di questo. \\
+\hline
+\textbf{Q2 -- Visibility} & Il banner è in cima alla pagina, colorato (verde), con icona accattivante e testo breve. Molto visibile. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Scopri le agevolazioni'' $\rightarrow$ ``scoprire se ho diritto a sconti'' è un mapping diretto e chiaro. \\
+\hline
+\textbf{Q4 -- Feedback} & Click $\rightarrow$ navigazione a \texttt{agevolazioni.html}. Transizione di pagina standard. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Banner ben progettato: visibile, targettizzato, con CTA chiara (RF-34, RF-36).
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 2: Avviare il wizard e rispondere alle domande}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Su \texttt{agevolazioni.html} clicca ``Scopri le mie agevolazioni'' $\rightarrow$ risponde a 3 domande (età, residenza, frequenza viaggi) cliccando sulle opzioni.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente capisce che rispondere a domande semplici porterà a un risultato personalizzato. \\
+\hline
+\textbf{Q2 -- Visibility} & Le domande sono grandi, una per volta, con opzioni a bottone. La progress bar ``Domanda X di 4'' è visibile. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Quanti anni hai?'' $\rightarrow$ seleziona la fascia. ``Sei residente a Bologna?'' $\rightarrow$ opzioni semplici. Domande in linguaggio naturale, non burocratico. \\
+\hline
+\textbf{Q4 -- Feedback} & Al click di ogni risposta, la domanda successiva appare immediatamente. Pulsante ``Indietro'' disponibile. Progress bar aggiornata. Feedback eccellente. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Wizard semplice, domande chiare, linguaggio non tecnico (RF-37). L'utente non deve conoscere termini burocratici per rispondere.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 3: Leggere i risultati}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Vede la schermata dei risultati: ``Abbiamo trovato X agevolazioni per te!'' con card per ogni agevolazione, descrizione, documenti necessari e link ``Vedi Abbonamenti''.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole sapere se ha diritto a sconti. I risultati glielo dicono chiaramente. \\
+\hline
+\textbf{Q2 -- Visibility} & I risultati sono in card colorate con titolo, descrizione e icona. I documenti necessari sono elencati. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Hai diritto a...'' $\rightarrow$ ``Ecco cosa ti serve''. Il collegamento è diretto: l'utente capisce cosa fare dopo. \\
+\hline
+\textbf{Q4 -- Feedback} & Messaggio di successo con numero di agevolazioni trovate. Pulsante ``Ricomincia'' per rifare il test. Link ``Vedi Abbonamenti'' per approfondire. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Risultato personalizzato, chiaro, con call-to-action esplicita.
+
+\vspace{0.2cm}
+\noindent\textbf{Issue identificata:} \textbf{CW-05 (Minore).} Il risultato non include un pulsante ``Stampa'' per portare la lista dei documenti allo sportello. Per l'utente anziano o a bassa competenza digitale, un supporto cartaceo è importante (RF-13).
+
+\vspace{0.2cm}
+\noindent\textbf{Issue:} \textbf{CW-10 (Media, Q4).} Se il wizard non trova agevolazioni, il messaggio ``Nessuna agevolazione automatica trovata'' può essere percepito come fallimento. Per Roberto (bassa motivazione), questo conferma l'inutilità del tentativo. Manca un'alternativa digitale che mantenga l'utente nel flusso.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+
+\vspace{0.3cm}
+
+% =====================================================================
+% TASK 4: GUIDA ALL'ACQUISTO (DOVE COMPRARE)
+% =====================================================================
+\section{Task 4: Guida all'Acquisto --- Dove Comprare}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\small
+\textbf{Profilo utente:} Fatima (68 anni, lingua araba, analfabeta in italiano scritto, competenza digitale minima) entra su \texttt{tper.it} per la prima volta. Non sa che il sito è solo informativo. Cerca un modo per ``comprare un biglietto per l'autobus''.
+
+\textbf{Punto di partenza:} Homepage \texttt{tper.it}. \textbf{Obiettivo:} Scoprire come e dove comprare un biglietto.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 1: Trovare la sezione ``Dove Comprare''}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Dalla homepage, clicca ``Dove Comprare'' (card verde o navigazione).} \\
+\hline
+\textbf{Q1 -- Goal} & Maria vuole ``comprare''. ``Dove Comprare'' corrisponde esattamente al suo bisogno. Per un'utente con competenza 1/5, il linguaggio ``Dove Comprare'' è perfetto. \\
+\hline
+\textbf{Q2 -- Visibility} & La card ``Dove Comprare'' è la seconda nella griglia ``Cosa vuoi fare?'', ben visibile subito dopo l'hero. Icona carrello + titolo chiaro. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Dove Comprare'' $\rightarrow$ ``scoprire dove si compra'' è letterale e inequivocabile. \\
+\hline
+\textbf{Q4 -- Feedback} & Navigazione a \texttt{dove-comprare.html}. La pagina si apre con la spiegazione che \texttt{tper.it} non vende direttamente. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent``Dove Comprare'' è la scelta di labeling migliore per utenti con bassa competenza (RF-10, RF-17).
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 2: Leggere il banner informativo}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Arrivata sulla pagina, legge il testo: ``Su tper.it non è possibile acquistare titoli di viaggio. Questa pagina ti guida verso il canale più adatto.''} \\
+\hline
+\textbf{Q1 -- Goal} & L'obiettivo di Maria (comprare) non è realizzabile qui. Ma deve capire che la pagina la guiderà altrove. \\
+\hline
+\textbf{Q2 -- Visibility} & Il testo è subito sotto l'h1, in posizione prominente. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Non è possibile acquistare... ma ti guida verso il canale più adatto'' $\rightarrow$ ``devo andare da un'altra parte, ma qui scopro dove''. Il messaggio è chiaro ma potrebbe deludere l'utente. \\
+\hline
+\textbf{Q4 -- Feedback} & La pagina mostra subito il pulsante ``Ti aiutiamo a scegliere'' e le card dei canali. Maria ha opzioni visibili. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent\textbf{Criticit\`a:} L'utente con competenza 1/5 potrebbe sentirsi ``respinto'' dal messaggio ``non si acquista qui''. Tuttavia, la guida interattiva e le card offrono un'alternativa immediata.
+
+\vspace{0.2cm}
+\noindent\textbf{Issue:} \textbf{CW-06 (Media).} Per un'utente molto anziana, il concetto ``sito informativo'' è astratto. Il banner spiega che non si può comprare, ma non offre un percorso one-click per chi non vuole usare la guida. Si suggerisce di aggiungere un percorso rapido ``Voglio comprare subito'' che porti direttamente a un canale operativo.
+
+\vspace{0.2cm}
+\noindent\textbf{Issue:} \textbf{CW-09 (Media, Q2).} Il selettore lingua usa le abbreviazioni IT, EN, AR in alfabeto latino. Per Fatima, che legge solo arabo, ``AR'' non è un segnale riconoscibile. Potrebbe non scoprire mai che il sito è disponibile in arabo.
+\end{tcolorbox}
+
+\subsection{Passo 3: Usare la guida interattiva}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Clicca ``Ti aiutiamo a scegliere'' $\rightarrow$ risponde ``Un biglietto'' $\rightarrow$ ``Non ho preferenze'' $\rightarrow$ ``Entrambi / non lo so'' $\rightarrow$ Ottiene ``App Roger'' come canale consigliato.} \\
+\hline
+\textbf{Q1 -- Goal} & Maria capisce che la guida la porterà a un canale dove poter comprare. \\
+\hline
+\textbf{Q2 -- Visibility} & Il pulsante primario ``Ti aiutiamo a scegliere'' è ben visibile. Le opzioni sono grandi. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Un biglietto (corsa singola o carnet)'' $\rightarrow$ Maria vuole ``un biglietto per l'autobus''. Mapping diretto. \\
+\hline
+\textbf{Q4 -- Feedback} & Progress bar, opzioni selezionabili, risultato con card e dettagli. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent La guida è semplice e accessibile anche per utenti con competenza 1/5.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+
+\vspace{0.3cm}
+
+% =====================================================================
+% TASK 5: VERIFICA E RICARICA TESSERA
+% =====================================================================
+\section{Task 5: Verifica e Ricarica Tessera}
+
+\begin{tcolorbox}[colback=primaryColor!10,colframe=primaryColor,arc=2mm]
+\small
+\textbf{Profilo utente:} Liliana (70 anni, bassa competenza digitale) vuole verificare lo stato della propria tessera TPER e ricaricarla. Operazioni disponibili senza login dalle ``Azioni Rapide''.
+
+\textbf{Punto di partenza:} Pagina di login \texttt{solweb/login.html}. \textbf{Obiettivo:} Verificare la tessera e ricaricarla.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 1: Trovare ``Verifica Tessera'' nelle Azioni Rapide}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Sulla pagina di login, nella sezione ``Azioni Rapide'', clicca ``Verifica Tessera''.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole verificare la propria tessera. ``Verifica Tessera'' è esplicito. \\
+\hline
+\textbf{Q2 -- Visibility} & Le Azioni Rapide sono in una griglia di 4 pulsanti sotto il form di login. ``Verifica Tessera'' è l'ultimo, ma ben visibile. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Verifica Tessera'' $\rightarrow$ ``controllare lo stato della mia tessera'' è diretto. \\
+\hline
+\textbf{Q4 -- Feedback} & Click $\rightarrow$ navigazione a \texttt{verifica.html}. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Operazione chiara e accessibile senza login.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 2: Inserire numero tessera e vedere risultato}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Su \texttt{verifica.html}, inserisce il numero tessera e clicca ``Verifica''. Vede i risultati simulati: stato, scadenza, tipo abbonamento, ultima ricarica.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole sapere lo stato della tessera. Il form è focalizzato su questo. \\
+\hline
+\textbf{Q2 -- Visibility} & Campo unico ``Numero Tessera'' + pulsante ``Verifica''. Minimal e chiaro. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Inserisci il numero'' $\rightarrow$ ``vedi i dettagli''. Mapping standard. \\
+\hline
+\textbf{Q4 -- Feedback} & I risultati sono mostrati in una card con icone di stato (verde = attivo, rosso = scaduto) e dettagli. Feedback eccellente e immediato. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Pagina semplice, risultato visivo chiaro.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Passo 3: Ricaricare la tessera}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=borderColor,arc=2mm]
+\small
+\begin{tabular}{|L{3cm}|L{11cm}|}
+\hline
+\textbf{Azione utente} & \multicolumn{1}{L{11cm}|}{Dalla pagina di login, clicca ``Ricarica Tessera'' $\rightarrow$ \texttt{ricarica.html}. Inserisce numero tessera, sceglie un importo tra i preset (10\euro, 20\euro, 50\euro, o importo personalizzato), clicca ``Ricarica'' $\rightarrow$ pagamento.} \\
+\hline
+\textbf{Q1 -- Goal} & L'utente vuole ricaricare. ``Ricarica Tessera'' è esplicito. \\
+\hline
+\textbf{Q2 -- Visibility} & Pulsante ben visibile nelle Azioni Rapide. Sulla pagina, form chiaro con importi preset grandi e cliccabili. \\
+\hline
+\textbf{Q3 -- Mapping} & ``Scegli un importo'' $\rightarrow$ ``Ricarica''. Mapping simile a ricariche telefoniche, familiare per molti utenti. \\
+\hline
+\textbf{Q4 -- Feedback} & Dopo il pagamento, redirect a \texttt{conferma.html} con riepilogo. \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent Flusso rapido, importi preset riducono lo sforzo cognitivo.
+
+\vspace{0.2cm}
+\noindent\textbf{Issue identificata:} \textbf{CW-07 (Minore).} Non è chiaro all'utente cosa succede dopo la ricarica (es. ``quando saranno disponibili i fondi sulla tessera?''). Si suggerisce un messaggio di conferma con tempistiche.
+
+\vspace{0.2cm}
+\noindent\textbf{Issue:} \textbf{CW-11 (Minore, Q1).} Dopo aver verificato la tessera, l'utente non ha un link diretto alla ricarica. Deve ricordare il percorso a ritroso fino alle Azioni Rapide. Per Liliana, ripercorrere manualmente la navigazione è un ostacolo non necessario.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+}
+
+\vspace{0.3cm}
+
+% =====================================================================
+% RIEPILOGO COMPLESSIVO
+% =====================================================================
+\section{Riepilogo Complessivo}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=primaryColor,arc=2mm]
+\small
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|L{3.5cm}|C{1.5cm}|C{3cm}|}
+\hline
+\textbf{Task} & \textbf{Passi} & \textbf{Issue trovate} \\
+\hline
+\#1 Rinnovo Guest & 5 & CW-01, CW-02, CW-08 \\
+\hline
+\#2 Acquisto Login & 4 & CW-03, CW-04 \\
+\hline
+\#3 Agevolazioni & 3 & CW-05, CW-10 \\
+\hline
+\#4 Dove Comprare & 3 & CW-06, CW-09 \\
+\hline
+\#5 Verifica/Ricarica & 3 & CW-07, CW-11 \\
+\hline
+\rowcolor{primaryColor!10}
+\textbf{Totale} & \textbf{18} & \textbf{11 issue} \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+\noindent\textbf{Risultato:} Il Cognitive Walkthrough ha identificato \textbf{11 criticit\`a} su 18 passi analizzati (4 di severit\`a media, 7 minori). Nessun passo ha mostrato criticit\`a tali da bloccarne il completamento. I problemi riguardano principalmente la comunicazione (etichette ambigue, messaggi post-azione) e non l'architettura complessiva del sistema.
+
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Issue Identificate}
+
+\begin{tcolorbox}[colback=accentOrange!5,colframe=accentOrange,arc=1mm]
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|L{1cm}|L{2.5cm}|L{2cm}|L{9cm}|}
+\hline
+\textbf{ID} & \textbf{Task} & \textbf{Severità} & \multicolumn{1}{L{9cm}|}{\textbf{Descrizione}} \\
+\hline
+CW-01 & \#1 Rinnovo & Minore & ``Dove Comprare'' non è immediatamente associato a ``rinnovo''. Mitigato da percorso alternativo via ``Abbonamenti''. \\
+\hline
+CW-02 & \#1 Rinnovo & Minore & Validazione formato tessera assente (formato TPER-XXXXXX non convalidato lato client). \\
+\hline
+CW-03 & \#2 Acquisto & \textbf{Media} & Sezione ``E adesso? Cosa fare dopo l'acquisto'' presente ma poco visibile (sotto la piega). L'utente potrebbe non vederla e salire a bordo senza titolo valido. RF-18, RF-28. \\
+\hline
+CW-04 & \#2 Acquisto & Minore & ``Codice Fiscale'' non internazionale. Il placeholder ``o Email'' mitiga solo parzialmente. \\
+\hline
+CW-05 & \#3 Agevolaz. & Minore & Manca ``Stampa riepilogo'' nei risultati del wizard. \\
+\hline
+CW-06 & \#4 Guida & \textbf{Media} & Messaggio ``non si acquista su tper.it'' può disorientare l'utente fragile. Servirebbe ``Compra subito'' one-click. \\
+\hline
+CW-07 & \#5 Ricarica & Minore & Manca comunicazione tempistiche post-ricarica. \\
+\hline
+CW-08 & \#1 Rinnovo & \textbf{Media} & Azioni Rapide poco visibili sotto il form di login dominante. Rischio abbandono per utenti con bassa competenza digitale (Q2 Visibility). \\
+\hline
+CW-09 & \#4 Guida & \textbf{Media} & Selettore lingua ``IT/EN/AR'' illeggibile per chi non conosce l'alfabeto latino. Fatima potrebbe non scoprire la versione araba (Q2 Visibility). \\
+\hline
+CW-10 & \#3 Agevolaz. & \textbf{Media} & Risultato ``nessuna agevolazione'' percepito come fallimento. Manca alternativa digitale per mantenere l'utente nel flusso (Q4 Feedback). \\
+\hline
+CW-11 & \#5 Verifica & Minore & Nessun link diretto da verifica tessera a ricarica. Deve ricordare e ripercorrere la navigazione (Q1 Goal). \\
+\hline
+\end{tabular}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection{Raccomandazioni}
+
+\begin{tcolorbox}[colback=backgroundColor,colframe=accentGreen,arc=2mm]
+\small
+Sulla base dei risultati del Cognitive Walkthrough, si raccomandano i seguenti interventi:
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Migliorare visibilità sezione post-acquisto (CW-03):} Spostare la sezione ``E adesso? Cosa fare dopo l'acquisto'' sopra la piega, in posizione prominente rispetto al riepilogo ordine, oppure replicarla come messaggio di conferma prima del download ricevuta. \textit{Corrisponde a RF-18, RF-28.}
+
+  \item \textbf{Aggiungere percorso ``Compra subito'' (CW-06):} Per utenti con bassissima competenza digitale, aggiungere sulla pagina ``Dove Comprare'' un pulsante ``Voglio comprare subito un biglietto'' che porti direttamente a un canale operativo (es. App Roger) bypassando la guida.
+
+  \item \textbf{Aggiungere stampa riepilogo (CW-05):} Aggiungere un pulsante ``Stampa'' nei risultati del wizard agevolazioni e nelle checklist documenti, per supportare il ponte analogico-digitale (RF-13).
+
+  \item \textbf{Validazione formato tessera (CW-02):} Aggiungere validazione lato client per il formato ``TPER-XXXXXX'' con feedback immediato.
+
+  \item \textbf{Comunicazione tempistiche ricarica (CW-07):} Aggiungere messaggio di conferma post-ricarica con indicazione delle tempistiche di disponibilità fondi.
+
+  \item \textbf{Migliorare visibilità Azioni Rapide (CW-08):} Portare le operazioni guest sopra il form di login o in una posizione più visibile, così che l'utente anziano le noti prima di confrontarsi con il form di accesso.
+
+  \item \textbf{Selettore lingua con etichette native (CW-09):} Affiancare alle abbreviazioni ``IT/EN/AR'' le diciture nella lingua target (``Italiano'', ``English'', ``Arabo''), così che ogni utente riconosca la propria lingua.
+
+  \item \textbf{Alternativa digitale a ``nessuna agevolazione'' (CW-10):} Sostituire il messaggio di fallimento con ``Vedi tutti gli abbonamenti disponibili'' o ``Scopri le riduzioni generiche'', mantenendo l'utente nel flusso digitale.
+
+  \item \textbf{Collegamento diretto verifica $\rightarrow$ ricarica (CW-11):} Aggiungere su \texttt{verifica.html} un pulsante ``Ricarica questa tessera'' che porti direttamente a \texttt{ricarica.html} con il numero tessera pre-compilato.
+\end{enumerate}
+
+\vspace{0.3cm}
+\noindent\textbf{Priorità:} Alta (CW-03, CW-06, CW-08, CW-09), Media (CW-05, CW-07, CW-10), Bassa (CW-01, CW-02, CW-04, CW-11).
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\end{document}
+

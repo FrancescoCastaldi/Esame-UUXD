@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="it" data-page="agevolazioni">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="agevolazioni.title">Hai diritto a uno sconto? — tper.it</title>
+  <meta name="description" content="Scopri in 30 secondi se hai diritto a tariffe agevolate TPER. Rispondi a 4 domande e ottieni l'elenco delle agevolazioni a cui puoi accedere.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-i18n="header.skip">Vai al contenuto principale</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" data-i18n-aria="header.menu">&#9776;</button>
+      <a href="index.html" class="logo" aria-label="Tper home">
+        <svg viewBox="0 0 100 32" aria-hidden="true">
+          <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
+          <text x="14" y="21" text-anchor="middle" fill="#FFF" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="13">TP</text>
+          <text x="34" y="21" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15">tper.it</text>
+        </svg>
+        tper.it
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="orari.html" data-i18n="nav.orari">Orari</a></li>
+          <li><a href="notizie.html" data-i18n="nav.notizie">Notizie</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="abbonamenti.html" aria-current="page" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </nav>
+      <div class="header-utilities">
+        <button class="lang-btn" data-lang="it" aria-label="Italiano">Italiano</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">English</button>
+        <button class="lang-btn" data-lang="ar" aria-label="العربية">العربية</button>
+        <button class="search-toggle" data-i18n-aria="header.search-toggle" aria-label="Cerca nel sito" title="Cerca">&#128269;</button>
+        <button class="contrast-toggle" data-i18n-aria="a11y.contrast-on" aria-label="Attiva contrasto elevato" title="Contrasto">&#9681;</button>
+        <button class="font-toggle" data-i18n-aria="a11y.font-increase" aria-label="Aumenta carattere" title="Carattere">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="sep">/</li>
+          <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li class="sep">/</li>
+          <li aria-current="page" data-i18n="agevolazioni.title">Hai diritto a uno sconto?</li>
+        </ol>
+      </nav>
+
+      <div class="section-header">
+        <h1 data-i18n="agevolazioni.title">&#127942; Hai diritto a uno sconto?</h1>
+        <p data-i18n="agevolazioni.desc">Rispondi a 4 domande e in 30 secondi scopri a quali agevolazioni TPER puoi accedere e quali documenti ti servono.</p>
+      </div>
+
+      <!-- Wizard -->
+      <div class="ticket-wizard-card" id="agev-wizard" style="max-width:600px;margin:0 auto 2rem;">
+        <div id="agev-question"></div>
+        <button class="btn-primary" id="agev-start" style="display:block;margin:0 auto;" data-i18n="agevolazioni.start">&#127942; Scopri le mie agevolazioni</button>
+      </div>
+
+      <!-- Results -->
+      <div id="agev-results" style="display:none;margin-bottom:2rem;"></div>
+
+      <div class="info-banner" role="status">
+        <span class="icon">&#9432;</span>
+        <p><strong data-i18n="banner.info">tper.it &egrave; un sito informativo.</strong> <span data-i18n="banner.text">Per acquistare biglietti e abbonamenti utilizza uno dei canali dedicati:</span> <a href="dove-comprare.html" data-i18n="banner.link">scopri dove comprare</a></p>
+      </div>
+    </div>
+  </main>
+
+  <button class="back-to-top" data-i18n-aria="back-to-top.label" aria-label="Torna in cima" title="Torna su">&#8593;</button>
+
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay-content">
+      <div class="search-overlay-header">
+        <input type="search" class="search-overlay-input" id="search-overlay-input" placeholder="Cerca..." data-i18n-placeholder="search.placeholder" aria-label="Cerca">
+        <button class="search-overlay-close" data-i18n-aria="search.close" aria-label="Chiudi ricerca">&times;</button>
+      </div>
+      <div class="search-overlay-results" id="search-overlay-results">
+        <div class="search-overlay-empty" data-i18n="search.placeholder">Cerca notizie, orari, linee...</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
+    <h3 data-i18n="trainer.title">&#127891; Modalità Trainer</h3>
+    <div id="trainer-steps"></div>
+  </aside>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>tper.it</h4>
+        <ul>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.buy-channels">Canali di Acquisto</h4>
+        <ul>
+          <li><a href="solweb/login.html" data-i18n="footer.solweb">solweb.tper.it</a></li>
+          <li><a href="dove-comprare.html#roger" data-i18n="footer.roger">App Roger</a></li>
+          <li><a href="dove-comprare.html#punti-tper" data-i18n="footer.punti">Punti Tper</a></li>
+          <li><a href="dove-comprare.html#tabaccherie" data-i18n="footer.tabacchi">Tabaccherie</a></li>
+          <li><a href="dove-comprare.html#contactless" data-i18n="footer.contactless">Contactless a bordo</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.accessibility">Accessibilità</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.contrast">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.font-large">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.contacts">Contatti</h4>
+        <ul>
+          <li><a href="aiuto.html" data-i18n="footer.support">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener" data-i18n="footer.institutional">Sito Istituzionale</a></li>
+          <li><a href="tel:+390800123456" data-i18n="footer.phone">Numero Verde 800-123-456</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/trainer-modules.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Agevolazioni Wizard (UR-05) -->
+  <script>
+  (function() {
+    var questions = [
+      { id:'eta', q:'Quanti anni hai?', opts:[
+        { v:'under19', t:'Meno di 19 anni' },
+        { v:'19-26', t:'Tra 19 e 26 anni' },
+        { v:'27-64', t:'Tra 27 e 64 anni' },
+        { v:'over65', t:'65 anni o pi\u00f9' }
+      ]},
+      { id:'isee', q:'Hai un ISEE?', opts:[
+        { v:'low', t:'S\u00ec, sotto i 15.000\u20ac' },
+        { v:'mid', t:'S\u00ec, tra 15.000\u20ac e 25.000\u20ac' },
+        { v:'no', t:'No' },
+        { v:'unknown', t:'Non lo so' }
+      ]},
+      { id:'residenza', q:'Dove abiti?', opts:[
+        { v:'bologna', t:'Bologna citt\u00e0' },
+        { v:'prov-bo', t:'Provincia di Bologna' },
+        { v:'ferrara', t:'Ferrara' },
+        { v:'other', t:'Altra provincia' }
+      ]},
+      { id:'frequenza', q:'Quanto spesso viaggi?', opts:[
+        { v:'daily', t:'Tutti i giorni' },
+        { v:'weekly', t:'Qualche volta a settimana' },
+        { v:'rare', t:'Raramente' }
+      ]}
+    ];
+
+    var results = [
+      { id:'saltasu', name:'SaltaSu — Abbonamento gratuito under 19', desc:'I residenti in Emilia-Romagna sotto i 19 anni hanno diritto a un abbonamento annuale gratuito per bus e treni regionali.', docs:'Documento d\'identit\u00e0, codice fiscale, certificato di residenza.', link:'<a href="abbonamenti.html" class="btn-outline">Vedi Abbonamenti</a>', cond:function(a){ return a.eta==='under19'; }},
+      { id:'isee-low', name:'Agevolazione ISEE — Sconto fino al 50%', desc:'Con ISEE sotto i 15.000\u20ac hai diritto a una tariffa agevolata sull\'abbonamento annuale o mensile. Risparmi fino al 50%.', docs:'Certificazione ISEE in corso di validit\u00e0, documento d\'identit\u00e0, codice fiscale.', link:'<a href="abbonamenti.html" class="btn-outline">Vedi Abbonamenti</a>', cond:function(a){ return a.isee==='low'; }},
+      { id:'isee-mid', name:'Agevolazione ISEE — Sconto parziale', desc:'Con ISEE tra 15.000\u20ac e 25.000\u20ac hai diritto a uno sconto ridotto sull\'abbonamento. Verifica l\'importo esatto al CAF.', docs:'Certificazione ISEE, documento d\'identit\u00e0.', link:'<a href="abbonamenti.html" class="btn-outline">Vedi Abbonamenti</a>', cond:function(a){ return a.isee==='mid'; }},
+      { id:'over65', name:'Tariffa Over 65', desc:'I residenti over 65 hanno diritto a una tariffa ridotta su abbonamenti mensili e annuali. Nessun ISEE richiesto.', docs:'Documento d\'identit\u00e0 valido.', link:'<a href="abbonamenti.html" class="btn-outline">Vedi Abbonamenti</a>', cond:function(a){ return a.eta==='over65'; }},
+      { id:'studente', name:'Tariffa Studenti 19-26', desc:'Se sei uno studente universitario tra 19 e 26 anni, puoi accedere all\'abbonamento annuale studenti a tariffa ridotta (260\u20ac/anno).', docs:'Documento d\'identit\u00e0, certificato di iscrizione universitaria, codice fiscale.', link:'<a href="abbonamenti.html" class="btn-outline">Vedi Abbonamenti</a>', cond:function(a){ return a.eta==='19-26'; }},
+      { id:'famiglia', name:'Abbonamento Famiglia — Sconto 20%', desc:'I nuclei familiari con 3 o pi\u00f9 abbonamenti hanno diritto a uno sconto del 20% sul totale. Vale per abbonamenti annuali e mensili.', docs:'Stato di famiglia, documenti d\'identit\u00e0 di tutti i componenti.', link:'<a href="abbonamenti.html" class="btn-outline">Vedi Abbonamenti</a>', cond:function(a){ return a.isee==='no' && a.frequenza==='daily'; }},
+      { id:'regionale', name:'Abbonamento Extraurbano agevolato', desc:'Se abiti fuori Bologna citt\u00e0 e viaggi spesso, l\'abbonamento extraurbano parte da 35\u20ac/mese ed \u00e8 spesso pi\u00f9 conveniente di biglietti singoli.', docs:'Documento d\'identit\u00e0, codice fiscale.', link:'<a href="abbonamenti.html" class="btn-outline">Vedi Abbonamenti</a>', cond:function(a){ return a.residenza!=='bologna' && a.frequenza!=='rare'; }}
+    ];
+
+    var current = 0, answers = {};
+    var startBtn = document.getElementById('agev-start');
+    var qDiv = document.getElementById('agev-question');
+    var rDiv = document.getElementById('agev-results');
+
+    function renderQuestion(idx) {
+      var q = questions[idx];
+      var html = '<div class="ticket-wizard-progress" style="text-align:center;margin-bottom:1rem;">Domanda ' + (idx+1) + ' di ' + questions.length + '</div>';
+      html += '<h3 style="text-align:center;margin-bottom:1rem;">' + q.q + '</h3>';
+      html += '<div class="ticket-wizard-options" style="display:flex;flex-direction:column;gap:0.5rem;">';
+      for (var i = 0; i < q.opts.length; i++) {
+        var o = q.opts[i], sel = answers[q.id] === o.v ? ' selected' : '';
+        html += '<button class="ticket-wizard-opt' + sel + '" data-value="' + o.v + '" style="text-align:left;">' + o.t + '</button>';
+      }
+      html += '</div>';
+      if (idx > 0) html += '<button class="btn-outline ticket-wizard-back" style="margin-top:0.75rem;">\u2190 Indietro</button>';
+      qDiv.innerHTML = html;
+
+      qDiv.querySelectorAll('.ticket-wizard-opt').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          answers[q.id] = btn.getAttribute('data-value');
+          if (current < questions.length - 1) { current++; renderQuestion(current); }
+          else showResults();
+        });
+      });
+      var backBtn = qDiv.querySelector('.ticket-wizard-back');
+      if (backBtn) backBtn.addEventListener('click', function() { current--; renderQuestion(current); });
+    }
+
+    function showResults() {
+      startBtn.style.display = 'none';
+      var matches = [];
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].cond(answers)) matches.push(results[i]);
+      }
+      var html = '';
+      if (matches.length === 0) {
+        html = '<div class="info-banner" style="text-align:center;padding:2rem;">';
+        html += '<div style="font-size:3rem;margin-bottom:0.5rem;">&#128064;</div>';
+        html += '<h3>Nessuna agevolazione automatica trovata</h3>';
+        html += '<p style="color:#777;">In base alle tue risposte non risulti eleggibile per agevolazioni automatiche. Contatta un Punto Tper per una verifica personalizzata.</p>';
+        html += '<a href="abbonamenti.html" class="btn-primary">Vedi tutti gli abbonamenti</a>';
+        html += '</div>';
+      } else {
+        html = '<h3 style="text-align:center;color:#2E7D32;margin-bottom:1rem;">&#127881; Abbiamo trovato ' + matches.length + ' agevolazioni per te!</h3>';
+        html += '<div class="card-grid" style="grid-template-columns:1fr;">';
+        for (var j = 0; j < matches.length; j++) {
+          var r = matches[j];
+          html += '<div class="card card-green">';
+          html += '<h3>' + r.name + '</h3>';
+          html += '<p style="font-size:0.9rem;margin-bottom:0.5rem;">' + r.desc + '</p>';
+          html += '<p style="font-size:0.85rem;color:#777;"><strong>\u{1F4CE} Documenti:</strong> ' + r.docs + '</p>';
+          html += '<div style="margin-top:0.75rem;">' + r.link + '</div>';
+          html += '</div>';
+        }
+        html += '</div>';
+        html += '<button class="btn-outline" id="agev-restart" style="display:block;margin:1rem auto;">\u21A9 Ricomincia</button>';
+      }
+      rDiv.style.display = 'block';
+      rDiv.innerHTML = html;
+      var restart = document.getElementById('agev-restart');
+      if (restart) restart.addEventListener('click', function() { current = 0; answers = {}; rDiv.style.display = 'none'; qDiv.innerHTML = ''; startBtn.style.display = 'block'; });
+    }
+
+    startBtn.addEventListener('click', function() { startBtn.style.display = 'none'; renderQuestion(0); });
+  })();
+  </script>
+
+  <button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
+</body>
+</html>

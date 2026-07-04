@@ -36,7 +36,22 @@ excalidraw.log
 Backupfile_07_17Giugno/
 Backup_main/
 *.backup
+Backup/
+backupsito/
+BACKUP_SESSION_*/
 
 # Agent / tool temp
 thoughts/
 ia-card-body.tex
+
+# Node
+node_modules/
+package-lock.json
+package.json
+
+# Duplicate files (artefacts)
+*\(1\).*
+
+# Screenshot capture scripts
+capture-screenshots.js
+capture-wf5.js
