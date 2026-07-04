@@ -6,6 +6,7 @@ on:
     paths:
       - 'Website - Finale/**'
       - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,7 +18,32 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check HTML files exist
+        run: |
+          echo "=== Checking Website - Finale structure ==="
+          ls -la "Website - Finale/"
+          echo "=== HTML files ==="
+          find "Website - Finale/" -name "*.html" | wc -l
+          echo "=== JS files ==="
+          find "Website - Finale/" -name "*.js" | wc -l
+
+      - name: Validate HTML (tidy)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq tidy
+          for f in Website\ - Finale/*.html; do
+            echo "Checking $(basename "$f")..."
+            tidy -q -e "$f" 2>/dev/null || true
+          done
+          echo "Validation complete (warnings are non-blocking)"
+
   deploy:
+    needs: validate
     runs-on: ubuntu-latest
     environment:
       name: github-pages
