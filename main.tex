@@ -104,6 +104,7 @@
 % ===================================================================
 % PGFPlots for charts (radar/charts)
 % ===================================================================
+\usepackage{longtable}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{polar}
@@ -4840,6 +4841,139 @@ WF5 & Aiuto + Trainer-Mode & FAQ per canale, sezione guide, toggle trainer-mode,
 \input{Comparison/00-reflections-body.tex}
 
 % ================================================================
+% Design Summary Card
+% ================================================================
+
+\newpage
+
+\section{Design Summary Card}
+\label{sec:design-summary}
+
+\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
+ \color{white}\LARGE\bfseries\sffamily DESIGN SUMMARY \\[0.1cm]
+ \color{white!80}\small\sffamily Phase C --- Design Proposal
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection*{Design Versions as Submitted}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+\hline
+\textbf{Versione} & \textbf{Cartella} & \textbf{Data / Ora} & \textbf{Tipi di valutazione} \\
+\hline
+\textbf{V0} 
+& \texttt{Website - Finale/} (stato iniziale)
+& 28 Giugno 2026, ore 18:00
+& Ante valutazione formale \\
+\hline
+\textbf{V1} 
+& \texttt{Website - Finale/} (post-FT fix)
+& 2 Luglio 2026, ore 12:00
+& Valutazione ispettiva --- Cognitive Walkthrough (CW-01--CW-09) \\
+\hline
+\textbf{Finale (v2.0)} 
+& \texttt{Website - Finale/} (versione finale)
+& 4 Luglio 2026, ore 10:00
+& \begin{tabular}{@{}l@{}}
+--- Cognitive Walkthrough (Post-Fix) \\ 
+--- Formative Test (2 soggetti) \\
+--- Summative Test (2 soggetti)
+\end{tabular} \\
+\hline
+\end{tabular}
+\caption{Versioni di design sottoposte a valutazione}
+\label{tab:design-versions}
+\end{table}
+
+\vspace{0.3cm}
+
+\subsection*{List of Issues Handled During Redesign, Ordered by Importance}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|p{0.8cm}|p{3cm}|p{3.5cm}|p{6.5cm}|}
+\hline
+\textbf{\#} & \textbf{Issue} & \textbf{Rif. Requirement / Test} & \textbf{Wireframe / Blueprint interessato} \\
+\hline
+\endhead
+1 & Ambiguit\`a terminologica ``Dove Comprare'' vs ``Abbonamenti'' (\textbf{FT1}, P=5, I=5) 
+& Phase A: R1 (Home Page Orientata al Compito) \\
+& Phase B: Cast Card --- UR-03 \\
+& Phase D: CW-04, CW-05
+& WF1 (Homepage --- griglia ``Cosa vuoi fare?'' e sidebar canali) \\
+& BP1 (Architettura Informazione: sezioni acquisto vs informativo) \\
+& BP3 (User Journey: punto decisionale ``dove acquisto?'') \\
+\hline
+2 & Confusione tra canali di acquisto: utente non sa quale canale usare (\textbf{D2}, R4) 
+& Phase A: R2 (IA Piana), R4 (Trainer-Mode) \\
+& Phase B: Cast Card --- UR-01 \\
+& Phase D: CW-02, FT2
+& WF3 (Dove Comprare --- card canali con icone) \\
+& BP2 (Ecosistema Multi-Canale: relazioni e bridge) \\
+\hline
+3 & Nessuna guida passo-passo per operazioni complesse (\textbf{R5}) 
+& Phase A: R5 (Persistenza Progressi) \\
+& Phase B: Cast Card --- UR-05 \\
+& Phase D: CW-07
+& WF5 (Aiuto + Trainer-Mode: guida 5 passi) \\
+& BP3 (Intervento Trainer-Mode lungo il journey) \\
+\hline
+4 & Homepage sovraccarica: news aziendali oscurano funzioni primarie (\textbf{D1}, R1) 
+& Phase A: R1 (Home Page Orientata al Compito) \\
+& Phase D: CW-01
+& WF1 (Homepage: hero search + 4 card servizi, news in footer) \\
+& BP1 (IA: riorganizzazione sezioni per priorit\`a d'uso) \\
+\hline
+5 & Barriera terminologica: ``solweb'', ``Roger'' come nomi tecnici (\textbf{D3}, R2) 
+& Phase A: R2 (Etichette Descrittive) \\
+& Phase B: Cast Card --- Laura, Maria \\
+& Phase D: FT1
+& WF3 (Card canali: ``Abbonamenti online (solweb)'') \\
+& BP2 (Ecosistema: etichettatura utente-centrica) \\
+\hline
+6 & Assenza di feedback e recupero dagli errori (\textbf{D4}, R10) 
+& Phase A: R10 (Messaggi di Errore Esponenziali) \\
+& Phase D: CW-08
+& BP3 (Punti di decisione con messaggi di recupero) \\
+& WF5 (Trainer-Mode: messaggi incoraggianti) \\
+\hline
+7 & Autenticazione obbligatoria per operazioni di base (\textbf{D5}, R7) 
+& Phase A: R7 (Percorso Guest) \\
+& Phase D: CW-06
+& BP1 (IA: sezioni accessibili senza login) \\
+& WF1 (Sidebar canali sempre visibile, anche in modalit\`a guest) \\
+\hline
+8 & Assenza supporto multilingua per utenti stranieri (\textbf{R12}) 
+& Phase A: R12 (Inglese e Arabo) \\
+& Phase B: Cast Card --- Fatima Hassan
+& WF3 (Card canali e wizard tradotti in EN/AR) \\
+& BP2 (Ecosistema: bridge con contenuti multilingua) \\
+\hline
+9 & Documentazione necessaria non anticipata all'utente (\textbf{R11}) 
+& Phase A: R11 (Checklist Preventiva) \\
+& Phase D: CW-09
+& WF4 (Biglietti: badge ``Documenti necessari'') \\
+& BP3 (Checklist prima del reindirizzamento a solweb) \\
+\hline
+10 & Assenza onboarding ``Primo Accesso'' (\textbf{FT2}, P=2, I=3) 
+& Phase D: FT2, FT6
+& WF5 (Tour guidato ``Prima Volta'' 4 schermate) \\
+& BP3 (Punto di ingresso: onboarding prima navigazione) \\
+\hline
+\end{longtable}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm]
+\small
+\textbf{Nota:} Ogni issue \`e correlata ai requirement emersi dalla Phase A (R1--R13), dalla Phase B (Cast Card --- Use Case UR-01--UR-05) e dalla Phase D (Cognitive Walkthrough CW-01--CW-09, Formative Test FT1--FT7). Le soluzioni progettuali sono localizzabili nei wireframe (WF1--WF5) e nei blueprint (BP1--BP3).
+\end{tcolorbox}
+
+% ================================================================
 % Fase D2: Inspection Card (Cognitive Walkthrough)
 % ================================================================
 
@@ -5925,6 +6059,221 @@ completato con \textbf{zero errori e zero backtrack} in soli
 57 secondi --- in Phase A lo stesso task aveva richiesto 195 s
 con 7 errori e 4 backtrack. Il wizard agevolazioni a 4 domande
 con il tooltip ISEE ha funzionato esattamente come progettato.
+\end{tcolorbox}
+
+% ================================================================
+% SUMMATIVE TEST — TEST #2: MARIA BORRIELLO
+% ================================================================
+
+\newpage
+\begin{center}
+  {\color{primaryColor}\large\bfseries Test \#2: Maria Borriello}\\
+  \vspace{0.1cm}
+  \color{borderColor}\hrule
+\end{center}
+
+\vspace{0.5cm}
+
+\subsection*{Name}
+\begin{tcolorbox}[base]
+Maria Borriello
+\end{tcolorbox}
+
+\subsection*{Date and time of test}
+\begin{tcolorbox}[base]
+4 Luglio 2026, ore 16:30
+\end{tcolorbox}
+
+\subsection*{Assistant of test (team member)}
+\begin{tcolorbox}[base]
+Francesco Castaldi
+\end{tcolorbox}
+
+\subsection*{Context of test}
+\begin{tcolorbox}[base]
+Sessione svolta presso il domicilio del soggetto, in un
+ambiente familiare e silenzioso. Durata totale: 45 minuti
+(5 task + compilazione SUS assistita nella lettura degli item).
+Il soggetto ha mostrato maggiore familiarità con il dispositivo
+rispetto alla sessione Phase A, pur rimanendo visibile l'emozione
+iniziale di fronte al trackpad. È stata necessaria una breve fase
+di ri-orientamento (3 minuti) per ricordare l'uso del browser.
+\end{tcolorbox}
+
+\subsection*{Quantitative data of tests}
+\begin{tcolorbox}[base]
+I test sono stati considerati falliti quando si è arreso l'utente.
+I tempi sono stati calcolati con timer apposito.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{clcccc}
+\toprule
+\textbf{Task} & \textbf{Descrizione} &
+\textbf{Esito} & \textbf{Tempo (s)} &
+\textbf{Errori} & \textbf{Backtrack} \\
+\midrule
+T1 & Ricerca orari             & \textbf{S} & 162 & 3 & 2 \\
+T2 & Pianificazione itinerario & \textbf{S} & 188 & 4 & 2 \\
+T3 & Acquisto abbonamento      & \textbf{F} & 141 & 4 & 6 \\
+T4 & Agevolazioni e requisiti  & \textbf{S} & 98  & 1 & 1 \\
+T5 & Rinnovo abbonamento       & \textbf{S} & 235 & 5 & 5 \\
+\midrule
+\multicolumn{2}{l}{\textbf{Totali / Medie}} &
+\textbf{4/5 (80\%)} & \textbf{164,8 s} &
+\textbf{3,4} & \textbf{3,2} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+\small S = Successo \quad F = Fallimento \quad
+Errori = click errati o percorsi sbagliati \quad
+Backtrack = ritorni alla pagina precedente
+\end{tcolorbox}
+
+\subsection*{SUS score}
+\begin{tcolorbox}[base]
+\textbf{Punteggio SUS: 71,0/100}\\[0.2cm]
+\small Punteggio ben al di sopra della soglia di accettabilità
+(50/100) e superiore a 68/100, valore che indica \textbf{buona
+usabilità} secondo la scala SUS standardizzata. Il dato segna
+un miglioramento di +43,5 punti rispetto al SUS Phase A sul sito
+originale (27,5/100), portando la percezione d'uso da
+``inaccettabile'' a ``buona''. Il miglioramento percentuale
+(+158\%) è il più alto registrato nell'intero ciclo di test,
+confermando l'efficacia del redesign proprio per il profilo
+utente più fragile.
+\end{tcolorbox}
+
+\subsection*{Outcomes and reflections useful for design}
+\begin{tcolorbox}[base]
+I dati registrano un miglioramento radicale rispetto al test
+Phase A sul sito originale: tasso di completamento dallo 0\%
+(0/5) all'80\% (4/5), tempo medio da 652,0 s a 164,8 s
+($-$75\%), errori medi da 13,0 a 3,4 ($-$74\%). Il SUS è
+passato da 27,5/100 a 71,0/100, superando la soglia di
+\textbf{buona usabilità} (68/100).
+
+\medskip
+
+Il risultato più importante è che Maria, che in Phase A non era
+riuscita a completare nessun task, ha ora completato 4 task su 5.
+Il task T1 (ricerca orari), fallito in Phase A con 698 s e 14
+errori, è stato completato in 162 s con 3 errori, dimostrando
+l'efficacia della griglia ``Cosa vuoi fare?'' e delle card
+visive dei canali.
+
+\medskip
+
+Il task T4 (agevolazioni) merita un'attenzione particolare: in
+Phase A aveva richiesto 543 s con 10 errori e 13 backtrack,
+senza successo. Nel redesign è stato completato in 98 s con un
+solo errore. Il wizard agevolazioni a 4 domande, con il tooltip
+ISEE e il linguaggio semplicissimo, ha funzionato esattamente
+come progettato per l'utenza più fragile.
+
+\medskip
+
+Il task T3 è l'unico fallimento, come per Laura: la barriera
+terminologica ``Dove Comprare'' vs ``Abbonamenti'' (\textbf{FT1})
+persiste. Maria, in particolare, si è fermata sulla pagina
+``Abbonamenti'' di \texttt{tper.it} cercando il pulsante di
+acquisto, senza riconoscere i banner di reindirizzamento a
+\texttt{solweb.tper.it}. I 6 backtrack e 4 errori indicano
+che il linguaggio dei banner va ulteriormente semplificato per
+l'utenza con competenza minima.
+
+\medskip
+
+Il confronto con Laura Palumbo (SUS 72,5) mostra che il redesign
+riduce il gap prestazionale tra i due profili di fragilità
+digitale: Maria è passata da un divario di 10 punti SUS rispetto
+a Laura (27,5 vs 37,5 in Phase A) a soli 1,5 punti (71,0 vs 72,5)
+nel Summative, dimostrando che il design inclusivo per il caso
+estremo avvantaggia proporzionalmente di più chi parte da
+condizioni più svantaggiate.
+\end{tcolorbox}
+
+% ================================================================
+% SUMMATIVE TEST — OVERALL CONCLUSIONS
+% ================================================================
+
+\newpage
+\begin{center}
+  {\color{primaryColor}\large\bfseries Conclusions --- Summative Test}\\
+  \vspace{0.1cm}
+  \color{borderColor}\hrule
+\end{center}
+
+\vspace{0.5cm}
+
+\subsection*{SUS Average and Variance}
+\begin{tcolorbox}[base]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Soggetto} & \textbf{SUS Phase A} & \textbf{SUS v2.0} \\
+\midrule
+Laura Palumbo  & 37,5/100 & 72,5/100 \\
+Maria Borriello & 27,5/100 & 71,0/100 \\
+\midrule
+\textbf{Media} & \textbf{32,5/100} & \textbf{71,75/100} \\
+\textbf{Varianza} & 50,0 & 1,13 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+
+La varianza si riduce drasticamente da 50,0 (Phase A) a 1,13
+(v2.0), indicando che il redesign ha uniformato l'esperienza
+d'uso tra i due profili di fragilità. Entrambi i soggetti
+superano la soglia di buona usabilità (68/100), con un
+miglioramento medio di +39,25 punti SUS.
+
+\medskip
+
+Il miglioramento percentuale medio è del +121\%, con un picco
+del +158\% per Maria Borriello, confermando che il design
+inclusivo produce benefici proporzionalmente maggiori per
+l'utenza con competenza digitale più bassa.
+\end{tcolorbox}
+
+\subsection*{Overall Conclusions}
+\begin{tcolorbox}[base]
+Il Summative Test sul redesign v2.0 conferma l'efficacia delle
+scelte progettuali adottate:
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Tasso di completamento}: da 1/5 (20\%) e 0/5 (0\%)
+  in Phase A a 4/5 (80\%) per entrambi i soggetti --- un risultato
+  che dimostra l'accessibilità del redesign per l'utenza anziana
+  con diversi livelli di fragilità digitale.
+  \item \textbf{Tempo medio}: riduzione media del 59,5\% (da
+  417,9 s a 164,8 s per Maria; da 183,8 s a 103,0 s per Laura).
+  \item \textbf{Errori medi}: riduzione media del 73\% (da 13,0
+  a 3,4 per Maria; da 5,0 a 1,4 per Laura).
+  \item \textbf{SUS medio}: da 32,5/100 (inaccettabile) a
+  71,75/100 (buona usabilità), con entrambi i soggetti sopra
+  la soglia 68/100.
+\end{itemize}
+
+\medskip
+
+La criticità residua principale è \textbf{FT1} (ambiguità
+terminologica ``Dove Comprare'' vs ``Abbonamenti''), che ha
+causato l'unico fallimento in entrambi i test. Un'ulteriore
+iterazione sul linguaggio dei banner e dei reindirizzamenti
+potrebbe portare al 100\% di completamento.
+
+\medskip
+
+In conclusione, il redesign TPER v2.0 raggiunge l'obiettivo
+progettuale di \textbf{buona usabilità} (SUS $\ge$ 68) per
+entrambi i profili del segmento S1 (L'anziana pendolare),
+convalidando l'intero processo di design incentrato sull'utente
+dalla Phase A alla Phase D.
 \end{tcolorbox}
 
 \end{document}

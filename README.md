@@ -32,8 +32,8 @@ A comprehensive **User Experience redesign** of the [TPER](https://www.tper.it) 
 ## 🏗️ Repository Structure
 
 ```
-├── main.tex                  # Main LaTeX thesis document (~4,600 lines)
-├── main.pdf                  # Compiled thesis PDF (110+ pages)
+├── main.tex                  # Main LaTeX thesis document (~6,100 lines)
+├── main.pdf                  # Compiled thesis PDF (117 pages)
 ├── Website - Finale/         # Final prototype — 22-page functional website
 │   ├── index.html            # Homepage
 │   ├── biglietti.html        # Tickets page with interactive wizard
@@ -84,16 +84,16 @@ An innovative guided-tour system that activates when users need help:
 | 1 | Sergio Magini | 68 | 3/5 (60%) | 149.6 s | 2.6 | **40.0** |
 | 2 | Laura Palumbo | 70 | 1/5 (20%) | 183.8 s | 5.0 | **37.5** |
 | 3 | Chris Harper | 34 | 2/5 (40%) | 156.6 s | 2.4 | **45.0** |
-| 4 | Maria Borriello | 79 | 0/5 (0%) | 652.0 s | 3.8 | **27.5** |
+| 4 | Maria Borriello | 79 | 0/5 (0%) | 652.0 s | 13.0 | **27.5** |
 
-### Phase C — Summative (Redesigned v2.0)
+### Phase D — Summative (Redesigned v2.0)
 
 | # | Participant | Age | Tasks | Avg Time | Errors | SUS | vs Phase A |
 |---|-------------|:---:|:-----:|:--------:|:------:|:---:|:----------:|
 | 1 | Laura Palumbo | 70 | **4/5 (80%)** | **103.0 s** (−44%) | **1.4** (−72%) | **72.5** | **+35 pts** |
-| 2 | Maria Borriello | 79 | *(testing in progress)* | | | | |
+| 2 | Maria Borriello | 79 | **4/5 (80%)** | **164.8 s** (−75%) | **3.4** (−74%) | **71.0** | **+43.5 pts** |
 
-> **Laura Palumbo** passed the **good usability** threshold (SUS ≥ 68), with dramatic improvements in task T4 (agevolazioni): 0 errors, 0 backtrack, 57 s (vs 195 s / 7 errors in Phase A).
+> **Both subjects** passed the **good usability** threshold (SUS ≥ 68). The redesign reduced the SUS gap between the two profiles from 10 pts (Phase A) to just 1.5 pts (v2.0). Maria's improvement (+158% SUS, 0/5 → 4/5 tasks) demonstrates maximum impact for the most fragile user profile.
 
 ---
 
