@@ -241,11 +241,11 @@
     }
 
     /* ============================
-        6. WIZARD — Channel Selector (solo dove-comprare)
+        6. WIZARD — Inline su ogni pagina
         ============================ */
-    var isDoveComprare = window.location.pathname.indexOf('dove-comprare.html') !== -1;
-    var wizardBtn = isDoveComprare ? document.getElementById('start-guide') : null;
-    var wizardContainer = isDoveComprare ? (document.getElementById('wizard-container') || document.getElementById('guide-container')) : null;
+    // dove-comprare, biglietti e abbonamenti hanno wizard inline propri (3, 5 e 7 domande)
+    var wizardBtn = null;
+    var wizardContainer = null;
 
     if (wizardBtn && wizardContainer) {
       wizardBtn.addEventListener('click', function() {

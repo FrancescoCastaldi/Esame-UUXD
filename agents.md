@@ -207,3 +207,33 @@ Commit:     NESSUN commit dopo il 26 giugno
 - **main.pdf:** 126 pagine
 - **Website - Finale:** 22 HTML + 3 JS + 1 CSS
 - **Website - Inter:** ripristinato sotto tracking git
+
+---
+
+## 2026-07-04 — Summative Test Card + main.tex Fix Finali + Chiusura
+
+### Done
+- **Summative Test Card aggiunta** in fondo a `main.tex` (protocollo + Test #1 Laura Palumbo):
+  - Discount usability testing, bottom line data, 5 task identici a Phase A
+  - Metriche: Success, Time, Errors, Satisfaction (SUS target $\ge 68$, buona usabilità)
+  - Laura Palumbo: 4/5 task (80%), SUS 72,5/100 (+35 punti vs Phase A)
+- **Fix main.tex dati (5 correzioni):**
+  1. Task completati Phase A: `2/20 (10%)` → `6/20 (30%)`
+  2. Tempo Maria Phase A: `417,9 s` → `652 s`
+  3. CW rimossi dalla tabella issue (erano assegnati alle issue sbagliate)
+  4. Varianza Formative uniformata a campionaria: `6,25 (popolazione)` → `12,5`
+  5. Tabella riepilogativa: nota subset Laura+Maria, `2/20` → `1/10`
+- **Fix IA Card Discrepanza B:** wizard `dove-comprare.html` ripristinato a 3 domande inline
+  - `app.js:246-247`: `wizardBtn = null; wizardContainer = null` (ogni pagina usa wizard inline proprio)
+- **Fix SUS target** protocollo Summative: `55` → `68`
+- **Compilazione main.pdf:** non eseguibile — pdflatex non disponibile su questa macchina
+
+### File Inventory Finale
+- **main.tex**: 6.457 righe
+- **Website - Finale**: 22 HTML + 3 JS (app.js ~1.498, i18n.js ~1.744, trainer-modules.js 293) + 1 CSS (~2.118 righe)
+- **FaseD2/02-inspection-card-body.tex**: 682 righe
+- **AGENTS.md**: 209 righe
+
+### Commit
+- Git status: 2 file modificati (`main.tex`, `Website - Finale/js/app.js`)
+- Push su GitHub (`master`)
