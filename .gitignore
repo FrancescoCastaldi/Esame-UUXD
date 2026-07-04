@@ -52,6 +52,9 @@ package.json
 # Duplicate files (artefacts)
 *\(1\).*
 
+# Presentations
+*.pptx
+
 # Screenshot capture scripts
 capture-screenshots.js
 capture-wf5.js
