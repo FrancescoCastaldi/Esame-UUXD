@@ -14,6 +14,8 @@
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{tikz}
+\usetikzlibrary{shapes.geometric, positioning, arrows, calc}
+\usepackage{forest}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{eurosym}
@@ -30,6 +32,9 @@
 \definecolor{accentGreen}{HTML}{059669}    % Tech green
 \definecolor{accentOrange}{HTML}{EA580C}   % Orange accent
 \definecolor{accentRed}{HTML}{DC2626}      % Red
+\definecolor{accentPurple}{HTML}{7C3AED}  % Purple — solweb.tper.it
+\definecolor{accentViolet}{HTML}{8B5CF6}  % Violet — Punti Tper
+\definecolor{accentTeal}{HTML}{0D9488}    % Teal — Tabaccherie
 \definecolor{sectionBg}{HTML}{EBF0F7}      % Light blue bg
 
 \hypersetup{
@@ -95,6 +100,46 @@
 \titleformat{\subsubsection}
   {\color{secondaryColor}\normalfont\normalsize\bfseries\sffamily}
   {}{0em}{}
+
+% ===================================================================
+% PGFPlots for charts (radar/charts)
+% ===================================================================
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{polar}
+
+% ===================================================================
+% Radar chart macro (C&A Diagram) — 6 dimensions, scale 1-5
+% Axis order: 0°=Tecnica, 60°=Fisica, 120°=Concentr., 180°=Linguist., 240°=Motivaz., 300°=Dominio
+% Usage: \radarchart[color]{name}{tecnica}{dominio}{linguistica}{motivazione}{fisica}{concentrazione}
+% ===================================================================
+\newcommand{\radarchart}[8][primaryColor]{%
+  \begin{tikzpicture}[scale=0.65, every node/.style={transform shape}]
+    \begin{polaraxis}[
+      width=10cm, height=10cm,
+      ymin=0, ymax=5,
+      ytick={1,2,3,4,5},
+      yticklabels={1,2,3,4,5},
+      xtick={0,60,120,180,240,300},
+      xticklabels={Competenza\\tecnica,Abilit\`a\\fis.\ e vis.,Concentrazione,Competenza\\linguistica,Motivazione,Competenza\\di dominio},
+      xlabel style={align=center,font=\small\bfseries},
+      xticklabel style={font=\small},
+      yticklabel style={font=\small},
+      grid style={dashed,gray!30},
+      minor grid style={dotted,gray!15},
+      axis lines=none,
+      legend entries={#2},
+      legend style={draw=none,font=\small,at={(0.5,-0.15)},anchor=north},
+    ]
+    \addplot[thick,#1,mark=*,mark size=3,mark options={fill=#1}] coordinates {
+      (0,#3) (60,#7) (120,#8) (180,#5) (240,#6) (300,#4) (0,#3)
+    };
+    \addplot[draw=none,fill=#1,fill opacity=0.15] coordinates {
+      (0,#3) (60,#7) (120,#8) (180,#5) (240,#6) (300,#4) (0,#3)
+    };
+    \end{polaraxis}
+  \end{tikzpicture}%
+}
 
 % ===================================================================
 % Screenshot / wireframe helper
@@ -2833,8 +2878,7 @@ e zone tariffarie dell'area in cui vive.
     \vspace{0.3cm}
 
     \begin{center}
-    \includegraphics[width=0.70\textwidth,keepaspectratio]
-    {images/fatima_chart.png}
+    \radarchart[primaryColor]{Fatima Benali}{2}{4}{1}{2}{3}{2}
     \end{center}
 
     \vspace{0.2cm}
@@ -3126,7 +3170,7 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
     \vspace{0.3cm}
 
     \begin{center}
-    \includegraphics[width=0.70\textwidth,keepaspectratio]{images/liliana_chart.png}
+    \radarchart[accentOrange]{Liliana Roversi}{1}{3}{5}{3}{2}{2}
     \end{center}
 
     \vspace{0.2cm}
@@ -3400,7 +3444,7 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
     \vspace{0.3cm}
 
     \begin{center}
-    \includegraphics[width=0.70\textwidth,keepaspectratio]{images/david_chart.png}
+    \radarchart[accentGreen]{David Carter}{4}{2}{2}{4}{5}{3}
     \end{center}
 
     \vspace{0.2cm}
@@ -3659,8 +3703,7 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
     }
 
      \begin{center}
-    \includegraphics[width=0.70\textwidth,keepaspectratio]
-    {images/robertochart.png}
+    \radarchart[accentRed]{Roberto Rinaldi}{2}{1}{5}{1}{4}{2}
     \end{center}
 
     \vspace{0.3cm}
@@ -3846,7 +3889,53 @@ digitale, timidezza allo sportello, ISEE basso \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth,keepaspectratio]{images/cumulativechart.png}
+\begin{tikzpicture}[scale=0.7, every node/.style={transform shape}]
+  \begin{polaraxis}[
+    width=12cm, height=12cm,
+    ymin=0, ymax=5,
+    ytick={1,2,3,4,5},
+    yticklabels={1,2,3,4,5},
+    xtick={0,60,120,180,240,300},
+    xticklabels={Competenza\\tecnica,Abilit\`a\\fis.\ e vis.,Concentrazione,Competenza\\linguistica,Motivazione,Competenza\\di dominio},
+    xlabel style={align=center,font=\small\bfseries},
+    xticklabel style={font=\small},
+    yticklabel style={font=\small},
+    grid style={dashed,gray!30},
+    minor grid style={dotted,gray!15},
+    axis lines=none,
+    legend entries={Fatima,Liliana,David,Roberto},
+    legend style={draw=none,font=\small,at={(0.5,-0.15)},anchor=north},
+  ]
+  % Fatima: t=2, d=4, l=1, m=2, f=3, c=2
+  \addplot[thick,primaryColor,mark=*,mark size=2] coordinates {
+    (0,2) (60,3) (120,2) (180,1) (240,2) (300,4) (0,2)
+  };
+  \addplot[draw=none,fill=primaryColor,fill opacity=0.08] coordinates {
+    (0,2) (60,3) (120,2) (180,1) (240,2) (300,4) (0,2)
+  };
+  % Liliana: t=1, d=3, l=5, m=3, f=2, c=2
+  \addplot[thick,accentOrange,mark=square*,mark size=2] coordinates {
+    (0,1) (60,2) (120,2) (180,5) (240,3) (300,3) (0,1)
+  };
+  \addplot[draw=none,fill=accentOrange,fill opacity=0.08] coordinates {
+    (0,1) (60,2) (120,2) (180,5) (240,3) (300,3) (0,1)
+  };
+  % David: t=4, d=2, l=2, m=4, f=5, c=3
+  \addplot[thick,accentGreen,mark=triangle*,mark size=2] coordinates {
+    (0,4) (60,5) (120,3) (180,2) (240,4) (300,2) (0,4)
+  };
+  \addplot[draw=none,fill=accentGreen,fill opacity=0.08] coordinates {
+    (0,4) (60,5) (120,3) (180,2) (240,4) (300,2) (0,4)
+  };
+  % Roberto: t=2, d=1, l=5, m=1, f=4, c=2
+  \addplot[thick,accentRed,mark=diamond*,mark size=2] coordinates {
+    (0,2) (60,4) (120,2) (180,5) (240,1) (300,1) (0,2)
+  };
+  \addplot[draw=none,fill=accentRed,fill opacity=0.08] coordinates {
+    (0,2) (60,4) (120,2) (180,5) (240,1) (300,1) (0,2)
+  };
+  \end{polaraxis}
+\end{tikzpicture}
 \caption{Confronto cumulativo dei tratti di personalità tra i quattro persona.
 Il grafico evidenzia come i profili siano complementari: nessun persona eccelle
 in tutte le dimensioni, e le carenze di ciascuno corrispondono ai punti di
@@ -4183,8 +4272,53 @@ I blueprint presentati in questa sezione definiscono i componenti per l'organizz
 \textit{Prospettiva struttura.} Questo blueprint mostra l'organizzazione gerarchica dei contenuti su \texttt{tper.it}, evidenziando la separazione netta tra contenuti informativi (gestiti direttamente sul sito) e le destinazioni di acquisto (canali esterni). Le frecce arancioni indicano i reindirizzamenti verso i canali di acquisto corretti.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{Blueprint/html/bp1-ia.png}
+\resizebox{\textwidth}{!}{%
+\begin{forest}
+for tree={
+    draw=primaryColor,
+    fill=primaryColor!10,
+    rounded corners=1pt,
+    font=\sffamily\scriptsize,
+    align=center,
+    l sep=10pt,
+    s sep=4pt,
+    inner sep=2pt,
+    parent anchor=south,
+    child anchor=north,
+    edge={primaryColor, thick},
+},
+where level=0{
+    draw=primaryColor,
+    fill=primaryColor!20,
+    font=\sffamily\small\bfseries,
+    inner sep=4pt,
+}{},
+[{\color{primaryColor}\bfseries tper.it}\\{\scriptsize\sffamily(Homepage)}
+    [Route\\Planner]
+    [Pianifica]
+    [Biglietti
+        [solweb\\{\tiny acquista}, draw=accentPurple, fill=accentPurple!10, edge={accentOrange, thick, dashed, ->}]
+    ]
+    [Abbonamenti
+        [solweb\\{\tiny rinnova}, draw=accentPurple, fill=accentPurple!10, edge={accentOrange, thick, dashed, ->}]
+        [Punti Tper\\{\tiny fisico}, draw=accentViolet, fill=accentViolet!10, edge={accentOrange, thick, dashed, ->}]
+    ]
+    [Dove\\Comprare
+        [solweb\\{\tiny online}, draw=accentPurple, fill=accentPurple!10, edge={accentPurple, thick, ->}]
+        [Roger App\\{\tiny mobile}, draw=accentGreen, fill=accentGreen!10, edge={accentGreen, thick, ->}]
+        [Punti Tper\\{\tiny fisico}, draw=accentViolet, fill=accentViolet!10, edge={accentViolet, thick, ->}]
+        [Tabaccherie, draw=accentTeal, fill=accentTeal!10, edge={accentTeal, thick, ->}]
+        [Contactless\\a bordo, draw=accentOrange, fill=accentOrange!10, edge={accentOrange, thick, ->}]
+    ]
+    [Agevolazioni
+        [solweb\\{\tiny richiedi}, draw=accentPurple, fill=accentPurple!10, edge={accentOrange, thick, dashed, ->}]
+    ]
+    [Aiuto]
+    [Orari]
+    [Notizie]
+]
+\end{forest}%
+}
 \caption{BP1 --- Architettura dell'Informazione di \texttt{tper.it}}
 \label{fig:bp1}
 \end{figure}
@@ -4215,7 +4349,90 @@ I blueprint presentati in questa sezione definiscono i componenti per l'organizz
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{Blueprint/html/bp2-ecosystem.png}
+\begin{tikzpicture}[
+    box/.style={
+        draw, thick, rounded corners=4pt,
+        align=center, inner sep=5pt,
+        text width=3.5cm, minimum height=2.4cm,
+        font=\small,
+    },
+    bridge/.style={
+        ->, dashed, thick, >=stealth,
+        color=accentOrange,
+    },
+    annot/.style={
+        font=\scriptsize\sffamily\bfseries,
+        color=accentOrange,
+        align=center,
+    },
+]
+
+%--- Central hub: tper.it ---
+\node[fill=primaryColor, rounded corners=5pt,
+      minimum width=3.6cm, minimum height=2.2cm] (hub) at (0,0) {};
+\node[font=\bfseries\sffamily\Large, text=white] at (0,0.3) {tper.it};
+\node[font=\small\sffamily, text=white!80] at (0,-0.65) {Information Hub};
+
+%--- Channel boxes (pentagon, radius=5.6cm) ---
+
+% 1: solweb (90\degree)
+\node[box, fill=primaryColor!8, draw=primaryColor] (c1) at (90:5.6) {
+    \textbf{\large solweb.tper.it}\\[2pt]
+    \textcolor{accentOrange}{\sffamily\bfseries\small Digital, Browser}\\[2pt]
+    \footnotesize Abbonamenti / Rinnovo\\Ricarica / ISEE
+};
+
+% 2: Roger App (18\degree)
+\node[box, fill=primaryColor!8, draw=primaryColor] (c2) at (18:5.6) {
+    \textbf{\large Roger App}\\[2pt]
+    \textcolor{accentOrange}{\sffamily\bfseries\small Digital, Smartphone}\\[2pt]
+    \footnotesize Biglietti / Pagamenti\\Validazione
+};
+
+% 3: Contactless a bordo (-54\degree)
+\node[box, fill=accentGreen!8, draw=accentGreen] (c3) at (-54:5.6) {
+    \textbf{\large Contactless a bordo}\\[2pt]
+    \textcolor{accentGreen}{\sffamily\bfseries\small Hybrid, Veicolo}\\[2pt]
+    \footnotesize Pay-per-ride
+};
+
+% 4: Tabaccherie / PuntoLis (-126\degree)
+\node[box, fill=secondaryColor!8, draw=secondaryColor] (c4) at (-126:5.6) {
+    \textbf{\large Tabaccherie}\\[-1pt]
+    \textbf{\large / PuntoLis}\\[2pt]
+    \textcolor{secondaryColor}{\sffamily\bfseries\small Physical, Rivendita}\\[2pt]
+    \footnotesize Ricariche\\Biglietti singoli
+};
+
+% 5: Punti Tper (162\degree)
+\node[box, fill=secondaryColor!8, draw=secondaryColor] (c5) at (162:5.6) {
+    \textbf{\large Punti Tper}\\[2pt]
+    \textcolor{secondaryColor}{\sffamily\bfseries\small Physical, Sportello}\\[2pt]
+    \footnotesize Tutti i servizi\\Assistenza
+};
+
+%--- Connecting lines: hub --- channels ---
+\draw[thick, primaryColor] (hub.70) -- (c1.190);
+\draw[thick, primaryColor] (hub.25) -- (c2.165);
+\draw[thick, accentGreen] (hub.300) -- (c3.60);
+\draw[thick, secondaryColor] (hub.240) -- (c4.50);
+\draw[thick, secondaryColor] (hub.145) -- (c5.15);
+
+%--- Bridge mechanisms (dashed orange arrows) ---
+
+% Reindirizzi web: tper.it ~> solweb / Roger
+\draw[bridge] (hub.45) -- +(2.0,0.8) node[annot, right] {Reindirizzi\\web};
+
+% QR Code: Punti Tper scontrino ~> online
+\draw[bridge] (c5.230) -- +(-1.0,-0.3) node[annot, left] {QR\\Code};
+
+% Guide stampate: PDF generati da tper.it
+\draw[bridge] (hub.280) -- +(1.8,-0.8) node[annot, right] {Guide\\stampate};
+
+% Trainer-Mode: operatori guidano utente
+\draw[bridge] (hub.120) -- +(-1.5,0.8) node[annot, left] {Trainer-\\Mode};
+
+\end{tikzpicture}
 \caption{BP2 --- Ecosistema Multi-Canale TPER}
 \label{fig:bp2}
 \end{figure}
@@ -4266,7 +4483,137 @@ Contactless a bordo & Ibrido & Pay-per-ride con carta o smartphone & Su veicolo 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{Blueprint/html/bp3-journey.png}
+\begin{tikzpicture}[
+    scale=0.85,
+    every node/.style={font=\small\sffamily, align=center},
+    startstop/.style={
+        rectangle, rounded corners=3pt,
+        draw=primaryColor, fill=primaryColor!12,
+        minimum width=2.6cm, minimum height=0.8cm, very thick, inner sep=3pt
+    },
+    action/.style={
+        rectangle,
+        draw=primaryColor, fill=primaryColor!5,
+        minimum width=2.4cm, minimum height=0.7cm, thick, inner sep=3pt
+    },
+    decision/.style={
+        diamond,
+        draw=accentOrange, thick, fill=accentOrange!5,
+        minimum width=2.2cm, minimum height=1.5cm, aspect=1.4, inner sep=2pt
+    },
+    endnode/.style={
+        rectangle, rounded corners=3pt,
+        draw=secondaryColor, fill=secondaryColor!8,
+        minimum width=2cm, minimum height=0.7cm, very thick
+    },
+    arrow/.style={->, >=stealth, thick, draw=secondaryColor!80},
+    decisionlabel/.style={font=\tiny\sffamily},
+]
+% === TRAINER MODE (vertical panel on the right) ===
+\draw[draw=violet!60!blue, very thick, fill=violet!4, rounded corners=3pt]
+    (8.2,-0.3) rectangle (11,-9.2);
+\node[font=\small\sffamily\bfseries\color{violet!60!blue}] at (9.6,-1) {TRAINER\\MODE};
+\node[font=\tiny\sffamily, text width=2.4cm, align=center, color=secondaryColor] at (9.6,-3.5) {
+    Attivato su richiesta\\o dopo 2 errori\\[6pt]
+    \textbullet\ \textbf{Checklist} documenti\\[3pt]
+    \textbullet\ \textbf{Guida} canale\\[3pt]
+    \textbullet\ \textbf{Tutorial} passo-passo
+};
+
+% === MAIN NODES ===
+\node[startstop] (start) at (0,0) {Arrivo su\\\texttt{tper.it}};
+
+\node[decision] (buy) at (0,-1.8) {Devi\\acquistare?};
+
+\node[decision] (dof) at (0,-3.6) {Digitale\\o Fisico?};
+
+% --- NO branch (buy $\to$ info $\to$ end) ---
+\node[action] (info) at (-2.8,-2.8) {Informazioni\\Orari/Percorsi};
+\node[endnode] (end) at (-2.8,-4) {Fine};
+
+% --- Digitale branch ---
+\node[decision] (account) at (-2.8,-5.4) {Hai un\\account?};
+
+\node[action] (solweb) at (-4.8,-7.2) {\texttt{solweb}\\tper.it};
+\node[action, below=0.6cm of solweb] (sacq) {Acquisto\\/ Rinnovo};
+
+\node[action] (roger) at (-1,-7.2) {Roger App};
+\node[action, below=0.6cm of roger] (rbig) {Acquisto\\Biglietti};
+
+% --- Fisico branch ---
+\node[decision] (cosa) at (3.2,-5.4) {Cosa\\devi fare?};
+
+\node[action] (punti) at (1.2,-7.2) {\textbf{Punti Tper}};
+\node[action, below=0.6cm of punti] (pcomp) {Acquisto\\completo};
+
+\node[action] (tabacchi) at (3.2,-7.2) {\textbf{Tabaccherie}};
+\node[action, below=0.6cm of tabacchi] (ricar) {Ricarica};
+
+\node[action] (contact) at (5.2,-7.2) {\textbf{Contactless}\\a bordo};
+\node[action, below=0.6cm of contact] (payper) {Pay-per-ride};
+
+% === ARROWS ===
+% Start → buy
+\draw[arrow] (start) -- (buy);
+
+% buy → dof (SÌ path)
+\draw[arrow] (buy) -- (dof);
+
+% buy → NO → info
+\draw[arrow] (buy.west) -- ++(-0.6,0) |- (info.north)
+    node[pos=0.3, above, font=\small\sffamily] {NO};
+
+% info → end
+\draw[arrow] (info) -- (end);
+
+% dof → Digitale (account)
+\draw[arrow] (dof.west) -- ++(-0.3,0) |- (account.north)
+    node[pos=0.3, above, font=\small\sffamily] {Digitale};
+
+% dof → Fisico (cosa)
+\draw[arrow] (dof.east) -- ++(0.3,0) |- (cosa.north)
+    node[pos=0.3, above, font=\small\sffamily] {Fisico};
+
+% account → SÌ (solweb)
+\draw[arrow] (account.west) -- ++(-0.3,0) |- (solweb.north)
+    node[pos=0.2, above, font=\small\sffamily] {S\`I};
+
+% solweb → sacq
+\draw[arrow] (solweb) -- (sacq);
+
+% account → NO (roger)
+\draw[arrow] (account.east) -- ++(0.3,0) |- (roger.north)
+    node[pos=0.2, above, font=\small\sffamily] {NO};
+
+% roger → rbig
+\draw[arrow] (roger) -- (rbig);
+
+% cosa → punti (Acquisto completo)
+\draw[arrow] (cosa.west) -- ++(-0.3,0) |- (punti.north)
+    node[pos=0.15, above, font=\tiny\sffamily] {Acquisto\\completo};
+
+% punti → pcomp
+\draw[arrow] (punti) -- (pcomp);
+
+% cosa → tabacchi (Ricarica)
+\draw[arrow] (cosa.south) -- (tabacchi.north)
+    node[pos=0.3, right, font=\tiny\sffamily] {Ricarica};
+
+% tabacchi → ricar
+\draw[arrow] (tabacchi) -- (ricar);
+
+% cosa → contact (Pay-per-ride)
+\draw[arrow] (cosa.east) -- ++(0.3,0) |- (contact.north)
+    node[pos=0.15, above, font=\tiny\sffamily] {Pay-per\\-ride};
+
+% contact → payper
+\draw[arrow] (contact) -- (payper);
+
+% === TRAINER TRIGGER INDICATOR ===
+\draw[dashed, draw=violet!50!blue, thick] (buy.east) -- ++(1.5,0);
+\node[font=\tiny\sffamily, color=violet!60!blue, anchor=west] at ($(buy.east)+(1.5,0)$)
+    {Aiuto / 2 errori};
+\end{tikzpicture}
 \caption{BP3 --- User Journey da \texttt{tper.it} all'Acquisto}
 \label{fig:bp3}
 \end{figure}
