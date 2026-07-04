@@ -77,10 +77,23 @@ An innovative guided-tour system that activates when users need help:
 
 ## 📊 Usability Testing
 
-| Phase | Participants | Key Results |
-|-------|-------------|-------------|
-| **Preliminary (Phase A)** | Laura Palumbo (70), Maria Borriello (79) | Baseline metrics, identified critical issues (FT1–FT7) |
-| **Summative (v2.0)** | Laura Palumbo (70) | **SUS 72.5/100** (+35 points vs Phase A), 4/5 tasks completed |
+### Phase A — Preliminary (Original TPER site)
+
+| # | Participant | Age | Tasks | Avg Time | Errors | SUS |
+|---|-------------|:---:|:-----:|:--------:|:------:|:---:|
+| 1 | Sergio Magini | 68 | 3/5 (60%) | 149.6 s | 2.6 | **40.0** |
+| 2 | Laura Palumbo | 70 | 1/5 (20%) | 183.8 s | 5.0 | **37.5** |
+| 3 | Chris Harper | 34 | 2/5 (40%) | 156.6 s | 2.4 | **45.0** |
+| 4 | Maria Borriello | 79 | 0/5 (0%) | 652.0 s | 3.8 | **27.5** |
+
+### Phase C — Summative (Redesigned v2.0)
+
+| # | Participant | Age | Tasks | Avg Time | Errors | SUS | vs Phase A |
+|---|-------------|:---:|:-----:|:--------:|:------:|:---:|:----------:|
+| 1 | Laura Palumbo | 70 | **4/5 (80%)** | **103.0 s** (−44%) | **1.4** (−72%) | **72.5** | **+35 pts** |
+| 2 | Maria Borriello | 79 | *(testing in progress)* | | | | |
+
+> **Laura Palumbo** passed the **good usability** threshold (SUS ≥ 68), with dramatic improvements in task T4 (agevolazioni): 0 errors, 0 backtrack, 57 s (vs 195 s / 7 errors in Phase A).
 
 ---
 
