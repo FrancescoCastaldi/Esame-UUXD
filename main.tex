@@ -165,6 +165,45 @@
 
 \vspace{0.3cm}
 
+% ================================================================
+% TEAM CARD — Valida per tutto il progetto
+% ================================================================
+\section*{Team Card}
+
+\vspace{0.2cm}
+
+\begin{tcolorbox}[base]
+\small
+\textbf{Nome del Team}: UX Design Project --- Help People Help People \\[6pt]
+Il presente documento costituisce il progetto di redesign dell'ecosistema digitale TPER S.p.A., 
+sviluppato nell'ambito del corso di \textit{Progettazione UUXD} dell'Università di Bologna, 
+A.A.\ 2025/2026. La Team Card è unica e valida per tutte le fasi del progetto (Phase A, B, C, D).
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{minipage}[t]{0.48\textwidth}
+\begin{tcolorbox}[personabox]
+    \textbf{Membro 1} \\[4pt]
+    \textbf{Nome:} Francesco Castaldi \\[2pt]
+    \textbf{Matricola:} 0001230662 \\[2pt]
+    \textbf{Email:} francesco.castaldi4@studio.unibo.it \\[2pt]
+    \textbf{Corso:} Ingegneria e Scienze Informatiche (L-08)
+\end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\begin{tcolorbox}[personabox]
+    \textbf{Membro 2} \\[4pt]
+    \textbf{Nome:} Stefano Mercurio \\[2pt]
+    \textbf{Matricola:} 1237578 \\[2pt]
+    \textbf{Email:} stefano.mercurio@studio.unibo.it \\[2pt]
+    \textbf{Corso:} Ingegneria e Scienze Informatiche (L-08)
+\end{tcolorbox}
+\end{minipage}
+
+\vspace{0.4cm}
+
 \section{Client Card}
 
 \subsection{Name of the Client}
@@ -1163,12 +1202,14 @@ del ricercatore tramite rete di prossimità.
 
 \vspace{0.2cm}
 \subsection*{Modality of recruitment of subjects}
+\refstepcounter{subsection}\label{sec:recruitment-modality-client}
 \begin{tcolorbox}[base]
 Il reclutamento è avvenuto grazie ai legami familiari di Stefano Mercurio per i primi due soggetti, mentre Chris Harper è stato reclutato in quanto collega del ricercatore in appoggio presso la sede italiana, con criterio di selezione basato sulla corrispondenza al profilo del segmento target. Maria Borriello è stata reclutata tramite la rete di prossimità familiare di Francesco Castaldi, in quanto sua nonna e rappresenta il profilo target più critico del progetto: anziana over 75 con competenza digitale limitata al solo uso passivo del dispositivo, senza alcuna esperienza di interazione attiva con servizi online.
 \end{tcolorbox}
 \vspace{0.2cm}
 
 \subsection*{Motivation for choice of subjects}
+\refstepcounter{subsection}\label{sec:recruitment-motivation-client}
 \begin{tcolorbox}[base]
 I soggetti sono stati scelti perché corrispondono pienamente
 alla combinazione di segmentazione prioritaria identificata
@@ -1650,6 +1691,27 @@ per garantire la piena comparabilità dei dati quantitativi.
 Gli stessi soggetti reclutati per il test sul sito TPER
 sono stati coinvolti nel test sul sito ATAC, per garantire
 la piena comparabilità dei risultati.
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\subsection*{Modality of recruitment of subjects}
+\begin{tcolorbox}[base]
+Medesima modalità di reclutamento descritta nel test sul sito TPER
+(Sezione~\ref{sec:recruitment-modality-client}). I soggetti sono
+stati ricontattati direttamente per concordare una seconda sessione
+di testing.
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\subsection*{Motivation for choice of subjects}
+\begin{tcolorbox}[base]
+Stessa motivazione del test sul sito TPER
+(Sezione~\ref{sec:recruitment-motivation-client}): i soggetti
+sono stati scelti per la loro rappresentatività dei segmenti
+S1 (anziano pendolare), S2 (lavoratore straniero) e S3
+(cittadino allo sportello).
 \end{tcolorbox}
 
 % ================================================================
@@ -3487,13 +3549,6 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
     {\small \textbf{Legenda:} \rule{10pt}{10pt} = valore raggiunto \hfill \color{lightgray}\rule{10pt}{10pt}\color{black} = valore non raggiunto}
 \end{tcolorbox}
 
-\vspace{0.3cm}
-
-% ================================================================
-% DETTAGLI INTERESSANTI ADDIZIONALI
-
-\newpage
-
 % ================================================================
 % USE CASE #1: «Il rinnovo che non si vede»
 % ================================================================
@@ -4782,6 +4837,51 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \label{fig:wf5}
 \end{figure}
 
+\newpage
+
+% ================================================================
+% WF6: ABBONAMENTI + TRAINER (RINNOVO)
+% ================================================================
+\section{Wireframe 6: Abbonamenti --- Trainer Rinnovo}
+\label{wf6}
+
+\begin{figure}[H]
+\centering
+\wfgraphic{Wireframes/screenshot-wf6.png}
+\caption{Abbonamenti --- Tipologie e trainer-mode Rinnovo attivo con highlight}
+\label{fig:wf6}
+\end{figure}
+
+\newpage
+
+% ================================================================
+% WF7a: SOLWEB PAGAMENTO
+% ================================================================
+\section{Wireframe 7a: solweb --- Flusso di Pagamento}
+\label{wf7a}
+
+\begin{figure}[H]
+\centering
+\wfgraphic{Wireframes/screenshot-wf7a.png}
+\caption{solweb --- Pagamento con riepilogo carrello e metodo di pagamento}
+\label{fig:wf7a}
+\end{figure}
+
+\newpage
+
+% ================================================================
+% WF7b: SOLWEB CONFERMA
+% ================================================================
+\section{Wireframe 7b: solweb --- Conferma Post-Acquisto}
+\label{wf7b}
+
+\begin{figure}[H]
+\centering
+\wfgraphic{Wireframes/screenshot-wf7b.png}
+\caption{solweb --- Schermata di conferma con riepilogo e opzioni successive}
+\label{fig:wf7b}
+\end{figure}
+
 \vspace{0.5cm}
 
 % ================================================================
@@ -4807,8 +4907,14 @@ WF4 & Biglietti & Tipologie biglietto con prezzi e validit\`a, badge consigliato
 \hline
 WF5 & Aiuto + Trainer-Mode & FAQ per canale, sezione guide, toggle trainer-mode, guida 5 passi & Toggle ON/OFF, passo-passo visibile, canale indicato per ogni passo \\
 \hline
+WF6 & Abbonamenti & Tipologie abbonamento, badge consigliato, trainer-mode Rinnovo attivo & Trainer highlight, confronto piani, CTA per canale \\
+\hline
+WF7a & solweb Pagamento & Riepilogo carrello, metodo di pagamento, form carta/dati & Flusso transazionale, breadcrumb, riepilogo importo \\
+\hline
+WF7b & solweb Conferma & Conferma acquisto, riepilogo ordine, opzioni successive & Biglietto/abbonamento acquistato, CTA stampa, dashboard \\
+\hline
 \end{tabular}
-\caption{Riepilogo dei wireframe prodotti per tper.it (solo informativo)}
+\caption{Riepilogo dei wireframe prodotti (tper.it + solweb.tper.it)}
 \label{tab:wfsum}
 \end{table}
 
@@ -5794,7 +5900,7 @@ FT7 & Link agli orari nella pianificazione & 2 & 3 \\
 
 \subsection*{Name of Redesigned Version}
 \begin{tcolorbox}[base]
-Redesign TPER --- v2.0 (Prototipo interattivo --- Phase C)
+Redesign TPER --- v2.0 (Prototipo interattivo --- Phase D)
 \end{tcolorbox}
 
 % ================================================================
