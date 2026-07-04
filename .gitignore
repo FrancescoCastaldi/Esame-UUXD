@@ -58,3 +58,6 @@ package.json
 # Screenshot capture scripts
 capture-screenshots.js
 capture-wf5.js
+
+# Project cards (templates)
+Cards_progetto/
