@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html lang="it" data-page="notizie">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="notizie.title">Notizie &mdash; tper.it</title>
+  <meta name="description" content="Rimani aggiornato sulle ultime novità di Tper: servizi, linee, deviazioni e eventi.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-i18n="header.skip">Vai al contenuto principale</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" data-i18n-aria="header.menu">&#9776;</button>
+      <a href="index.html" class="logo" aria-label="Tper home">
+        <svg viewBox="0 0 100 32" aria-hidden="true">
+          <rect x="0" y="2" width="28" height="28" rx="6" fill="#CA1424"/>
+          <text x="14" y="21" text-anchor="middle" fill="#FFF" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="13">TP</text>
+          <text x="34" y="21" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15">tper.it</text>
+        </svg>
+        tper.it
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="orari.html" data-i18n="nav.orari">Orari</a></li>
+          <li><a href="notizie.html" aria-current="page" data-i18n="nav.notizie">Notizie</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </nav>
+      <div class="header-utilities">
+        <button class="lang-btn" data-lang="it" data-i18n-aria="header.lang-it" aria-label="Italiano">IT</button>
+        <button class="lang-btn" data-lang="en" data-i18n-aria="header.lang-en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="ar" data-i18n-aria="header.lang-ar" aria-label="العربية">AR</button>
+        <button class="search-toggle" data-i18n-aria="header.search-toggle" aria-label="Cerca nel sito" title="Cerca">&#128269;</button>
+        <button class="contrast-toggle" data-i18n-aria="a11y.contrast-on" aria-label="Attiva contrasto elevato" title="Contrasto">&#9681;</button>
+        <button class="font-toggle" data-i18n-aria="a11y.font-increase" aria-label="Aumenta carattere" title="Carattere">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+  <section class="news-header">
+    <h1 data-i18n="notizie.title">Notizie</h1>
+    <p data-i18n="notizie.desc">Rimani aggiornato sulle ultime novità di Tper: servizi, linee, deviazioni e eventi.</p>
+  </section>
+
+  <div class="news-categories">
+    <button class="news-cat-btn active" data-category="all" data-i18n="notizie.all-categories">Tutte le categorie</button>
+    <button class="news-cat-btn" data-category="bologna" data-i18n="notizie.category-bologna">Bologna</button>
+    <button class="news-cat-btn" data-category="ferrara" data-i18n="notizie.category-ferrara">Ferrara</button>
+    <button class="news-cat-btn" data-category="bus" data-i18n="notizie.category-bus">Bus</button>
+    <button class="news-cat-btn" data-category="ferrovia" data-i18n="notizie.category-ferrovia">Ferrovia</button>
+    <button class="news-cat-btn" data-category="deviazioni" data-i18n="notizie.category-deviazioni">Deviazioni</button>
+    <button class="news-cat-btn" data-category="scioperi" data-i18n="notizie.category-scioperi">Scioperi</button>
+    <button class="news-cat-btn" data-category="sosta" data-i18n="notizie.category-sosta">Sosta</button>
+  </div>
+
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="sep">/</li>
+          <li aria-current="page" data-i18n="nav.notizie">Notizie</li>
+        </ol>
+      </nav>
+      <div class="news-grid" id="news-grid">
+        <article class="news-card" data-category="bologna">
+          <div class="news-card-image">&#128652;</div>
+          <div class="news-card-body">
+            <span class="news-card-tag" data-i18n="notizie.category-bologna">Bologna</span>
+            <span class="news-card-date">Pubblicato il 15 Giugno 2026</span>
+            <h3>Nuova linea bus 27 collegherà via Lame con la Fiera</h3>
+            <p>Dal 1° luglio attiva la nuova linea 27 che collegherà il centro città con il quartiere fieristico, con corse ogni 12 minuti in ora di punta.</p>
+            <a href="#" class="btn-outline" data-i18n="notizie.read-more">Leggi tutto</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="ferrara">
+          <div class="news-card-image">&#128647;</div>
+          <div class="news-card-body">
+            <span class="news-card-tag" data-i18n="notizie.category-ferrara">Ferrara</span>
+            <span class="news-card-date">Pubblicato il 12 Giugno 2026</span>
+            <h3>Lavori di manutenzione sulla linea ferroviaria Ferrara-Ravenna</h3>
+            <p>Dal 20 al 27 giugno la linea sarà interessata da lavori. Previste sostituzioni con bus navetta tra Ferrara e Ravenna.</p>
+            <a href="#" class="btn-outline" data-i18n="notizie.read-more">Leggi tutto</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="scioperi">
+          <div class="news-card-image">&#9888;&#65039;</div>
+          <div class="news-card-body">
+            <span class="news-card-tag" data-i18n="notizie.category-scioperi">Scioperi</span>
+            <span class="news-card-date">Pubblicato il 10 Giugno 2026</span>
+            <h3>Sciopero del personale Tper previsto per il 25 giugno</h3>
+            <p>Possibili disagi al servizio in tutta la regione. Informazioni aggiornate su fasce di garanzia e linee garantite.</p>
+            <a href="#" class="btn-outline" data-i18n="notizie.read-more">Leggi tutto</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="bus">
+          <div class="news-card-image">&#128653;</div>
+          <div class="news-card-body">
+            <span class="news-card-tag" data-i18n="notizie.category-bus">Bus</span>
+            <span class="news-card-date">Pubblicato il 8 Giugno 2026</span>
+            <h3>Potenziamento linee bus per l'estate 2026</h3>
+            <p>Da giugno a settembre potenziate le linee verso le località turistiche della costa e dell'Appennino bolognese.</p>
+            <a href="#" class="btn-outline" data-i18n="notizie.read-more">Leggi tutto</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="deviazioni">
+          <div class="news-card-image">&#128694;</div>
+          <div class="news-card-body">
+            <span class="news-card-tag" data-i18n="notizie.category-deviazioni">Deviazioni</span>
+            <span class="news-card-date">Pubblicato il 5 Giugno 2026</span>
+            <h3>Deviazioni linee 14 e 36 per lavori in via Indipendenza</h3>
+            <p>Da lunedì 7 giugno le linee 14 e 36 subiranno deviazioni. Fermate alternative indicate sul posto.</p>
+            <a href="#" class="btn-outline" data-i18n="notizie.read-more">Leggi tutto</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="sosta">
+          <div class="news-card-image">&#128663;</div>
+          <div class="news-card-body">
+            <span class="news-card-tag" data-i18n="notizie.category-sosta">Sosta</span>
+            <span class="news-card-date">Pubblicato il 3 Giugno 2026</span>
+            <h3>Nuove tariffe park&amp;ride: sconto del 30% per abbonati Tper</h3>
+            <p>Dal 1° luglio gli abbonati Tper beneficeranno di uno sconto del 30% sulle tariffe dei parcheggi scambiatori.</p>
+            <a href="#" class="btn-outline" data-i18n="notizie.read-more">Leggi tutto</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="ferrovia">
+          <div class="news-card-image">&#128646;</div>
+          <div class="news-card-body">
+            <span class="news-card-tag" data-i18n="notizie.category-ferrovia">Ferrovia</span>
+            <span class="news-card-date">Pubblicato il 1 Giugno 2026</span>
+            <h3>Orario estivo: modifiche alla linea Bologna-Portomaggiore</h3>
+            <p>Dal 15 giugno entra in vigore l'orario estivo con alcune modifiche agli orari della linea ferroviaria.</p>
+            <a href="#" class="btn-outline" data-i18n="notizie.read-more">Leggi tutto</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="bologna">
+          <div class="news-card-image">&#128204;</div>
+          <div class="news-card-body">
+            <span class="news-card-tag" data-i18n="notizie.category-bologna">Bologna</span>
+            <span class="news-card-date">Pubblicato il 28 Maggio 2026</span>
+            <h3>Evento: Tper Partecipa alla Festa della Musica 2026</h3>
+            <p>Il 21 giugno Tper sarà presente alla Festa della Musica con uno stand informativo in piazza Maggiore.</p>
+            <a href="#" class="btn-outline" data-i18n="notizie.read-more">Leggi tutto</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="news-load-more">
+        <button class="btn-primary" data-i18n="notizie.load-more">Carica più notizie</button>
+      </div>
+
+      <div class="info-banner" role="status">
+        <span class="icon">&#9432;</span>
+        <p><strong data-i18n="banner.info">tper.it &egrave; un sito informativo.</strong> <span data-i18n="banner.text">Per acquistare biglietti e abbonamenti utilizza uno dei canali dedicati:</span> <a href="dove-comprare.html" data-i18n="banner.link">scopri dove comprare</a></p>
+      </div>
+    </div>
+  </main>
+
+  <button class="back-to-top" data-i18n-aria="back-to-top.label" aria-label="Torna in cima" title="Torna su">&#8593;</button>
+
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay-content">
+      <div class="search-overlay-header">
+        <input type="search" class="search-overlay-input" id="search-overlay-input" placeholder="Cerca..." data-i18n-placeholder="search.placeholder" aria-label="Cerca">
+        <button class="search-overlay-close" data-i18n-aria="search.close" aria-label="Chiudi ricerca">&times;</button>
+      </div>
+      <div class="search-overlay-results" id="search-overlay-results">
+        <div class="search-overlay-empty" data-i18n="search.placeholder">Cerca notizie, orari, linee...</div>
+      </div>
+
+    </div>
+  </div>
+
+  <aside class="trainer-bar" data-i18n-aria="trainer.title" aria-label="Pannello trainer" role="complementary">
+    <h3 data-i18n="trainer.title">&#127891; Modalità Trainer</h3>
+    <div id="trainer-steps"></div>
+  </aside>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>tper.it</h4>
+        <ul>
+          <li><a href="pianifica.html" data-i18n="nav.pianifica">Pianifica</a></li>
+          <li><a href="dove-comprare.html" data-i18n="nav.dove-comprare">Dove Comprare</a></li>
+          <li><a href="biglietti.html" data-i18n="nav.biglietti">Biglietti</a></li>
+          <li><a href="abbonamenti.html" data-i18n="nav.abbonamenti">Abbonamenti</a></li>
+          <li><a href="aiuto.html" data-i18n="nav.aiuto">Aiuto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.buy-channels">Canali di Acquisto</h4>
+        <ul>
+          <li><a href="solweb/login.html" data-i18n="footer.solweb">solweb.tper.it</a></li>
+          <li><a href="dove-comprare.html#roger" data-i18n="footer.roger">App Roger</a></li>
+          <li><a href="dove-comprare.html#punti-tper" data-i18n="footer.punti">Punti Tper</a></li>
+          <li><a href="dove-comprare.html#tabaccherie" data-i18n="footer.tabacchi">Tabaccherie</a></li>
+          <li><a href="dove-comprare.html#contactless" data-i18n="footer.contactless">Contactless a bordo</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.accessibility">Accessibilità</h4>
+        <ul>
+          <li><button class="contrast-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.contrast">Contrasto elevato</button></li>
+          <li><button class="font-toggle" style="background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;" data-i18n="footer.font-large">Testo grande</button></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.contacts">Contatti</h4>
+        <ul>
+          <li><a href="aiuto.html" data-i18n="footer.support">Supporto</a></li>
+          <li><a href="https://tper.it" target="_blank" rel="noopener" data-i18n="footer.institutional">tper.it &ndash; Sito Istituzionale</a></li>
+          <li><a href="tel:+390800123456" data-i18n="footer.phone">Numero Verde 800-123-456</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2026 Tper &mdash; Progetto UX Design &bull; Solo dimostrativo</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/trainer-modules.js"></script>
+  <script src="js/app.js"></script>
+
+  <button class="trainer-toggle-btn" data-i18n-aria="trainer.toggle" aria-label="Attiva modalità trainer" title="Modalità Trainer">🎓</button>
+</body>
+</html>
+
+
+
