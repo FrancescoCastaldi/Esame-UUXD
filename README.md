@@ -59,7 +59,7 @@ An innovative guided-tour system that activates when users need help:
 | Phase | Participants | Key Results |
 |-------|-------------|-------------|
 | **Preliminary (Phase A)** | Laura Palumbo (70), Maria Borriello (79) | Baseline metrics, identified critical issues (FT1-FT7) |
-| **Summative (v2.0)** | Laura Palumbo (70) | **SUS 72.5/100** (+35 points vs Phase A), 4/5 tasks completed |
+| **Summative (v2.0)** | Laura Palumbo (70) | **SUS 72.5/100** (+35 points vs Phase A),4/5 tasks completed |
 
 ## 🛠️ Technologies Used
 
