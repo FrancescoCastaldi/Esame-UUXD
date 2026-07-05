@@ -328,12 +328,15 @@ Commit:     NESSUN commit dopo il 26 giugno
   - `FaseD2/03-formative-test-card.tex` — 1 data
 
 - **Scan main-en.tex:** trovati 18 punti di italiano residuo da tradurre
+- **Traduzione completata:** tutti i 18 punti tradotti in inglese (RF-01--RF-09, Abilità→Physical ability, 3 use case commenti, 3 testi narrativi)
+- **Commit e push** su GitHub (`d6bda7b`)
 
 ### File Inventory
 - **main.tex**: 6.119 righe
-- **main-en.tex**: 6.108 righe (con 18 punti ITA da tradurre)
+- **main-en.tex**: 6.108 righe (100% inglese, 0 italiano residuo ✅)
 - **AGENTS.md**: auto-dichiarato
 
 ### Key Decisions
 - Timeline realistica: Phase A (5-15 Maggio), CW (15-16 Giugno), Formative (20-24 Giugno), Summative (28-30 Giugno), V2 Finale (3 Luglio)
 - File FaseD2 standalone (non inclusi via `\input{}`) aggiornati comunque per consistenza
+- RF titles tradotti mantenendo la codifica `RF-XX --- [English title]` per coerenza con i RF inglesi già presenti (RF-10+)
