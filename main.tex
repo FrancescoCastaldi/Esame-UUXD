@@ -609,7 +609,7 @@ più estremo, migliorano l'esperienza per tutti gli utenti fragili.
 
 % ================================================================
 \newpage
-\section{Assessment of Existing Resource Card --- TPER}
+{\raggedright\section{Assessment of Existing Resource Card --- TPER}\par}
 
 \textbf{Questo è il tool del cliente}\\
 \textit{(ossia quello da ridisegnare)}
@@ -636,7 +636,7 @@ accessibili senza login.
 \noindent L'ecosistema ha duplice funzione. Sul sito informativo
 (\texttt{tper.it}): consultazione di orari e percorsi in tempo reale,
 pianificazione del viaggio, avvisi di servizio. Sulla piattaforma
-transazionale (\texttt{solweb.tper.it}): acquisto e rinnovo di abbonamenti
+transazionale (\texttt{solweb}\discretionary{-}{-}{.}\texttt{tper.it}): acquisto e rinnovo di abbonamenti
 (ordinari e agevolati, nominativi e impersonali), ricarica della tessera
 \textit{Mi Muovo}, ricarica Boost, pagamento sanzioni (bus e ferroviarie),
 caricamento di documenti per agevolazioni tariffarie. Alcuni servizi
@@ -676,8 +676,8 @@ non esperti, in particolare anziani over 70 con bassa competenza digitale.
     transazionale richiede la creazione di un account per qualsiasi
     operazione, senza offrire un percorso guest per rinnovi
     impersonali, ricariche o sanzioni.
-    \item Nessuna modalità di affiancamento caregiver: il sito non prevede vista condivisa, sessione co-navigabile o funzioni trainer.
-    \item Assenza di supporto guidato contestuale: nessun tooltip attivabile, nessun flusso passo-passo, nessuna guida vocale o tattile.
+    \item Nessuna modalità di affianca\-mento caregiver: il sito non prevede vista condivisa, sessione co-navigabile o funzioni trainer.
+    \item Assenza di supporto guidato contestuale: nessun tooltip attivabile, nessun flusso passo-passo,\\ nessuna guida vocale o tattile.
     \item Gestione degli errori insufficiente: il sito non guida l'utente nel recupero da errori comuni come pagamento fallito o abbonamento scaduto.
     \item Nessun monitoraggio dei progressi: l'intermediario non dispone di strumenti per tracciare le competenze acquisite dall'utente e pianificare training incrementali.
 \end{itemize}
@@ -3883,7 +3883,8 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
 \begin{center}
 {\small
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|p{2.5cm}|p{2cm}|p{3cm}|p{6.5cm}|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2.3cm}|p{1.8cm}|p{2.7cm}|p{6.5cm}|}
 \hline
 \textbf{Persona} & \textbf{Ruolo} & \textbf{Segmento} & \textbf{Profilo sintetico} \\
 \hline
@@ -3903,7 +3904,9 @@ Roberto Rinaldi & Non-protagonista & \hyperref[seg:cittadino]{[S3]} Il cittadino
 allo sportello & 54 anni, italiano, bassa motivazione all'apprendimento
 digitale, timidezza allo sportello, ISEE basso \\
 \hline
-\end{tabular}}
+\end{tabular}%
+}
+}
 \end{center}
 \end{tcolorbox}
 
@@ -4299,7 +4302,7 @@ I blueprint presentati in questa sezione definiscono i componenti per l'organizz
 \hline
 \textbf{Canale} & \textbf{Tipo} & \textbf{Funzioni} & \textbf{Accesso} \\
 \hline
-\texttt{solweb.tper.it} & Digitale & Abbonamenti online, rinnovo, ricarica, agevolazioni ISEE & Browser web, richiede account \\
+\texttt{solweb}\discretionary{-}{-}{.}\texttt{tper.it} & Digitale & Abbonamenti online, rinnovo, ricarica, agevolazioni ISEE & Browser web, richiede account \\
 \hline
 Roger App & Digitale & Biglietti digitali, acquisto, validazione, saldo contatti & Smartphone (iOS/Android) \\
 \hline
