@@ -14,8 +14,7 @@
 *.lof
 *.lot
 
-# Compiled PDFs
-*.pdf
+# Compiled PDFs (tracked — main.pdf and main-en.pdf are deliverables)
 
 # Puppeteer Blueprint build artifacts
 Blueprint/html/
