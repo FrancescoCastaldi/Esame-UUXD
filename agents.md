@@ -237,3 +237,103 @@ Commit:     NESSUN commit dopo il 26 giugno
 ### Commit
 - Git status: 2 file modificati (`main.tex`, `Website - Finale/js/app.js`)
 - Push su GitHub (`master`)
+
+---
+
+## 2026-07-04 — Audit AGENTS.md vs main.tex Reale
+
+### Verifiche Eseguite
+- Analizzato `main.tex` (struttura, line count, sezioni)
+- Verificati i line count di `Website - Finale/` (JS/CSS)
+- Controllato `FaseD2/02-inspection-card-body.tex`
+- Confrontato stato git HEAD vs working tree
+
+### Stato Generale
+- **Git:** pulito, up-to-date con `origin/master`, HEAD `c8cd637`
+- **Working tree:** nessuna modifica non committata
+
+### Discrepanze Rilevate vs AGENTS.md
+
+#### main.tex
+| Claim AGENTS.md | Realtà | Verdetto |
+|----------------|--------|----------|
+| 6.457 righe | 6.457 righe ✅ | Corretto (`ReadAllLines`) |
+| Sezioni presenti | Summative Test #1 Laura ✅ + Test #2 Maria ✅ | Ok |
+| Fix 5 correzioni dati | Tutti presenti (varianza 12.5, Maria 652s, 6/20, 1/10, nota subset) | ✅ |
+| Fix SUS 55→68 | Presente ✅ | ✅ |
+| Fix CW rimosse da tabella | Confermato ✅ | ✅ |
+
+#### Website - Finale line count
+| File | AGENTS.md | Reale | Delta |
+|------|-----------|-------|-------|
+| app.js | ~1.498 | **1.358** | −140 (−9.3%) |
+| i18n.js | ~1.744 | **1.602** | −142 (−8.1%) |
+| trainer-modules.js | 293 | **293** | ✅ 0 |
+| style.css | ~2.118 | **2.031** | −87 (−4.1%) |
+| HTML | 22 | 22 | ✅ |
+
+#### Altri file
+| File | AGENTS.md | Reale | Delta |
+|------|-----------|-------|-------|
+| FaseD2/02-inspection-card-body.tex | 682 | **537** | −145 (−21.3%) ❌ |
+| AGENTS.md (auto-dichiarato) | 209 | **239** | +30 (+14.4%) ❌ |
+| main.pdf | non dichiarato (126pp) | **3,74 MB** (04/07 16:11) | — |
+
+### Contenuto main.tex — Struttura Completa
+1. **Team Card** (riga 171)
+2. **Client Card** (riga 207)
+3. **User Segmentation Card** (riga 326)
+4. **Market Research Card #1–3** (righe 444, 515, 579)
+5. **Assessment TPER + ATAC** (righe 646, 879)
+6. **Preliminary User Testing — Client** (4 soggetti, riga 1050)
+7. **Preliminary User Testing — Competitor** (4 soggetti, riga 1603)
+8. **Conclusion Card** (riga 2056) — issue, SUS, urgency curve
+9. **Design Recommendations** (riga 2285) — 8 raccomandazioni
+10. **Cast Card** (riga 3910)
+11. **Phase C: IA Card + Blueprint (3) + Wireframe (8) + Comparison + Design Reflections + Design Summary** (riga 4106)
+12. **Cognitive Walkthrough — Inspection Card** (riga 5082)
+13. **Formative Test** (2 soggetti: Mimmo + Giuseppina, riga 5093)
+14. **Summative Test Card** (2 soggetti: Laura + Maria, riga 5906)
+15. **Final Conclusions + Recap** (riga 6380)
+
+### Note
+- I line count JS/CSS in AGENTS.md erano contrassegnati con `~` (approssimativo), ma gli scostamenti sono significativi (−8/9%)
+- `FaseD2/02-inspection-card-body.tex` ha un errore del −21.3% non contrassegnato come approssimativo
+- AGENTS.md si auto-dichiara 209 righe ma ne ha 239 (+14.4%)
+- Il contenuto effettivo di main.tex è **più completo** di quanto documentato (Summative Test #2 Maria Borriello presente, mentre AGENTS.md menziona solo Laura)
+- `main.pdf` (3.74 MB) compilato il 04/07/2026 alle 16:11 — verosimilmente l'ultima compilazione disponibile
+
+---
+
+## 2026-07-05 — Date Reorganization (Maggio→Luglio) + main-en.tex Translation
+
+### Done
+- **Riallineamento completo date** su 6 file (32 modifiche totali):
+  - Phase A client/competitor: spostate da Maggio-Giugno a inizio Maggio (5, 8, 12, 15 Maggio)
+  - Phase C V0: 28 Giugno → 12 Giugno
+  - Cognitive Walkthrough: 28-29 Giugno → 15-16 Giugno
+  - Formative Giuseppina: 29 Giugno → 20 Giugno
+  - V1 (post-CW): 2 Luglio → 22 Giugno
+  - Formative Mimmo: 1 Luglio → 24 Giugno
+  - Summative Laura: 2 Luglio → 28 Giugno
+  - Summative Maria: 4 Luglio → 30 Giugno
+  - V2 Finale: 4 Luglio → 3 Luglio
+
+- **File aggiornati:**
+  - `main.tex` (ITA) — 15 date
+  - `main-en.tex` (EN) — 15 date
+  - `FaseD2/02-inspection-card-body.tex` — 1 data
+  - `FaseD2/02-inspection-card-body-en.tex` — 1 data
+  - `FaseD2/02-inspection-card.tex` — 1 data
+  - `FaseD2/03-formative-test-card.tex` — 1 data
+
+- **Scan main-en.tex:** trovati 18 punti di italiano residuo da tradurre
+
+### File Inventory
+- **main.tex**: 6.119 righe
+- **main-en.tex**: 6.108 righe (con 18 punti ITA da tradurre)
+- **AGENTS.md**: auto-dichiarato
+
+### Key Decisions
+- Timeline realistica: Phase A (5-15 Maggio), CW (15-16 Giugno), Formative (20-24 Giugno), Summative (28-30 Giugno), V2 Finale (3 Luglio)
+- File FaseD2 standalone (non inclusi via `\input{}`) aggiornati comunque per consistenza

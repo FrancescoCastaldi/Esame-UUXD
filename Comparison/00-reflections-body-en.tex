@@ -1,0 +1,120 @@
+﻿
+\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
+    \color{white}\LARGE\bfseries FINAL REFLECTIONS \\[0.2cm]
+    \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
+    \color{white!60}\normalsize Phase C --- Design Proposal
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\section{How Personas Influenced the Design}
+
+The four personas developed in the Cast Card guided every design decision of Phase C. A cross-cutting theme that emerged from testing is \textbf{confusion about purchase channels}: the TPER ecosystem is structured across multiple channels (solweb, Roger, Punti Tper, tabaccherie, onboard contactless), but the informational website \texttt{tper.it} provided no guidance for orientation. Below is the specific impact of each persona on the proposed design.
+
+\subsection{Impact of Maria Borriello (79, minimal digital literacy, SUS 27.5)}
+
+Maria represents the project's edge case. Her 0 out of 5 completed tasks and an average time of 652 seconds per task imposed non-negotiable design constraints. Maria's main difficulty was not the purchase itself, but understanding \textbf{where} to go to make a purchase:
+
+\begin{itemize}
+    \item \textbf{Channel cards with visual icons}: Maria could not distinguish between ``solweb'', ``Roger'', and ``Punto Tper'' because these are technical names with no intuitive meaning. The redesign introduces visual cards with large icons and distinctive colors: a card with a phone symbol for Roger, a card with a computer symbol for solweb, a card with a shop symbol for Punti Tper. Each card shows only the 2--3 main operations in very simple language (``Buy ticket'', ``Top up'', ``Subscription'').
+    \item \textbf{``First Visit'' guided tour}: On her first visit, Maria sees an optional introductory window: ``We'll help you get oriented'' with 4 illustrated screens that explain the channels using everyday metaphors (``Like a digital tabaccheria'', ``Like a physical shop'').
+    \item \textbf{Large text and high contrast (R8)}: The reading difficulty reported in testing mandated a minimum 14pt font and 4.5:1 contrast ratio, particularly critical for reading channel names.
+    \item \textbf{Encouraging tone (R9)}: Maria would abandon the task when she encountered an unfamiliar channel. The new messages guide her: ``Don't worry, let me explain where to go''.
+    \item \textbf{Progress bar (R3)}: In the ``Where to Buy'' wizard, Maria always sees where she is in the selection path (``Step 2 of 3: choose how to pay'').
+\end{itemize}
+
+\subsection{Impact of Laura Palumbo (70, medium literacy, 7 errors)}
+
+Laura demonstrated that even a few years of age difference and minimal smartphone use produce a significant performance gap. Laura possessed basic digital skills but was overwhelmed by the multitude of options:
+
+\begin{itemize}
+    \item \textbf{``Where do you want to buy?'' wizard}: Laura saw 5+ channels and did not know which to choose. The wizard reduces the choice to a guided path of 2--3 simple questions: ``What do you need?'' $\rightarrow$ ``How do you want to pay?'' $\rightarrow$ ``Here is the right channel for you''. Each answer narrows the visible options until only the recommended channel is shown.
+    \item \textbf{Channel comparison table}: Laura made manual comparisons by opening 5 tabs. The ``Channel comparison'' table shows at a glance: which operations each channel supports, costs, hours, language. Filterable by desired operation (R2).
+    \item \textbf{Separation of informational/transactional content}: Laura got lost between corporate news and actionable content. The homepage was reorganized by usage priority (R1), with the ``Where to Buy'' section always visible and news in a secondary section.
+    \item \textbf{Clear labels (R2)}: Laura did not understand ``solweb'' and ``MyAtac'' as channel names. The redesign uses descriptive labels: ``Online Subscriptions (solweb)'', ``Digital Tickets (Roger)'' with the technical name in parentheses as support.
+\end{itemize}
+
+\subsection{Impact of Chris Harper (34, high literacy, 226 seconds on Task 1)}
+
+Chris demonstrated that critical issues do not only affect vulnerable users. Despite high digital literacy, Chris wasted valuable time due to channel fragmentation:
+
+\begin{itemize}
+    \item \textbf{Upfront channel comparison}: Chris took 226 seconds to navigate between the various channels, visiting 3 different domains before finding the right one. The redesign shows a channel comparison table already on the homepage, allowing Chris to choose the correct channel on the first try, without exploratory navigation.
+    \item \textbf{Signaled domain transition (UR-01)}: Chris would go from \texttt{tper.it} to \texttt{solweb.tper.it} without warning and had to reorient. The redesign shows an explicit notice before every redirect: ``You are about to go to \texttt{solweb.tper.it} to complete the subscription purchase'' with a ``Continue'' button and a ``Go back'' button.
+    \item \textbf{``Did you mean...?'' cross-links}: Chris often ended up on the wrong channel because the names were ambiguous. The system now recognizes intent: if the user searches for ``subscription'' on a \texttt{tper.it} informational page, a direct link appears: ``Are you trying to buy a subscription? Go to \texttt{solweb.tper.it}'' (UR-03).
+    \item \textbf{Preventive checklist (R11)}: Chris had to independently search for which documents were needed for the subscription. The redesign shows a visual ``Required documents'' checklist already in the informational guide, before redirecting to solweb.
+\end{itemize}
+
+\subsection{Impact of Fatima Hassan (45, Arabic speaker)}
+
+Fatima highlighted language barriers in navigating between channels, not just in using services:
+
+\begin{itemize}
+    \item \textbf{Multilingual channel guide (R12)}: The ``Where to Buy'' guide is fully translated into Arabic and English, including channel descriptions, operation names, and wizard messages. Fatima can choose the right channel in her own language without having to interpret Italian terms.
+    \item \textbf{Multi-language synonym search}: The search engine accepts ``biglietto'', ``ticket'', and ``tadhkira'' (ticket in Arabic) and returns the same results, with an indication of the appropriate channel for each purchase type.
+    \item \textbf{Universal visual signage}: Channel icons have been designed to be culturally neutral and universally recognizable: phone for Roger, building for Punto Tper, computer for solweb, credit card for contactless. They reduce dependence on written language.
+    \item \textbf{Multilingual QR code}: The QR code on a Punto Tper receipt lands on an informational page that detects the device language and automatically presents itself in Arabic, English, or Italian.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\section{How Use Cases Influenced the Design}
+
+The Use Cases (UR-01--UR-05) emerging from the Cast Card guided the design choices, with particular attention to channel fragmentation and the resulting confusion:
+
+\begin{itemize}
+    \item \textbf{UR-01 (Channel fragmentation)}: Led to the design of \texttt{tper.it} as an \textbf{integrated information hub}. Instead of isolating each channel, the redesign presents a unified view of the TPER ecosystem, with a card for each channel, the supported operations, and direct links. The explicit transition notice prepares the user for the context change.
+    \item \textbf{UR-02 (Post-purchase confusion)}: Generated the ``After Purchase'' section for each channel. On \texttt{tper.it}, every product page includes a post-purchase guide: ``Just bought on solweb? Here is how to activate the subscription'' or ``Topped up at a tabaccheria? Check your remaining balance on Roger'' (R6).
+    \item \textbf{UR-03 (Wrong-channel errors)}: Led to the implementation of \textbf{intelligent cross-links}. When a user visits an informational page on \texttt{tper.it} describing a product purchasable elsewhere, the system shows a contextual suggestion: ``Did you mean to buy? Go to [correct channel]''. This reduces navigation errors and abandonment (R10).
+    \item \textbf{UR-04 (Physical/digital bridge)}: Inspired the \textbf{QR code} system that connects the physical experience (Punto Tper) to the informational one (\texttt{tper.it}). The receipt printed at the counter includes a QR code that leads to the dedicated informational page, with an operation summary, attached documents, and the possibility to continue digitally. The bridge is bidirectional: from the informational page, one can book an appointment at the nearest Punto Tper.
+    \item \textbf{UR-05 (Subscription guide)}: Generated the step-by-step ``How to Subscribe'' guide in 5 phases, entirely hosted on \texttt{tper.it} as informational content. Each phase explains what is needed, which documents to prepare, and, at the end, redirects the user to the correct channel (solweb for online purchase, Punto Tper for in-person purchase). Includes an ``Are you eligible for a discount?'' calculator that assesses user eligibility in under a minute.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\section{Reflections on the Design Process}
+
+\subsection{Consistency Across Phases}
+
+Phase C is the culmination of a journey that began with the Ethnographic Assessment (Phase A) and continued with the Feasibility Study (Phase B). Every design decision is traceable to the collected evidence:
+
+\begin{itemize}
+    \item From user testing $\rightarrow$ to recommendations R1--R13 $\rightarrow$ to Information Architecture $\rightarrow$ to Blueprint $\rightarrow$ to Wireframes.
+    \item The Issues (D1--D5, R1--R4) identified in the heuristic analysis found a response in one or more recommendations.
+    \item The Personas did not stay as an academic exercise: they guided concrete choices regarding IA depth, text size, language, and navigation modes.
+\end{itemize}
+
+\subsection{Critical Decisions}
+
+Some decisions required balancing conflicting needs:
+
+\begin{itemize}
+    \item \textbf{Channel guide vs. freedom of choice}: The ``Where to Buy'' wizard guides the user toward the optimal channel, but some expert users (like Chris) might prefer free choice. The solution is to show the recommended channel prominently, but always list all alternatives in an ``Other ways to buy'' section.
+    \item \textbf{Information hub vs. corporate content}: Keeping \texttt{tper.it} as a purely informational site means that corporate news and press releases must find space without obscuring the main functions. The choice was to relegate them to a separate ``Company'' section accessible from the footer, while the entire main area is dedicated to the user.
+    \item \textbf{Informational completeness vs. simplicity}: Describing 5+ channels with all their nuances risks reproducing the original problem (information overload). The compromise is the filterable comparison table: the user sees everything but can narrow the field by operation type or payment method.
+    \item \textbf{Explicit redirects vs. seamless experience}: Showing a warning before redirecting to solweb adds a step, but reduces the disorientation of the domain change. The test with Chris demonstrated that the cost in terms of additional clicks is negligible compared to the benefit of knowing where one is going.
+\end{itemize}
+
+\subsection{Contribution of Personas to the Design}
+
+The most significant contribution of the personas was making design decisions ``personal''. When having to choose between two options, the question ``What would Maria do?'' or ``What would Fatima understand?'' provided an unequivocal compass. This ensured that the design remained user-centered even in the most abstract technical choices.
+
+In particular, the theme of \textbf{channel confusion} --- which emerged across all four personas --- became the fulcrum of \texttt{tper.it}'s informational redesign. It was not about improving the purchase (which happens elsewhere), but about acting as an \textbf{informational bridge} between the user and the right channel. This redefined the very mission of the site: no longer a generic information container, but an \textbf{active guide to the TPER ecosystem}.
+
+\subsection{Limitations and Future Developments}
+
+\begin{itemize}
+    \item The presented wireframes are in lo-fi format. High-fidelity prototyping with summative user testing is the natural next step (Phase D).
+    \item The channel guide and the ``Where to Buy'' wizard are designed to be tested with real users (Maria, Laura, Chris, Fatima) to validate their effectiveness in reducing channel confusion.
+    \item The QR code bridge between Punto Tper and \texttt{tper.it} requires technical integration with the physical counter's management system. Technical feasibility was verified in Phase B, but remains to be implemented.
+    \item The ``Did you mean...?'' cross-links require an intent recognition engine based on user navigation. A first version can be implemented with static rules, but the natural evolution is the use of machine learning for predictive suggestions.
+\end{itemize}
+
+\vspace{0.5cm}
+
+\begin{center}
+{\color{secondaryColor}\small
+Document describing the impact of personas and use cases on the proposed design \\[4pt]
+\textbf{Phase C --- Design Proposal: Final Reflections} \\[4pt]
+Project: UX Design Project: Help People Help People --- TPER S.p.A.}
+\end{center}
