@@ -83,6 +83,19 @@
         left=6pt, right=6pt, top=6pt, bottom=6pt,
         boxsep=0pt,
     },
+    headerbox/.style={
+        colback=primaryColor,
+        colframe=primaryColor,
+        arc=1.5mm,
+        halign=center,
+        valign=center,
+        height=2cm,
+    },
+    summarybox/.style={
+        colback=primaryColor!5,
+        colframe=primaryColor,
+        arc=2mm,
+    },
 }
 
 % ===================================================================
@@ -793,28 +806,28 @@ account'' è sufficiente a causare l'abbandono.
 
 \bigskip
 
-\noindent\textbf{Issue R1 — Linea Guida G5 (Trust and Credibility)}\phantomsection\label{iss:R1}\\
+\noindent\textbf{Issue R1 — Linea Guida G5 (Trust and Credibility)}\phantomsection\label{iss:H1}\\
 \textit{Localizzazione: solweb.tper.it — area acquisto e pagamento online}\\
 
 \noindent Il sito non fornisce segnali di fiducia adeguati nelle schermate di acquisto: assenza di icone di sicurezza del pagamento, mancanza di conferme intermedie durante il flusso e nessuna sintesi dell'ordine prima del pagamento definitivo. Per un utente anziano che già diffida dei pagamenti online, questa assenza di rassicurazioni aumenta l'ansia e la probabilità di abbandono del flusso.
 
 \bigskip
 
-\noindent\textbf{Issue R2 — Linea Guida G8 (Search)}\phantomsection\label{iss:R2}\\
+\noindent\textbf{Issue R2 — Linea Guida G8 (Search)}\phantomsection\label{iss:H2}\\
 \textit{Localizzazione: sito tper.it — funzione di ricerca interna}\\
 
 \noindent La funzione di ricerca interna non è prominente, non suggerisce query correlate né autocompleta. Una ricerca per \textit{``abbonamento anziani''} restituisce risultati privi di metadati utili (nessuna data, nessun estratto significativo) per orientare l'utente nella scelta. L'utente anziano che usa la ricerca come scorciatoia non ottiene risposte utili ed è costretto a navigare manualmente la struttura del sito.
 
 \bigskip
 
-\noindent\textbf{Issue R3 — Linea Guida G10 (Accessibility)}\phantomsection\label{iss:R3}\\
+\noindent\textbf{Issue R3 — Linea Guida G10 (Accessibility)}\phantomsection\label{iss:H3}\\
 \textit{Localizzazione: sito tper.it — testi, contrasto, aree cliccabili}\\
 
 \noindent Alcune sezioni presentano testi di dimensione ridotta, contrasto testo/sfondo insufficiente per utenti con riduzione visiva lieve e aree cliccabili troppo piccole per l'uso su smartphone. La modalità scura presente sul sito non offre un vero controllo di accessibilità (contrasto regolabile, dimensione testo, font accessibili), penalizzando direttamente il target anziano.
 
 \bigskip
 
-\noindent\textbf{Issue R4 — Linea Guida G2 (Task Orientation)}\phantomsection\label{iss:R4}\\
+\noindent\textbf{Issue R4 — Linea Guida G2 (Task Orientation)}\phantomsection\label{iss:H4}\\
 \textit{Localizzazione: ecosistema TPER --- distinzione tra pianificazione
 e acquisto}\\
 
@@ -829,7 +842,7 @@ sul mezzo convinto di avere un titolo valido.
 \bigskip
 
 \noindent\textbf{Issue R5 — Linea Guida G9 (Help, Feedback, Error
-Tolerance)}\phantomsection\label{iss:R5}\\
+Tolerance)}\phantomsection\label{iss:H5}\\
 \textit{Localizzazione: ecosistema TPER — assenza di supporto
 contestuale e modalità trainer}\\
 
@@ -972,35 +985,35 @@ G10 & Accessibilità — accessibilità cognitiva e motoria \\
 
 \bigskip
 
-\noindent\textbf{Issue R1 — Violazione G5 (Fiducia e credibilità)}\phantomsection\label{atac:R1}\\
+\noindent\textbf{Issue R1 — Violazione G5 (Fiducia e credibilità)}\phantomsection\label{atac:H1}\\
 \textit{Localizzazione: sito ATAC nel suo complesso}\\
 
 \noindent Il sito è credibile dal punto di vista istituzionale, ma la quantità di percorsi e aree di servizio può indebolire la fiducia operativa del nuovo utente. Quando non è subito chiaro quale sia il canale giusto per un dato compito, l’utente può percepire incertezza anche in un sistema affidabile. Il problema non riguarda la reputazione del servizio, ma la sua leggibilità d’uso. La fiducia è forte sul brand, meno forte sul task.
 
 \bigskip
 
-\noindent\textbf{Issue R2 — Violazione G8 (Ricerca)}\phantomsection\label{atac:R2}\\
+\noindent\textbf{Issue R2 — Violazione G8 (Ricerca)}\phantomsection\label{atac:H2}\\
 \textit{Localizzazione: pagine informative e sezioni di servizio del sito}\\
 
 \noindent La funzione di ricerca e' presente tramite un'icona nell'header ma non e' immediatamente visibile come strumento primario. Non offre suggerimenti o autocompletamento, e la sua efficacia dipende dalla capacita' dell'utente di formulare query con la terminologia corretta del dominio. Per utenti fragili, la ricerca non compensa la complessita' dell'architettura e non sostituisce una struttura piu' guidata.
 
 \bigskip
 
-\noindent\textbf{Issue R3 — Violazione G10}\phantomsection\label{atac:R3}\\
+\noindent\textbf{Issue R3 — Violazione G10}\phantomsection\label{atac:H3}\\
 \textit{Localizzazione: pagine di servizio, istruzioni e percorsi account-based}\\
 
 \noindent L’accessibilità è presente sul piano funzionale, ma il sistema resta impegnativo sul piano mentale. L’utente deve distinguere tra diversi tipi di contenuto, comprendere il significato di termini tecnici e ricordare dove si trova nel percorso. Questo riduce l’adeguatezza del sito per utenti con bassa fiducia digitale. Il problema è dunque cognitivo prima ancora che visivo o motorio.
 
 \bigskip
 
-\noindent\textbf{Issue R4 — Violazione G2}\phantomsection\label{atac:R4}\\
+\noindent\textbf{Issue R4 — Violazione G2}\phantomsection\label{atac:H4}\\
 \textit{Localizzazione: percorso tra informazione, acquisto e gestione del titolo}\\
 
 \noindent Il sito supporta il task, ma non lo rende immediatamente leggibile come sequenza di azioni. Consultare, acquistare, attivare e gestire un titolo sono operazioni collegate, ma il sistema si aspetta che l’utente ne comprenda già il rapporto. Questo è poco adatto a un pubblico che ha bisogno di un modello mentale semplice e rassicurante. La piattaforma facilita il compito solo dopo che l’utente ha già superato la parte più difficile: capire il compito.
 
 \bigskip
 
-\noindent\textbf{Issue R5 — Violazione G9}\phantomsection\label{atac:R5}\\
+\noindent\textbf{Issue R5 — Violazione G9}\phantomsection\label{atac:H5}\\
 \textit{Localizzazione: supporto diffuso nel sito}\\
 
 \noindent Il sito offre aiuto, ma non una vera esperienza di accompagnamento nel momento dell’azione. In caso di dubbio o errore, l’utente deve spesso trasformare da solo le istruzioni in comportamento concreto. Per il target HPHP questo non basta, perché il problema principale non è la mancanza di informazioni ma la mancanza di fiducia nel momento di usarle. L’assenza di un supporto più guidato rappresenta quindi la criticità più grave.
@@ -1279,10 +1292,10 @@ Al termine della sessione, il soggetto ha osservato spontaneamente: \textit{``Do
 Il volume ridotto di errori e backtrack registrato in alcune fasi non è sintomo di fluidità del sistema. Il soggetto, in difficoltà di fronte alla quantità di informazione che si trova dinanzi, preferisce spendere un tempo prolungato nell'esplorazione visiva faticosa di ogni singola schermata piuttosto che cliccare casualmente. Questo blocco è causato direttamente dal disorientamento in homepage \textbf{(\hyperref[iss:D1]{D1})} e dall'architettura informativa promiscua \textbf{(\hyperref[iss:D2]{D2})}.
 
 Nello specifico del primo task (\textit{Ricerca e consultazione orari}) pur avendo isolato visivamente la linea di interesse, non è riuscito a individuare il comando per accedere alle tabelle orarie, lamentando una totale mancanza di intuitività dei componenti grafici.
-La tendenza a non distinguere un pulsante interattivo da una stringa di testo statico conferma sperimentalmente la gravità della \textbf{\hyperref[iss:R3]{R3}} (Accessibilità visiva e cognitiva). 
+La tendenza a non distinguere un pulsante interattivo da una stringa di testo statico conferma sperimentalmente la gravità della \textbf{\hyperref[iss:H3]{H3}} (Accessibilità visiva e cognitiva). 
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Affordance e contrasto visivo (\hyperref[iss:R3]{R3}):} Standardizzare i pulsanti con forme geometriche chiare ed elevazione visiva rispetto allo sfondo. Introdurre micro-interazioni di \textit{hover} e \textit{focus} marcate per rendere immediata e inequivocabile la distinzione dal testo statico.
+    \item \textbf{Affordance e contrasto visivo (\hyperref[iss:H3]{H3}):} Standardizzare i pulsanti con forme geometriche chiare ed elevazione visiva rispetto allo sfondo. Introdurre micro-interazioni di \textit{hover} e \textit{focus} marcate per rendere immediata e inequivocabile la distinzione dal testo statico.
     \item \textbf{De-cluttering e progressive disclosure (\hyperref[iss:D1]{D1}, \hyperref[iss:D2]{D2}):} Sfoltire il layout eliminando gli elementi informativi secondari (news, avvisi generali).
 \end{itemize}
 \end{tcolorbox}
@@ -1372,7 +1385,7 @@ I dati quantitativi registrano un quadro di usabilità critico, con un tasso di 
 
 \medskip
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Task Orientation (\hyperref[iss:R4]{R4}):} Segnalare chiaramente all'utente il passaggio dal sito informativo alla piattaforma di acquisto, che oggi avviene senza alcun preavviso e senza spiegare perché l'interfaccia cambi.
+    \item \textbf{Task Orientation (\hyperref[iss:H4]{H4}):} Segnalare chiaramente all'utente il passaggio dal sito informativo alla piattaforma di acquisto, che oggi avviene senza alcun preavviso e senza spiegare perché l'interfaccia cambi.
     \item \textbf{Prevenzione ed Error Tolerance (\hyperref[iss:D4]{D4}):} Compensare l'incapacità di recupero autonomo dagli errori introducendo un micro-accompagnamento guidato e messaggi di feedback contestuali gestiti dal layer dell'intermediario.
     \item     \textbf{Scorciatoie per i flussi di tutela (\hyperref[iss:D2]{D2}):} Estrarre la sezione agevolazioni dai nodi profondi dell'architettura informativa, posizionandola come punto di accesso prioritario nella dashboard iniziale tramite un percorso guidato passo-passo (\textit{wizard}).
     Degli altri punti ne abbiamo già discusso nel test precedente.
@@ -1454,7 +1467,7 @@ Suggerimento rilevante: una guida più esplicita e semplice in inglese per acqui
 \end{tcolorbox}
 \subsection*{Outcomes and reflections useful for design}
 \begin{tcolorbox}[base]
-I dati di Chris Harper confermano che un utente straniero con buona alfabetizzazione digitale riesce a gestire le funzioni informative base, ma incontra forti difficoltà nei flussi transazionali. Il completamento del 40\% mostra che i problemi non dipendono solo dalla competenza tecnica, ma anche da lingua, terminologia e assenza di supporto contestuale. Questo risultato conferma in modo diretto la gravità della Issue \textbf{\hyperref[iss:D3]{D3}} e della Issue \textbf{\hyperref[iss:D5]{D5}}, cioè linguaggio non semplificato e registrazione obbligatoria, che bloccano anche utenti capaci di navigare autonomamente. Il fallimento sui Task 3, 4 e 5 suggerisce che il redesign deve introdurre un percorso guest-friendly, una lingua più accessibile e una guida step-by-step per acquisto, agevolazioni e rinnovo. Il SUS di 45/100 conferma una percezione di usabilità bassa e rafforza anche la Issue \textbf{\hyperref[iss:R5]{R5}}, perché il sistema non offre un supporto sufficientemente guidato nel momento dell’azione.
+I dati di Chris Harper confermano che un utente straniero con buona alfabetizzazione digitale riesce a gestire le funzioni informative base, ma incontra forti difficoltà nei flussi transazionali. Il completamento del 40\% mostra che i problemi non dipendono solo dalla competenza tecnica, ma anche da lingua, terminologia e assenza di supporto contestuale. Questo risultato conferma in modo diretto la gravità della Issue \textbf{\hyperref[iss:D3]{D3}} e della Issue \textbf{\hyperref[iss:D5]{D5}}, cioè linguaggio non semplificato e registrazione obbligatoria, che bloccano anche utenti capaci di navigare autonomamente. Il fallimento sui Task 3, 4 e 5 suggerisce che il redesign deve introdurre un percorso guest-friendly, una lingua più accessibile e una guida step-by-step per acquisto, agevolazioni e rinnovo. Il SUS di 45/100 conferma una percezione di usabilità bassa e rafforza anche la Issue \textbf{\hyperref[iss:H5]{H5}}, perché il sistema non offre un supporto sufficientemente guidato nel momento dell’azione.
 \end{tcolorbox}
 % ================================================================
 % TEST #4
@@ -1737,7 +1750,7 @@ T4 & Agevolazioni e requisiti  & \textbf{S} & 263 & 5 & 3 \\
 T5 & Acquisto e ricarica       & \textbf{S} & 189 & 4 & 0 \\
 \midrule
 \multicolumn{2}{l}{\textbf{Totali / Medie}} &
-\textbf{4/5 (80\%)} & \textbf{154s} &
+\textbf{4/5 (80\%)} & \textbf{198s} &
 \textbf{4} & \textbf{2} \\
 \bottomrule
 \end{tabular}
@@ -1825,7 +1838,7 @@ T4 & Agevolazioni e requisiti  & \textbf{F} & 155 & 4 & 2 \\
 T5 & Acquisto e ricarica       & \textbf{S} & 90 & 2 & 1 \\
 \midrule
 \multicolumn{2}{l}{\textbf{Totali / Medie}} &
-\textbf{2/5 (40\%)} & \textbf{260 s} &
+\textbf{2/5 (40\%)} & \textbf{147 s} &
 \textbf{3,6} & \textbf{1,6} \\
 \bottomrule
 \end{tabular}
@@ -2011,7 +2024,7 @@ Suggerimento rilevante: anche su ATAC, un utente molto anziano e digitalmente fr
 
 \subsection*{Outcomes and reflections useful for design}
 \begin{tcolorbox}[base]
-I dati di Maria Borriello rappresentano il caso limite anche sul competitor ATAC. Il completamento dello 0\% e il SUS di 29/100 indicano che, nonostante alcuni elementi più accessibili rispetto a TPER, il sito ATAC resta inadeguato per un'utente over 75 con bassissima competenza digitale. Il fallimento totale su tutti i task dimostra che il problema non riguarda solo i flussi transazionali, ma anche la semplice comprensione della struttura del sito. Questo rafforza una conclusione centrale del progetto: nessuno dei due siti, nella sua forma attuale, fornisce un'esperienza davvero autonoma per il segmento più fragile. Il redesign TPER deve quindi andare oltre il benchmark ATAC e proporre una modalità di orientamento radicalmente più semplice, con \textbf{riduzione della complessità visiva (\hyperref[atac:D1]{D1})}, \textbf{etichette comprensibili (\hyperref[atac:D3]{D3})} e \textbf{supporto contestuale sempre visibile (\hyperref[atac:R5]{R5})}.
+I dati di Maria Borriello rappresentano il caso limite anche sul competitor ATAC. Il completamento dello 0\% e il SUS di 29/100 indicano che, nonostante alcuni elementi più accessibili rispetto a TPER, il sito ATAC resta inadeguato per un'utente over 75 con bassissima competenza digitale. Il fallimento totale su tutti i task dimostra che il problema non riguarda solo i flussi transazionali, ma anche la semplice comprensione della struttura del sito. Questo rafforza una conclusione centrale del progetto: nessuno dei due siti, nella sua forma attuale, fornisce un'esperienza davvero autonoma per il segmento più fragile. Il redesign TPER deve quindi andare oltre il benchmark ATAC e proporre una modalità di orientamento radicalmente più semplice, con \textbf{riduzione della complessità visiva (\hyperref[atac:D1]{D1})}, \textbf{etichette comprensibili (\hyperref[atac:D3]{D3})} e \textbf{supporto contestuale sempre visibile (\hyperref[atac:H5]{H5})}.
 \end{tcolorbox}
 
 
@@ -2043,7 +2056,7 @@ scala 1--5. Punteggio composito: I\,+\,P su 10.}
     \hfill I:\,5 \textbar{} P:\,5 \textbar{} \textbf{10/10}\\
     Affligge tutti e cinque i task.
 
-    \item \textbf{\hyperref[iss:R5]{R5} --- Assenza di modalità trainer 
+    \item \textbf{\hyperref[iss:H5]{H5} --- Assenza di modalità trainer 
     e supporto contestuale}
     \hfill I:\,4 \textbar{} P:\,5 \textbar{} \textbf{9/10}\\
     Issue strutturale: affligge tutti i task per tutti i soggetti. 
@@ -2059,7 +2072,7 @@ scala 1--5. Punteggio composito: I\,+\,P su 10.}
     falliscono anche su un soggetto con competenza digitale media. 
     L'impatto è massimo perché non ammette recupero parziale.
 
-    \item \textbf{\hyperref[iss:R3]{R3} --- Accessibilità visiva: 
+    \item \textbf{\hyperref[iss:H3]{H3} --- Accessibilità visiva: 
     elementi interattivi non distinguibili dal testo statico}
     \hfill I:\,4 \textbar{} P:\,4 \textbar{} \textbf{8/10}\\
     Documentata sperimentalmente in Test~1 e Test~2. 
@@ -2076,7 +2089,7 @@ scala 1--5. Punteggio composito: I\,+\,P su 10.}
     (SUS 45/100) e contribuisce in modo determinante al 0\% di 
     completamento in Test~4.
 
-    \item \textbf{\hyperref[iss:R4]{R4} --- Task orientation:
+    \item \textbf{\hyperref[iss:H4]{H4} --- Task orientation:
     passaggio non segnalato tra sito informativo e piattaforma
     di acquisto}
     \hfill I:\,4 \textbar{} P:\,3 \textbar{} \textbf{7/10}\\
@@ -2096,14 +2109,14 @@ scala 1--5. Punteggio composito: I\,+\,P su 10.}
     Non è causa primaria di fallimento, ma amplifica in modo sistematico 
     tutte le issue precedenti.
 
-    \item \textbf{\hyperref[iss:R1]{R1} --- Trust and credibility: 
+    \item \textbf{\hyperref[iss:H1]{H1} --- Trust and credibility: 
     assenza di segnali di sicurezza nel flusso di pagamento}
     \hfill I:\,3 \textbar{} P:\,2 \textbar{} \textbf{5/10}\\
     Affligge T3 e T5. Non rilevabile direttamente dai dati quantitativi 
     dei test, ma coerente con le barriere emotive documentate nelle 
     interviste qualitative del segmento S1.
 
-    \item \textbf{\hyperref[iss:R2]{R2} --- Search: 
+    \item \textbf{\hyperref[iss:H2]{H2} --- Search: 
     funzione di ricerca interna non funzionale}
     \hfill I:\,1 \textbar{} P:\,1 \textbar{} \textbf{2/10}\\
     Nessun soggetto ha utilizzato la ricerca interna come strategia 
@@ -3362,9 +3375,9 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
 
         \item \textbf{RF-11 --- Architettura informativa piatta per flussi operativi (cfr. D2):} I flussi transazionali (rinnovo, acquisto) non devono richiedere più di 3 click dal punto di ingresso. Voci di menu oltre il secondo livello vanno riservate a contenuti informativi, non operativi.
 
-        \item \textbf{RF-12 --- Modalità co-navigazione trainer/utente (cfr. R5):} Il sistema deve offrire una vista condivisa che permetta al trainer di evidenziare elementi, dettare passaggi e guidare senza prendere fisicamente il controllo del dispositivo (es. overlay di puntamento, step evidenziati).
+        \item \textbf{RF-12 --- Modalità co-navigazione trainer/utente (cfr. H5):} Il sistema deve offrire una vista condivisa che permetta al trainer di evidenziare elementi, dettare passaggi e guidare senza prendere fisicamente il controllo del dispositivo (es. overlay di puntamento, step evidenziati).
 
-        \item \textbf{RF-13 --- Ponte analogico-digitale (cfr. R3, R6):} L'utente deve poter ricevere output stampabili (promemoria cartacei, QR code, calendario scadenze) per mantenere un aggancio con le abitudini analogiche preesistenti.
+        \item \textbf{RF-13 --- Ponte analogico-digitale (cfr. H3, R6):} L'utente deve poter ricevere output stampabili (promemoria cartacei, QR code, calendario scadenze) per mantenere un aggancio con le abitudini analogiche preesistenti.
     \end{itemize}
     }
 \end{tcolorbox}
@@ -3375,7 +3388,7 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
     {\small
     \textbf{Impatto del Use Case \#1 (Il passaggio fantasma) sul design:} \\[4pt]
     \begin{itemize}[leftmargin=*]
-        \item \textbf{RF-14 --- Segnalazione cambio piattaforma (cfr. R4):} Il passaggio \texttt{tper.it} $\rightarrow$ \texttt{solweb.tper.it} deve essere segnalato con un indicatore di contesto (banner, overlay, nota visiva). L'utente deve sapere di aver cambiato ambiente e perché.
+        \item \textbf{RF-14 --- Segnalazione cambio piattaforma (cfr. H4):} Il passaggio \texttt{tper.it} $\rightarrow$ \texttt{solweb.tper.it} deve essere segnalato con un indicatore di contesto (banner, overlay, nota visiva). L'utente deve sapere di aver cambiato ambiente e perché.
 
         \item \textbf{RF-15 --- Guest flow per rinnovo senza registrazione (cfr. D5):} Un rinnovo di abbonamento non richiede identificazione preventiva. Il sistema deve offrire un percorso guest che richieda solo i dati essenziali alla transazione (numero tessera + pagamento), senza obbligo di account.
     \end{itemize}
@@ -3616,9 +3629,9 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
 
         \item \textbf{RF-25 --- Supporto multilingua nei flussi di registrazione e acquisto (cfr. R12):} L'interfaccia inglese su \texttt{solweb.tper.it} deve essere disponibile \textit{prima} del login, non dopo. L'utente straniero necessita della lingua straniera proprio durante la registrazione e il primo accesso.
 
-        \item \textbf{RF-26 --- Motore di ricerca per intenti (cfr. R2):} La ricerca interna deve supportare sinonimi e query semantiche (``discount'', ``sconti'', ``monthly pass'') oltre alla terminologia burocratica esatta. Per un utente che non conosce il dominio, formulare la query giusta non deve essere un prerequisito.
+        \item \textbf{RF-26 --- Motore di ricerca per intenti (cfr. H2):} La ricerca interna deve supportare sinonimi e query semantiche (``discount'', ``sconti'', ``monthly pass'') oltre alla terminologia burocratica esatta. Per un utente che non conosce il dominio, formulare la query giusta non deve essere un prerequisito.
 
-        \item \textbf{RF-27 --- Contenuti informativi in lingua chiara (cfr. D2, R3):} Le pagine descrittive (abbonamenti, agevolazioni) devono utilizzare un tono non burocratico, spiegando i concetti normativi (ISEE, DSU, delibere) in linguaggio accessibile anche a chi non ha familiarità con il contesto istituzionale italiano.
+        \item \textbf{RF-27 --- Contenuti informativi in lingua chiara (cfr. D2, H3):} Le pagine descrittive (abbonamenti, agevolazioni) devono utilizzare un tono non burocratico, spiegando i concetti normativi (ISEE, DSU, delibere) in linguaggio accessibile anche a chi non ha familiarità con il contesto istituzionale italiano.
     \end{itemize}
     }
 \end{tcolorbox}
@@ -3631,14 +3644,14 @@ membro del cast di supporto che però va comunque tenuto in considerazione per g
     \begin{itemize}[leftmargin=*]
         \item \textbf{RF-28 --- Guida procedurale post-acquisto obbligatoria (cfr. R10):} Il flusso di checkout non deve concludersi al pagamento. Deve includere una schermata ``Istruzioni per l'uso'' che spieghi come rendere l'abbonamento valido a bordo (caricamento su Mi Muovo/app TPER). La ricevuta email deve essere accompagnata da istruzioni procedurali chiare.
 
-        \item \textbf{RF-29 --- Mappatura esplicita dell'ecosistema multipiattaforma (cfr. D5, R4):} Il sistema deve dichiarare esplicitamente le relazioni tra piattaforme (solweb = acquisto, Mi Muovo = supporto fisico, app TPER = digitale) al momento opportuno, non a posteriori. L'utente deve sapere su quale piattaforma sta operando e cosa succede dopo.
+        \item \textbf{RF-29 --- Mappatura esplicita dell'ecosistema multipiattaforma (cfr. D5, H4):} Il sistema deve dichiarare esplicitamente le relazioni tra piattaforme (solweb = acquisto, Mi Muovo = supporto fisico, app TPER = digitale) al momento opportuno, non a posteriori. L'utente deve sapere su quale piattaforma sta operando e cosa succede dopo.
 
         \item \textbf{Costo della mancata guida:} Una multa di 60\euro{} per un abbonamento pagato 50\euro{} (danno >100\% del valore della transazione) è una conseguenza economica inaccettabile generata esclusivamente dall'opacit\`a procedurale del sistema.
     \end{itemize}
     \vspace{0.2cm}
     \textbf{Impatto del Use Case \#2 (L'agevolazione nascosta) sul design:} \\[4pt]
     \begin{itemize}[leftmargin=*]
-        \item \textbf{RF-30 --- Ricerca semantica e per intenti (cfr. R2):} Il motore di ricerca interno deve restituire risultati per ``discount'', ``sconti'', ``risparmio'' oltre che per ``agevolazioni''. Per un utente con competenza linguistica 2/5 e competenza di dominio 2/5, conoscere il termine burocratico esatto non può essere un prerequisito.
+        \item \textbf{RF-30 --- Ricerca semantica e per intenti (cfr. H2):} Il motore di ricerca interno deve restituire risultati per ``discount'', ``sconti'', ``risparmio'' oltre che per ``agevolazioni''. Per un utente con competenza linguistica 2/5 e competenza di dominio 2/5, conoscere il termine burocratico esatto non può essere un prerequisito.
 
         \item \textbf{RF-31 --- Equità informativa: terminologia spiegata (cfr. D3):} Termini burocratici (ISEE, DSU) devono essere accompagnati da spiegazioni in linguaggio semplice, tooltip e traduzioni. L'opacit\`a terminologica colpisce selettivamente gli utenti che più hanno bisogno delle agevolazioni, configurando un problema di equità oltre che di usabilità.
 
@@ -3914,7 +3927,7 @@ digitale, timidezza allo sportello, ISEE basso \\
 
 \subsection{Cumulative Chart of Personality Traits}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.95\textwidth]{images/cumulativechart.png}
 \caption{Confronto cumulativo dei tratti di personalità tra i quattro persona.
@@ -4038,7 +4051,7 @@ La Phase C traduce le raccomandazioni R1--R13 in artefatti progettuali concreti:
 \subsection{Information Architecture Card}
 
 
-\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
+\begin{tcolorbox}[headerbox]
  \color{white}\LARGE\bfseries\sffamily INFORMATION ARCHITECTURE CARD \\[0.1cm]
  \color{white!80}\small\sffamily Phase C --- Design Proposal
 \end{tcolorbox}
@@ -4226,7 +4239,7 @@ Lingua & \texttt{IT, EN, AR} & Supporto multilingua strutturato \\
 
 \subsection{Structure Blueprint}
 
-\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
+\begin{tcolorbox}[headerbox]
  \color{white}\LARGE\bfseries\sffamily BLUEPRINT \\[0.1cm]
  \color{white!80}\small\sffamily Phase C --- Design Proposal
 \end{tcolorbox}
@@ -4252,7 +4265,7 @@ I blueprint presentati in questa sezione definiscono i componenti per l'organizz
 
 \textit{Prospettiva struttura.} Questo blueprint mostra l'organizzazione gerarchica dei contenuti su \texttt{tper.it}, evidenziando la separazione netta tra contenuti informativi (gestiti direttamente sul sito) e le destinazioni di acquisto (canali esterni). Le frecce arancioni indicano i reindirizzamenti verso i canali di acquisto corretti.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Blueprint/bp1-ia.png}
 \caption{BP1 --- Architettura dell'Informazione di \texttt{tper.it}}
@@ -4283,7 +4296,7 @@ I blueprint presentati in questa sezione definiscono i componenti per l'organizz
 
 \textit{Prospettiva sistema.} Questo blueprint illustra le relazioni tra \texttt{tper.it} (canale informativo) e i 5 canali di acquisto, mostrando i meccanismi di ponte che collegano l'informazione alla transazione.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Blueprint/bp2-ecosystem.png}
 \caption{BP2 --- Ecosistema Multi-Canale TPER}
@@ -4334,7 +4347,7 @@ Contactless a bordo & Ibrido & Pay-per-ride con carta o smartphone & Su veicolo 
 
 \textit{Prospettiva utente.} Questo blueprint traccia il percorso tipico di un utente HPHP dal momento in cui arriva su \texttt{tper.it} fino al completamento dell'acquisto sul canale corretto.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Blueprint/bp3-journey.png}
 \caption{BP3 --- User Journey da \texttt{tper.it} all'Acquisto}
@@ -4400,7 +4413,7 @@ Progetto: UX Design Project: Help People Help People --- TPER S.p.A.}
 
 \subsection{Wireframe}
 
-\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
+\begin{tcolorbox}[headerbox]
  \color{white}\LARGE\bfseries\sffamily WIREFRAMES \\[0.1cm]
  \color{white!80}\small\sffamily Phase C --- Design Proposal
 \end{tcolorbox}
@@ -4420,15 +4433,6 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
     \item \textbf{Contactless a bordo} --- Pagamento per singola corsa con carta
 \end{itemize}
 
-\vspace{0.2cm}
-\textbf{Convenzioni grafiche:}
-\begin{itemize}
-    \item Riquadri blu = elementi interattivi principali (CTA, navigazione)
-    \item Riquadri grigi = contenuti informativi / aree secondarie
-    \item Linea viola = elementi della Trainer-Mode
-    \item Testo in \texttt{corsivo} = etichette descrittive
-\end{itemize}
-
 \newpage
 
 % ================================================================
@@ -4437,14 +4441,12 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \section{Wireframe 1: Homepage tper.it --- Utente Non Autenticato (Guest)}
 \label{wf1}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf1.png}
 \caption{Homepage tper.it --- Vista utente non autenticato (Guest)}
 \label{fig:wf1}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF2: PIANIFICA (ROUTE PLANNER)
@@ -4452,14 +4454,12 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \section{Wireframe 2: Pianifica --- Il Percorso (Core Function)}
 \label{wf2}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf2.png}
 \caption{Pianifica --- Risultati di ricerca percorso con prezzi informativi}
 \label{fig:wf2}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF3: DOVE COMPRARE (CHANNEL GUIDE)
@@ -4467,14 +4467,12 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \section{Wireframe 3: Dove Comprare --- Guida ai Canali}
 \label{wf3}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf3.png}
 \caption{Dove Comprare --- Guida ai canali di vendita con tabella comparativa}
 \label{fig:wf3}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF4: BIGLIETTI (INFORMATIONAL)
@@ -4482,14 +4480,12 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \section{Wireframe 4: Biglietti --- Tipologie e Prezzi}
 \label{wf4}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf4.png}
 \caption{Biglietti --- Tipologie, prezzi e canali consigliati}
 \label{fig:wf4}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF5: AIUTO + TRAINER-MODE
@@ -4497,14 +4493,12 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \section{Wireframe 5: Aiuto e Trainer-Mode --- Guida Passo-Passo}
 \label{wf5}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf5.png}
 \caption{Aiuto e Trainer-Mode --- FAQ e guida passo-passo attivabile}
 \label{fig:wf5}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF6: ABBONAMENTI + TRAINER (RINNOVO)
@@ -4512,14 +4506,12 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \section{Wireframe 6: Abbonamenti --- Trainer Rinnovo}
 \label{wf6}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf6.png}
 \caption{Abbonamenti --- Tipologie e trainer-mode Rinnovo attivo con highlight}
 \label{fig:wf6}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF7a: SOLWEB PAGAMENTO
@@ -4527,14 +4519,12 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \section{Wireframe 7a: solweb --- Flusso di Pagamento}
 \label{wf7a}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf7a.png}
 \caption{solweb --- Pagamento con riepilogo carrello e metodo di pagamento}
 \label{fig:wf7a}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF7b: SOLWEB CONFERMA
@@ -4542,7 +4532,7 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \section{Wireframe 7b: solweb --- Conferma Post-Acquisto}
 \label{wf7b}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf7b.png}
 \caption{solweb --- Schermata di conferma con riepilogo e opzioni successive}
@@ -4564,7 +4554,7 @@ I wireframe presentati in questa sezione illustrano le schermate fondamentali di
 \hline
 \textbf{Wireframe} & \textbf{Schermata} & \textbf{Contenuto principale} & \textbf{Elementi chiave} \\
 \hline
-WF1 & Homepage Guest & Route planner, 4 card informative (Pianifica, Biglietti, Abbonamenti, Aiuto), sidebar Dove Comprare & Nav tabs, hero search, canali in sidebar, news, contatti \\
+WF1 & Homepage Guest & Route planner, 6 card servizio (Pianifica, Dove Comprare, Biglietti, Abbonamenti, Aiuto, Orari e Linee), sidebar Dove Comprare & Nav tabs, hero search, canali in sidebar, news, contatti \\
 \hline
 WF2 & Pianifica & Form di ricerca percorso, risultati con orari/durata/prezzo, toggle mappa/elenco & Core function, link Dove Comprare per ogni risultato, prezzi informativi \\
 \hline
@@ -4587,7 +4577,7 @@ WF7b & solweb Conferma & Conferma acquisto, riepilogo ordine, opzioni successive
 
 \vspace{0.3cm}
 
-\begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm]
+\begin{tcolorbox}[summarybox]
 \small
 \textbf{Nota importante:} tper.it \`e un portale esclusivamente \textbf{informativo}. Non sono presenti flussi di acquisto, pagamento o transazione. Ogni schermata orienta l'utente verso il canale corretto (\texttt{solweb.tper.it}, Roger App, Punti Tper, Tabaccherie, Contactless a bordo) per completare l'operazione desiderata. Questa architettura rispetta la separazione reale dei canali nell'ecosistema TPER.
 \end{tcolorbox}
@@ -4603,17 +4593,6 @@ WF7b & solweb Conferma & Conferma acquisto, riepilogo ordine, opzioni successive
 \input{Comparison/00-comparison-body.tex}
 
 % ================================================================
-% Design Card: Final Reflections
-% ================================================================
-
-\newpage
-
-\section{Design Card --- Final Reflections}
-\label{sec:design-card}
-
-\input{Comparison/00-reflections-body.tex}
-
-% ================================================================
 % Design Summary Card
 % ================================================================
 
@@ -4622,7 +4601,7 @@ WF7b & solweb Conferma & Conferma acquisto, riepilogo ordine, opzioni successive
 \section{Design Summary Card}
 \label{sec:design-summary}
 
-\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
+\begin{tcolorbox}[headerbox]
  \color{white}\LARGE\bfseries\sffamily DESIGN SUMMARY \\[0.1cm]
  \color{white!80}\small\sffamily Phase C --- Design Proposal
 \end{tcolorbox}
@@ -4640,19 +4619,19 @@ WF7b & solweb Conferma & Conferma acquisto, riepilogo ordine, opzioni successive
 \textbf{Versione} & \textbf{Cartella} & \textbf{Data / Ora} & \textbf{Tipi di valutazione} \\
 \hline
 \textbf{V0} 
-& \texttt{Website - Finale/} (stato iniziale)
-& 12 Giugno 2026, ore 18:00
-& Ante valutazione formale \\
+& \texttt{Tper sito originale/}
+& Inizio Maggio 2026
+& Sito TPER originale --- valutazione preliminare \\
 \hline
 \textbf{V1} 
-& \texttt{Website - Finale/} (post-FT fix)
+& \texttt{Website - Inter/}
 & 22 Giugno 2026, ore 12:00
-& Valutazione ispettiva --- Cognitive Walkthrough (CW-01--CW-11) \\
+& \parbox{4.5cm}{\raggedright --- Valutazione euristica (D1--D5, H1--H5) \\ --- Formative test (Phase A) \\ --- 4 personas (Phase B)} \\
 \hline
 \textbf{Finale (v2.0)} 
 & \texttt{Website - Finale/} (versione finale)
 & 3 Luglio 2026, ore 10:00
-& \parbox{3.8cm}{\raggedright --- Cognitive Walkthrough (Post-Fix) \\ --- Formative Test (2 soggetti) \\ --- Summative Test (2 soggetti)} \\
+& \parbox{3.8cm}{\raggedright --- Valutazione euristica (Post-Fix) \\ --- Formative Test (2 soggetti) \\ --- Summative Test (2 soggetti)} \\
 \hline
 \end{tabular}
 \caption{Versioni di design sottoposte a valutazione}
@@ -4664,74 +4643,56 @@ WF7b & solweb Conferma & Conferma acquisto, riepilogo ordine, opzioni successive
 \subsection*{List of Issues Handled During Redesign, Ordered by Importance}
 
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{0.8cm}|p{3cm}|p{3.5cm}|p{6.5cm}|}
+\begin{longtable}{|p{0.8cm}|p{3.2cm}|p{3.3cm}|p{6.2cm}|}
 \hline
 \textbf{\#} & \textbf{Issue} & \textbf{Rif. Requirement / Test} & \textbf{Wireframe / Blueprint interessato} \\
 \hline
 \endhead
 1 & Ambiguit\`a terminologica ``Dove Comprare'' vs ``Abbonamenti'' (\textbf{FT1}, P=5, I=5) 
-& Phase A: R1 (Home Page Orientata al Compito) \\
-& Phase B: Cast Card --- UR-03 \\
- & WF1 (Homepage --- griglia ``Cosa vuoi fare?'' e sidebar canali) \\
-& BP1 (Architettura Informazione: sezioni acquisto vs informativo) \\
-& BP3 (User Journey: punto decisionale ``dove acquisto?'') \\
+& Phase A: R1 (Home Page Orientata al Compito) \newline Phase B: Cast Card --- UR-03
+& WF1 (Homepage: griglia ``Cosa vuoi fare?'' e sidebar canali) \newline BP1 (IA: sezioni acquisto vs informativo) \newline BP3 (User Journey: punto decisionale ``dove acquisto?'') \\
 \hline
 2 & Confusione tra canali di acquisto: utente non sa quale canale usare (\textbf{D2}, R4) 
-& Phase A: R2 (IA Piana), R4 (Trainer-Mode) \\
-& Phase B: Cast Card --- UR-01 \\
- & Phase D: FT2
- & WF3 (Dove Comprare --- card canali con icone) \\
-& BP2 (Ecosistema Multi-Canale: relazioni e bridge) \\
+& Phase A: R2 (IA Piana), R4 (Trainer-Mode) \newline Phase B: Cast Card --- UR-01 \newline Phase D: FT2
+& WF3 (Dove Comprare: card canali con icone) \newline BP2 (Ecosistema Multi-Canale: relazioni e bridge) \\
 \hline
 3 & Nessuna guida passo-passo per operazioni complesse (\textbf{R5}) 
-& Phase A: R5 (Persistenza Progressi) \\
-& Phase B: Cast Card --- UR-05 \\
- & WF5 (Aiuto + Trainer-Mode: guida 5 passi) \\
-& BP3 (Intervento Trainer-Mode lungo il journey) \\
+& Phase A: R5 (Persistenza Progressi) \newline Phase B: Cast Card --- UR-05
+& WF5 (Aiuto + Trainer-Mode: guida 5 passi) \newline BP3 (Intervento Trainer-Mode lungo il journey) \\
 \hline
 4 & Homepage sovraccarica: news aziendali oscurano funzioni primarie (\textbf{D1}, R1) 
-& Phase A: R1 (Home Page Orientata al Compito) \\
- & WF1 (Homepage: hero search + 4 card servizi, news in footer) \\
-& BP1 (IA: riorganizzazione sezioni per priorit\`a d'uso) \\
+& Phase A: R1 (Home Page Orientata al Compito)
+& WF1 (Homepage: hero search + 4 card servizi, news in footer) \newline BP1 (IA: riorganizzazione sezioni per priorit\`a d'uso) \\
 \hline
 5 & Barriera terminologica: ``solweb'', ``Roger'' come nomi tecnici (\textbf{D3}, R2) 
-& Phase A: R2 (Etichette Descrittive) \\
-& Phase B: Cast Card --- Laura, Maria \\
-& Phase D: FT1
-& WF3 (Card canali: ``Abbonamenti online (solweb)'') \\
-& BP2 (Ecosistema: etichettatura utente-centrica) \\
+& Phase A: R2 (Etichette Descrittive) \newline Phase B: Cast Card --- Laura, Maria \newline Phase D: FT1
+& WF3 (Card canali: ``Abbonamenti online (solweb)'') \newline BP2 (Ecosistema: etichettatura utente-centrica) \\
 \hline
 6 & Assenza di feedback e recupero dagli errori (\textbf{D4}, R10) 
-& Phase A: R10 (Messaggi di Errore Esponenziali) \\
- & BP3 (Punti di decisione con messaggi di recupero) \\
-& WF5 (Trainer-Mode: messaggi incoraggianti) \\
+& Phase A: R10 (Messaggi di Errore Esponenziali)
+& BP3 (Punti di decisione con messaggi di recupero) \newline WF5 (Trainer-Mode: messaggi incoraggianti) \\
 \hline
 7 & Autenticazione obbligatoria per operazioni di base (\textbf{D5}, R7) 
-& Phase A: R7 (Percorso Guest) \\
- & BP1 (IA: sezioni accessibili senza login) \\
-& WF1 (Sidebar canali sempre visibile, anche in modalit\`a guest) \\
+& Phase A: R7 (Percorso Guest)
+& BP1 (IA: sezioni accessibili senza login) \newline WF1 (Sidebar canali sempre visibile, anche in modalit\`a guest) \\
 \hline
 8 & Assenza supporto multilingua per utenti stranieri (\textbf{R12}) 
-& Phase A: R12 (Inglese e Arabo) \\
-& Phase B: Cast Card --- Fatima Hassan
-& WF3 (Card canali e wizard tradotti in EN/AR) \\
-& BP2 (Ecosistema: bridge con contenuti multilingua) \\
+& Phase A: R12 (Inglese e Arabo) \newline Phase B: Cast Card --- Fatima Hassan
+& WF3 (Card canali e wizard tradotti in EN/AR) \newline BP2 (Ecosistema: bridge con contenuti multilingua) \\
 \hline
 9 & Documentazione necessaria non anticipata all'utente (\textbf{R11}) 
-& Phase A: R11 (Checklist Preventiva) \\
- & WF4 (Biglietti: badge ``Documenti necessari'') \\
-& BP3 (Checklist prima del reindirizzamento a solweb) \\
+& Phase A: R11 (Checklist Preventiva)
+& WF4 (Biglietti: badge ``Documenti necessari'') \newline BP3 (Checklist prima del reindirizzamento a solweb) \\
 \hline
 10 & Assenza onboarding ``Primo Accesso'' (\textbf{FT2}, P=2, I=3) 
 & Phase D: FT2, FT6
-& WF5 (Tour guidato ``Prima Volta'' 4 schermate) \\
-& BP3 (Punto di ingresso: onboarding prima navigazione) \\
+& WF5 (Tour guidato ``Prima Volta'' 4 schermate) \newline BP3 (Punto di ingresso: onboarding prima navigazione) \\
 \hline
 \end{longtable}
 
 \vspace{0.3cm}
 
-\begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm]
+\begin{tcolorbox}[summarybox]
 \small
 \textbf{Nota:} Ogni issue \`e correlata ai requirement emersi dalla Phase A (R1--R13), dalla Phase B (Cast Card --- Use Case UR-01--UR-05) e dalla Phase D (Cognitive Walkthrough CW-01--CW-11, Formative Test FT1--FT7). Le soluzioni progettuali sono localizzabili nei wireframe (WF1--WF7b) e nei blueprint (BP1--BP3).
 \end{tcolorbox}
@@ -5120,7 +5081,7 @@ Giuseppina Borriello
 
 \subsection*{Date of test}
 \begin{tcolorbox}[base]
-20 Giugno 2026
+24 Giugno 2026
 \end{tcolorbox}
 
 \subsection*{Assistant of test (team member)}
@@ -5376,10 +5337,8 @@ I suggerimenti più significativi emersi durante le sessioni di Thinking
 Aloud:
 
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Unificare ``Abbonamenti'' e ``Dove Comprare'' (entrambi):}
-  ``Non è chiaro che per comprare bisogna andare su Dove Comprare e non
-  su Abbonamenti'' (Mimmo). Entrambi i soggetti hanno cercato l'acquisto
-  e il rinnovo sulla pagina del prodotto, non del canale.
+  \item \textbf{Banner rosso informativo su ``Abbonamenti'' (entrambi):}
+  Il banner ``Tper è un sito informativo, per acquistare o rinnovare abbonamenti visita la sezione Dove Comprare'' ha ridotto i tentativi di acquisto sulla pagina sbagliata. Entrambi i soggetti hanno notato il banner e seguito il link.
 
   \item \textbf{Spiegare la terminologia tecnica (Mimmo):} ``Roger'',
   ``Trainer Mode'', ``Contactless'' non sono compresi. Suggerisce di
@@ -5731,7 +5690,7 @@ Laura Palumbo
 
 \subsection*{Date and time of test}
 \begin{tcolorbox}[base]
-28 Giugno 2026, ore 17:00
+4 Luglio 2026, ore 17:00
 \end{tcolorbox}
 
 \subsection*{Assistant of test (team member)}
@@ -5844,7 +5803,7 @@ Maria Borriello
 
 \subsection*{Date and time of test}
 \begin{tcolorbox}[base]
-30 Giugno 2026, ore 16:30
+4 Luglio 2026, ore 16:30
 \end{tcolorbox}
 
 \subsection*{Assistant of test (team member)}
@@ -6118,3 +6077,4 @@ Tempo medio task & 417,9 s & \textbf{133,9 s} \\
 \end{tcolorbox}
 
 \end{document}
+

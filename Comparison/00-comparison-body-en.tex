@@ -1,4 +1,4 @@
-
+﻿
 \begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
     \color{white}\LARGE\bfseries BEFORE/AFTER COMPARISON \\[0.2cm]
     \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
@@ -35,17 +35,11 @@ The redesign transforms \texttt{tper.it} from a generic news container into an \
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Tper sito originale/Homepage.png}
+\includegraphics[width=0.85\textwidth]{Tper sito originale/Homepage.png}
 \par\small\textit{Before: \texttt{tper.it} live --- corporate news slider, no primary CTA}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/homepage.png}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/homepage.png}
 \par\small\textit{After: tper 2.0 --- hero route planner + 6 task-oriented cards grid}
-\end{minipage}
 \caption{\texttt{tper.it} Homepage}
 \label{fig:comparison-home}
 \end{figure}
@@ -93,19 +87,13 @@ Explicit banner on every page: ``\texttt{tper.it} is an informational website. T
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Tper sito originale/HomepageS.png}\\[2pt]
+\includegraphics[width=0.85\textwidth]{Tper sito originale/HomepageS.png}\\[2pt]
 {\small\textit{+ second view:}}\\[2pt]
-\includegraphics[width=\textwidth]{Tper sito originale/HomepageS2.png}
+\includegraphics[width=0.85\textwidth]{Tper sito originale/HomepageS2.png}
 \par\small\textit{Before: original \texttt{solweb} --- mandatory login, no guest path}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/HomepageS.png}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/HomepageS.png}
 \par\small\textit{After: solweb 2.0 --- login + 4 quick actions without registration}
-\end{minipage}
 \caption{\texttt{solweb.tper.it} Homepage}
 \label{fig:comparison-solweb-home}
 \end{figure}
@@ -153,15 +141,15 @@ All operations require registration. No distinction between simple operations (t
 
 \subsection*{The Original Problem}
 
-In the original site, three pages overlapped, generating confusion and duplication:
+In the original site, Tickets, Subscriptions, and Tariffs were not three separate pages but \textbf{three sections of the same page}, creating information overload:
 
 \begin{itemize}[nosep]
-    \item \textbf{Tickets}: listed tickets + sales channels + tariffs --- too many functions for one page;
-    \item \textbf{Subscriptions}: listed subscriptions + channels + tariffs --- the same duplication as the Tickets page;
-    \item \textbf{Tariffs}: a separate pricing page, \textbf{redundant} and disconnected from the usage context.
+    \item \textbf{Tickets}: listed tickets + sales channels + tariffs --- too many functions in a single page;
+    \item \textbf{Subscriptions}: listed subscriptions + channels + tariffs --- the same duplication as the Tickets section;
+    \item \textbf{Tariffs}: a pricing section on the same page, \textbf{redundant} and disconnected from the usage context.
 \end{itemize}
 
-Result: the user had to \textbf{jump between 3 pages} to answer questions like \textit{``which subscription should I buy?''} and \textit{``where do I buy it?''}. The channel guide (``Sales Network'') was buried three navigation levels deep.
+Result: the user had to \textbf{scroll through a single page} visually comparing different sections to answer questions like \textit{``which subscription should I buy?''} and \textit{``where do I buy it?''}. The channel guide (``Sales Network'') was buried three navigation levels deep.
 
 \subsection*{The Solution: Separation of Concerns}
 
@@ -182,7 +170,7 @@ The redesign applies the \textbf{one page, one task} principle (R2), eliminating
 \includegraphics[width=0.332\textwidth]{Tper sito originale/Abbonamenti.png}\hfill
 \includegraphics[width=0.332\textwidth]{Tper sito originale/Tariffe.png}\\[2pt]
 {\small\textit{Tickets \hspace{3.7cm} Subscriptions \hspace{3.3cm} Tariffs}}\\[2pt]
-{\footnotesize 3 overlapping pages: duplicated content, buried channels, corporate terminology}
+{\footnotesize A single page with 3 sections: duplicated content, buried channels, corporate terminology}
 
 \vspace{0.5cm}
 
@@ -205,11 +193,11 @@ The redesign applies the \textbf{one page, one task} principle (R2), eliminating
 \hline
 & \textbf{Before (Original)} & \textbf{After (Redesign 2.0)} \\ \hline
 \cellcolor{primaryColor!15} &
-\textit{3 overlapping pages} &
+\textit{A single page, 3 overlapping sections} &
 \textit{3 specialised pages} \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Structure}}} &
-3 pages with duplicated content and blurred boundaries. Tickets and Subscriptions both contain references to tariffs and channels. The Tariffs page is redundant. 3+ level navigation to reach the channel guide (D2). &
+A single page with 3 overlapping sections and blurred boundaries. Tickets and Subscriptions both contain references to tariffs and channels. The Tariffs section is redundant. 3+ level navigation to reach the channel guide (D2). &
 3 pages with clear and distinct responsibilities. Each page has a single task. No duplication. Direct access to each section from the main navigation (max 1 click). Tariffs are displayed in the product context (R2). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Tickets}}} &
@@ -221,7 +209,7 @@ Lists subscription plans with corporate terminology (MiMuovo, SaltaSu, Prontobus
 Page focused exclusively on subscriptions. 7-question wizard (action, impersonal?, zone, duration, holder, concession, channel). 4-group filter. Accordion ``How to Purchase or Renew''. Callout to check discount eligibility (R9). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Channels / Tariffs}}} &
-\textbf{Channels}: ``Sales Network'' buried under Tickets and Subscriptions, reachable in 3 clicks. \textbf{Tariffs}: separate pricing page, disconnected from the usage context --- the user must remember the price while navigating elsewhere to decide (D3). &
+\textbf{Channels}: ``Sales Network'' buried under Tickets and Subscriptions, reachable in 3 clicks. \textbf{Tariffs}: separate pricing section on the same page, disconnected from the usage context --- the user must remember the price while navigating elsewhere to decide (D3). &
 \textbf{Where to Buy}: standalone, prominent section in the main navigation. 3-question wizard $\rightarrow$ recommended channel with icon, description, and direct link. Comparison table 5 channels $\times$ 7 operations. \textbf{Tariffs}: integrated into Tickets and Subscriptions --- visible at the moment of decision (R2, R4). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Impact}}} &
@@ -234,29 +222,25 @@ Phase D data: Laura P. 4/5 tasks (80\%), SUS 72.5 (+35 points). T4 (concessions)
 
 \vspace{0.3cm}
 
-% ============================================================
-% COMPARISON 4: solweb PURCHASE FLOW
-% ============================================================
-\section{\texttt{solweb.tper.it} Purchase Flow}
-\label{sec:comparison-acquisto}
 
-\textbf{D4+D5 $\rightarrow$ R7+R10} --- No error recovery $\rightarrow$ Guided messages + guest path. Chris 498s, 8 errors, 10 backtracks on T3.
+
+% ============================================================
+% COMPARISON 4: CONCESSIONS AND DISCOUNTS
+% ============================================================
+\section{Concessions and Discounts}
+\label{sec:comparison-agevolazioni}
+
+\textbf{UR-05 $\rightarrow$ R9+R11} --- User does not know which discounts they are entitled to $\rightarrow$ 4-question wizard + ISEE tooltip. David Carter pays 50\euro/month for 3 months before discovering he is entitled to 30\euro.
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Tper sito originale/FlussoAcquistoS.png}
-\par\small\textit{Before: original purchase flow --- mandatory registration, no guidance}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/RiepilogoS.png}
-\par\small\textit{After: purchase flow 2.0 --- progress bar, guided form, order summary}
-\end{minipage}
-\caption{\texttt{solweb.tper.it} Purchase Flow}
-\label{fig:comparison-acquisto}
+\includegraphics[width=0.85\textwidth]{Tper sito originale/Agevolazioni.png}
+\par\small\textit{Before: original concessions page --- bureaucratic language, no guidance}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/Agevolazioni.png}
+\par\small\textit{After: concessions wizard 2.0 --- 4 questions, personalised results, ISEE tooltip}
+\caption{Concessions and Discounts}
+\label{fig:comparison-agevolazioni}
 \end{figure}
 
 \begin{table}[H]
@@ -267,54 +251,52 @@ Phase D data: Laura P. 4/5 tasks (80\%), SUS 72.5 (+35 points). T4 (concessions)
 \hline
 & \textbf{Before} & \textbf{After} \\ \hline
 \cellcolor{primaryColor!15} &
-\textit{Original solweb purchase flow} &
-\textit{solweb 2.0 purchase flow} \\ \hline
+\textit{Original concessions section} &
+\textit{Concessions wizard in tper 2.0} \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Progress}}} &
-No progress indicator. The user does not know where they are in the process or how many steps remain. Frequent abandonment due to disorientation (Issue D2). &
-\textbf{4-step progress bar}: Login $\rightarrow$ Choose Plan $\rightarrow$ Documents $\rightarrow$ Payment. Each step shows: step number, text description, graphical completion indicator (green = completed, red = active). Visible on all flow pages (R3). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Access}}} &
+Section buried 3+ levels deep in the navigation. Only reachable through ``Subscriptions'' $\rightarrow$ ``Carta Agevolata''. No direct path from the homepage (D2, UR-05). &
+\textbf{Dedicated ``Am I entitled to a discount?'' path} visible from the homepage (``Discover Subscriptions'' card) and from the Subscriptions page with a prominent callout ``Find out in 30 seconds which discounts you can access''. Breadcrumb: Home $\rightarrow$ Subscriptions $\rightarrow$ Concessions (R2, R9). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Language}}} &
+Bureaucratic register: ``ISEE'', ``DSU'', ``Carta Agevolata'', ``brackets'', ``resolutions''. No explanation of terms. For a foreign user (David Carter, language competence 2/5), terms remain incomprehensible even with Google Translate (UR-05, Use Case \#2). &
+\textbf{Citizen-friendly language} with explanatory tooltips. On hover over ``ISEE'' it shows ``Indicatore della Situazione Economica Equivalente. Certifies the household income. Obtainable free of charge at CAF or online at INPS.'' Same approach for ``DSU'' and ``Carta Agevolata''. Available in IT/EN/AR (R9, R12). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Wizard}}} &
+\textbf{Absent.} The user must read pages of resolutions and brackets to discover if they are entitled to a discount. No interactive guidance. David Carter's test shows 15 minutes of attempts followed by abandonment (Use Case \#2). &
+\textbf{4-question wizard}: (1) How old are you? (2) Do you have an ISEE? (3) How often do you use public transport? (4) Who is the subscription for? Each answer filters available discounts in real time. Result: ``We found X discounts for you!'' with name, description, required documents, and direct link (RF-35, R9). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Documents}}} &
-No preventive checklist. The user discovers which documents are needed only after starting the flow, often causing mid-flow abandonment. Elderly users forced to return to the counter because they lack the required documents (R11). &
-\textbf{Interactive checklist} with progress bar (0/4 $\rightarrow$ 4/4). 4 document cards with visual reproduction of the actual document (where the number is, where the expiry date is). ``I have this document'' checkbox. Guided upload. ``Required Documents'' badge visible before starting (R11). \\ \hline
+No preventive checklist. Required documents (ISEE, DSU, passport photo, ID) mentioned on separate bureaucratic pages. The user arrives at the counter without the right documents (Roberto, Use Case \#1). &
+\textbf{Integrated document checklist} in the wizard results: each discount shows exactly which documents are needed, with tooltips on where to obtain them. Visual document reproduction (e.g. ``ISEE --- first page'' with yellow highlight of the value). ``View Subscriptions'' link to proceed with purchase (R11). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Payment}}} &
-Payment form without order summary. No security icons. Generic error messages: ``Error --- try again''. The user does not know what went wrong or how to fix it (Issue D4). &
-\textbf{Order summary} always visible: plan, duration, total. 3 payment methods with radio buttons (Card, PayPal, Bank Transfer). Terms checkbox. Exponential error messages: what happened + why + how to fix + alternative (R10). \\ \hline
-
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Flexibility}}} &
-Single possible path: registration $\rightarrow$ login $\rightarrow$ purchase. No variant for top-up, impersonal renewal, or fines (Issue D5). &
-\textbf{Multi-flow}: pagamento.html handles 4 different flows (purchase, renewal, top-up, fines) with adaptive breadcrumbs and forms. The guest path for impersonal renewal and top-up completely skips registration (R7). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Impact}}} &
+David Carter (Phase A): 3 months paying 50\euro/month instead of 30\euro. Roberto: arrives at the counter without documents and postpones. Average SUS 37.5/100. &
+Laura P. (Phase D, T4): from 195\,s and 7 errors to 57\,s and 0 errors. Concessions wizard completed in 30 seconds. ISEE tooltip used spontaneously. SUS 72.5 (+35 points). \\ \hline
 \end{tabular}
-\caption{solweb Purchase Flow}
-\label{tab:comparison-acquisto}
+\caption{Concessions and Discounts}
+\label{tab:comparison-agevolazioni}
 \end{table}
 
 \vspace{0.3cm}
 
 % ============================================================
-% COMPARISON 5: POST-PURCHASE SUMMARY
+% COMPARISON 5: TRIP PLANNING
 % ============================================================
-\section{\texttt{solweb.tper.it} Post-Purchase Summary}
-\label{sec:comparison-riepilogo}
+\section{Trip Planning}
+\label{sec:comparison-planning}
 
-\textbf{UR-02 $\rightarrow$ R6} --- PDF mistaken for valid ticket $\rightarrow$ 3 guided post-purchase steps. Risk of onboard fine.
+\textbf{D2 $\rightarrow$ R1+R2} --- Route planner on a separate page, reachable via the ``Routes and Timetables'' link on the homepage (1 click), but with no search fields visible directly on the homepage $\rightarrow$ Hero search + dedicated page. Maria: 724\,s, 16 errors, 19 backtracks on T2 (Phase A).
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Tper sito originale/RiepilogoS.png}
-\par\small\textit{Before: original summary --- confirmation only, no post-purchase guidance}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/AcquistoS.png}
-\par\small\textit{After: confirmation 2.0 --- 3 guided steps + printable receipt}
-\end{minipage}
-\caption{Post-Purchase Summary}
-\label{fig:comparison-riepilogo}
+\includegraphics[width=0.85\textwidth]{Tper sito originale/Percorsi.png}
+\par\small\textit{Before: original planner --- reachable from the homepage via ``Routes and Timetables'' (homepage link) $\rightarrow$ ``Calculate your route''}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/Percorsi.png}
+\par\small\textit{After: trip planner 2.0 --- hero search on homepage + dedicated page with map and form}
+\caption{Trip Planning}
+\label{fig:comparison-planning}
 \end{figure}
 
 \begin{table}[H]
@@ -325,27 +307,27 @@ Single possible path: registration $\rightarrow$ login $\rightarrow$ purchase. N
 \hline
 & \textbf{Before} & \textbf{After} \\ \hline
 \cellcolor{primaryColor!15} &
-\textit{Original post-purchase summary} &
-\textit{Post-purchase confirmation in solweb 2.0} \\ \hline
+\textit{Original \texttt{tper.it} route planner} &
+\textit{Trip planning in tper 2.0} \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Confirmation}}} &
-Bare confirmation message. No explanation of what happens next. The generated PDF is mistaken for a valid travel document --- but it is not (UR-02). &
-\textbf{H1}: ``Thank you for your purchase!''. Complete progress bar (4/4 with green checkmark). Detailed order summary: plan, email, order number, payment method, total. ``Download Receipt (PDF)'' button (R6). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Access}}} &
+``Routes and Timetables'' link visible on the homepage (1 click), leading to the planner page. No search fields visible directly on the homepage. The user must recognise the corporate label ``Routes and Timetables'' to start the task (D3). &
+\textbf{Hero search on homepage}: ``From'' and ``To'' fields visible with no clicks needed. ``Plan'' section in main navigation (1 click). ``Plan'' card in the ``What do you want to do?'' grid with distinctive icon (R1, R2). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Instructions}}} &
-\textbf{Absent.} No guidance on how to use the purchased ticket/subscription. The user does not know whether to print something, show their phone, or validate a card (UR-02). &
-\textbf{3 guided post-purchase steps}: (1) You will receive a confirmation email with your order details, (2) Your card will activate automatically within 24 hours, (3) Show your card to the inspector onboard. Each step is numbered and illustrated with icons (R6, UR-02). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Form}}} &
+Text search form with no suggestions. Single combined from/to field. No transport mode filter. No interactive map. &
+\textbf{Full form}: separate from/to fields with swap button. Transport modes (bus/train/bike/walk). Date and time with ``Depart now'' checkbox. Interactive Bologna map alongside (click to enlarge). Autocomplete on fields (R1). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Support}}} &
-No post-purchase support link. A user in difficulty must independently search for customer service. &
-Help link always visible. Order number reference for assistance. Option to return to the dashboard or home. \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Results}}} &
+Text list of results without timetables or duration. No price indication. No link to purchase channel. The user must take notes and search elsewhere for how to buy the ticket (UR-01, UR-03). &
+\textbf{Structured results} with timetables, duration, and informative price for each option. ``Where to Buy'' link integrated in each result. Map/list toggle. Informational banner: ``On tper.it you cannot purchase --- find out how and where to buy'' (R1, R6). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Cross-channel}}} &
-No connection with other channels. The journey ends without guidance on how to use the purchased service on Roger, at Punti Tper, or onboard. &
-Cross-channel references: if you purchased a subscription, we explain how to also use it on the Roger App. If you paid a fine, we show how to check the status (UR-02, R6). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Impact}}} &
+Maria B. (Phase A): 724\,s, 16 errors, 19 backtracks. Cannot find the planner and gives up after 12 minutes. Average SUS 37.5/100. &
+Laura P. (Phase D, T2): 115\,s, 1 error, 0 backtracks. ``Plan'' card recognised immediately. Hero search used without hesitation. SUS 72.5 (+35 points). \\ \hline
 \end{tabular}
-\caption{Post-Purchase Summary}
-\label{tab:comparison-riepilogo}
+\caption{Trip Planning}
+\label{tab:comparison-planning}
 \end{table}
 
 \vspace{0.3cm}
@@ -360,19 +342,18 @@ Cross-channel references: if you purchased a subscription, we explain how to als
 
 \begin{figure}[H]
 \centering
-\begin{minipage}{0.498\textwidth}
+\fcolorbox{borderColor}{backgroundColor}{%
+\begin{minipage}{0.78\textwidth}
 \centering
-\rule{\textwidth}{0.1pt}
-\vspace{2cm}
-\rule{\textwidth}{0.1pt}
+\vspace{1.5cm}
+{\large\sffamily\textcolor{secondaryColor}{No Trainer Mode}}\\[4pt]
+\small\textit{The original site offered no assisted mode whatsoever.}
+\vspace{1.5cm}
+\end{minipage}}
 \par\small\textit{Before: no trainer mode --- only telephone help desk}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/Aiuto.png}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/Aiuto.png}
 \par\small\textit{After: Help section with trainer mode, FAQ, step-by-step guides}
-\end{minipage}
 \caption{Trainer Mode and Support}
 \label{fig:comparison-trainer}
 \end{figure}
@@ -390,7 +371,7 @@ Cross-channel references: if you purchased a subscription, we explain how to als
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Trainer}}} &
 \textbf{Non-existent.} No assisted mode for counter operators. No step-by-step guidance mechanism to accompany users with low digital competence in navigating between channels. The only support channel is customer service (phone or email) (R4, R5). &
-\textbf{Integrated sidebar} on all 22 pages of the site. 5 trainer modules: Renew, Purchase, Trip, Ticket, Top-up. Each module automatically loads the correct page with highlights on relevant elements. Activation: on request ($\mathcal{T}$ button) or automatic after 2 consecutive user errors (R4, R5). \\ \hline
+\textbf{Integrated sidebar} on all 22 pages of the site. 5 trainer modules: Renew, Purchase, Trip, Ticket, Top-up. Each module automatically loads the correct page with highlights on relevant elements. Activation: on request ($\mathcal{T}$ button) (R4, R5). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Script}}} &
 No operational script for counter staff. &
@@ -445,9 +426,6 @@ Small text (10--11pt). Reading difficulty for users over 65, particularly critic
 Contrast not declared, likely below WCAG AA standard for some colour combinations. &
 \textbf{Minimum 4.5:1 ratio} (WCAG AA). \textbf{$\blacksquare$} button to toggle high-contrast mode on all pages. Persistent toggle. Completely revised palette in high-contrast mode (R8). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{ARIA}}} &
-``Skip to main content'' link present. ARIA roles absent or partial on most interactive elements. &
-\textbf{Complete ARIA}: \texttt{role="banner"}, \texttt{role="navigation"}, \texttt{role="main"}, \texttt{role="complementary"} (trainer bar), \texttt{role="contentinfo"} (footer), \texttt{role="dialog"} (modals and search overlay), \texttt{role="search"} (route planner), \texttt{aria-label} on all interactive elements, \texttt{aria-current="page"} on the active page, \texttt{aria-expanded} on hamburger and accordion, \texttt{aria-modal="true"} on overlays and modals (R8). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Touch Targets}}} &
 Touch targets below 44$\times$44px in many areas, making smartphone use difficult for users with reduced dexterity. &
@@ -498,50 +476,6 @@ No first-access path. The user lands on the homepage and must figure everything 
 \label{tab:comparison-tone}
 \end{table}
 
-\vspace{0.5cm}
 
-% ============================================================
-% SUMMARY
-% ============================================================
-\section{Summary of Key Differences}
-\label{sec:comparison-summary}
 
-\begin{tcolorbox}[colback=backgroundColor,colframe=primaryColor,arc=2mm]
-{\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|p{3.5cm}|p{5cm}|p{5cm}|}
-\hline
-\textbf{Dimension} & \textbf{Before (\texttt{tper.it} live)} & \textbf{After (tper 2.0)} \\ \hline
-\texttt{tper.it} Homepage & Corporate news and institutional slider (D1) & Hero route planner + 6 task-oriented card grid (R1) \\ \hline
-\texttt{solweb} Homepage & Login only, no guest path (D5) & 4 quick actions without registration + progress bar (R7) \\ \hline
-Information Architecture & 3 overlapping pages (Tickets, Subscriptions, Tariffs), channels buried 3 levels deep (D2) & 3 specialised pages: Tickets, Subscriptions, Where to Buy --- one page, one task (R2) \\ \hline
-Navigation & Mega-menu 200+ items, 5 levels deep & Flat nav 8 items + breadcrumb on all pages \\ \hline
-``Where to Buy'' & Non-existent --- \textit{Sales Network} buried & Standalone section + 3-question wizard + comparison table 5$\times$7 \\ \hline
-solweb / Roger & Never mentioned on homepage & Dedicated cards with direct CTAs and transition modal \\ \hline
-Channel Guide & Absent --- user must deduce & Interactive wizards on 3 pages + comparison table \\ \hline
-Purchase Flow & No progress, no document checklist & 4-step bar + interactive checklist (R3, R11) \\ \hline
-Post-Purchase & No instructions, PDF mistaken for ticket (UR-02) & 3 guided steps + printable receipt (R6) \\ \hline
-Trainer Mode & Non-existent (R5) & Sidebar on 22 pages + 5 modules + persistence + summary (R4, R5, R6) \\ \hline
-FAQ / Guides & Help desk only & Channel accordion + 3 step-by-step guides + operator script \\ \hline
-Language & Italian only & IT + EN + AR, 1,600+ i18n keys, RTL support (R12) \\ \hline
-Font / Contrast & 10--11pt, below WCAG AA & 14pt min, 4.5:1, A+ toggle, contrast toggle (R8) \\ \hline
-ARIA / Touch Targets & Partial, targets $<$ 44px & Complete: roles, labels, states; all targets $\ge$ 44$\times$44px (R8) \\ \hline
-Tone & Bureaucratic/institutional & Encouraging/inclusive + micro-reinforcements (R9) \\ \hline
-Terminology & Corporate (Sales Network, MiMuovo, Issuing Machines) & User-centric with glosses (Where to Buy, Online Subscriptions) \\ \hline
-Errors & Generic ``Error --- try again'' messages & Exponential messages: cause + solution + alternative (R10) \\ \hline
-Info Message & Absent & ``tper.it is an informational website'' banner on every page (R1) \\ \hline
-Documents & No preventive checklist & Interactive checklist with visual reproduction (R11) \\ \hline
-Guest Path & Non-existent --- login required for everything & Impersonal renewal, top-up, fines without registration (R7) \\ \hline
-\end{tabular}
-}
-\end{tcolorbox}
 
-\vspace{0.5cm}
-
-\begin{center}
-{\color{secondaryColor}\small
-Document compiled based on direct analysis of the live \texttt{tper.it} and \texttt{solweb.tper.it} sites, \\
-R1--R13 recommendations from Phase B, and Phase A user testing results (4 subjects, SUS 37.5/100) \\[4pt]
-\textbf{Phase C --- Design Proposal: Before/After Comparison} \\[4pt]
-Project: UX Design Project: Help People Help People --- TPER S.p.A.}
-\end{center}

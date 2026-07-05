@@ -32,9 +32,9 @@
 \definecolor{accentGreen}{HTML}{059669}    % Tech green
 \definecolor{accentOrange}{HTML}{EA580C}   % Orange accent
 \definecolor{accentRed}{HTML}{DC2626}      % Red
-\definecolor{accentPurple}{HTML}{7C3AED}  % Purple â€” solweb.tper.it
-\definecolor{accentViolet}{HTML}{8B5CF6}  % Violet â€” Punti Tper
-\definecolor{accentTeal}{HTML}{0D9488}    % Teal â€” Tabaccherie
+\definecolor{accentPurple}{HTML}{7C3AED}  % Purple --- solweb.tper.it
+\definecolor{accentViolet}{HTML}{8B5CF6}  % Violet --- Punti Tper
+\definecolor{accentTeal}{HTML}{0D9488}    % Teal --- Tabaccherie
 \definecolor{sectionBg}{HTML}{EBF0F7}      % Light blue bg
 
 \hypersetup{
@@ -82,6 +82,19 @@
         arc=1mm,
         left=6pt, right=6pt, top=6pt, bottom=6pt,
         boxsep=0pt,
+    },
+    headerbox/.style={
+        colback=primaryColor,
+        colframe=primaryColor,
+        arc=1.5mm,
+        halign=center,
+        valign=center,
+        height=2cm,
+    },
+    summarybox/.style={
+        colback=primaryColor!5,
+        colframe=primaryColor,
+        arc=2mm,
     },
 }
 
@@ -132,7 +145,7 @@
 \vspace{0.3cm}
 
 % ================================================================
-% TEAM CARD â€” Valid for the entire project
+% TEAM CARD --- Valid for the entire project
 % ================================================================
 \section*{Team Card}
 
@@ -748,7 +761,7 @@ cognitive load from the very first phases of interaction.
 
 \bigskip
 
-\noindent\textbf{Issue D2 â€” Violation G3}\phantomsection\label{iss:D2}\\
+\noindent\textbf{Issue D2 --- Violation G3}\phantomsection\label{iss:D2}\\
 \textit{Location: main menu tper.it, general navigation structure}\\
 
 \noindent The information architecture mixes purely
@@ -761,21 +774,21 @@ than three clicks and is not linear.
 
 \bigskip
 
-\noindent\textbf{Issue D3 â€” Violation G6, G10}\phantomsection\label{iss:D3}\\
-\textit{Location: site â€” labels, buttons, system messages}\\
+\noindent\textbf{Issue D3 --- Violation G6, G10}\phantomsection\label{iss:D3}\\
+\textit{Location: site --- labels, buttons, system messages}\\
 
 \noindent The technical language used on the site is never simplified or contextually explained. No area offers glossaries, tooltips, or explanatory micro-copy near technical terms. For an elderly user with low digital literacy, these words are devoid of operational meaning and produce cognitive block.
 
 \bigskip
 
-\noindent\textbf{Issue D4 â€” Violation G9}\phantomsection\label{iss:D4}\\
+\noindent\textbf{Issue D4 --- Violation G9}\phantomsection\label{iss:D4}\\
 \textit{Location: solweb.tper.it --- purchase and renewal flow}\\
 
 \noindent The system does not guide the user in recovering from the most common errors: failed payment, expired subscription not renewed. In these cases, the site does not show clear error messages with instructions on how to proceed, generating call centre calls, counter queues, and refund requests.
 
 \bigskip
 
-\noindent\textbf{Issue D5 â€” Violation G4}\phantomsection\label{iss:D5}\\
+\noindent\textbf{Issue D5 --- Violation G4}\phantomsection\label{iss:D5}\\
 \textit{Location: solweb.tper.it platform --- registration
 flow}\\
 
@@ -795,28 +808,28 @@ account'' is enough to cause abandonment.
 
 \bigskip
 
-\noindent\textbf{Issue R1 â€” Guideline G5 (Trust and Credibility)}\phantomsection\label{iss:R1}\\
-\textit{Location: solweb.tper.it â€” purchase and online payment area}\\
+\noindent\textbf{Issue H1 --- Guideline G5 (Trust and Credibility)}\phantomsection\label{iss:H1}\\
+\textit{Location: solweb.tper.it --- purchase and online payment area}\\
 
 \noindent The site does not provide adequate trust signals on the purchase screens: absence of payment security icons, lack of intermediate confirmations during the flow, and no order summary before final payment. For an elderly user who already distrusts online payments, this absence of reassurances increases anxiety and the probability of flow abandonment.
 
 \bigskip
 
-\noindent\textbf{Issue R2 â€” Guideline G8 (Search)}\phantomsection\label{iss:R2}\\
-\textit{Location: tper.it site â€” internal search function}\\
+\noindent\textbf{Issue H2 --- Guideline G8 (Search)}\phantomsection\label{iss:H2}\\
+\textit{Location: tper.it site --- internal search function}\\
 
 \noindent The internal search function is not prominent, does not suggest related queries or autocomplete. A search for \textit{``elderly subscription''} returns results devoid of useful metadata (no date, no meaningful excerpt) to guide the user in the choice. The elderly user who uses search as a shortcut does not obtain useful answers and is forced to manually navigate the site structure.
 
 \bigskip
 
-\noindent\textbf{Issue R3 â€” Guideline G10 (Accessibility)}\phantomsection\label{iss:R3}\\
-\textit{Location: tper.it site â€” texts, contrast, clickable areas}\\
+\noindent\textbf{Issue H3 --- Guideline G10 (Accessibility)}\phantomsection\label{iss:H3}\\
+\textit{Location: tper.it site --- texts, contrast, clickable areas}\\
 
 \noindent Some sections feature text of reduced size, insufficient text/background contrast for users with mild visual impairment, and clickable areas too small for smartphone use. The dark mode present on the site does not offer genuine accessibility control (adjustable contrast, text size, accessible fonts), directly penalising the elderly target.
 
 \bigskip
 
-\noindent\textbf{Issue R4 â€” Guideline G2 (Task Orientation)}\phantomsection\label{iss:R4}\\
+\noindent\textbf{Issue H4 --- Guideline G2 (Task Orientation)}\phantomsection\label{iss:H4}\\
 \textit{Location: TPER ecosystem --- distinction between planning
 and purchase}\\
 
@@ -830,9 +843,9 @@ the vehicle convinced they have a valid ticket.
 
 \bigskip
 
-\noindent\textbf{Issue R5 â€” Guideline G9 (Help, Feedback, Error
-Tolerance)}\phantomsection\label{iss:R5}\\
-\textit{Location: TPER ecosystem â€” absence of contextual
+\noindent\textbf{Issue H5 --- Guideline G9 (Help, Feedback, Error
+Tolerance)}\phantomsection\label{iss:H5}\\
+\textit{Location: TPER ecosystem --- absence of contextual
 support and trainer mode}\\
 
 \noindent Neither of the two platforms offers guidance tools
@@ -847,7 +860,7 @@ of the HPHP project.
 
 \section{Assessment of Existing Resource Card --- ATAC}
 
-\textbf{This is the competitorâ€™s tool}\\
+\textbf{This is the competitor's tool}\\
 \textit{(i.e. one of the external benchmarks used for comparison)}
 
 \subsection*{Name of the Tool}
@@ -942,28 +955,28 @@ G10 & Accessibility --- cognitive and motor accessibility \\
 
 \bigskip
 
-\noindent\textbf{Issue D2 â€” Violation G3}\phantomsection\label{atac:D2}\\
+\noindent\textbf{Issue D2 --- Violation G3}\phantomsection\label{atac:D2}\\
 \textit{Location: general site structure and service sections}\\
 
 \noindent The information architecture distributes content across different sections and separate domains --- the institutional site, the MyAtac purchasing platform, support on a third domain --- without this fragmentation being made evident to the user. The user must decide alone where to start, how to move from information to action, and which section is the right one for their problem. This structure is acceptable for expert users, but not for those who need a linear and repeatable path. Navigation reaches up to four levels of depth in corporate sections. The user must decide alone where to start and how to move from information to action. This structure is acceptable for expert users, but not for those who need a linear and repeatable path.
 
 \bigskip
 
-\noindent\textbf{Issue D3 â€” Violation G6, G10}\phantomsection\label{atac:D3}\\
+\noindent\textbf{Issue D3 --- Violation G6, G10}\phantomsection\label{atac:D3}\\
 \textit{Location: informational texts, instructions on tickets and online services}\\
 
 \noindent The site language is correct but often assumes familiarity with concepts such as activation, validation, MyAtac, digital ticket, and discounted tickets. Explanations are present, but not always contextual enough for a user entering the system with low confidence. As a result, the site informs, but does not always guide. Cognitive accessibility thus remains only partial, especially for users over 70.
 
 \bigskip
 
-\noindent\textbf{Issue D4 â€” Violation G9}\phantomsection\label{atac:D4}\\
+\noindent\textbf{Issue D4 --- Violation G9}\phantomsection\label{atac:D4}\\
 \textit{Location: help pages and exception handling}\\
 
 \noindent The site provides support and guidance, but does not build a genuine recovery experience when something goes wrong. If the user encounters a problem during purchase or ticket management, they must interpret the available instructions on their own. For someone who is already insecure, this may be enough to interrupt the process. The error is not accompanied in a sufficiently reassuring way.
 
 \bigskip
 
-\noindent\textbf{Issue D5 â€” Violation G4}\phantomsection\label{atac:D5}\\
+\noindent\textbf{Issue D5 --- Violation G4}\phantomsection\label{atac:D5}\\
 \textit{Location: areas requiring MyAtac access and related forms}\\
 
 \noindent Some services require access to the MyAtac area or the use of forms and preliminary steps that increase the entry threshold. Registration and profile management are functional, but add a mental load that can block users with low confidence. The problem is not the presence of the account, but the fact that the site does not make the initial transition smooth enough. For the HPHP target, this is a significant criticality.
@@ -974,35 +987,35 @@ G10 & Accessibility --- cognitive and motor accessibility \\
 
 \bigskip
 
-\noindent\textbf{Issue R1 â€” Violation G5 (Trust and Credibility)}\phantomsection\label{atac:R1}\\
+\noindent\textbf{Issue H1 --- Violation G5 (Trust and Credibility)}\phantomsection\label{atac:H1}\\
 \textit{Location: ATAC site as a whole}\\
 
-\noindent The site is credible from an institutional point of view, but the number of paths and service areas can weaken the new userâ€™s operational trust. When it is not immediately clear which channel is the right one for a given task, the user may perceive uncertainty even in a reliable system. The problem does not concern the reputation of the service, but its usability legibility. Trust is strong on the brand, less strong on the task.
+\noindent The site is credible from an institutional point of view, but the number of paths and service areas can weaken the new user's operational trust. When it is not immediately clear which channel is the right one for a given task, the user may perceive uncertainty even in a reliable system. The problem does not concern the reputation of the service, but its usability legibility. Trust is strong on the brand, less strong on the task.
 
 \bigskip
 
-\noindent\textbf{Issue R2 â€” Violation G8 (Search)}\phantomsection\label{atac:R2}\\
+\noindent\textbf{Issue H2 --- Violation G8 (Search)}\phantomsection\label{atac:H2}\\
 \textit{Location: informational pages and service sections of the site}\\
 
 \noindent The search function is present via an icon in the header but is not immediately visible as a primary tool. It does not offer suggestions or autocomplete, and its effectiveness depends on the user's ability to formulate queries with the correct domain terminology. For vulnerable users, search does not compensate for the complexity of the architecture and does not replace a more guided structure.
 
 \bigskip
 
-\noindent\textbf{Issue R3 â€” Violation G10}\phantomsection\label{atac:R3}\\
+\noindent\textbf{Issue H3 --- Violation G10}\phantomsection\label{atac:H3}\\
 \textit{Location: service pages, instructions and account-based paths}\\
 
 \noindent Accessibility is present on a functional level, but the system remains demanding on a mental level. The user must distinguish between different types of content, understand the meaning of technical terms, and remember where they are in the path. This reduces the suitability of the site for users with low digital confidence. The problem is therefore cognitive before being visual or motor.
 
 \bigskip
 
-\noindent\textbf{Issue R4 â€” Violation G2}\phantomsection\label{atac:R4}\\
+\noindent\textbf{Issue H4 --- Violation G2}\phantomsection\label{atac:H4}\\
 \textit{Location: path between information, purchase and ticket management}\\
 
 \noindent The site supports the task, but does not make it immediately readable as a sequence of actions. Consulting, purchasing, activating, and managing a ticket are connected operations, but the system expects the user to already understand their relationship. This is poorly suited to an audience that needs a simple and reassuring mental model. The platform facilitates the task only after the user has already overcome the hardest part: understanding the task.
 
 \bigskip
 
-\noindent\textbf{Issue R5 â€” Violation G9}\phantomsection\label{atac:R5}\\
+\noindent\textbf{Issue H5 --- Violation G9}\phantomsection\label{atac:H5}\\
 \textit{Location: support distributed throughout the site}\\
 
 \noindent The site offers help, but not a genuine guided experience at the moment of action. In case of doubt or error, the user often has to transform instructions into concrete behaviour on their own. For the HPHP target this is not enough, because the main problem is not the lack of information but the lack of confidence in the moment of using it. The absence of more guided support therefore represents the most serious criticality.
@@ -1012,7 +1025,7 @@ G10 & Accessibility --- cognitive and motor accessibility \\
 % ================================================================
 
 % ================================================================
-% PRELIMINARY USER TESTING CARD â€” Client's tool
+% PRELIMINARY USER TESTING CARD --- Client's tool
 % ================================================================
 
 \newpage
@@ -1281,10 +1294,10 @@ At the end of the session, the subject spontaneously observed: \textit{``They sh
 The reduced volume of errors and backtrack recorded in some phases is not a symptom of system fluidity. The subject, struggling in the face of the amount of information before him, prefers to spend prolonged time in laborious visual exploration of each individual screen rather than clicking randomly. This block is directly caused by disorientation on the homepage \textbf{(\hyperref[iss:D1]{D1})} and by the promiscuous information architecture \textbf{(\hyperref[iss:D2]{D2})}.
 
 Specifically regarding the first task (\textit{Timetable search and consultation}), despite having visually isolated the line of interest, he was unable to locate the command to access timetable tables, complaining of a total lack of intuitiveness of the graphic components.
-The tendency not to distinguish an interactive button from a static text string experimentally confirms the severity of \textbf{\hyperref[iss:R3]{R3}} (Visual and cognitive accessibility).
+The tendency not to distinguish an interactive button from a static text string experimentally confirms the severity of \textbf{\hyperref[iss:H3]{H3}} (Visual and cognitive accessibility).
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Affordance and visual contrast (\hyperref[iss:R3]{R3}):} Standardize buttons with clear geometric shapes and visual elevation from the background. Introduce marked \textit{hover} and \textit{focus} micro-interactions to make the distinction from static text immediate and unambiguous.
+    \item \textbf{Affordance and visual contrast (\hyperref[iss:H3]{H3}):} Standardize buttons with clear geometric shapes and visual elevation from the background. Introduce marked \textit{hover} and \textit{focus} micro-interactions to make the distinction from static text immediate and unambiguous.
     \item \textbf{De-cluttering and progressive disclosure (\hyperref[iss:D1]{D1}, \hyperref[iss:D2]{D2}):} Streamline the layout by eliminating secondary informational elements (news, general notices).
 \end{itemize}
 \end{tcolorbox}
@@ -1374,7 +1387,7 @@ The quantitative data records a critical usability picture, with a completion ra
 
 \medskip
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Task Orientation (\hyperref[iss:R4]{R4}):} Clearly signal to the user the transition from the informational site to the purchase platform, which today occurs without any notice and without explaining why the interface changes.
+    \item \textbf{Task Orientation (\hyperref[iss:H4]{H4}):} Clearly signal to the user the transition from the informational site to the purchase platform, which today occurs without any notice and without explaining why the interface changes.
     \item \textbf{Prevention and Error Tolerance (\hyperref[iss:D4]{D4}):} Compensate the inability to autonomously recover from errors by introducing a micro-guided accompaniment and contextual feedback messages managed by the intermediary layer.
     \item \textbf{Shortcuts for protection flows (\hyperref[iss:D2]{D2}):} Extract the concessions section from the deep nodes of the information architecture, positioning it as a priority access point in the initial dashboard through a step-by-step guided path (\textit{wizard}).
     The other points have already been discussed in the previous test.
@@ -1456,7 +1469,7 @@ Useful suggestion from the subject: a more explicit and simple guide in English 
 \end{tcolorbox}
 \subsection*{Outcomes and reflections useful for design}
 \begin{tcolorbox}[base]
-Chris Harper's data confirm that a foreign user with good digital literacy can handle basic informational functions, but encounters strong difficulties in transactional flows. The 40\% completion rate shows that the problems do not depend only on technical competence, but also on language, terminology, and absence of contextual support. This result directly confirms the severity of Issue \textbf{\hyperref[iss:D3]{D3}} and Issue \textbf{\hyperref[iss:D5]{D5}}, i.e.\ non-simplified language and mandatory registration, which block even users capable of navigating autonomously. The failure on Tasks 3, 4, and 5 suggests that the redesign must introduce a guest-friendly path, more accessible language, and step-by-step guidance for purchase, concessions, and renewal. The SUS of 45/100 confirms a low usability perception and also reinforces Issue \textbf{\hyperref[iss:R5]{R5}}, because the system does not offer sufficiently guided support at the moment of action.
+Chris Harper's data confirm that a foreign user with good digital literacy can handle basic informational functions, but encounters strong difficulties in transactional flows. The 40\% completion rate shows that the problems do not depend only on technical competence, but also on language, terminology, and absence of contextual support. This result directly confirms the severity of Issue \textbf{\hyperref[iss:D3]{D3}} and Issue \textbf{\hyperref[iss:D5]{D5}}, i.e.\ non-simplified language and mandatory registration, which block even users capable of navigating autonomously. The failure on Tasks 3, 4, and 5 suggests that the redesign must introduce a guest-friendly path, more accessible language, and step-by-step guidance for purchase, concessions, and renewal. The SUS of 45/100 confirms a low usability perception and also reinforces Issue \textbf{\hyperref[iss:H5]{H5}}, because the system does not offer sufficiently guided support at the moment of action.
 \end{tcolorbox}
 % ================================================================
 % TEST #4
@@ -1683,7 +1696,7 @@ S1 (elderly commuter), S2 (foreign worker) and S3
 \end{tcolorbox}
 
 % ================================================================
-% TEST ATAC #1 â€” Sergio Mercurio
+% TEST ATAC #1 --- Sergio Mercurio
 % ================================================================
 
 \newpage
@@ -1737,7 +1750,7 @@ T4 & Discounts and requirements  & \textbf{S} & 263 & 5 & 3 \\
 T5 & Purchase and recharge       & \textbf{S} & 189 & 4 & 0 \\
 \midrule
 \multicolumn{2}{l}{\textbf{Totals / Averages}} &
-\textbf{4/5 (80\%)} & \textbf{154s} &
+\textbf{4/5 (80\%)} & \textbf{198s} &
 \textbf{4} & \textbf{2} \\
 \bottomrule
 \end{tabular}
@@ -1774,7 +1787,7 @@ However, once entering the ATAC ticket office, the extreme information density o
 \end{tcolorbox}
 
 % ================================================================
-% TEST ATAC #2 â€” Laura Palumbo
+% TEST ATAC #2 --- Laura Palumbo
 % ================================================================
 
 \newpage
@@ -1825,7 +1838,7 @@ T4 & Discounts and requirements  & \textbf{F} & 155 & 4 & 2 \\
 T5 & Purchase and recharge       & \textbf{S} & 90 & 2 & 1 \\
 \midrule
 \multicolumn{2}{l}{\textbf{Totals / Averages}} &
-\textbf{2/5 (40\%)} & \textbf{260 s} &
+\textbf{2/5 (40\%)} & \textbf{147 s} &
 \textbf{3,6} & \textbf{1,6} \\
 \bottomrule
 \end{tabular}
@@ -1860,7 +1873,7 @@ At the end of the session the subject expressed strong frustration at the poor c
 \end{tcolorbox}
 
 % ================================================================
-% TEST ATAC #3 â€” Chris Harper
+% TEST ATAC #3 --- Chris Harper
 % ================================================================
 
 \newpage
@@ -1937,7 +1950,7 @@ Chris Harper's data shows that a foreign user with good digital literacy can man
 \end{tcolorbox}
 
 % ================================================================
-% TEST ATAC #4 â€” Maria Borriello
+% TEST ATAC #4 --- Maria Borriello
 % ================================================================
 
 \newpage
@@ -2011,7 +2024,7 @@ Even on ATAC, a very elderly and digitally fragile user cannot orient themselves
 
 \subsection*{Outcomes and reflections useful for design}
 \begin{tcolorbox}[base]
-Maria Borriello's data represents the limit case also on the ATAC competitor. The 0\% completion rate and SUS of 29/100 indicate that, despite some more accessible elements compared to TPER, the ATAC site remains inadequate for a user over 75 with very low digital competence. The total failure on all tasks demonstrates that the problem concerns not only transactional flows, but also the simple understanding of the site structure. This reinforces a central conclusion of the project: neither of the two sites, in their current form, provides a truly autonomous experience for the most fragile segment. The TPER redesign must therefore go beyond the ATAC benchmark and propose a radically simpler orientation mode, with \textbf{reduction of visual complexity (\hyperref[atac:D1]{D1})}, \textbf{understandable labels (\hyperref[atac:D3]{D3})} and \textbf{always visible contextual support (\hyperref[atac:R5]{R5})}.
+Maria Borriello's data represents the limit case also on the ATAC competitor. The 0\% completion rate and SUS of 29/100 indicate that, despite some more accessible elements compared to TPER, the ATAC site remains inadequate for a user over 75 with very low digital competence. The total failure on all tasks demonstrates that the problem concerns not only transactional flows, but also the simple understanding of the site structure. This reinforces a central conclusion of the project: neither of the two sites, in their current form, provides a truly autonomous experience for the most fragile segment. The TPER redesign must therefore go beyond the ATAC benchmark and propose a radically simpler orientation mode, with \textbf{reduction of visual complexity (\hyperref[atac:D1]{D1})}, \textbf{understandable labels (\hyperref[atac:D3]{D3})} and \textbf{always visible contextual support (\hyperref[atac:H5]{H5})}.
 \end{tcolorbox}
 
 
@@ -2043,7 +2056,7 @@ scale 1--5. Composite score: I\,+\,P out of 10.}
     \hfill I:\,5 \textbar{} P:\,5 \textbar{} \textbf{10/10}\\
     Affects all five tasks.
 
-    \item \textbf{\hyperref[iss:R5]{R5} --- Absence of trainer mode
+    \item \textbf{\hyperref[iss:H5]{H5} --- Absence of trainer mode
     and contextual support}
     \hfill I:\,4 \textbar{} P:\,5 \textbar{} \textbf{9/10}\\
     Structural issue: affects all tasks for all subjects.
@@ -2059,7 +2072,7 @@ scale 1--5. Composite score: I\,+\,P out of 10.}
     fail even on a subject with average digital competence.
     The impact is maximum because it does not allow partial recovery.
 
-    \item \textbf{\hyperref[iss:R3]{R3} --- Visual accessibility:
+    \item \textbf{\hyperref[iss:H3]{H3} --- Visual accessibility:
     interactive elements not distinguishable from static text}
     \hfill I:\,4 \textbar{} P:\,4 \textbar{} \textbf{8/10}\\
     Experimentally documented in Test~1 and Test~2.
@@ -2076,7 +2089,7 @@ scale 1--5. Composite score: I\,+\,P out of 10.}
     (SUS 45/100) and contributes decisively to the 0\% completion
     rate in Test~4.
 
-    \item \textbf{\hyperref[iss:R4]{R4} --- Task orientation:
+    \item \textbf{\hyperref[iss:H4]{H4} --- Task orientation:
     unannounced transition between information site and purchase
     platform}
     \hfill I:\,4 \textbar{} P:\,3 \textbar{} \textbf{7/10}\\
@@ -2096,14 +2109,14 @@ scale 1--5. Composite score: I\,+\,P out of 10.}
     It is not a primary cause of failure, but it systematically amplifies
     all the preceding issues.
 
-    \item \textbf{\hyperref[iss:R1]{R1} --- Trust and credibility:
+    \item \textbf{\hyperref[iss:H1]{H1} --- Trust and credibility:
     absence of security signals in the payment flow}
     \hfill I:\,3 \textbar{} P:\,2 \textbar{} \textbf{5/10}\\
     Affects T3 and T5. Not directly detectable from the quantitative test
     data, but consistent with the emotional barriers documented in the
     qualitative interviews of segment S1.
 
-    \item \textbf{\hyperref[iss:R2]{R2} --- Search:
+    \item \textbf{\hyperref[iss:H2]{H2} --- Search:
     non-functional internal search function}
     \hfill I:\,1 \textbar{} P:\,1 \textbar{} \textbf{2/10}\\
     No subject used the internal search as a navigation
@@ -2184,52 +2197,52 @@ Question \#10     & Neutral        & Agree          & Agree          & Agree    
   % Full scale 1--5; points in the same cell slightly offset
   % ============================================================
 
-  % D1 â€” P=5, I=5 (offset \u2197)
+  % D1 --- P=5, I=5 (offset \u2197)
   \filldraw[violet!80!black] (4.82,5.18) circle (3.5pt);
   \node[violet!80!black, font=\footnotesize\bfseries, above left]
     at (4.82,5.18) {D1};
 
-  % D2 â€” P=5, I=5 (offset \u2198)
+  % D2 --- P=5, I=5 (offset \u2198)
   \filldraw[violet!80!black] (5.18,4.82) circle (3.5pt);
   \node[violet!80!black, font=\footnotesize\bfseries, below right]
     at (5.18,4.82) {D2};
 
-  % R5 â€” P=5, I=4
+  % R5 --- P=5, I=4
   \filldraw[teal!80!black] (5,4) circle (3.5pt);
   \node[teal!80!black, font=\footnotesize\bfseries, right]
     at (5,4) {\;R5};
 
-  % D5 â€” P=3, I=5
+  % D5 --- P=3, I=5
   \filldraw[red!70!black] (3,5) circle (3.5pt);
   \node[red!70!black, font=\footnotesize\bfseries, above]
     at (3,5) {D5};
 
-  % R3 â€” P=4, I=4 (offset \u2197)
+  % R3 --- P=4, I=4 (offset \u2197)
   \filldraw[orange!80!black] (3.82,4.18) circle (3.5pt);
   \node[orange!80!black, font=\footnotesize\bfseries, above left]
     at (3.82,4.18) {R3};
 
-  % D3 â€” P=4, I=4 (offset \u2198)
+  % D3 --- P=4, I=4 (offset \u2198)
   \filldraw[orange!80!black] (4.18,3.82) circle (3.5pt);
   \node[orange!80!black, font=\footnotesize\bfseries, below right]
     at (4.18,3.82) {D3};
 
-  % R4 â€” P=3, I=4
+  % R4 --- P=3, I=4
   \filldraw[blue!70!black] (3,4) circle (3.5pt);
   \node[blue!70!black, font=\footnotesize\bfseries, above left]
     at (3,4) {R4};
 
-  % D4 â€” P=4, I=3
+  % D4 --- P=4, I=3
   \filldraw[blue!70!black] (4,3) circle (3.5pt);
   \node[blue!70!black, font=\footnotesize\bfseries, above right]
     at (4,3) {D4};
 
-  % R1 â€” P=2, I=3
+  % R1 --- P=2, I=3
   \filldraw[gray!70] (2,3) circle (3.5pt);
   \node[gray!70, font=\footnotesize\bfseries, above right]
     at (2,3) {R1};
 
-  % R2 â€” P=1, I=1
+  % R2 --- P=1, I=1
   \filldraw[gray!70] (1,1) circle (3.5pt);
   \node[gray!70, font=\footnotesize\bfseries, above right]
     at (1,1) {R2};
@@ -2262,7 +2275,7 @@ the implementation of the trainer-mode and the overall redesign
 of the TPER ecosystem.
 
 The recommendations are organized by macro-design themes (information
-architecture, trainer modeÃƒÂ  authentication, accessibility, errorÃƒÂ 
+architecture, trainer mode, authentication, accessibility, error
 support, multilingual, and progress monitoring), reflecting the main
 intervention areas identified.
 
@@ -2737,6 +2750,8 @@ direct involvement of the identified user segments (elderly commuter,
 foreign worker) to validate
 the effectiveness of the proposed solutions.
 
+\newpage
+
 \begin{center}
     {\color{primaryColor}\Large\bfseries Persona and Use Case Card} \\[4pt]
     {\color{secondaryColor}\normalsize Phase B --- Feasibility Study} \\[4pt]
@@ -2779,9 +2794,9 @@ the effectiveness of the proposed solutions.
 \begin{tcolorbox}[base]
     \textbf{Persona description} \\[4pt]
     {\small
-    \textbf{EtÃƒÂ :} 68 anni \hfill
+    \textbf{Age:} 68 \hfill
     \textbf{Gender:} Female \hfill
-    \textbf{NazionalitÃƒÂ :} Moroccan, resident in Italy for 22 years
+    \textbf{Nationality:} Moroccan, resident in Italy for 22 years
     \\[2pt]
     \textbf{Residence:} Bologna, Pilastro district \hfill
     \textbf{Marital status:} Married \\[2pt]
@@ -3150,13 +3165,13 @@ supporting cast member who must nevertheless be taken into account to ensure an 
 \begin{tcolorbox}[base]
     \textbf{Persona description} \\[4pt]
     {\small
-    \textbf{EtÃƒÂ :} 79 years \hfill
+    \textbf{Age:} 79 years \hfill
     \textbf{Gender:} Female \hfill
-    \textbf{NazionalitÃƒÂ :} Italiana \\[2pt]
+    \textbf{Nationality:} Italian \\[2pt]
     \textbf{Residence:} Bologna, San Donato district (suburbs) \hfill
     \textbf{Marital status:} Widow, lives alone \\[2pt]
     \textbf{Education:} Elementary school diploma \\[2pt]
-    \textbf{Relevant physical issues:} Presbyopia (uses reading glasses), hand arthritis that reduces fine motor skillsÃƒÂ  fine, reduced mobilityÃƒÂ  (walks with a cane for long journeys). \\[2pt]
+    \textbf{Relevant physical issues:} Presbyopia (uses reading glasses), hand arthritis that reduces fine motor skills, reduced mobility (walks with a cane for long journeys). \\[2pt]
     \textbf{Digital profile:} She owns a smartphone given to her by her daughter, but uses it exclusively for passive scrolling on Facebook (family photos) and WhatsApp calls. She has never used a browser for active navigation, has never filled in an online form. During tests, an initial orientation phase on the computer trackpad was necessary. \\[2pt]
     \textbf{TPL usage:} TPER user for over 40 years. She knows well the lines, stops, and fare zones from physical experience. She used to buy tickets at the newsstand and renew the subscription at the TPER counter in the station. Since many services have migrated online, she depends entirely on her daughter for every digital operation.
     }
@@ -3258,7 +3273,7 @@ supporting cast member who must nevertheless be taken into account to ensure an 
 \newpage
 
 % ================================================================
-% USE CASE #1: Â«The phantom transitionÂ»
+% USE CASE #1: "The phantom transition"
 % ================================================================
 
 \begin{tcolorbox}[sectionbox,colback=primaryColor!10]
@@ -3302,7 +3317,7 @@ supporting cast member who must nevertheless be taken into account to ensure an 
 \vspace{0.3cm}
 
 % ================================================================
-% USE CASE #2: Â«The labyrinth architectureÂ»
+% USE CASE #2: "The labyrinth architecture"
 % ================================================================
 
 \begin{tcolorbox}[sectionbox,colback=primaryColor!10]
@@ -3356,9 +3371,9 @@ supporting cast member who must nevertheless be taken into account to ensure an 
 
         \item \textbf{RF-11 --- Flat information architecture for operational flows (cfr. D2):} Transactional flows (renewal, purchase) must not require more than 3 clicks from the entry point. Menu items beyond the second level should be reserved for informative content, not operational.
 
-        \item \textbf{RF-12 --- Trainer/user co-navigation mode (cfr. R5):} The system must offer a shared view that allows the trainer to highlight elements, dictate steps, and guide without physically taking control of the device (e.g. pointing overlay, highlighted steps).
+        \item \textbf{RF-12 --- Trainer/user co-navigation mode (cfr. H5):} The system must offer a shared view that allows the trainer to highlight elements, dictate steps, and guide without physically taking control of the device (e.g. pointing overlay, highlighted steps).
 
-        \item \textbf{RF-13 --- Analog-digital bridge (cfr. R3, R6):} The user must be able to receive printable outputs (paper reminders, QR codes, deadline calendars) to maintain a link with pre-existing analog habits.
+        \item \textbf{RF-13 --- Analog-digital bridge (cfr. H3, R6):} The user must be able to receive printable outputs (paper reminders, QR codes, deadline calendars) to maintain a link with pre-existing analog habits.
     \end{itemize}
     }
 \end{tcolorbox}
@@ -3369,7 +3384,7 @@ supporting cast member who must nevertheless be taken into account to ensure an 
     {\small
     \textbf{Impact of Use Case \#1 (The phantom transition) on design:} \\[4pt]
     \begin{itemize}[leftmargin=*]
-        \item \textbf{RF-14 --- Platform change notification (cfr. R4):} The transition \texttt{tper.it} $\rightarrow$ \texttt{solweb.tper.it} must be signaled with a context indicator (banner, overlay, visual note). The user must know they have changed environment and why.
+        \item \textbf{RF-14 --- Platform change notification (cfr. H4):} The transition \texttt{tper.it} $\rightarrow$ \texttt{solweb.tper.it} must be signaled with a context indicator (banner, overlay, visual note). The user must know they have changed environment and why.
 
         \item \textbf{RF-15 --- Guest flow for renewal without registration (cfr. D5):} A subscription renewal does not require prior identification. The system must offer a guest path that requires only the essential transaction data (card number + payment), without mandatory account.
     \end{itemize}
@@ -3421,7 +3436,7 @@ supporting cast member who must nevertheless be taken into account to ensure an 
 \begin{tcolorbox}[base]
     \textbf{Persona description} \\[4pt]
     {\small
-    \textbf{Age:} 32 anni \hfill
+    \textbf{Age:} 32 years \hfill
     \textbf{Gender:} Male \hfill
     \textbf{Nationality:} British (native English speaker) \\[2pt]
     \textbf{Residence:} Bologna, San Vitale area (near university) \hfill
@@ -3512,7 +3527,7 @@ supporting cast member who must nevertheless be taken into account to ensure an 
 \end{tcolorbox}
 
 % ================================================================
-% USE CASE #1: Â«The renewal that cannot be seenÂ»
+% USE CASE #1: "The renewal that cannot be seen"
 % ================================================================
 
 \begin{tcolorbox}[sectionbox,colback=primaryColor!10]
@@ -3610,9 +3625,9 @@ supporting cast member who must nevertheless be taken into account to ensure an 
 
         \item \textbf{RF-25 --- Multilingual support in registration and purchase flows (cfr. R12):} The English interface on \texttt{solweb.tper.it} must be available \textit{before} login, not after. The foreign user needs the foreign language precisely during registration and first access.
 
-        \item \textbf{RF-26 --- Intent-based search engine (cfr. R2):} Internal search must support synonyms and semantic queries (``discount'', ``sconti'', ``monthly pass'') beyond exact bureaucratic terminology. For a user unfamiliar with the domain, formulating the right query must not be a prerequisite.
+        \item \textbf{RF-26 --- Intent-based search engine (cfr. H2):} Internal search must support synonyms and semantic queries (``discount'', ``sconti'', ``monthly pass'') beyond exact bureaucratic terminology. For a user unfamiliar with the domain, formulating the right query must not be a prerequisite.
 
-        \item \textbf{RF-27 --- Informative content in clear language (cfr. D2, R3):} Descriptive pages (subscriptions, discounts) must use a non-bureaucratic tone, explaining regulatory concepts (ISEE, DSU, resolutions) in language accessible even to those unfamiliar with the Italian institutional context.
+        \item \textbf{RF-27 --- Informative content in clear language (cfr. D2, H3):} Descriptive pages (subscriptions, discounts) must use a non-bureaucratic tone, explaining regulatory concepts (ISEE, DSU, resolutions) in language accessible even to those unfamiliar with the Italian institutional context.
     \end{itemize}
     }
 \end{tcolorbox}
@@ -3625,14 +3640,14 @@ supporting cast member who must nevertheless be taken into account to ensure an 
     \begin{itemize}[leftmargin=*]
         \item \textbf{RF-28 --- Mandatory post-purchase procedural guide (cfr. R10):} The checkout flow must not end at payment. It must include an ``Instructions for use'' screen explaining how to make the subscription valid on board (loading on Mi Muovo/TPER app). The email receipt must be accompanied by clear procedural instructions.
 
-        \item \textbf{RF-29 --- Explicit mapping of the multi-platform ecosystem (cfr. D5, R4):} The system must explicitly declare the relationships between platforms (solweb = purchase, Mi Muovo = physical medium, TPER app = digital) at the right time, not after the fact. The user must know which platform they are operating on and what happens next.
+        \item \textbf{RF-29 --- Explicit mapping of the multi-platform ecosystem (cfr. D5, H4):} The system must explicitly declare the relationships between platforms (solweb = purchase, Mi Muovo = physical medium, TPER app = digital) at the right time, not after the fact. The user must know which platform they are operating on and what happens next.
 
         \item \textbf{Cost of missing guidance:} A fine of 60\euro{} for a subscription paid 50\euro{} (damage >100\% of the transaction value) is an unacceptable economic consequence generated exclusively by the system's procedural opacity.
     \end{itemize}
     \vspace{0.2cm}
     \textbf{Impact of Use Case \#2 (The hidden discount) on design:} \\[4pt]
     \begin{itemize}[leftmargin=*]
-        \item \textbf{RF-30 --- Semantic and intent-based search (cfr. R2):} The internal search engine must return results for ``discount'', ``sconti'', ``risparmio'' as well as ``agevolazioni''. For a user with language competence 2/5 and domain competence 2/5, knowing the exact bureaucratic term cannot be a prerequisite.
+        \item \textbf{RF-30 --- Semantic and intent-based search (cfr. H2):} The internal search engine must return results for ``discount'', ``sconti'', ``risparmio'' as well as ``agevolazioni''. For a user with language competence 2/5 and domain competence 2/5, knowing the exact bureaucratic term cannot be a prerequisite.
 
         \item \textbf{RF-31 --- Information equity: terminology explained (cfr. D3):} Bureaucratic terms (ISEE, DSU) must be accompanied by explanations in simple language, tooltips, and translations. Terminological opacity selectively affects the users who most need discounts, constituting a problem of equity as well as usability.
 
@@ -3908,7 +3923,7 @@ learning, shyness at the counter, low ISEE \\
 
 \subsection{Cumulative Chart of Personality Traits}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.95\textwidth]{images/cumulativechart.png}
 \caption{Cumulative comparison of personality traits among the four personas.
@@ -4032,7 +4047,7 @@ Phase C translates recommendations R1--R13 into concrete design artifacts: Infor
 \subsection{Information Architecture Card}
 
 
-\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
+\begin{tcolorbox}[headerbox]
  \color{white}\LARGE\bfseries\sffamily INFORMATION ARCHITECTURE CARD \\[0.1cm]
  \color{white!80}\small\sffamily Phase C --- Design Proposal
 \end{tcolorbox}
@@ -4220,8 +4235,8 @@ Language & \texttt{IT, EN, AR} & Structured multilingual support \\
 
 \subsection{Structure Blueprint}
 
-\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
- \color{white}\LARGE\bfseries\sffamily BLUEPRINT \\[0.1cm]
+\begin{tcolorbox}[headerbox]
+ \color{white}\LARGE\bfseries\sffamily STRUCTURE BLUEPRINT \\[0.1cm]
  \color{white!80}\small\sffamily Phase C --- Design Proposal
 \end{tcolorbox}
 
@@ -4247,7 +4262,7 @@ The blueprints presented in this section define the components for content organ
 
 \textit{Structure perspective.} This blueprint shows the hierarchical organization of content on \texttt{tper.it}, highlighting the clear separation between informational content (managed directly on the site) and purchase destinations (external channels). Orange arrows indicate redirects to the correct purchase channels.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Blueprint/bp1-ia.png}
 \caption{BP1 --- Information Architecture of \texttt{tper.it}}
@@ -4278,7 +4293,7 @@ The blueprints presented in this section define the components for content organ
 
 \textit{System perspective.} This blueprint illustrates the relationships between \texttt{tper.it} (informational channel) and the 5 purchase channels, showing the bridge mechanisms that connect information to transaction.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Blueprint/bp2-ecosystem.png}
 \caption{BP2 --- TPER Multi-Channel Ecosystem}
@@ -4329,7 +4344,7 @@ Contactless on board & Hybrid & Pay-per-ride with card or smartphone & On TPER v
 
 \textit{User perspective.} This blueprint traces the typical path of an HPHP user from the moment they arrive on \texttt{tper.it} until purchase completion on the correct channel.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Blueprint/bp3-journey.png}
 \caption{BP3 --- User Journey from \texttt{tper.it} to Purchase}
@@ -4395,8 +4410,8 @@ Project: UX Design Project: Help People Help People --- TPER S.p.A.}
 
 \subsection{Wireframe}
 
-\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
- \color{white}\LARGE\bfseries\sffamily WIREFRAMES \\[0.1cm]
+\begin{tcolorbox}[headerbox]
+ \color{white}\LARGE\bfseries\sffamily WIREFRAME \\[0.1cm]
  \color{white!80}\small\sffamily Phase C --- Design Proposal
 \end{tcolorbox}
 
@@ -4415,15 +4430,6 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
     \item \textbf{Contactless on board} --- Payment per single ride with card
 \end{itemize}
 
-\vspace{0.2cm}
-\textbf{Graphic conventions:}
-\begin{itemize}
-    \item Blue boxes = main interactive elements (CTA, navigation)
-    \item Gray boxes = informational content / secondary areas
-    \item Purple line = Trainer-Mode elements
-    \item \texttt{Italic} text = descriptive labels
-\end{itemize}
-
 \newpage
 
 % ================================================================
@@ -4432,14 +4438,12 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \section{Wireframe 1: tper.it Homepage --- Unauthenticated User (Guest)}
 \label{wf1}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf1.png}
 \caption{tper.it Homepage --- Unauthenticated user view (Guest)}
 \label{fig:wf1}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF2: PIANIFICA (ROUTE PLANNER)
@@ -4447,14 +4451,12 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \section{Wireframe 2: Pianifica --- The Route (Core Function)}
 \label{wf2}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf2.png}
 \caption{Pianifica --- Route search results with informational prices}
 \label{fig:wf2}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF3: DOVE COMPRARE (CHANNEL GUIDE)
@@ -4462,14 +4464,12 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \section{Wireframe 3: Dove Comprare --- Channel Guide}
 \label{wf3}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf3.png}
 \caption{Dove Comprare --- Sales channel guide with comparison table}
 \label{fig:wf3}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF4: BIGLIETTI (INFORMATIONAL)
@@ -4477,14 +4477,12 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \section{Wireframe 4: Biglietti --- Types and Prices}
 \label{wf4}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf4.png}
 \caption{Biglietti --- Types, prices, and recommended channels}
 \label{fig:wf4}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF5: AIUTO + TRAINER-MODE
@@ -4492,14 +4490,12 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \section{Wireframe 5: Aiuto and Trainer-Mode --- Step-by-Step Guide}
 \label{wf5}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf5.png}
 \caption{Aiuto and Trainer-Mode --- FAQ and activatable step-by-step guide}
 \label{fig:wf5}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF6: ABBONAMENTI + TRAINER (RENEWAL)
@@ -4507,14 +4503,12 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \section{Wireframe 6: Abbonamenti --- Renewal Trainer}
 \label{wf6}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf6.png}
 \caption{Abbonamenti --- Types and active Renewal trainer-mode with highlight}
 \label{fig:wf6}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF7a: SOLWEB PAYMENT
@@ -4522,14 +4516,12 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \section{Wireframe 7a: solweb --- Payment Flow}
 \label{wf7a}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf7a.png}
 \caption{solweb --- Payment with cart summary and payment method}
 \label{fig:wf7a}
 \end{figure}
-
-\newpage
 
 % ================================================================
 % WF7b: SOLWEB CONFIRMATION
@@ -4537,7 +4529,7 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \section{Wireframe 7b: solweb --- Post-Purchase Confirmation}
 \label{wf7b}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \wfgraphic{Wireframes/screenshot-wf7b.png}
 \caption{solweb --- Confirmation screen with summary and next options}
@@ -4559,7 +4551,7 @@ The wireframes presented in this section illustrate the key screens of \textbf{t
 \hline
 \textbf{Wireframe} & \textbf{Screen} & \textbf{Main Content} & \textbf{Key Elements} \\
 \hline
-WF1 & Homepage Guest & Route planner, 4 informational cards (Pianifica, Biglietti, Abbonamenti, Aiuto), Dove Comprare sidebar & Nav tabs, hero search, channels in sidebar, news, contacts \\
+WF1 & Homepage Guest & Route planner, 6 service cards (Pianifica, Dove Comprare, Biglietti, Abbonamenti, Aiuto, Orari e Linee), Dove Comprare sidebar & Nav tabs, hero search, channels in sidebar, news, contacts \\
 \hline
 WF2 & Pianifica & Route search form, results with timetables/duration/price, map/list toggle & Core function, Dove Comprare link for each result, informational prices \\
 \hline
@@ -4582,7 +4574,7 @@ WF7b & solweb Confirmation & Purchase confirmation, order summary, next options 
 
 \vspace{0.3cm}
 
-\begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm]
+\begin{tcolorbox}[summarybox]
 \small
 \textbf{Important note:} tper.it is an exclusively \textbf{informational} portal. There are no purchase, payment, or transaction flows. Each screen directs the user to the correct channel (\texttt{solweb.tper.it}, Roger App, Punti Tper, Tabaccherie, Contactless on board) to complete the desired operation. This architecture respects the actual channel separation in the TPER ecosystem.
 \end{tcolorbox}
@@ -4598,16 +4590,6 @@ WF7b & solweb Confirmation & Purchase confirmation, order summary, next options 
 \input{Comparison/00-comparison-body-en.tex}
 
 % ================================================================
-% Design Card: Final Reflections
-% ================================================================
-
-\newpage
-
-\section{Design Card --- Final Reflections}
-\label{sec:design-card}
-
-\input{Comparison/00-reflections-body-en.tex}
-
 % ================================================================
 % Design Summary Card
 % ================================================================
@@ -4616,7 +4598,7 @@ WF7b & solweb Confirmation & Purchase confirmation, order summary, next options 
 \section{Design Summary Card}
 \label{sec:design-summary}
 
-\begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=1.5mm,halign=center,valign=center,height=2cm]
+\begin{tcolorbox}[headerbox]
  \color{white}\LARGE\bfseries\sffamily DESIGN SUMMARY \\[0.1cm]
  \color{white!80}\small\sffamily Phase C --- Design Proposal
 \end{tcolorbox}
@@ -4634,19 +4616,19 @@ WF7b & solweb Confirmation & Purchase confirmation, order summary, next options 
 \textbf{Version} & \textbf{Folder} & \textbf{Date / Time} & \textbf{Evaluation Types} \\
 \hline
 \textbf{V0} 
-& \texttt{Website - Finale/} (initial state)
-& June 12, 2026, 18:00
-& Before formal evaluation \\
+& \texttt{Tper sito originale/}
+& Early May 2026
+& Original TPER website assessment \\
 \hline
 \textbf{V1} 
-& \texttt{Website - Finale/} (post-FT fix)
+& \texttt{Website - Inter/}
 & June 22, 2026, 12:00
-& Inspection evaluation --- Cognitive Walkthrough (CW-01--CW-11) \\
+& \parbox{4.5cm}{\raggedright --- Heuristic evaluation (D1--D5, H1--H5) \\ --- Formative test (Phase A) \\ --- 4 personas (Phase B)} \\
 \hline
 \textbf{Final (v2.0)} 
 & \texttt{Website - Finale/} (final version)
 & July 3, 2026, 10:00
-& \parbox{3.8cm}{\raggedright --- Cognitive Walkthrough (Post-Fix) \\ --- Formative Test (2 subjects) \\ --- Summative Test (2 subjects)} \\
+& \parbox{3.8cm}{\raggedright --- Heuristic evaluation (Post-Fix) \\ --- Formative Test (2 subjects) \\ --- Summative Test (2 subjects)} \\
 \hline
 \end{tabular}
 \caption{Design versions submitted for evaluation}
@@ -4658,74 +4640,56 @@ WF7b & solweb Confirmation & Purchase confirmation, order summary, next options 
 \subsection*{List of Issues Handled During Redesign, Ordered by Importance}
 
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{0.8cm}|p{3cm}|p{3.5cm}|p{6.5cm}|}
+\begin{longtable}{|p{0.8cm}|p{3.2cm}|p{3.3cm}|p{6.2cm}|}
 \hline
 \textbf{\#} & \textbf{Issue} & \textbf{Ref. Requirement / Test} & \textbf{Wireframe / Blueprint affected} \\
 \hline
 \endhead
 1 & Terminology ambiguity ``Where to Buy'' vs ``Subscriptions'' (\textbf{FT1}, P=5, I=5) 
-& Phase A: R1 (Task-Oriented Home Page) \\
-& Phase B: Cast Card --- UR-03 \\
- & WF1 (Homepage --- ``What do you want to do?'' grid and channel sidebar) \\
-& BP1 (Information Architecture: purchase vs informational sections) \\
-& BP3 (User Journey: decision point ``where to buy?'') \\
+& Phase A: R1 (Task-Oriented Home Page) \newline Phase B: Cast Card --- UR-03
+& WF1 (Homepage: ``What do you want to do?'' grid and channel sidebar) \newline BP1 (IA: purchase vs informational sections) \newline BP3 (User Journey: decision point ``where to buy?'') \\
 \hline
 2 & Confusion between purchase channels: user does not know which channel to use (\textbf{D2}, R4) 
-& Phase A: R2 (Flat IA), R4 (Trainer-Mode) \\
-& Phase B: Cast Card --- UR-01 \\
- & Phase D: FT2
- & WF3 (Where to Buy --- channel cards with icons) \\
-& BP2 (Multi-Channel Ecosystem: relationships and bridges) \\
+& Phase A: R2 (Flat IA), R4 (Trainer-Mode) \newline Phase B: Cast Card --- UR-01 \newline Phase D: FT2
+& WF3 (Where to Buy: channel cards with icons) \newline BP2 (Multi-Channel Ecosystem: relationships and bridges) \\
 \hline
 3 & No step-by-step guide for complex operations (\textbf{R5}) 
-& Phase A: R5 (Progress Persistence) \\
-& Phase B: Cast Card --- UR-05 \\
- & WF5 (Help + Trainer-Mode: 5-step guide) \\
-& BP3 (Trainer-Mode intervention along the journey) \\
+& Phase A: R5 (Progress Persistence) \newline Phase B: Cast Card --- UR-05
+& WF5 (Help + Trainer-Mode: 5-step guide) \newline BP3 (Trainer-Mode intervention along the journey) \\
 \hline
 4 & Overloaded homepage: company news obscures primary functions (\textbf{D1}, R1) 
-& Phase A: R1 (Task-Oriented Home Page) \\
- & WF1 (Homepage: hero search + 4 service cards, news in footer) \\
-& BP1 (IA: section reorganization by usage priority) \\
+& Phase A: R1 (Task-Oriented Home Page)
+& WF1 (Homepage: hero search + 4 service cards, news in footer) \newline BP1 (IA: section reorganization by usage priority) \\
 \hline
 5 & Terminology barrier: ``solweb'', ``Roger'' as technical names (\textbf{D3}, R2) 
-& Phase A: R2 (Descriptive Labels) \\
-& Phase B: Cast Card --- Laura, Maria \\
-& Phase D: FT1
-& WF3 (Channel cards: ``Online subscriptions (solweb)'') \\
-& BP2 (Ecosystem: user-centric labeling) \\
+& Phase A: R2 (Descriptive Labels) \newline Phase B: Cast Card --- Laura, Maria \newline Phase D: FT1
+& WF3 (Channel cards: ``Online subscriptions (solweb)'') \newline BP2 (Ecosystem: user-centric labeling) \\
 \hline
 6 & Lack of feedback and error recovery (\textbf{D4}, R10) 
-& Phase A: R10 (Exponential Error Messages) \\
- & BP3 (Decision points with recovery messages) \\
-& WF5 (Trainer-Mode: encouraging messages) \\
+& Phase A: R10 (Exponential Error Messages)
+& BP3 (Decision points with recovery messages) \newline WF5 (Trainer-Mode: encouraging messages) \\
 \hline
 7 & Mandatory authentication for basic operations (\textbf{D5}, R7) 
-& Phase A: R7 (Guest Path) \\
- & BP1 (IA: sections accessible without login) \\
-& WF1 (Channel sidebar always visible, even in guest mode) \\
+& Phase A: R7 (Guest Path)
+& BP1 (IA: sections accessible without login) \newline WF1 (Channel sidebar always visible, even in guest mode) \\
 \hline
 8 & No multilingual support for foreign users (\textbf{R12}) 
-& Phase A: R12 (English and Arabic) \\
-& Phase B: Cast Card --- Fatima Hassan
-& WF3 (Channel cards and wizard translated into EN/AR) \\
-& BP2 (Ecosystem: bridge with multilingual content) \\
+& Phase A: R12 (English and Arabic) \newline Phase B: Cast Card --- Fatima Benali
+& WF3 (Channel cards and wizard translated into EN/AR) \newline BP2 (Ecosystem: bridge with multilingual content) \\
 \hline
 9 & Required documentation not communicated to the user in advance (\textbf{R11}) 
-& Phase A: R11 (Preventive Checklist) \\
- & WF4 (Tickets: ``Required documents'' badge) \\
-& BP3 (Checklist before redirect to solweb) \\
+& Phase A: R11 (Preventive Checklist)
+& WF4 (Tickets: ``Required documents'' badge) \newline BP3 (Checklist before redirect to solweb) \\
 \hline
 10 & No ``First Access'' onboarding (\textbf{FT2}, P=2, I=3) 
 & Phase D: FT2, FT6
-& WF5 (Guided Tour ``First Time'' 4 screens) \\
-& BP3 (Entry point: onboarding before navigation) \\
+& WF5 (Guided Tour ``First Time'' 4 screens) \newline BP3 (Entry point: onboarding before navigation) \\
 \hline
 \end{longtable}
 
 \vspace{0.3cm}
 
-\begin{tcolorbox}[colback=primaryColor!5,colframe=primaryColor,arc=2mm]
+\begin{tcolorbox}[summarybox]
 \small
 \textbf{Note:} Each issue is related to the requirements from Phase A (R1--R13), Phase B (Cast Card --- Use Case UR-01--UR-05) and Phase D (Cognitive Walkthrough CW-01--CW-11, Formative Test FT1--FT7). The design solutions can be located in the wireframes (WF1--WF7b) and blueprints (BP1--BP3).
 \end{tcolorbox}
@@ -5111,7 +5075,7 @@ Giuseppina Borriello
 
 \subsection*{Date of test}
 \begin{tcolorbox}[base]
-June 20, 2026
+June 24, 2026
 \end{tcolorbox}
 
 \subsection*{Assistant of test (team member)}
@@ -5367,10 +5331,8 @@ The most significant suggestions that emerged during the Thinking
 Aloud sessions:
 
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Unify ``Abbonamenti'' and ``Dove Comprare'' (both):}
-  ``It's not clear that to buy you need to go to Dove Comprare and not
-  to Abbonamenti'' [English] (Mimmo). Both subjects looked for the purchase
-  and renewal on the product page, not the channel page.
+  \item \textbf{Informational red banner on ``Abbonamenti'' (both):}
+  The banner ``Tper is an informational site, to buy or renew subscriptions visit the Dove Comprare section'' reduced attempts to purchase on the wrong page. Both subjects noticed the banner and followed the link.
 
   \item \textbf{Explain technical terminology (Mimmo):} ``Roger'',
   ``Trainer Mode'', ``Contactless'' are not understood. He suggests
@@ -5499,7 +5461,7 @@ immediately.
   \node[orange!80!black, font=\footnotesize\bfseries, below right]
     at (3.1,2) {FT3};
 
-  % FT4 --- P=4, I=3 (offset â†–)
+  % FT4 --- P=4, I=3 (offset NW)
   \filldraw[blue!70!black] (3.82,3.18) circle (3.5pt);
   \node[blue!70!black, font=\footnotesize\bfseries, above left]
     at (3.82,3.18) {FT4};
@@ -5509,12 +5471,12 @@ immediately.
   \node[teal!80!black, font=\footnotesize\bfseries, above]
     at (3.15,4) {FT5};
 
-  % FT6 --- P=4, I=3 (offset â†˜)
+  % FT6 --- P=4, I=3 (offset SE)
   \filldraw[gray!70] (4.18,2.82) circle (3.5pt);
   \node[gray!70, font=\footnotesize\bfseries, below right]
     at (4.18,2.82) {FT6};
 
-  % FT7 --- P=2, I=3 (offset â†™ from FT2)
+  % FT7 --- P=2, I=3 (offset SW from FT2)
   \filldraw[brown!80!black] (1.82,2.82) circle (3.5pt);
   \node[brown!80!black, font=\footnotesize\bfseries, below right]
     at (1.82,2.82) {FT7};
@@ -5721,7 +5683,7 @@ Laura Palumbo
 
 \subsection*{Date and time of test}
 \begin{tcolorbox}[base]
-June 28, 2026, 5:00 PM
+July 4, 2026, 5:00 PM
 \end{tcolorbox}
 
 \subsection*{Assistant of test (team member)}
@@ -5833,7 +5795,7 @@ Maria Borriello
 
 \subsection*{Date and time of test}
 \begin{tcolorbox}[base]
-June 30, 2026, 4:30 PM
+July 4, 2026, 4:30 PM
 \end{tcolorbox}
 
 \subsection*{Assistant of test (team member)}
@@ -6107,3 +6069,5 @@ Average task time & 417.9 s & \textbf{133.9 s} \\
 \end{tcolorbox}
 
 \end{document}
+
+

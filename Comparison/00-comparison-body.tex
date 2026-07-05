@@ -1,4 +1,4 @@
-
+﻿
 \begin{tcolorbox}[colback=primaryColor,colframe=primaryColor,arc=3mm,halign=center,valign=center,height=2.5cm]
     \color{white}\LARGE\bfseries CONFRONTO BEFORE/AFTER \\[0.2cm]
     \color{white!80}\large UX Design Project: Help People Help People --- TPER S.p.A. \\[0.1cm]
@@ -35,17 +35,11 @@ Il redesign trasforma \texttt{tper.it} da contenitore generico di notizie a \tex
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Tper sito originale/Homepage.png}
+\includegraphics[width=0.85\textwidth]{Tper sito originale/Homepage.png}
 \par\small\textit{Before: \texttt{tper.it} live --- slider di news aziendali, nessuna CTA primaria}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/homepage.png}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/homepage.png}
 \par\small\textit{After: tper 2.0 --- hero pianificatore + griglia 6 card task-oriented}
-\end{minipage}
 \caption{Homepage \texttt{tper.it}}
 \label{fig:comparison-home}
 \end{figure}
@@ -93,19 +87,13 @@ Banner esplicito su ogni pagina: ``\texttt{tper.it} è un sito informativo. Per 
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Tper sito originale/HomepageS.png}\\[2pt]
+\includegraphics[width=0.85\textwidth]{Tper sito originale/HomepageS.png}\\[2pt]
 {\small\textit{+ seconda vista:}}\\[2pt]
-\includegraphics[width=\textwidth]{Tper sito originale/HomepageS2.png}
+\includegraphics[width=0.85\textwidth]{Tper sito originale/HomepageS2.png}
 \par\small\textit{Before: \texttt{solweb} originale --- login obbligatorio, nessun percorso guest}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/HomepageS.png}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/HomepageS.png}
 \par\small\textit{After: solweb 2.0 --- login + 4 azioni rapide senza registrazione}
-\end{minipage}
 \caption{Homepage \texttt{solweb.tper.it}}
 \label{fig:comparison-solweb-home}
 \end{figure}
@@ -153,15 +141,15 @@ Tutte le operazioni richiedono registrazione. Nessuna distinzione tra operazioni
 
 \subsection*{Il Problema Originale}
 
-Nel sito originale, tre pagine si sovrapponevano generando confusione e duplicazione:
+Nel sito originale, Biglietti, Abbonamenti e Tariffe non erano tre pagine separate, ma \textbf{tre sezioni della stessa pagina}, creando un sovraccarico informativo:
 
 \begin{itemize}[nosep]
-    \item \textbf{Biglietti}: elencava biglietti + canali di vendita + tariffe --- troppe informazioni per una pagina sola;
-    \item \textbf{Abbonamenti}: elencava abbonamenti + canali + tariffe --- stessa duplicazione della pagina Biglietti;
-    \item \textbf{Tariffe}: pagina separata con i prezzi, \textbf{ridondante} e scollegata dal contesto d'uso.
+    \item \textbf{Biglietti}: elencava biglietti + canali di vendita + tariffe --- troppe informazioni in un'unica pagina;
+    \item \textbf{Abbonamenti}: elencava abbonamenti + canali + tariffe --- stessa duplicazione della sezione Biglietti;
+    \item \textbf{Tariffe}: sezione prezzi sulla stessa pagina, \textbf{ridondante} e scollegata dal contesto d'uso.
 \end{itemize}
 
-Risultato: l'utente doveva \textbf{saltare tra 3 pagine} per rispondere a domande come \textit{``quale abbonamento comprare?''} e \textit{``dove lo compro?''}. La guida ai canali (``Rete di vendita'') era sepolta al terzo livello di navigazione.
+Risultato: l'utente doveva \textbf{scorrere un'unica pagina} confrontando visivamente sezioni diverse per rispondere a domande come \textit{``quale abbonamento comprare?''} e \textit{``dove lo compro?''}. La guida ai canali (``Rete di vendita'') era sepolta al terzo livello di navigazione.
 
 \subsection*{La Soluzione: Separazione delle Responsabilità}
 
@@ -182,7 +170,7 @@ Le \textbf{tariffe} sono state \textbf{integrate} direttamente in Biglietti e Ab
 \includegraphics[width=0.332\textwidth]{Tper sito originale/Abbonamenti.png}\hfill
 \includegraphics[width=0.332\textwidth]{Tper sito originale/Tariffe.png}\\[2pt]
 {\small\textit{Biglietti \hspace{3.3cm} Abbonamenti \hspace{3.3cm} Tariffe}}\\[2pt]
-{\footnotesize 3 pagine sovrapposte: contenuti duplicati, canali sepolti, terminologia aziendale}
+{\footnotesize Un'unica pagina con 3 sezioni: contenuti duplicati, canali sepolti, terminologia aziendale}
 
 \vspace{0.5cm}
 
@@ -205,11 +193,11 @@ Le \textbf{tariffe} sono state \textbf{integrate} direttamente in Biglietti e Ab
 \hline
 & \textbf{Before (Originale)} & \textbf{After (Redesign 2.0)} \\ \hline
 \cellcolor{primaryColor!15} &
-\textit{3 pagine sovrapposte} &
+\textit{Un'unica pagina, 3 sezioni sovrapposte} &
 \textit{3 pagine specializzate} \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Struttura}}} &
-3 pagine con contenuti duplicati e confini sfumati. Biglietti e Abbonamenti contengono entrambi riferimenti a tariffe e canali. La pagina Tariffe è ridondante. Navigazione a 3+ livelli per raggiungere la guida canali (D2). &
+Un'unica pagina con 3 sezioni sovrapposte e confini sfumati. Biglietti e Abbonamenti contengono entrambi riferimenti a tariffe e canali. La sezione Tariffe è ridondante. Navigazione a 3+ livelli per raggiungere la guida canali (D2). &
 3 pagine con responsabilità chiare e distinte. Ogni pagina ha un unico compito. Nessuna duplicazione. Accesso diretto a ogni sezione dalla navigazione principale (max 1 click). Le tariffe sono mostrate nel contesto del prodotto (R2). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Biglietti}}} &
@@ -221,7 +209,7 @@ Elenca piani di abbonamento con terminologia aziendale (MiMuovo, SaltaSu, Pronto
 Pagina focalizzata esclusivamente sugli abbonamenti. Wizard a 7 domande (azione, impersonale?, zona, durata, intestatario, agevolazione, canale). Filtro a 4 gruppi. Accordion ``Come Acquistare o Rinnovare''. Callout per verificare diritto a sconto (R9). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Canali / Tariffe}}} &
-\textbf{Canali}: ``Rete di vendita'' sepolta sotto Biglietti e Abbonamenti, raggiungibile in 3 click. \textbf{Tariffe}: pagina separata con prezzi, scollegata dal contesto d'uso --- l'utente deve ricordare il prezzo mentre naviga altrove per decidere (D3). &
+\textbf{Canali}: ``Rete di vendita'' sepolta sotto Biglietti e Abbonamenti, raggiungibile in 3 click. \textbf{Tariffe}: sezione prezzi sulla stessa pagina, scollegata dal contesto d'uso --- l'utente deve ricordare il prezzo mentre naviga altrove per decidere (D3). &
 \textbf{Dove Comprare}: sezione autonoma e prominente nella navigazione principale. Wizard a 3 domande $\rightarrow$ canale consigliato con icona, descrizione e link diretto. Tabella comparativa 5 canali $\times$ 7 operazioni. \textbf{Tariffe}: integrate in Biglietti e Abbonamenti --- visibili nel momento della decisione (R2, R4). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Impatto}}} &
@@ -234,29 +222,25 @@ Dati Phase D: Laura P. 4/5 task (80\%), SUS 72.5 (+35 punti). T4 (agevolazioni):
 
 \vspace{0.3cm}
 
-% ============================================================
-% CONFRONTO 4: FLUSSO ACQUISTO solweb
-% ============================================================
-\section{Flusso Acquisto \texttt{solweb.tper.it}}
-\label{sec:comparison-acquisto}
 
-\textbf{D4+D5 $\rightarrow$ R7+R10} --- No recupero errori $\rightarrow$ Messaggi guidati + guest path. Chris 498s, 8 errori, 10 backtrack su T3.
+
+% ============================================================
+% CONFRONTO 4: AGEVOLAZIONI E SCONTI
+% ============================================================
+\section{Agevolazioni e Sconti}
+\label{sec:comparison-agevolazioni}
+
+\textbf{UR-05 $\rightarrow$ R9+R11} --- Utente non sa a quali sconti ha diritto $\rightarrow$ Wizard 4 domande + tooltip ISEE. David Carter paga 50\euro/mese per 3 mesi prima di scoprire di avere diritto a 30\euro.
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Tper sito originale/FlussoAcquistoS.png}
-\par\small\textit{Before: flusso acquisto originale --- registrazione obbligatoria, nessuna guida}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/RiepilogoS.png}
-\par\small\textit{After: flusso acquisto 2.0 --- barra progresso, form guidato, riepilogo}
-\end{minipage}
-\caption{Flusso Acquisto \texttt{solweb.tper.it}}
-\label{fig:comparison-acquisto}
+\includegraphics[width=0.85\textwidth]{Tper sito originale/Agevolazioni.png}
+\par\small\textit{Before: pagina agevolazioni originale --- linguaggio burocratico, nessuna guida}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/Agevolazioni.png}
+\par\small\textit{After: wizard agevolazioni 2.0 --- 4 domande, risultati personalizzati, tooltip ISEE}
+\caption{Agevolazioni e Sconti}
+\label{fig:comparison-agevolazioni}
 \end{figure}
 
 \begin{table}[H]
@@ -267,54 +251,52 @@ Dati Phase D: Laura P. 4/5 task (80\%), SUS 72.5 (+35 punti). T4 (agevolazioni):
 \hline
 & \textbf{Before} & \textbf{After} \\ \hline
 \cellcolor{primaryColor!15} &
-\textit{Flusso acquisto solweb originale} &
-\textit{Flusso acquisto solweb 2.0} \\ \hline
+\textit{Sezione agevolazioni originale} &
+\textit{Wizard agevolazioni in tper 2.0} \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Progresso}}} &
-Nessun indicatore di progresso. L'utente non sa a che punto è del processo né quanti passi mancano. Abbandono frequente per disorientamento (Issue D2). &
-\textbf{Barra di progresso a 4 passi}: Accedi $\rightarrow$ Scegli il Piano $\rightarrow$ Documenti $\rightarrow$ Pagamento. Ogni passo mostra: numero del passo, descrizione testuale, indicatore grafico di completamento (verde = completato, rosso = attivo). Visibile su tutte le pagine del flusso (R3). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Accesso}}} &
+Sezione sepolta a 3+ livelli di profondità nella navigazione. Raggiungibile solo attraverso ``Abbonamenti'' $\rightarrow$ ``Carta Agevolata''. Nessun percorso diretto dalla homepage (D2, UR-05). &
+\textbf{Percorso dedicato ``Hai diritto a uno sconto?''} visibile dalla homepage (card ``Scopri Abbonamenti'') e dalla pagina Abbonamenti con callout prominente ``Scopri in 30 secondi a quali agevolazioni puoi accedere''. Breadcrumb: Home $\rightarrow$ Abbonamenti $\rightarrow$ Agevolazioni (R2, R9). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Linguaggio}}} &
+Registro burocratico: ``ISEE'', ``DSU'', ``Carta Agevolata'', ``scaglioni'', ``delibere''. Nessuna spiegazione dei termini. Per un utente straniero (David Carter, competenza linguistica 2/5), i termini rimangono incomprensibili anche con Google Translate (UR-05, Use Case \#2). &
+\textbf{Linguaggio cittadino} con tooltip esplicativi. All'hover su ``ISEE'' compare ``Indicatore della Situazione Economica Equivalente. Certifica il reddito del nucleo familiare. Si richiede gratuitamente al CAF o online sul sito INPS.'' Stesso approccio per ``DSU'' e ``Carta Agevolata''. Disponibile in IT/EN/AR (R9, R12). \\ \hline
+
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Wizard}}} &
+\textbf{Assente.} L'utente deve leggere pagine di delibere e scaglioni per scoprire se ha diritto a uno sconto. Nessuna guida interattiva. Il test con David Carter mostra 15 minuti di tentativi e abbandono (Use Case \#2). &
+\textbf{Wizard a 4 domande}: (1) Quanti anni hai? (2) Hai un ISEE? (3) Con quale frequenza usi i mezzi? (4) Per chi è l'abbonamento? Ogni risposta filtra le agevolazioni disponibili in tempo reale. Risultato: ``Abbiamo trovato X agevolazioni per te!'' con nome, descrizione, documenti necessari e link diretto (RF-35, R9). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Documenti}}} &
-Nessuna checklist preventiva. L'utente scopre quali documenti servono solo dopo aver iniziato il flusso, spesso causando abbandono a metà. Utenti anziani costretti a tornare allo sportello perché privi dei documenti (R11). &
-\textbf{Checklist interattiva} con barra di progresso (0/4 $\rightarrow$ 4/4). 4 card documento con riproduzione visiva del documento reale (dov'è il numero, dov'è la scadenza). Checkbox ``Ho questo documento''. Caricamento guidato. Badge ``Documenti necessari'' visibile prima di iniziare (R11). \\ \hline
+Nessuna checklist preventiva. I documenti necessari (ISEE, DSU, foto tessera, documento identità) sono menzionati in pagine burocratiche separate. L'utente arriva allo sportello senza i documenti giusti (Roberto, Use Case \#1). &
+\textbf{Checklist documenti integrata} nei risultati del wizard: ogni agevolazione mostra esattamente quali documenti servono, con tooltip su dove ottenerli. Riproduzione visiva del documento (es. ``ISEE --- prima pagina'' con evidenziazione gialla del valore). Link ``Vedi Abbonamenti'' per procedere all'acquisto (R11). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Pagamento}}} &
-Form di pagamento senza riepilogo ordine. Nessuna icona di sicurezza. Messaggi di errore generici: ``Errore --- riprovare''. L'utente non sa cosa ha sbagliato né come correggere (Issue D4). &
-\textbf{Riepilogo ordine} sempre visibile: piano, durata, totale. 3 metodi di pagamento con radio button (Carta, PayPal, Bonifico). Checkbox termini. Messaggi di errore esponenziali: cosa è successo + perché + come risolvere + alternativa (R10). \\ \hline
-
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Flessibilità}}} &
-Unico percorso possibile: registrazione $\rightarrow$ login $\rightarrow$ acquisto. Nessuna variante per ricarica, rinnovo impersonale o sanzioni (Issue D5). &
-\textbf{Multi-flusso}: pagamento.html gestisce 4 flussi diversi (acquisto, rinnovo, ricarica, sanzioni) con breadcrumb e form adattivi. Il percorso guest per rinnovo impersonale e ricarica salta completamente la registrazione (R7). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Impatto}}} &
+David Carter (Phase A): 3 mesi a pagare 50\euro/mese invece di 30\euro. Roberto: arriva allo sportello senza documenti e rimanda. SUS medio 37.5/100. &
+Laura P. (Phase D, T4): da 195\,s e 7 errori a 57\,s e 0 errori. Wizard agevolazioni completato in 30 secondi. Tooltip ISEE usato spontaneamente. SUS 72.5 (+35 punti). \\ \hline
 \end{tabular}
-\caption{Flusso Acquisto solweb}
-\label{tab:comparison-acquisto}
+\caption{Agevolazioni e Sconti}
+\label{tab:comparison-agevolazioni}
 \end{table}
 
 \vspace{0.3cm}
 
 % ============================================================
-% CONFRONTO 5: RIEPILOGO POST-ACQUISTO
+% CONFRONTO 5: PIANIFICAZIONE VIAGGIO
 % ============================================================
-\section{Riepilogo Post-Acquisto \texttt{solweb.tper.it}}
-\label{sec:comparison-riepilogo}
+\section{Pianificazione del Viaggio}
+\label{sec:comparison-planning}
 
-\textbf{UR-02 $\rightarrow$ R6} --- PDF scambiato per biglietto valido $\rightarrow$ 3 passi guidati post-acquisto. Rischio multa a bordo.
+\textbf{D2 $\rightarrow$ R1+R2} --- Pianificatore su pagina separata, raggiungibile tramite link ``Percorsi e Orari'' in homepage (1 click), ma privo di campi di ricerca visibili direttamente in homepage $\rightarrow$ Hero search + pagina dedicata. Maria: 724\,s, 16 errori, 19 backtrack su T2 (Phase A).
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Tper sito originale/RiepilogoS.png}
-\par\small\textit{Before: riepilogo originale --- solo conferma, nessuna guida post-acquisto}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/AcquistoS.png}
-\par\small\textit{After: conferma 2.0 --- 3 passi guidati + ricevuta stampabile}
-\end{minipage}
-\caption{Riepilogo Post-Acquisto}
-\label{fig:comparison-riepilogo}
+\includegraphics[width=0.85\textwidth]{Tper sito originale/Percorsi.png}
+\par\small\textit{Before: pianificatore originale --- raggiungibile da homepage via ``Percorsi e Orari'' (link in homepage) $\rightarrow$ ``Calcola il tuo percorso''}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/Percorsi.png}
+\par\small\textit{After: pianifica 2.0 --- hero search in homepage + pagina dedicata con mappa e form}
+\caption{Pianificazione del Viaggio}
+\label{fig:comparison-planning}
 \end{figure}
 
 \begin{table}[H]
@@ -325,27 +307,27 @@ Unico percorso possibile: registrazione $\rightarrow$ login $\rightarrow$ acquis
 \hline
 & \textbf{Before} & \textbf{After} \\ \hline
 \cellcolor{primaryColor!15} &
-\textit{Riepilogo originale post-acquisto} &
-\textit{Conferma post-acquisto in solweb 2.0} \\ \hline
+\textit{Pianificatore originale \texttt{tper.it}} &
+\textit{Pianificazione viaggio in tper 2.0} \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Conferma}}} &
-Messaggio scarno di conferma. Nessuna spiegazione di cosa accade dopo. Il PDF generato viene scambiato per un titolo di viaggio valido --- ma non lo è (UR-02). &
-\textbf{H1}: ``Grazie per il tuo acquisto!''. Barra di progresso completa (4/4 con spunta verde). Riepilogo ordine dettagliato: piano, email, numero ordine, metodo di pagamento, totale. Pulsante ``Scarica Ricevuta (PDF)'' (R6). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Accesso}}} &
+Link ``Percorsi e Orari'' visibile in homepage (1 click), che porta alla pagina del pianificatore. Nessun campo di ricerca visibile direttamente in homepage. L'utente deve riconoscere l'etichetta aziendale ``Percorsi e Orari'' per iniziare il task (D3). &
+\textbf{Hero search in homepage}: campi ``Partenza'' e ``Destinazione'' visibili senza click. Sezione ``Pianifica'' nella navigazione principale (1 click). Card ``Pianifica'' nella griglia ``Cosa vuoi fare?'' con icona distintiva (R1, R2). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Istruzioni}}} &
-\textbf{Assenti.} Nessuna guida su come utilizzare il biglietto/abbonamento acquistato. L'utente non sa se deve stampare qualcosa, mostrare il telefono, o validare una tessera (UR-02). &
-\textbf{3 passi guidati post-acquisto}: (1) Riceverai una email di conferma con i dettagli dell'ordine, (2) La tua tessera si attiverà automaticamente entro 24 ore, (3) Mostra la tessera al controllore a bordo. Ogni passo è numerato e illustrato con icone (R6, UR-02). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Form}}} &
+Form di ricerca testuale senza suggerimenti. Unico campo combinato partenza/destinazione. Nessun filtro per modalità di trasporto. Nessuna mappa interattiva. &
+\textbf{Form completo}: partenza e destinazione separati con pulsante scambia. Modalità di trasporto (bus/treno/bici/piedi). Data e ora con checkbox ``Partenza ora''. Mappa di Bologna interattiva a lato (click per ingrandire). Autocomplete sui campi (R1). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Supporto}}} &
-Nessun link di supporto post-acquisto. L'utente in difficoltà deve cercare autonomamente il servizio clienti. &
-Link all'aiuto sempre visibile. Riferimento al numero ordine per assistenza. Possibilità di tornare alla dashboard o alla home. \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Risultati}}} &
+Elenco testuale di risultati senza orari né durata. Nessuna indicazione di prezzo. Nessun link al canale di acquisto. L'utente deve prendere appunti e cercare altrove come comprare il biglietto (UR-01, UR-03). &
+\textbf{Risultati strutturati} con orari, durata e prezzo informativo per ogni opzione. Link ``Dove Comprare'' integrato in ogni risultato. Toggle mappa/elenco. Banner informativo: ``Su tper.it non puoi acquistare --- scopri come e dove comprare'' (R1, R6). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{Multicanale}}} &
-Nessuna connessione con altri canali. Il percorso termina senza indicazioni su come usare il servizio acquistato su Roger, al Punto Tper o a bordo. &
-Riferimenti cross-canale: se hai acquistato un abbonamento, ti spieghiamo come usarlo anche sull'App Roger. Se hai pagato una sanzione, ti indichiamo come verificare lo stato (UR-02, R6). \\ \hline
+\raisebox{0.5cm}{\rotatebox{90}{\textbf{Impatto}}} &
+Maria B. (Phase A): 724\,s, 16 errori, 19 backtrack. Non trova il pianificatore e abbandona dopo 12 minuti. SUS medio 37.5/100. &
+Laura P. (Phase D, T2): 115\,s, 1 errore, 0 backtrack. ``Pianifica'' card riconosciuta immediatamente. Hero search usato senza esitazione. SUS 72.5 (+35 punti). \\ \hline
 \end{tabular}
-\caption{Riepilogo Post-Acquisto}
-\label{tab:comparison-riepilogo}
+\caption{Pianificazione del Viaggio}
+\label{tab:comparison-planning}
 \end{table}
 
 \vspace{0.3cm}
@@ -360,19 +342,18 @@ Riferimenti cross-canale: se hai acquistato un abbonamento, ti spieghiamo come u
 
 \begin{figure}[H]
 \centering
-\begin{minipage}{0.498\textwidth}
+\fcolorbox{borderColor}{backgroundColor}{%
+\begin{minipage}{0.78\textwidth}
 \centering
-\rule{\textwidth}{0.1pt}
-\vspace{2cm}
-\rule{\textwidth}{0.1pt}
+\vspace{1.5cm}
+{\large\sffamily\textcolor{secondaryColor}{Nessun Trainer Mode}}\\[4pt]
+\small\textit{Il sito originale non offriva alcuna modalità assistita.}
+\vspace{1.5cm}
+\end{minipage}}
 \par\small\textit{Before: nessun trainer mode --- solo help desk telefonico}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.498\textwidth}
-\centering
-\includegraphics[width=\textwidth]{Redesign Tper 2.0/Aiuto.png}
+\vspace{0.4cm}
+\includegraphics[width=0.85\textwidth]{Redesign Tper 2.0/Aiuto.png}
 \par\small\textit{After: sezione Aiuto con trainer mode, FAQ, guide passo-passo}
-\end{minipage}
 \caption{Trainer Mode e Supporto}
 \label{fig:comparison-trainer}
 \end{figure}
@@ -390,7 +371,7 @@ Riferimenti cross-canale: se hai acquistato un abbonamento, ti spieghiamo come u
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Trainer}}} &
 \textbf{Inesistente.} Nessuna modalità assistita per operatori allo sportello. Nessun meccanismo di guida passo-passo per accompagnare utenti a bassa competenza digitale nell'orientamento tra i canali. L'unico canale di supporto è il servizio clienti (telefonico o email) (R4, R5). &
-\textbf{Barra laterale integrata} su tutte le 22 pagine del sito. 5 moduli trainer: Rinnovo, Acquista, Viaggio, Biglietto, Ricarica. Ogni modulo carica automaticamente la pagina corretta con gli highlight sugli elementi rilevanti. Attivazione: su richiesta (pulsante $\mathcal{T}$) o automatica dopo 2 errori consecutivi dell'utente (R4, R5). \\ \hline
+\textbf{Barra laterale integrata} su tutte le 22 pagine del sito. 5 moduli trainer: Rinnovo, Acquista, Viaggio, Biglietto, Ricarica. Ogni modulo carica automaticamente la pagina corretta con gli highlight sugli elementi rilevanti. Attivazione: su richiesta (pulsante $\mathcal{T}$) (R4, R5). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Script}}} &
 Nessuno script operativo per il personale di sportello. &
@@ -445,9 +426,6 @@ Testo piccolo (10--11pt). Difficoltà di lettura per utenti over 65, particolarm
 Contrasto non dichiarato, verosimilmente inferiore allo standard WCAG AA per alcune combinazioni colore. &
 \textbf{Rapporto minimo 4.5:1} (WCAG AA). Pulsante \textbf{$\blacksquare$} per attivare/disattivare la modalità contrasto elevato su tutte le pagine. Toggle persistente. Palette completamente rivista in modalità alto contrasto (R8). \\ \hline
 
-\raisebox{0.5cm}{\rotatebox{90}{\textbf{ARIA}}} &
-Skip link ``Salta al contenuto principale'' presente. Ruoli ARIA assenti o parziali sulla maggior parte degli elementi interattivi. &
-\textbf{ARIA completo}: \texttt{role="banner"}, \texttt{role="navigation"}, \texttt{role="main"}, \texttt{role="complementary"} (trainer bar), \texttt{role="contentinfo"} (footer), \texttt{role="dialog"} (modali e search overlay), \texttt{role="search"} (route planner), \texttt{aria-label} su tutti gli elementi interattivi, \texttt{aria-current="page"} sulla pagina attiva, \texttt{aria-expanded} su hamburger e accordion, \texttt{aria-modal="true"} su overlay e modali (R8). \\ \hline
 
 \raisebox{0.5cm}{\rotatebox{90}{\textbf{Target}}} &
 Touch target inferiori a 44$\times$44px in molte aree, rendendo difficile l'uso su smartphone per utenti con ridotta destrezza. &
@@ -498,50 +476,5 @@ Nessun percorso di primo accesso. L'utente arriva sulla homepage e deve capire t
 \label{tab:comparison-tone}
 \end{table}
 
-\vspace{0.5cm}
 
-% ============================================================
-% RIEPILOGO
-% ============================================================
-\section{Riepilogo delle Differenze Chiave}
-\label{sec:comparison-summary}
 
-\begin{tcolorbox}[colback=backgroundColor,colframe=primaryColor,arc=2mm]
-{\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|p{3.5cm}|p{5cm}|p{5cm}|}
-\hline
-\textbf{Dimensione} & \textbf{Before (\texttt{tper.it} live)} & \textbf{After (tper 2.0)} \\ \hline
-Homepage \texttt{tper.it} & News aziendali e slider istituzionale (D1) & Hero pianificatore + griglia 6 card task-oriented (R1) \\ \hline
-Homepage \texttt{solweb} & Solo login, nessun percorso guest (D5) & 4 azioni rapide senza registrazione + progress bar (R7) \\ \hline
-Architettura Informativa & 3 pagine sovrapposte (Biglietti, Abbonamenti, Tariffe), canali sepolti al 3\textdegree{} livello (D2) & 3 pagine specializzate: Biglietti, Abbonamenti, Dove Comprare --- ogni pagina, un compito (R2) \\ \hline
-Navigazione & Mega-menu 200+ voci, 5 livelli di profondità & Nav flat 8 voci + breadcrumb su tutte le pagine \\ \hline
-``Dove Comprare'' & Inesistente --- \textit{Rete di vendita} sepolta & Sezione autonoma + wizard 3 domande + tabella comparativa 5$\times$7 \\ \hline
-solweb / Roger & Mai menzionati in homepage & Card dedicate con CTA dirette e modale di transizione \\ \hline
-Guida canali & Assente --- scelta affidata all'utente & Wizard interattivi su 3 pagine + tabella comparativa \\ \hline
-Flusso acquisto & Senza progresso, senza checklist documenti & Barra 4 passi + checklist interattiva (R3, R11) \\ \hline
-Post-acquisto & Nessuna istruzione, PDF scambiato per biglietto (UR-02) & 3 passi guidati + ricevuta stampabile (R6) \\ \hline
-Trainer Mode & Inesistente (R5) & Barra laterale su 22 pagine + 5 moduli + persistenza + riepilogo (R4, R5, R6) \\ \hline
-FAQ / Guide & Solo help desk & Accordion per canale + 3 guide passo-passo + script operatore \\ \hline
-Lingua & Solo italiano & IT + EN + AR, 1.600+ chiavi i18n, supporto RTL (R12) \\ \hline
-Carattere / Contrasto & 10--11pt, sotto WCAG AA & 14pt min, 4.5:1, toggle A+, toggle contrasto (R8) \\ \hline
-ARIA / Touch target & Parziale, target $<$ 44px & Completo: ruoli, label, stati; tutti i target $\ge$ 44$\times$44px (R8) \\ \hline
-Tono & Burocratico/istituzionale & Incoraggiante/inclusivo + micro-rinforzi (R9) \\ \hline
-Terminologia & Aziendale (Rete di vendita, MiMuovo, Emettitrici) & Utente-centrica con glosse (Dove Comprare, Abbonamenti online) \\ \hline
-Errori & Messaggi generici ``Errore --- riprovare'' & Messaggi esponenziali: causa + soluzione + alternativa (R10) \\ \hline
-Messaggio informativo & Assente & Banner ``tper.it è un sito informativo'' su ogni pagina (R1) \\ \hline
-Documenti & Nessuna checklist preventiva & Checklist interattiva con riproduzione visiva (R11) \\ \hline
-Guest path & Inesistente --- login obbligatorio per tutto & Rinnovo impers., ricarica, sanzioni senza registrazione (R7) \\ \hline
-\end{tabular}
-}
-\end{tcolorbox}
-
-\vspace{0.5cm}
-
-\begin{center}
-{\color{secondaryColor}\small
-Documento compilato sulla base dell'analisi diretta dei siti \texttt{tper.it} e \texttt{solweb.tper.it} live, \\
-delle raccomandazioni R1--R13 della Phase B, e dei risultati dei test utente Phase A (4 soggetti, SUS 37.5/100) \\[4pt]
-\textbf{Phase C --- Design Proposal: Before/After Comparison} \\[4pt]
-Progetto: UX Design Project: Help People Help People --- TPER S.p.A.}
-\end{center}
