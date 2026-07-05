@@ -1,24 +1,23 @@
-# TPER Website Redesign — UX Design Project
+# TperTutti — TPER Website Redesign
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-brightgreen)](https://francescocastaldi.github.io/Esame-UUXD/)
 [![Deploy to GitHub Pages](https://github.com/FrancescoCastaldi/Esame-UUXD/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/FrancescoCastaldi/Esame-UUXD/actions/workflows/deploy-pages.yml)
-[![Last Commit](https://img.shields.io/github/last-commit/FrancescoCastaldi/Esame-UUXD)](https://github.com/FrancescoCastaldi/Esame-UUXD/commits/master)
-[![Repo Size](https://img.shields.io/github/repo-size/FrancescoCastaldi/Esame-UUXD)](https://github.com/FrancescoCastaldi/Esame-UUXD)
-[![Contributors](https://img.shields.io/github/contributors/FrancescoCastaldi/Esame-UUXD)](https://github.com/FrancescoCastaldi/Esame-UUXD/graphs/contributors)
 
-A comprehensive **User Experience redesign** of the [TPER](https://www.tper.it) website (public transport company serving Bologna and Emilia-Romagna, Italy). This project follows the **Double Diamond methodology** (Discover, Define, Develop, Deliver) and was developed for the *User Experience Design* course at the University of Bologna.
+A comprehensive **User Experience redesign** of the [TPER](https://www.tper.it) website (public transport company serving Bologna and Emilia-Romagna, Italy). Follows the **Double Diamond methodology** (Discover, Define, Develop, Deliver) for the *User Experience Design* course at the University of Bologna.
+
+**Team:** TperTutti
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-> **[View the redesigned website →](https://francescocastaldi.github.io/Esame-UUXD/)**  
+> **[View the redesigned website](https://francescocastaldi.github.io/Esame-UUXD/)**  
 > Hosted on **GitHub Pages** — fully interactive prototype (22 pages)
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 
 | Area | Description |
 |------|-------------|
@@ -29,108 +28,85 @@ A comprehensive **User Experience redesign** of the [TPER](https://www.tper.it) 
 
 ---
 
-## 🏗️ Repository Structure
+## Repository Structure
 
 ```
-├── main.tex                  # Main LaTeX thesis document (~6,100 lines)
-├── main.pdf                  # Compiled thesis PDF (117 pages)
-├── Website - Finale/         # Final prototype — 22-page functional website
-│   ├── index.html            # Homepage
-│   ├── biglietti.html        # Tickets page with interactive wizard
-│   ├── abbonamenti.html      # Subscriptions page with renewal wizard
-│   ├── pianifica.html        # Trip planner
-│   ├── dove-comprare.html    # Where to buy (channel selector)
-│   ├── aiuto.html            # Help / FAQ
-│   ├── solweb/               # User account area (12 pages)
-│   ├── js/                   # JavaScript (app, i18n, trainer modules)
-│   ├── css/                  # Stylesheet (~2,000 lines)
-│   └── images/               # Assets
-├── FaseD2/                   # Inspection card & Formative test card
-├── Blueprint/                # IA diagrams, ecosystem map, journey map
-├── Wireframes/               # 8 wireframe screenshots + LaTeX document
-├── Comparison/               # Before/after comparison & reflections
-├── IA/                       # Information Architecture card
-├── Redesign Tper 1.0/        # First redesign screenshots (12 PNG)
-├── Redesign Tper 2.0/        # Second redesign screenshots (12 PNG)
-├── Tper sito originale/      # Original site screenshots (11 PNG)
-└── images/                   # Thesis images (personas, charts, etc.)
+├── Website - Finale/          # Final redesigned prototype (V2)
+│   ├── index.html             # Homepage (guest)
+│   ├── pianifica.html         # Route planner
+│   ├── dove-comprare.html     # Channel guide
+│   ├── biglietti.html         # Ticket types & prices
+│   ├── abbonamenti.html       # Subscription plans + wizard
+│   ├── agevolazioni.html      # Discount eligibility wizard
+│   ├── aiuto.html             # Help + Trainer Mode
+│   ├── orari.html             # Timetables
+│   ├── notizie.html           # News
+│   ├── 404.html               # Error page
+│   ├── solweb/                # Transactional portal pages
+│   │   ├── dashboard.html     # User dashboard
+│   │   ├── pagamento.html     # Payment flow
+│   │   ├── conferma.html      # Post-purchase confirmation
+│   │   ├── login.html         # Login
+│   │   ├── registrazione.html # Registration
+│   │   ├── recupero.html      # Password recovery
+│   │   ├── piani.html         # Subscription plans
+│   │   ├── rinnova.html       # Renewal
+│   │   ├── ricarica.html      # Top-up
+│   │   ├── documenti.html     # Document upload
+│   │   ├── sanzioni.html      # Fines
+│   │   └── verifica.html      # Ticket verification
+│   ├── css/style.css          # Stylesheet (~2100 lines)
+│   └── js/
+│       ├── app.js             # Main app logic (~1500 lines)
+│       ├── i18n.js            # Internationalization (IT/EN/AR)
+│       └── trainer-modules.js # Trainer mode modules
+│
+├── Website/                   # Deployment build (same as Finale)
+│
+├── Redesign Tper 1.0/         # V1 redesign screenshots (before CW fixes)
+│
+├── images/                    # Photos & charts for LaTeX document
+├── Wireframes/                # Screenshot wireframes (WF1–WF7)
+├── Blueprint/                 # Blueprint diagrams (IA, Ecosystem, Journey)
+│
+├── main.tex                   # LaTeX project document (Italian, ~6065 lines)
+├── main-en.tex                # LaTeX project document (English, ~6060 lines)
+├── main.pdf                   # Compiled PDF (Italian, 126 pp.)
+├── main-en.pdf                # Compiled PDF (English, 125 pp.)
+│
+├── .github/workflows/         # GitHub Pages deployment
+├── LICENSE                    # MIT License
+├── README.md                  # This file
+└── .gitignore                 # Git ignore rules
 ```
 
 ---
 
-## ✨ Key Features
+## Project Phases
 
-### 🌐 Redesigned Website
-- **22 HTML pages** covering all user journeys (tickets, subscriptions, trip planning, account management)
-- **Multilingual support** — Italian, English, Arabic (i18n via JavaScript)
-- **Responsive design** — works on desktop and mobile
-- **Accessibility** — breadcrumbs, ARIA labels, high-contrast color palette
-
-### 🧠 Trainer Mode
-An innovative guided-tour system that activates when users need help:
-- **Ticket Wizard** — 5-question flow to find the right ticket
-- **Subscription Wizard** — 7-question flow for subscription renewal
-- **Trip Planning Guide** — step-by-step journey builder
-- **Channel Selector** — helps users choose where to buy
+| Phase | Description | Key Artifacts |
+|-------|-------------|---------------|
+| **Phase A** | User research: testing existing TPER site with 4 subjects | SUS scores, task completion data, user journey maps |
+| **Phase B** | Define personas, scenarios, design recommendations | Personas (Maria, Fatima, David, Roberto), 13 recommendations (R1–R13) |
+| **Phase C** | Design proposal: IA, Blueprint, Wireframe, Comparison | IA card, 3 blueprints, 7 wireframes, 5 Before/After comparisons |
+| **Phase D** | Evaluation: CW, Formative test, Summative test | Inspection card, 2 formative tests, 2 summative tests (SUS > 68) |
 
 ---
 
-## 📊 Usability Testing
+## Key Metrics
 
-### Phase A — Preliminary (Original TPER site)
-
-| # | Participant | Age | Tasks | Avg Time | Errors | SUS |
-|---|-------------|:---:|:-----:|:--------:|:------:|:---:|
-| 1 | Sergio Magini | 68 | 3/5 (60%) | 149.6 s | 2.6 | **40.0** |
-| 2 | Laura Palumbo | 70 | 1/5 (20%) | 183.8 s | 5.0 | **37.5** |
-| 3 | Chris Harper | 34 | 2/5 (40%) | 156.6 s | 2.4 | **45.0** |
-| 4 | Maria Borriello | 79 | 0/5 (0%) | 652.0 s | 13.0 | **27.5** |
-
-### Phase D — Summative (Redesigned v2.0)
-
-| # | Participant | Age | Tasks | Avg Time | Errors | SUS | vs Phase A |
-|---|-------------|:---:|:-----:|:--------:|:------:|:---:|:----------:|
-| 1 | Laura Palumbo | 70 | **4/5 (80%)** | **103.0 s** (−44%) | **1.4** (−72%) | **72.5** | **+35 pts** |
-| 2 | Maria Borriello | 79 | **4/5 (80%)** | **164.8 s** (−75%) | **3.4** (−74%) | **71.0** | **+43.5 pts** |
-
-> **Both subjects** passed the **good usability** threshold (SUS ≥ 68). The redesign reduced the SUS gap between the two profiles from 10 pts (Phase A) to just 1.5 pts (v2.0). Maria's improvement (+158% SUS, 0/5 → 4/5 tasks) demonstrates maximum impact for the most fragile user profile.
+| Metric | Before (Phase A) | After (Phase D) | Improvement |
+|--------|------------------|-----------------|-------------|
+| Task completion | 30% (6/20) | 80% (4/5, Laura P.) | +50 pp |
+| Avg SUS score | 37.5/100 | 72.5/100 | +35 pts |
+| Task time (T4) | 195 s, 7 errors | 57 s, 0 errors | −71% time |
 
 ---
 
-## 🛠️ Technologies Used
+## Built With
 
-| Technology | Purpose |
-|------------|---------|
-| **HTML5 + CSS3** | Static website prototype (~2,000 lines CSS) |
-| **JavaScript (Vanilla)** | Interactive UI, Trainer Mode, i18n, wizards (~3,400 lines across 3 files) |
-| **LaTeX** | Thesis document (`tcolorbox`, `tikz`, `hyperref`) |
-| **GitHub Actions** | CI/CD — automated validation & deploy to Pages |
-| **Puppeteer / Playwright** | Automated screenshot capture for wireframes |
-
----
-
-## 🔄 CI/CD
-
-The repository uses **GitHub Actions** for continuous deployment:
-
-1. **Validate** — Checks HTML structure and file integrity on every push
-2. **Deploy** — Automatically deploys `Website - Finale/` to GitHub Pages
-
-The workflow runs automatically on pushes to `master` affecting the website or workflow files, and can also be triggered manually from the [Actions tab](https://github.com/FrancescoCastaldi/Esame-UUXD/actions).
-
----
-
-## 📚 Academic Context
-
-- **Course:** User Experience Design (UUXD)
-- **University:** University of Bologna
-- **Year:** 2025/2026
-- **Team:** Francesco Castaldi & Stefano Mercurio
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
-> *TPER brand, logos, and content belong to [TPER S.p.A.](https://www.tper.it). This project is for academic purposes only.*
+- **Prototype:** HTML5, CSS3, JavaScript (vanilla)
+- **Documentation:** LaTeX (MiKTeX 25.12)
+- **Diagrams:** Forest package (LaTeX), custom TikZ
+- **Screenshots:** Puppeteer
+- **Hosting:** GitHub Pages

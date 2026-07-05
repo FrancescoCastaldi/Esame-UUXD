@@ -66,3 +66,16 @@ Test/
 
 # Old website versions (keep only Website - Finale)
 Website/
+
+# Standalone card folders (not part of main compilation)
+FaseD2/
+Comparison/
+IA/
+
+# Session logs & compiled deliverables
+AGENTS.md
+main.pdf
+main-en.pdf
+main_old.pdf
+main.tex
+main-en.tex
